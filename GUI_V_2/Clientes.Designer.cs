@@ -54,6 +54,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btn_ver = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -319,12 +321,36 @@
             this.button2.Text = "ELIMINAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.comboBox2.Location = new System.Drawing.Point(168, 337);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(107, 28);
+            this.comboBox2.TabIndex = 94;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(50, 340);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 20);
+            this.label19.TabIndex = 93;
+            this.label19.Text = "ESTADO";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(742, 397);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_ver);
             this.Controls.Add(this.label15);
@@ -385,5 +411,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btn_ver;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label19;
     }
 }

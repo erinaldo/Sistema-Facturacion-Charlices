@@ -60,6 +60,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +84,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(523, 319);
+            this.button1.Location = new System.Drawing.Point(523, 337);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 45);
             this.button1.TabIndex = 2;
@@ -211,7 +213,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(54, 325);
+            this.label9.Location = new System.Drawing.Point(54, 322);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 20);
             this.label9.TabIndex = 18;
@@ -230,7 +232,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(151, 321);
+            this.textBox8.Location = new System.Drawing.Point(151, 318);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(107, 24);
             this.textBox8.TabIndex = 19;
@@ -300,7 +302,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(264, 321);
+            this.label16.Location = new System.Drawing.Point(264, 318);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(15, 20);
             this.label16.TabIndex = 53;
@@ -344,7 +346,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(523, 252);
+            this.button2.Location = new System.Drawing.Point(523, 270);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 45);
             this.button2.TabIndex = 87;
@@ -379,12 +381,36 @@
             this.dateTimePicker1.TabIndex = 90;
             this.dateTimePicker1.Value = new System.DateTime(2020, 1, 28, 12, 20, 2, 0);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.comboBox2.Location = new System.Drawing.Point(151, 356);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(107, 28);
+            this.comboBox2.TabIndex = 92;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(56, 359);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 20);
+            this.label19.TabIndex = 91;
+            this.label19.Text = "ESTADO";
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(724, 380);
+            this.ClientSize = new System.Drawing.Size(724, 402);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -457,5 +483,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label19;
     }
 }
