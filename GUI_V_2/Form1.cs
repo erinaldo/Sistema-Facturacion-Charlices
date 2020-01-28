@@ -16,6 +16,7 @@ namespace GUI_V_2
         public Form1()
         {
             InitializeComponent();
+           
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -125,6 +126,12 @@ namespace GUI_V_2
         private void btnven_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new CONSULTAS());
+            AnimacionPequena();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConGen());
             AnimacionPequena();
         }
     }

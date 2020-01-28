@@ -20,6 +20,12 @@ namespace GUI_V_2
         private void label15_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.Close();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

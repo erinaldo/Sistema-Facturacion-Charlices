@@ -16,5 +16,10 @@ namespace GUI_V_2
         {
             InitializeComponent();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

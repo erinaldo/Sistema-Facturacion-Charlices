@@ -58,6 +58,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConGen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConGen.Designer.cs">
+      <DependentUpon>ConGen.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONSULTAS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConGen.resx">
+      <DependentUpon>ConGen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS.resx">
       <DependentUpon>CONSULTAS.cs</DependentUpon>
