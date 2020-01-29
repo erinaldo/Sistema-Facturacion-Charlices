@@ -16,7 +16,7 @@ namespace GUI_V_2
         public Form1()
         {
             InitializeComponent();
-           
+     
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -28,20 +28,7 @@ namespace GUI_V_2
             Application.Exit();
         }
 
-        private void iconmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            iconrestaurar.Visible = true;
-            iconmaximizar.Visible = false;
-        }
-
-        private void iconrestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            iconrestaurar.Visible = false;
-            iconmaximizar.Visible = true;
-        }
-
+     
         private void iconminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

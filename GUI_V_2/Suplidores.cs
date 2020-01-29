@@ -10,16 +10,24 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class Suplidores : Form
+    public partial class Suplidores : FormBaseMan
     {
         public Suplidores()
         {
             InitializeComponent();
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

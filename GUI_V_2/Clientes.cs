@@ -10,22 +10,18 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class Clientes : Form
+    public partial class Clientes : FormBaseMan
     {
         public Clientes()
         {
             InitializeComponent();
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.Close();
-        }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
     }
 }
