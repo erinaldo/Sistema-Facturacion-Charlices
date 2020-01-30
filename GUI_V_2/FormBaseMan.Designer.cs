@@ -194,16 +194,16 @@
         }
 
         #endregion
-        protected System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label btn_cerrar;
-        protected System.Windows.Forms.Label label2;
-        protected System.Windows.Forms.Button bnt_eliminar;
-        protected System.Windows.Forms.Button btn_guardar;
-        protected System.Windows.Forms.Label label19;
-        protected System.Windows.Forms.Label label5;
-        protected internal System.Windows.Forms.ComboBox estado;
-        protected internal ErrorTxtBox Nom;
-        protected internal ErrorTxtBox Codigo;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button bnt_eliminar;
+        public System.Windows.Forms.Button btn_guardar;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox estado;
+        public ErrorTxtBox Nom;
+        public ErrorTxtBox Codigo;
     }
 }

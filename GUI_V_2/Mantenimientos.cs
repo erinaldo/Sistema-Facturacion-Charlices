@@ -53,5 +53,10 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new Categorias());
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Comprabantes());
+        }
     }
 }
