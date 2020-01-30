@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox2 = new GUI_V_2.ErrorTxtBox();
+            this.TelCli = new GUI_V_2.ErrorTxtBox();
+            this.DirCli = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.errorTxtBox3 = new GUI_V_2.ErrorTxtBox();
+            this.TipCli = new System.Windows.Forms.ComboBox();
+            this.CorCli = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -42,15 +42,6 @@
             // 
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.Text = "CLIENTES";
-            // 
-            // NomPro
-            // 
-            this.Nom.Location = new System.Drawing.Point(162, 102);
-            // 
-            // estado
-            // 
-            this.estado.Location = new System.Drawing.Point(162, 333);
-            this.estado.Size = new System.Drawing.Size(137, 28);
             // 
             // bnt_eliminar
             // 
@@ -66,27 +57,36 @@
             // 
             this.label19.Location = new System.Drawing.Point(44, 336);
             // 
-            // CodCli
+            // estado
+            // 
+            this.estado.Location = new System.Drawing.Point(162, 333);
+            this.estado.Size = new System.Drawing.Size(137, 28);
+            // 
+            // Nom
+            // 
+            this.Nom.Location = new System.Drawing.Point(162, 102);
+            // 
+            // Codigo
             // 
             this.Codigo.Location = new System.Drawing.Point(162, 58);
             // 
-            // errorTxtBox1
+            // TelCli
             // 
-            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox1.Location = new System.Drawing.Point(162, 142);
-            this.errorTxtBox1.Name = "errorTxtBox1";
-            this.errorTxtBox1.Size = new System.Drawing.Size(137, 26);
-            this.errorTxtBox1.TabIndex = 107;
-            this.errorTxtBox1.Validar = true;
+            this.TelCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelCli.Location = new System.Drawing.Point(162, 142);
+            this.TelCli.Name = "TelCli";
+            this.TelCli.Size = new System.Drawing.Size(137, 26);
+            this.TelCli.TabIndex = 107;
+            this.TelCli.Validar = true;
             // 
-            // errorTxtBox2
+            // DirCli
             // 
-            this.errorTxtBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox2.Location = new System.Drawing.Point(162, 188);
-            this.errorTxtBox2.Name = "errorTxtBox2";
-            this.errorTxtBox2.Size = new System.Drawing.Size(137, 26);
-            this.errorTxtBox2.TabIndex = 108;
-            this.errorTxtBox2.Validar = true;
+            this.DirCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirCli.Location = new System.Drawing.Point(162, 188);
+            this.DirCli.Name = "DirCli";
+            this.DirCli.Size = new System.Drawing.Size(137, 26);
+            this.DirCli.TabIndex = 108;
+            this.DirCli.Validar = true;
             // 
             // label3
             // 
@@ -118,27 +118,27 @@
             this.label6.TabIndex = 112;
             this.label6.Text = "TIPO CLIENTE";
             // 
-            // comboBox1
+            // TipCli
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TipCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TipCli.FormattingEnabled = true;
+            this.TipCli.Items.AddRange(new object[] {
             "NORMAL",
             "FAMILIA",
             "MAYOR"});
-            this.comboBox1.Location = new System.Drawing.Point(162, 235);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 28);
-            this.comboBox1.TabIndex = 113;
+            this.TipCli.Location = new System.Drawing.Point(162, 235);
+            this.TipCli.Name = "TipCli";
+            this.TipCli.Size = new System.Drawing.Size(137, 28);
+            this.TipCli.TabIndex = 113;
             // 
-            // errorTxtBox3
+            // CorCli
             // 
-            this.errorTxtBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox3.Location = new System.Drawing.Point(162, 284);
-            this.errorTxtBox3.Name = "errorTxtBox3";
-            this.errorTxtBox3.Size = new System.Drawing.Size(137, 26);
-            this.errorTxtBox3.TabIndex = 114;
-            this.errorTxtBox3.Validar = true;
+            this.CorCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CorCli.Location = new System.Drawing.Point(162, 284);
+            this.CorCli.Name = "CorCli";
+            this.CorCli.Size = new System.Drawing.Size(137, 26);
+            this.CorCli.TabIndex = 114;
+            this.CorCli.Validar = true;
             // 
             // label7
             // 
@@ -157,21 +157,21 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(818, 553);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.errorTxtBox3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CorCli);
+            this.Controls.Add(this.TipCli);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.errorTxtBox2);
-            this.Controls.Add(this.errorTxtBox1);
+            this.Controls.Add(this.DirCli);
+            this.Controls.Add(this.TelCli);
             this.Name = "Clientes";
             this.Text = "Clientes";
-            this.Controls.SetChildIndex(this.errorTxtBox1, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox2, 0);
+            this.Controls.SetChildIndex(this.TelCli, 0);
+            this.Controls.SetChildIndex(this.DirCli, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.TipCli, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -181,7 +181,7 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox3, 0);
+            this.Controls.SetChildIndex(this.CorCli, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,13 +190,13 @@
 
         #endregion
 
-        private ErrorTxtBox errorTxtBox1;
-        private ErrorTxtBox errorTxtBox2;
+        private ErrorTxtBox TelCli;
+        private ErrorTxtBox DirCli;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private ErrorTxtBox errorTxtBox3;
+        private System.Windows.Forms.ComboBox TipCli;
+        private ErrorTxtBox CorCli;
         private System.Windows.Forms.Label label7;
     }
 }

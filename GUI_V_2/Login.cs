@@ -27,5 +27,27 @@ namespace GUI_V_2
         {
             this.Close();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+                {
+                    VisitLink();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error, intente de nuevo mas tarde.");
+                }
+            }
+
+            private void VisitLink()
+            {
+                // Change the color of the link text by setting LinkVisited
+                // to true.
+                linkLabel1.LinkVisited = true;
+                //Call the Process.Start method to open the default browser
+                //with a URL:
+                System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=18098862933&text=Soporte%20!");
+            }
+        }
     }
-}
