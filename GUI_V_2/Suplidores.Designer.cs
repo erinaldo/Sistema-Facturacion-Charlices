@@ -39,8 +39,8 @@
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(114, 25);
-            this.label1.Text = "Suplidores";
+            this.label1.Size = new System.Drawing.Size(146, 25);
+            this.label1.Text = "SUPLIDORES";
             // 
             // bnt_eliminar
             // 
