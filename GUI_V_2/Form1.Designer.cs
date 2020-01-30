@@ -171,6 +171,7 @@
             this.btncom.TabIndex = 5;
             this.btncom.Text = "VENTAS/COMPRA";
             this.btncom.UseVisualStyleBackColor = true;
+            this.btncom.Click += new System.EventHandler(this.btncom_Click);
             // 
             // btnsup
             // 

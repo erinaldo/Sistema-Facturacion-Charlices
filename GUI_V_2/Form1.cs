@@ -121,5 +121,11 @@ namespace GUI_V_2
             AbrirFormEnPanel(new ConGen());
             AnimacionPequena();
         }
+
+        private void btncom_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Ventas_Compras());
+            AnimacionPequena();
+        }
     }
 }

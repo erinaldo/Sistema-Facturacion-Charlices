@@ -133,6 +133,18 @@
       <DependentUpon>USUARIO.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
+    <Compile Include="Ventas-Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas-Compras.Designer.cs">
+      <DependentUpon>Ventas-Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentasModoTouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasModoTouch.Designer.cs">
+      <DependentUpon>VentasModoTouch.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USUARIO.resx">
       <DependentUpon>USUARIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas-Compras.resx">
+      <DependentUpon>Ventas-Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasModoTouch.resx">
+      <DependentUpon>VentasModoTouch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
