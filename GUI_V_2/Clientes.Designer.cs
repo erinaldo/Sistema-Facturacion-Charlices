@@ -45,7 +45,7 @@
             // 
             // NomPro
             // 
-            this.NomPro.Location = new System.Drawing.Point(162, 102);
+            this.Nom.Location = new System.Drawing.Point(162, 102);
             // 
             // estado
             // 
@@ -68,7 +68,7 @@
             // 
             // CodCli
             // 
-            this.CodCli.Location = new System.Drawing.Point(162, 58);
+            this.Codigo.Location = new System.Drawing.Point(162, 58);
             // 
             // errorTxtBox1
             // 
@@ -177,9 +177,9 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label19, 0);
-            this.Controls.SetChildIndex(this.CodCli, 0);
+            this.Controls.SetChildIndex(this.Codigo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.NomPro, 0);
+            this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
             this.Controls.SetChildIndex(this.errorTxtBox3, 0);
             this.Controls.SetChildIndex(this.label7, 0);

@@ -39,8 +39,8 @@
             this.btn_cerrar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.estado = new System.Windows.Forms.ComboBox();
-            this.NomPro = new GUI_V_2.ErrorTxtBox();
-            this.CodCli = new GUI_V_2.ErrorTxtBox();
+            this.Nom = new GUI_V_2.ErrorTxtBox();
+            this.Codigo = new GUI_V_2.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,23 +150,23 @@
             this.estado.Size = new System.Drawing.Size(121, 28);
             this.estado.TabIndex = 106;
             // 
-            // NomPro
+            // Nom
             // 
-            this.NomPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomPro.Location = new System.Drawing.Point(125, 102);
-            this.NomPro.Name = "NomPro";
-            this.NomPro.Size = new System.Drawing.Size(137, 26);
-            this.NomPro.TabIndex = 105;
-            this.NomPro.Validar = true;
+            this.Nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nom.Location = new System.Drawing.Point(125, 102);
+            this.Nom.Name = "Nom";
+            this.Nom.Size = new System.Drawing.Size(137, 26);
+            this.Nom.TabIndex = 105;
+            this.Nom.Validar = true;
             // 
-            // CodCli
+            // Codigo
             // 
-            this.CodCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodCli.Location = new System.Drawing.Point(125, 58);
-            this.CodCli.Name = "CodCli";
-            this.CodCli.Size = new System.Drawing.Size(137, 26);
-            this.CodCli.TabIndex = 101;
-            this.CodCli.Validar = true;
+            this.Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Codigo.Location = new System.Drawing.Point(125, 58);
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Size = new System.Drawing.Size(137, 26);
+            this.Codigo.TabIndex = 101;
+            this.Codigo.Validar = true;
             // 
             // FormBaseMan
             // 
@@ -175,10 +175,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 544);
             this.Controls.Add(this.estado);
-            this.Controls.Add(this.NomPro);
+            this.Controls.Add(this.Nom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_cerrar);
-            this.Controls.Add(this.CodCli);
+            this.Controls.Add(this.Codigo);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -198,12 +198,12 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label btn_cerrar;
         protected System.Windows.Forms.Label label2;
-        protected System.Windows.Forms.ComboBox estado;
         protected System.Windows.Forms.Button bnt_eliminar;
         protected System.Windows.Forms.Button btn_guardar;
         protected System.Windows.Forms.Label label19;
         protected System.Windows.Forms.Label label5;
-        public ErrorTxtBox NomPro;
-        public ErrorTxtBox CodCli;
+        protected internal System.Windows.Forms.ComboBox estado;
+        protected internal ErrorTxtBox Nom;
+        protected internal ErrorTxtBox Codigo;
     }
 }

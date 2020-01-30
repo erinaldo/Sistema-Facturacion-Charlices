@@ -29,27 +29,18 @@
         private void InitializeComponent()
         {
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
+            this.DirSup = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.errorTxtBox2 = new GUI_V_2.ErrorTxtBox();
+            this.CedSup = new GUI_V_2.ErrorTxtBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.errorTxtBox3 = new GUI_V_2.ErrorTxtBox();
+            this.TelSup = new GUI_V_2.ErrorTxtBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.Text = "Suplidores";
-            // 
-            // NomPro
-            // 
-            this.NomPro.Location = new System.Drawing.Point(151, 102);
-            this.NomPro.Size = new System.Drawing.Size(252, 26);
-            // 
-            // estado
-            // 
-            this.estado.Location = new System.Drawing.Point(151, 279);
             // 
             // bnt_eliminar
             // 
@@ -65,9 +56,18 @@
             // 
             this.label19.Location = new System.Drawing.Point(44, 287);
             // 
-            // CodCli
+            // estado
             // 
-            this.CodCli.Location = new System.Drawing.Point(151, 58);
+            this.estado.Location = new System.Drawing.Point(151, 279);
+            // 
+            // Nom
+            // 
+            this.Nom.Location = new System.Drawing.Point(151, 102);
+            this.Nom.Size = new System.Drawing.Size(252, 26);
+            // 
+            // Codigo
+            // 
+            this.Codigo.Location = new System.Drawing.Point(151, 58);
             // 
             // textBox3
             // 
@@ -77,14 +77,14 @@
             this.textBox3.Size = new System.Drawing.Size(210, 24);
             this.textBox3.TabIndex = 60;
             // 
-            // errorTxtBox1
+            // DirSup
             // 
-            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.errorTxtBox1.Location = new System.Drawing.Point(151, 237);
-            this.errorTxtBox1.Name = "errorTxtBox1";
-            this.errorTxtBox1.Size = new System.Drawing.Size(319, 26);
-            this.errorTxtBox1.TabIndex = 107;
-            this.errorTxtBox1.Validar = false;
+            this.DirSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.DirSup.Location = new System.Drawing.Point(151, 237);
+            this.DirSup.Name = "DirSup";
+            this.DirSup.Size = new System.Drawing.Size(319, 26);
+            this.DirSup.TabIndex = 107;
+            this.DirSup.Validar = false;
             // 
             // label3
             // 
@@ -106,14 +106,14 @@
             this.label4.TabIndex = 110;
             this.label4.Text = "CLA / RNC";
             // 
-            // errorTxtBox2
+            // CedSup
             // 
-            this.errorTxtBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.errorTxtBox2.Location = new System.Drawing.Point(151, 146);
-            this.errorTxtBox2.Name = "errorTxtBox2";
-            this.errorTxtBox2.Size = new System.Drawing.Size(170, 26);
-            this.errorTxtBox2.TabIndex = 109;
-            this.errorTxtBox2.Validar = false;
+            this.CedSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.CedSup.Location = new System.Drawing.Point(151, 146);
+            this.CedSup.Name = "CedSup";
+            this.CedSup.Size = new System.Drawing.Size(170, 26);
+            this.CedSup.TabIndex = 109;
+            this.CedSup.Validar = false;
             // 
             // label6
             // 
@@ -125,14 +125,14 @@
             this.label6.TabIndex = 112;
             this.label6.Text = "TELEFONO";
             // 
-            // errorTxtBox3
+            // TelSup
             // 
-            this.errorTxtBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.errorTxtBox3.Location = new System.Drawing.Point(151, 192);
-            this.errorTxtBox3.Name = "errorTxtBox3";
-            this.errorTxtBox3.Size = new System.Drawing.Size(170, 26);
-            this.errorTxtBox3.TabIndex = 111;
-            this.errorTxtBox3.Validar = false;
+            this.TelSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TelSup.Location = new System.Drawing.Point(151, 192);
+            this.TelSup.Name = "TelSup";
+            this.TelSup.Size = new System.Drawing.Size(170, 26);
+            this.TelSup.TabIndex = 111;
+            this.TelSup.Validar = false;
             // 
             // Suplidores
             // 
@@ -141,11 +141,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(814, 549);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.errorTxtBox3);
+            this.Controls.Add(this.TelSup);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.errorTxtBox2);
+            this.Controls.Add(this.CedSup);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.errorTxtBox1);
+            this.Controls.Add(this.DirSup);
             this.Name = "Suplidores";
             this.Text = "Suplidores";
             this.Controls.SetChildIndex(this.btn_guardar, 0);
@@ -153,15 +153,15 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label19, 0);
-            this.Controls.SetChildIndex(this.CodCli, 0);
+            this.Controls.SetChildIndex(this.Codigo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.NomPro, 0);
+            this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox1, 0);
+            this.Controls.SetChildIndex(this.DirSup, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox2, 0);
+            this.Controls.SetChildIndex(this.CedSup, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox3, 0);
+            this.Controls.SetChildIndex(this.TelSup, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,11 +170,11 @@
 
         #endregion
         private System.Windows.Forms.TextBox textBox3;
-        private ErrorTxtBox errorTxtBox1;
+        private ErrorTxtBox DirSup;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private ErrorTxtBox errorTxtBox2;
+        private ErrorTxtBox CedSup;
         private System.Windows.Forms.Label label6;
-        private ErrorTxtBox errorTxtBox3;
+        private ErrorTxtBox TelSup;
     }
 }
