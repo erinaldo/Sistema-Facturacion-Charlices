@@ -47,11 +47,13 @@
             // 
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.bnt_eliminar.Location = new System.Drawing.Point(612, 373);
             // 
             // btn_guardar
             // 
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_guardar.Location = new System.Drawing.Point(612, 438);
             // 
             // label19
             // 
@@ -65,6 +67,7 @@
             // Nom
             // 
             this.Nom.Location = new System.Drawing.Point(162, 102);
+            this.Nom.Size = new System.Drawing.Size(225, 26);
             // 
             // Codigo
             // 
@@ -84,7 +87,7 @@
             this.DirCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirCli.Location = new System.Drawing.Point(162, 188);
             this.DirCli.Name = "DirCli";
-            this.DirCli.Size = new System.Drawing.Size(137, 26);
+            this.DirCli.Size = new System.Drawing.Size(278, 26);
             this.DirCli.TabIndex = 108;
             this.DirCli.Validar = true;
             // 
@@ -136,7 +139,7 @@
             this.CorCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorCli.Location = new System.Drawing.Point(162, 284);
             this.CorCli.Name = "CorCli";
-            this.CorCli.Size = new System.Drawing.Size(137, 26);
+            this.CorCli.Size = new System.Drawing.Size(225, 26);
             this.CorCli.TabIndex = 114;
             this.CorCli.Validar = true;
             // 

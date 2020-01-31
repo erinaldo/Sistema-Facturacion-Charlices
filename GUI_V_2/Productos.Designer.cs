@@ -93,7 +93,7 @@
             this.PreNormal.Name = "PreNormal";
             this.PreNormal.Size = new System.Drawing.Size(80, 26);
             this.PreNormal.TabIndex = 107;
-            this.PreNormal.Validar = false;
+            this.PreNormal.Validar = true;
             // 
             // label3
             // 
@@ -132,7 +132,7 @@
             this.PreCom.Name = "PreCom";
             this.PreCom.Size = new System.Drawing.Size(80, 26);
             this.PreCom.TabIndex = 111;
-            this.PreCom.Validar = false;
+            this.PreCom.Validar = true;
             // 
             // PreFamilia
             // 
@@ -141,7 +141,7 @@
             this.PreFamilia.Name = "PreFamilia";
             this.PreFamilia.Size = new System.Drawing.Size(80, 26);
             this.PreFamilia.TabIndex = 112;
-            this.PreFamilia.Validar = false;
+            this.PreFamilia.Validar = true;
             // 
             // PreMayor
             // 
@@ -150,7 +150,7 @@
             this.PreMayor.Name = "PreMayor";
             this.PreMayor.Size = new System.Drawing.Size(80, 26);
             this.PreMayor.TabIndex = 113;
-            this.PreMayor.Validar = false;
+            this.PreMayor.Validar = true;
             // 
             // label7
             // 

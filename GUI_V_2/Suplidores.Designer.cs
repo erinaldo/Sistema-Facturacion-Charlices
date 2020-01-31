@@ -84,7 +84,7 @@
             this.DirSup.Name = "DirSup";
             this.DirSup.Size = new System.Drawing.Size(319, 26);
             this.DirSup.TabIndex = 107;
-            this.DirSup.Validar = false;
+            this.DirSup.Validar = true;
             // 
             // label3
             // 
@@ -113,7 +113,7 @@
             this.CedSup.Name = "CedSup";
             this.CedSup.Size = new System.Drawing.Size(170, 26);
             this.CedSup.TabIndex = 109;
-            this.CedSup.Validar = false;
+            this.CedSup.Validar = true;
             // 
             // label6
             // 
@@ -132,7 +132,7 @@
             this.TelSup.Name = "TelSup";
             this.TelSup.Size = new System.Drawing.Size(170, 26);
             this.TelSup.TabIndex = 111;
-            this.TelSup.Validar = false;
+            this.TelSup.Validar = true;
             // 
             // Suplidores
             // 
