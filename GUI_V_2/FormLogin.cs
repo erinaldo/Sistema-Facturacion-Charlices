@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
-        public Login()
+        public FormLogin()
         {
             InitializeComponent();
         }
-
         private void textBox1_DoubleClick(object sender, EventArgs e)
         {
             txt_pass.Text = "";
@@ -49,5 +48,11 @@ namespace GUI_V_2
                 //with a URL:
                 System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=18098862933&text=Soporte%20!");
             }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 ventana = new Form1();
+            ventana.Show();
         }
+    }
     }

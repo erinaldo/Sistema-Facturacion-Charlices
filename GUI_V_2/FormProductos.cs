@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class ConGen : Form
+    public partial class FormProductos : FormBaseMan
     {
-        public ConGen()
+        public FormProductos()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
+
+
+
+
+
     }
 }

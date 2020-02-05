@@ -27,5 +27,7 @@ namespace GUI_V_2
     
         public virtual DbSet<comprobantes> comprobantes { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
+        public virtual DbSet<Clientes> Clientes { get; set; }
+        public virtual DbSet<Suplidores> Suplidores { get; set; }
     }
 }

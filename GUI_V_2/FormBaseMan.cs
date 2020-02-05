@@ -34,5 +34,10 @@ namespace GUI_V_2
         {
             this.Close();
         }
+
+        private void bnt_eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

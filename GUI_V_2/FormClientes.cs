@@ -12,7 +12,7 @@ namespace GUI_V_2
 {
     public partial class FormClientes : FormBaseMan
     {
-        int id;
+        int id = 0;
         public FormClientes()
         {
             InitializeComponent();

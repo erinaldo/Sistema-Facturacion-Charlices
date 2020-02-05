@@ -9,11 +9,6 @@ namespace GUI_V_2
     class Utilidades
     {
 
-
-
-
-
-
         public static Boolean ValidarFormulario(Control objeto, ErrorProvider ErrorProvider)
         {
             Boolean HayError = false;
@@ -41,6 +36,32 @@ namespace GUI_V_2
             }
 
             return HayError;
+        }
+
+
+        public static void LimpiarControles(Control forms)
+        {
+
+            foreach (Control Item in forms.Controls)
+            {
+                if (Item is ErrorTxtBox obj)
+                {
+                    if (obj.Limpiar)
+                    {
+                        obj.Text = "";
+                    }
+                }
+                else if (Item is DataGridView dataGrid)
+                {
+                    dataGrid.Rows.Clear();
+                }
+                if (Item.Controls.Count > 0)
+                {
+                    LimpiarControles(Item);
+                }
+
+            }
+
         }
 
 

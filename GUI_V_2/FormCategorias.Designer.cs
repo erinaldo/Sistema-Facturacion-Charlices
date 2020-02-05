@@ -72,12 +72,14 @@
             // 
             this.Nom.Limpiar = true;
             this.Nom.Margin = new System.Windows.Forms.Padding(5);
+            this.Nom.MaxLength = 25;
             this.Nom.Size = new System.Drawing.Size(277, 30);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
             this.Codigo.Margin = new System.Windows.Forms.Padding(5);
+            this.Codigo.MaxLength = 15;
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // FormCategorias

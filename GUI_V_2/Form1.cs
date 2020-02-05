@@ -59,13 +59,13 @@ namespace GUI_V_2
 
         private void btnprod_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Mantenimientos());
+            AbrirFormEnPanel(new FormMantenimientos());
             AnimacionPequena();
         }
 
         private void btnlogoInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new InicioResumen());
+            AbrirFormEnPanel(new FormInicioResumen());
             AnimacionPequena();
         }
 
@@ -77,7 +77,7 @@ namespace GUI_V_2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Clientes());
+            AbrirFormEnPanel(new FormClientes());
             AnimacionPequena();
         }
 
@@ -100,25 +100,25 @@ namespace GUI_V_2
 
         private void btnsup_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Reportes());
+            AbrirFormEnPanel(new FormReportes());
             AnimacionPequena();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new USUARIO());
+            AbrirFormEnPanel(new FormUSUARIO());
             AnimacionPequena();
         }
 
         private void btnven_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new CONSULTAS());
+            AbrirFormEnPanel(new FormCONSULTAS());
             AnimacionPequena();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new ConGen());
+            AbrirFormEnPanel(new FormConGen());
             AnimacionPequena();
         }
 

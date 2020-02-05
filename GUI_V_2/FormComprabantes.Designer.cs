@@ -1,6 +1,6 @@
 ﻿namespace GUI_V_2
 {
-    partial class Comprabantes
+    partial class FormComprabantes
     {
         /// <summary>
         /// Required designer variable.

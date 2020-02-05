@@ -88,8 +88,14 @@ namespace GUI_V_2
                         estado.SelectedIndex = 0;
                         bnt_eliminar.Enabled = true;
                         id = categoria.id;
-                   }
-                    
+                    }
+                    else
+                    {
+                        Codigo.Limpiar = false;
+                        Utilidades.LimpiarControles(this);
+                        Codigo.Limpiar = true;
+                    }
+
                 }
             }
         }
