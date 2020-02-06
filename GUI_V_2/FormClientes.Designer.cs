@@ -40,65 +40,69 @@
             // 
             // label1
             // 
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Size = new System.Drawing.Size(148, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.Text = "CLIENTES";
             // 
             // bnt_eliminar
             // 
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.bnt_eliminar.Location = new System.Drawing.Point(816, 459);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5);
+            this.bnt_eliminar.Location = new System.Drawing.Point(612, 385);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
             // 
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btn_guardar.Location = new System.Drawing.Point(816, 539);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_guardar.Location = new System.Drawing.Point(612, 438);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(59, 414);
-            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label19.Location = new System.Drawing.Point(44, 336);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // label5
             // 
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Text = "CÓDIGO";
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(216, 410);
-            this.estado.Margin = new System.Windows.Forms.Padding(5);
-            this.estado.Size = new System.Drawing.Size(181, 33);
+            this.estado.Location = new System.Drawing.Point(162, 333);
+            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estado.Size = new System.Drawing.Size(137, 28);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
-            this.Nom.Location = new System.Drawing.Point(216, 126);
-            this.Nom.Margin = new System.Windows.Forms.Padding(5);
-            this.Nom.Size = new System.Drawing.Size(299, 30);
+            this.Nom.Location = new System.Drawing.Point(162, 102);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nom.Size = new System.Drawing.Size(225, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Location = new System.Drawing.Point(216, 71);
-            this.Codigo.Margin = new System.Windows.Forms.Padding(5);
-            this.Codigo.Size = new System.Drawing.Size(299, 30);
+            this.Codigo.Location = new System.Drawing.Point(162, 58);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Codigo.Size = new System.Drawing.Size(225, 26);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(612, 334);
             // 
             // TelCli
             // 
             this.TelCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelCli.Limpiar = false;
-            this.TelCli.Location = new System.Drawing.Point(216, 175);
-            this.TelCli.Margin = new System.Windows.Forms.Padding(4);
+            this.TelCli.Location = new System.Drawing.Point(162, 142);
             this.TelCli.MaxLength = 15;
             this.TelCli.Name = "TelCli";
-            this.TelCli.Size = new System.Drawing.Size(181, 30);
+            this.TelCli.Size = new System.Drawing.Size(137, 26);
             this.TelCli.TabIndex = 107;
             this.TelCli.Validar = true;
             // 
@@ -106,11 +110,10 @@
             // 
             this.DirCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirCli.Limpiar = true;
-            this.DirCli.Location = new System.Drawing.Point(216, 231);
-            this.DirCli.Margin = new System.Windows.Forms.Padding(4);
+            this.DirCli.Location = new System.Drawing.Point(162, 188);
             this.DirCli.MaxLength = 40;
             this.DirCli.Name = "DirCli";
-            this.DirCli.Size = new System.Drawing.Size(369, 30);
+            this.DirCli.Size = new System.Drawing.Size(278, 26);
             this.DirCli.TabIndex = 108;
             this.DirCli.Validar = true;
             // 
@@ -118,10 +121,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(53, 182);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(40, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 110;
             this.label3.Text = "TELÉFONO";
             // 
@@ -129,10 +131,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(53, 235);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(40, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
+            this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 111;
             this.label4.Text = "DIRECCIÓN";
             // 
@@ -140,10 +141,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(53, 293);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(40, 238);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 25);
+            this.label6.Size = new System.Drawing.Size(116, 20);
             this.label6.TabIndex = 112;
             this.label6.Text = "TIPO CLIENTE";
             // 
@@ -155,21 +155,19 @@
             "NORMAL",
             "FAMILIA",
             "Empleado"});
-            this.TipCli.Location = new System.Drawing.Point(216, 289);
-            this.TipCli.Margin = new System.Windows.Forms.Padding(4);
+            this.TipCli.Location = new System.Drawing.Point(162, 235);
             this.TipCli.Name = "TipCli";
-            this.TipCli.Size = new System.Drawing.Size(181, 33);
+            this.TipCli.Size = new System.Drawing.Size(137, 28);
             this.TipCli.TabIndex = 113;
             // 
             // CorCli
             // 
             this.CorCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorCli.Limpiar = true;
-            this.CorCli.Location = new System.Drawing.Point(216, 350);
-            this.CorCli.Margin = new System.Windows.Forms.Padding(4);
+            this.CorCli.Location = new System.Drawing.Point(162, 284);
             this.CorCli.MaxLength = 60;
             this.CorCli.Name = "CorCli";
-            this.CorCli.Size = new System.Drawing.Size(299, 30);
+            this.CorCli.Size = new System.Drawing.Size(225, 26);
             this.CorCli.TabIndex = 114;
             this.CorCli.Validar = true;
             // 
@@ -177,19 +175,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(53, 353);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(40, 287);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
+            this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 115;
             this.label7.Text = "CORREO";
             // 
             // FormClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1091, 681);
+            this.ClientSize = new System.Drawing.Size(818, 553);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CorCli);
             this.Controls.Add(this.TipCli);
@@ -198,9 +195,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DirCli);
             this.Controls.Add(this.TelCli);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormClientes";
             this.Text = "Clientes";
+            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.TelCli, 0);
             this.Controls.SetChildIndex(this.DirCli, 0);
             this.Controls.SetChildIndex(this.label3, 0);

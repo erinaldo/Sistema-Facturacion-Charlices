@@ -21,8 +21,7 @@ namespace GUI_V_2
         {
             if (Utilidades.ValidarFormulario(this, errorProvider1) == true)
                 return;
-
-
+            
 
 
 

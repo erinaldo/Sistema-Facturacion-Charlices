@@ -82,6 +82,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityFramework.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FormBaseCons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseCons.Designer.cs">
+      <DependentUpon>FormBaseCons.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <Compile Include="VentasModoTouch.Designer.cs">
       <DependentUpon>VentasModoTouch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormBaseCons.resx">
+      <DependentUpon>FormBaseCons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCategorias.resx">
       <DependentUpon>FormCategorias.cs</DependentUpon>
     </EmbeddedResource>
