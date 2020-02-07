@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBaseCons));
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btn_cerrar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -46,22 +46,11 @@
             this.label2.TabIndex = 93;
             this.label2.Text = "Form Base Consultas";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 154);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(923, 376);
-            this.dataGridView1.TabIndex = 94;
-            // 
             // errorTxtBox1
             // 
             this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorTxtBox1.Limpiar = false;
-            this.errorTxtBox1.Location = new System.Drawing.Point(12, 113);
+            this.errorTxtBox1.Location = new System.Drawing.Point(146, 113);
             this.errorTxtBox1.Name = "errorTxtBox1";
             this.errorTxtBox1.Size = new System.Drawing.Size(289, 35);
             this.errorTxtBox1.TabIndex = 95;
@@ -82,20 +71,48 @@
             this.button1.Text = "SELECCIONAR";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(12, 123);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(128, 20);
+            this.label16.TabIndex = 109;
+            this.label16.Text = "Filtrar busqueda:";
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.AutoSize = true;
+            this.btn_cerrar.BackColor = System.Drawing.Color.White;
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.ForeColor = System.Drawing.Color.DimGray;
+            this.btn_cerrar.Location = new System.Drawing.Point(905, 9);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(30, 29);
+            this.btn_cerrar.TabIndex = 110;
+            this.btn_cerrar.Text = "X";
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
             // FormBaseCons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(957, 542);
+            this.Controls.Add(this.btn_cerrar);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.errorTxtBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaseCons";
             this.Text = "FormBaseCons";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,8 +121,9 @@
         #endregion
 
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private ErrorTxtBox errorTxtBox1;
         public System.Windows.Forms.Button button1;
+        public ErrorTxtBox errorTxtBox1;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label btn_cerrar;
     }
 }

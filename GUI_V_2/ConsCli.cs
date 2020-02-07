@@ -8,18 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI_V_2
+namespace GUI_V_2.Consultas
 {
-    public partial class FormBaseCons : Form
+    public partial class ConsCli : FormBaseCons
     {
-        public FormBaseCons()
+        public ConsCli()
         {
             InitializeComponent();
-        }
 
-        private void btn_cerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+
         }
     }
 }

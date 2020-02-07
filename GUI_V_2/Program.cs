@@ -18,6 +18,7 @@ namespace GUI_V_2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());
 
+
         }
     }
 }

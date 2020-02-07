@@ -199,9 +199,9 @@
             this.btnven.ForeColor = System.Drawing.Color.White;
             this.btnven.Image = ((System.Drawing.Image)(resources.GetObject("btnven.Image")));
             this.btnven.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnven.Location = new System.Drawing.Point(0, 185);
+            this.btnven.Location = new System.Drawing.Point(12, 185);
             this.btnven.Name = "btnven";
-            this.btnven.Size = new System.Drawing.Size(250, 40);
+            this.btnven.Size = new System.Drawing.Size(225, 40);
             this.btnven.TabIndex = 2;
             this.btnven.Text = "CONSULTAS";
             this.btnven.UseVisualStyleBackColor = true;

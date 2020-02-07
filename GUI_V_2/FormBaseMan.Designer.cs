@@ -56,7 +56,7 @@
             this.bnt_eliminar.ForeColor = System.Drawing.Color.White;
             this.bnt_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("bnt_eliminar.Image")));
             this.bnt_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_eliminar.Location = new System.Drawing.Point(612, 355);
+            this.bnt_eliminar.Location = new System.Drawing.Point(612, 369);
             this.bnt_eliminar.Name = "bnt_eliminar";
             this.bnt_eliminar.Size = new System.Drawing.Size(180, 45);
             this.bnt_eliminar.TabIndex = 89;
@@ -161,7 +161,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(612, 305);
+            this.button1.Location = new System.Drawing.Point(612, 319);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 44);
             this.button1.TabIndex = 107;

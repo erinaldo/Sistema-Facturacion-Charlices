@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_V_2.Consultas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,25 @@ namespace GUI_V_2
         {
             InitializeComponent();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void AbrirFormEnPanel(object Mentenimientos)
         {
-
+            if (this.panel_consultas.Controls.Count > 0)
+                this.panel_consultas.Controls.RemoveAt(0);
+            Form fh = Mentenimientos as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panel_consultas.Controls.Add(fh);
+            this.panel_consultas.Tag = fh;
+            fh.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           AbrirFormEnPanel( new ConsCli());
+        }
+
+
+
     }
 }
