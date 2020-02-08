@@ -16,6 +16,7 @@ namespace GUI_V_2
         public FormClientes()
         {
             InitializeComponent();
+            TipCli.SelectedIndex = 0;
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)

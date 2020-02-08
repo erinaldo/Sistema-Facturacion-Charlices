@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class ConsSup : FormBaseCons
+    public partial class ConsCatProd : FormBaseCons
     {
-        public ConsSup()
+        public ConsCatProd()
         {
             InitializeComponent();
         }

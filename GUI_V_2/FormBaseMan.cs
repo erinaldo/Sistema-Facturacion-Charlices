@@ -15,6 +15,7 @@ namespace GUI_V_2
         public FormBaseMan()
         {
             InitializeComponent();
+            estado.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)

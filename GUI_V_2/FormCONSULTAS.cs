@@ -35,7 +35,14 @@ namespace GUI_V_2
            AbrirFormEnPanel( new ConsCli());
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsCatProd());
+        }
 
-
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsSup());
+        }
     }
 }

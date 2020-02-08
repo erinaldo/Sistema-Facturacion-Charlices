@@ -1,6 +1,6 @@
-﻿namespace GUI_V_2.Consultas
+﻿namespace GUI_V_2
 {
-    partial class ConsCli
+    partial class ConsCatProd
     {
         /// <summary>
         /// Required designer variable.
@@ -34,38 +34,33 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CedCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(114, 25);
-            this.label2.Text = "CLIENTES";
+            this.label2.Size = new System.Drawing.Size(293, 25);
+            this.label2.Text = "CATEGORIA DE PROCUTOS";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(746, 113);
+            this.button1.Location = new System.Drawing.Point(747, 134);
             // 
             // errorTxtBox1
             // 
             this.errorTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox1.Location = new System.Drawing.Point(142, 118);
+            this.errorTxtBox1.Location = new System.Drawing.Point(142, 139);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(8, 123);
+            this.label16.Location = new System.Drawing.Point(8, 149);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(916, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(917, 9);
             // 
             // dataGridView1
             // 
@@ -86,13 +81,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodPro,
             this.NomPro,
-            this.CedCli,
-            this.PrePro,
-            this.CanPro,
-            this.DesPro,
-            this.TotalPro,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 159);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 180);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -111,66 +101,36 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 374);
-            this.dataGridView1.TabIndex = 111;
+            this.dataGridView1.Size = new System.Drawing.Size(935, 344);
+            this.dataGridView1.TabIndex = 113;
             // 
             // CodPro
             // 
-            this.CodPro.FillWeight = 51.84586F;
+            this.CodPro.FillWeight = 51.95889F;
             this.CodPro.HeaderText = "CODIGO";
             this.CodPro.Name = "CodPro";
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
             // 
-            this.NomPro.FillWeight = 162.959F;
+            this.NomPro.FillWeight = 163.3143F;
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
             // 
-            // CedCli
-            // 
-            this.CedCli.FillWeight = 101.5227F;
-            this.CedCli.HeaderText = "CLA/RCN";
-            this.CedCli.Name = "CedCli";
-            // 
-            // PrePro
-            // 
-            this.PrePro.FillWeight = 88.5353F;
-            this.PrePro.HeaderText = "TELEFONO";
-            this.PrePro.Name = "PrePro";
-            // 
-            // CanPro
-            // 
-            this.CanPro.FillWeight = 184.5884F;
-            this.CanPro.HeaderText = "DIRECCION";
-            this.CanPro.Name = "CanPro";
-            // 
-            // DesPro
-            // 
-            this.DesPro.FillWeight = 53.18349F;
-            this.DesPro.HeaderText = "TIPO";
-            this.DesPro.Name = "DesPro";
-            // 
-            // TotalPro
-            // 
-            this.TotalPro.FillWeight = 104.9513F;
-            this.TotalPro.HeaderText = "CORREO";
-            this.TotalPro.Name = "TotalPro";
-            // 
             // estatus
             // 
-            this.estatus.FillWeight = 52.41302F;
+            this.estatus.FillWeight = 52.52729F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
             // 
-            // ConsCli
+            // ConsCatProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 545);
+            this.ClientSize = new System.Drawing.Size(959, 536);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ConsCli";
-            this.Text = "W";
+            this.Name = "ConsCatProd";
+            this.Text = "ConsCatProd";
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.errorTxtBox1, 0);
             this.Controls.SetChildIndex(this.button1, 0);
@@ -188,11 +148,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CedCli;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrePro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CanPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DesPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
     }
 }

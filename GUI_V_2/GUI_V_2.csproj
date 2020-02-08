@@ -67,11 +67,23 @@
     <Compile Include="comprobantes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="ConsCatProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsCatProd.Designer.cs">
+      <DependentUpon>ConsCatProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsCli.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsCli.Designer.cs">
       <DependentUpon>ConsCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsSup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsSup.Designer.cs">
+      <DependentUpon>ConsSup.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework.Context.cs">
       <AutoGen>True</AutoGen>
@@ -202,8 +214,14 @@
     <Compile Include="VentasModoTouch.Designer.cs">
       <DependentUpon>VentasModoTouch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConsCatProd.resx">
+      <DependentUpon>ConsCatProd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsCli.resx">
       <DependentUpon>ConsCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsSup.resx">
+      <DependentUpon>ConsSup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBaseCons.resx">
       <DependentUpon>FormBaseCons.cs</DependentUpon>
