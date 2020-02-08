@@ -42,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.fecha_hora = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,8 +66,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.fecha_hora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button10 = new System.Windows.Forms.Button();
             this.errorTxtBox11 = new GUI_V_2.ErrorTxtBox();
             this.errorTxtBox10 = new GUI_V_2.ErrorTxtBox();
             this.errorTxtBox9 = new GUI_V_2.ErrorTxtBox();
@@ -228,6 +229,17 @@
             this.panel4.Size = new System.Drawing.Size(1269, 43);
             this.panel4.TabIndex = 3;
             // 
+            // fecha_hora
+            // 
+            this.fecha_hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fecha_hora.AutoSize = true;
+            this.fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_hora.Location = new System.Drawing.Point(1119, 6);
+            this.fecha_hora.Name = "fecha_hora";
+            this.fecha_hora.Size = new System.Drawing.Size(142, 20);
+            this.fecha_hora.TabIndex = 73;
+            this.fecha_hora.Text = "HORA Y FECHA";
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -278,6 +290,7 @@
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button10);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.btn_volver);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -298,7 +311,7 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(379, 6);
+            this.button9.Location = new System.Drawing.Point(381, 6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(180, 102);
             this.button9.TabIndex = 70;
@@ -317,7 +330,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(194, 6);
+            this.button8.Location = new System.Drawing.Point(196, 6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(180, 102);
             this.button8.TabIndex = 69;
@@ -335,7 +348,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1082, 6);
+            this.button5.Location = new System.Drawing.Point(891, 8);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(180, 102);
             this.button5.TabIndex = 68;
@@ -353,11 +366,11 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(895, 6);
+            this.button3.Location = new System.Drawing.Point(680, 8);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 102);
+            this.button3.Size = new System.Drawing.Size(205, 102);
             this.button3.TabIndex = 67;
-            this.button3.Text = "TARJETA";
+            this.button3.Text = "COTIZACIÓN";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -371,7 +384,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(709, 6);
+            this.button2.Location = new System.Drawing.Point(1077, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 102);
             this.button2.TabIndex = 66;
@@ -548,21 +561,28 @@
             this.label4.TabIndex = 70;
             this.label4.Text = "TOTAL BRUTO:";
             // 
-            // fecha_hora
-            // 
-            this.fecha_hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fecha_hora.AutoSize = true;
-            this.fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_hora.Location = new System.Drawing.Point(1119, 6);
-            this.fecha_hora.Name = "fecha_hora";
-            this.fecha_hora.Size = new System.Drawing.Size(142, 20);
-            this.fecha_hora.TabIndex = 73;
-            this.fecha_hora.Text = "HORA Y FECHA";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button10
+            // 
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.BackColor = System.Drawing.Color.LimeGreen;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(1077, 8);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(180, 102);
+            this.button10.TabIndex = 66;
+            this.button10.Text = "EFECTIVO";
+            this.button10.UseVisualStyleBackColor = false;
             // 
             // errorTxtBox11
             // 
@@ -691,7 +711,7 @@
             this.errorTxtBox8.Name = "errorTxtBox8";
             this.errorTxtBox8.Size = new System.Drawing.Size(167, 26);
             this.errorTxtBox8.TabIndex = 71;
-            this.errorTxtBox8.Text = "Nro. FACTURA";
+            this.errorTxtBox8.Text = "FAC000000";
             this.errorTxtBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.errorTxtBox8.Validar = true;
             // 
@@ -811,5 +831,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label fecha_hora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button10;
     }
 }
