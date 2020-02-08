@@ -44,5 +44,20 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new ConsSup());
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsPro());
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsComprobante());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsUser());
+        }
     }
 }

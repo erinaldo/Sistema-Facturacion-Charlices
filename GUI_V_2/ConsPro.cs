@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class FormUSUARIO : Form
+    public partial class ConsPro : FormBaseCons
     {
-        public FormUSUARIO()
+        public ConsPro()
         {
             InitializeComponent();
-         
         }
-
- 
-
-
-        }
-    
+    }
 }

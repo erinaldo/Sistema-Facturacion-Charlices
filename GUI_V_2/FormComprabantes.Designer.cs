@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.ComUsa = new GUI_V_2.ErrorTxtBox();
             this.TipCom = new System.Windows.Forms.ComboBox();
@@ -36,6 +39,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ComDisp = new GUI_V_2.ErrorTxtBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NumOrden = new GUI_V_2.ErrorTxtBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaLim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,17 +65,21 @@
             // 
             // bnt_eliminar
             // 
+            this.bnt_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.bnt_eliminar.Location = new System.Drawing.Point(921, 455);
             // 
             // btn_guardar
             // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_guardar.Location = new System.Drawing.Point(921, 507);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(51, 290);
+            this.label19.Location = new System.Drawing.Point(44, 285);
             // 
             // label5
             // 
@@ -71,7 +89,7 @@
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(132, 287);
+            this.estado.Location = new System.Drawing.Point(132, 282);
             this.estado.Size = new System.Drawing.Size(135, 28);
             // 
             // Nom
@@ -83,6 +101,11 @@
             // 
             this.Codigo.Location = new System.Drawing.Point(179, 95);
             this.Codigo.Size = new System.Drawing.Size(252, 26);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(919, 405);
             // 
             // label3
             // 
@@ -96,11 +119,14 @@
             // 
             // ComUsa
             // 
+            this.ComUsa.Enabled = false;
             this.ComUsa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ComUsa.Location = new System.Drawing.Point(167, 248);
+            this.ComUsa.Limpiar = false;
+            this.ComUsa.Location = new System.Drawing.Point(132, 250);
             this.ComUsa.Name = "ComUsa";
             this.ComUsa.Size = new System.Drawing.Size(100, 26);
             this.ComUsa.TabIndex = 108;
+            this.ComUsa.Text = "0";
             this.ComUsa.Validar = true;
             // 
             // TipCom
@@ -126,7 +152,7 @@
             // 
             this.FechaLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.FechaLimite.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaLimite.Location = new System.Drawing.Point(171, 171);
+            this.FechaLimite.Location = new System.Drawing.Point(179, 171);
             this.FechaLimite.Name = "FechaLimite";
             this.FechaLimite.Size = new System.Drawing.Size(128, 26);
             this.FechaLimite.TabIndex = 110;
@@ -145,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(44, 251);
+            this.label6.Location = new System.Drawing.Point(44, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 112;
@@ -164,17 +190,136 @@
             // ComDisp
             // 
             this.ComDisp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ComDisp.Limpiar = false;
             this.ComDisp.Location = new System.Drawing.Point(167, 210);
             this.ComDisp.Name = "ComDisp";
             this.ComDisp.Size = new System.Drawing.Size(100, 26);
             this.ComDisp.TabIndex = 113;
             this.ComDisp.Validar = true;
             // 
-            // Comprabantes
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodPro,
+            this.NomPro,
+            this.DesPro,
+            this.CanPro,
+            this.FechaLim,
+            this.estatus});
+            this.dataGridView1.Location = new System.Drawing.Point(273, 203);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(640, 349);
+            this.dataGridView1.TabIndex = 115;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(681, 169);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(232, 28);
+            this.comboBox1.TabIndex = 116;
+            this.comboBox1.Text = "FILTRAR NRO. ORDEN";
+            // 
+            // NumOrden
+            // 
+            this.NumOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.NumOrden.Limpiar = false;
+            this.NumOrden.Location = new System.Drawing.Point(640, 55);
+            this.NumOrden.Name = "NumOrden";
+            this.NumOrden.Size = new System.Drawing.Size(100, 26);
+            this.NumOrden.TabIndex = 117;
+            this.NumOrden.Validar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(524, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.TabIndex = 118;
+            this.label8.Text = "NRO. ORDEN";
+            // 
+            // CodPro
+            // 
+            this.CodPro.FillWeight = 61.85785F;
+            this.CodPro.HeaderText = "ORDEN";
+            this.CodPro.Name = "CodPro";
+            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // NomPro
+            // 
+            this.NomPro.FillWeight = 198.0502F;
+            this.NomPro.HeaderText = "TIPO";
+            this.NomPro.Name = "NomPro";
+            // 
+            // DesPro
+            // 
+            this.DesPro.FillWeight = 111.3903F;
+            this.DesPro.HeaderText = "SERIE";
+            this.DesPro.Name = "DesPro";
+            // 
+            // CanPro
+            // 
+            this.CanPro.FillWeight = 67.61398F;
+            this.CanPro.HeaderText = "FECHA ORDEN";
+            this.CanPro.Name = "CanPro";
+            // 
+            // FechaLim
+            // 
+            this.FechaLim.FillWeight = 69.53754F;
+            this.FechaLim.HeaderText = "FECHA LIMITE";
+            this.FechaLim.Name = "FechaLim";
+            // 
+            // estatus
+            // 
+            this.estatus.FillWeight = 100.85F;
+            this.estatus.HeaderText = "ESTADO";
+            this.estatus.Name = "estatus";
+            // 
+            // FormComprabantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 485);
+            this.ClientSize = new System.Drawing.Size(1113, 559);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.NumOrden);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ComDisp);
             this.Controls.Add(this.label6);
@@ -183,8 +328,10 @@
             this.Controls.Add(this.TipCom);
             this.Controls.Add(this.ComUsa);
             this.Controls.Add(this.label3);
-            this.Name = "Comprabantes";
+            this.Name = "FormComprabantes";
             this.Text = "Comprabantes";
+            this.Controls.SetChildIndex(this.btn_cerrar, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.ComUsa, 0);
             this.Controls.SetChildIndex(this.TipCom, 0);
@@ -202,6 +349,11 @@
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.ComDisp, 0);
             this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.NumOrden, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +369,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private ErrorTxtBox ComDisp;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private ErrorTxtBox NumOrden;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DesPro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CanPro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaLim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
     }
 }

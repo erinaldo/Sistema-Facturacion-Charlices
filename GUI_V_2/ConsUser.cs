@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class FormProductos : FormBaseMan
+    public partial class ConsUser : FormBaseCons
     {
-        public FormProductos()
+        public ConsUser()
         {
             InitializeComponent();
-            TipoPro.SelectedIndex = 0;
         }
 
-
-
-
-
-
-
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

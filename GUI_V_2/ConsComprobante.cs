@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class FormProductos : FormBaseMan
+    public partial class ConsComprobante : FormBaseCons
     {
-        public FormProductos()
+        public ConsComprobante()
         {
             InitializeComponent();
-            TipoPro.SelectedIndex = 0;
         }
-
-
-
-
-
-
-
     }
 }

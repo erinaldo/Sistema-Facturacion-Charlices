@@ -336,9 +336,11 @@
             // 
             // formHijo2
             // 
+            this.formHijo2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.formHijo2.Location = new System.Drawing.Point(15, 185);
             this.formHijo2.Name = "formHijo2";
-            this.formHijo2.Size = new System.Drawing.Size(905, 542);
+            this.formHijo2.Size = new System.Drawing.Size(917, 542);
             this.formHijo2.TabIndex = 44;
             // 
             // panel7
@@ -426,12 +428,12 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Ventas";
             // 
-            // Mantenimientos
+            // FormMantenimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(935, 739);
+            this.ClientSize = new System.Drawing.Size(944, 739);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.formHijo2);
@@ -442,7 +444,7 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Mantenimientos";
+            this.Name = "FormMantenimientos";
             this.Text = "Mantenimientos";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

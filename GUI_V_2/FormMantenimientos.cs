@@ -36,7 +36,7 @@ namespace GUI_V_2
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormUSUARIO());
+            AbrirFormEnPanel(new FormUsuarios());
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)

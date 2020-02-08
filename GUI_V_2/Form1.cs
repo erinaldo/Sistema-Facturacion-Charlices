@@ -106,7 +106,7 @@ namespace GUI_V_2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormUSUARIO());
+            AbrirFormEnPanel(new FormUsuarios());
             AnimacionPequena();
         }
 

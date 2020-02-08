@@ -10,19 +10,12 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class FormProductos : FormBaseMan
+    public partial class FormUsuarios : FormBaseMan
     {
-        public FormProductos()
+        public FormUsuarios()
         {
             InitializeComponent();
-            TipoPro.SelectedIndex = 0;
+            TipUsu.SelectedIndex = 0;
         }
-
-
-
-
-
-
-
     }
 }

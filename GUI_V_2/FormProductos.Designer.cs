@@ -47,6 +47,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CatPro = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.CanExi = new GUI_V_2.ErrorTxtBox();
+            this.TipoPro = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reorden)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,17 +65,21 @@
             // 
             // bnt_eliminar
             // 
+            this.bnt_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.bnt_eliminar.Location = new System.Drawing.Point(624, 430);
             // 
             // btn_guardar
             // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_guardar.Location = new System.Drawing.Point(624, 479);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(38, 443);
+            this.label19.Location = new System.Drawing.Point(38, 485);
             // 
             // label5
             // 
@@ -79,16 +87,22 @@
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(136, 443);
+            this.estado.Location = new System.Drawing.Point(136, 485);
             // 
             // Nom
             // 
             this.Nom.Location = new System.Drawing.Point(125, 99);
             this.Nom.Size = new System.Drawing.Size(232, 26);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(624, 380);
+            // 
             // PreNormal
             // 
             this.PreNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PreNormal.Limpiar = false;
             this.PreNormal.Location = new System.Drawing.Point(138, 230);
             this.PreNormal.Name = "PreNormal";
             this.PreNormal.Size = new System.Drawing.Size(80, 26);
@@ -128,6 +142,7 @@
             // PreCom
             // 
             this.PreCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PreCom.Limpiar = false;
             this.PreCom.Location = new System.Drawing.Point(138, 270);
             this.PreCom.Name = "PreCom";
             this.PreCom.Size = new System.Drawing.Size(80, 26);
@@ -137,6 +152,7 @@
             // PreFamilia
             // 
             this.PreFamilia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PreFamilia.Limpiar = false;
             this.PreFamilia.Location = new System.Drawing.Point(224, 230);
             this.PreFamilia.Name = "PreFamilia";
             this.PreFamilia.Size = new System.Drawing.Size(80, 26);
@@ -146,6 +162,7 @@
             // PreMayor
             // 
             this.PreMayor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PreMayor.Limpiar = false;
             this.PreMayor.Location = new System.Drawing.Point(310, 230);
             this.PreMayor.Name = "PreMayor";
             this.PreMayor.Size = new System.Drawing.Size(80, 26);
@@ -222,7 +239,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.Location = new System.Drawing.Point(37, 403);
+            this.label11.Location = new System.Drawing.Point(37, 445);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 20);
             this.label11.TabIndex = 120;
@@ -231,7 +248,7 @@
             // reorden
             // 
             this.reorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.reorden.Location = new System.Drawing.Point(139, 397);
+            this.reorden.Location = new System.Drawing.Point(139, 439);
             this.reorden.Name = "reorden";
             this.reorden.Size = new System.Drawing.Size(73, 26);
             this.reorden.TabIndex = 121;
@@ -277,12 +294,59 @@
             this.CatPro.Size = new System.Drawing.Size(209, 28);
             this.CatPro.TabIndex = 125;
             // 
-            // Productos
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label14.Location = new System.Drawing.Point(38, 404);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 20);
+            this.label14.TabIndex = 126;
+            this.label14.Text = "CANTIDAD";
+            // 
+            // CanExi
+            // 
+            this.CanExi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.CanExi.Limpiar = false;
+            this.CanExi.Location = new System.Drawing.Point(138, 401);
+            this.CanExi.Name = "CanExi";
+            this.CanExi.Size = new System.Drawing.Size(119, 26);
+            this.CanExi.TabIndex = 127;
+            this.CanExi.Validar = true;
+            // 
+            // TipoPro
+            // 
+            this.TipoPro.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TipoPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.TipoPro.FormattingEnabled = true;
+            this.TipoPro.Items.AddRange(new object[] {
+            "INVENTARIO",
+            "SERVICIO"});
+            this.TipoPro.Location = new System.Drawing.Point(535, 97);
+            this.TipoPro.Name = "TipoPro";
+            this.TipoPro.Size = new System.Drawing.Size(209, 28);
+            this.TipoPro.TabIndex = 129;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label15.Location = new System.Drawing.Point(363, 102);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(166, 20);
+            this.label15.TabIndex = 130;
+            this.label15.Text = "TIPO DE PRODUCTO";
+            // 
+            // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(816, 488);
+            this.ClientSize = new System.Drawing.Size(816, 536);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.TipoPro);
+            this.Controls.Add(this.CanExi);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.CatPro);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.itbis);
@@ -302,8 +366,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PreNormal);
-            this.Name = "Productos";
+            this.Name = "FormProductos";
             this.Text = "Productos";
+            this.Controls.SetChildIndex(this.btn_cerrar, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -332,6 +398,10 @@
             this.Controls.SetChildIndex(this.itbis, 0);
             this.Controls.SetChildIndex(this.label13, 0);
             this.Controls.SetChildIndex(this.CatPro, 0);
+            this.Controls.SetChildIndex(this.label14, 0);
+            this.Controls.SetChildIndex(this.CanExi, 0);
+            this.Controls.SetChildIndex(this.TipoPro, 0);
+            this.Controls.SetChildIndex(this.label15, 0);
             ((System.ComponentModel.ISupportInitialize)(this.reorden)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -359,5 +429,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox CatPro;
+        private System.Windows.Forms.Label label14;
+        private ErrorTxtBox CanExi;
+        private System.Windows.Forms.ComboBox TipoPro;
+        private System.Windows.Forms.Label label15;
     }
 }
