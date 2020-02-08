@@ -96,9 +96,13 @@
             // 
             // panel_consultas
             // 
-            this.panel_consultas.Location = new System.Drawing.Point(18, 184);
+            this.panel_consultas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_consultas.AutoSize = true;
+            this.panel_consultas.Location = new System.Drawing.Point(12, 185);
             this.panel_consultas.Name = "panel_consultas";
-            this.panel_consultas.Size = new System.Drawing.Size(1003, 436);
+            this.panel_consultas.Size = new System.Drawing.Size(1009, 435);
             this.panel_consultas.TabIndex = 50;
             // 
             // panel13
@@ -437,7 +441,6 @@
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1033, 632);
             this.MinimumSize = new System.Drawing.Size(1023, 590);
             this.Name = "FormCONSULTAS";
             this.Text = "CONSULTAS";

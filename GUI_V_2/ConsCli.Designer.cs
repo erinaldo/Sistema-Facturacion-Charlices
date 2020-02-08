@@ -50,17 +50,17 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(746, 186);
+            this.button1.Location = new System.Drawing.Point(746, 113);
             // 
             // errorTxtBox1
             // 
             this.errorTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox1.Location = new System.Drawing.Point(146, 191);
+            this.errorTxtBox1.Location = new System.Drawing.Point(142, 118);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(12, 201);
+            this.label16.Location = new System.Drawing.Point(8, 123);
             // 
             // btn_cerrar
             // 
@@ -90,7 +90,7 @@
             this.DesPro,
             this.TotalPro,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 232);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 159);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -109,7 +109,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 301);
+            this.dataGridView1.Size = new System.Drawing.Size(934, 374);
             this.dataGridView1.TabIndex = 111;
             // 
             // CodPro
