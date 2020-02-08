@@ -38,5 +38,11 @@ namespace GUI_V_2
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            fecha_hora.Text = DateTime.Now.ToString("hh:mm ") + DateTime.Now.ToShortDateString();
+
+        }
     }
 }

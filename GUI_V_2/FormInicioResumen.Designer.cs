@@ -585,7 +585,7 @@
             this.panel5.Size = new System.Drawing.Size(110, 150);
             this.panel5.TabIndex = 32;
             // 
-            // InicioResumen
+            // FormInicioResumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -604,7 +604,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InicioResumen";
+            this.Name = "FormInicioResumen";
             this.Text = "InicioResumen";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
