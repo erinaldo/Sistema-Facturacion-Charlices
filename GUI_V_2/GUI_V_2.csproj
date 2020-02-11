@@ -118,6 +118,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityFramework.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entradas.Designer.cs">
+      <DependentUpon>Entradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBaseCons.cs">
       <SubType>Form</SubType>
     </Compile>
