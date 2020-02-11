@@ -44,5 +44,12 @@ namespace GUI_V_2
             fecha_hora.Text = DateTime.Now.ToString("hh:mm ") + DateTime.Now.ToShortDateString();
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            PanelCobro obj = new PanelCobro();
+            obj.ShowDialog();
+
+        }
     }
 }

@@ -30,27 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasModoTouch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.errorTxtBox12 = new GUI_V_2.ErrorTxtBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.errorTxtBox5 = new GUI_V_2.ErrorTxtBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorTxtBox4 = new GUI_V_2.ErrorTxtBox();
+            this.errorTxtBox3 = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.errorTxtBox2 = new GUI_V_2.ErrorTxtBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fecha_hora = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.errorTxtBox8 = new GUI_V_2.ErrorTxtBox();
+            this.errorTxtBox7 = new GUI_V_2.ErrorTxtBox();
+            this.errorTxtBox6 = new GUI_V_2.ErrorTxtBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_cotizar = new System.Windows.Forms.Button();
+            this.btn_cobrar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_volver = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,25 +71,15 @@
             this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.errorTxtBox11 = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.errorTxtBox10 = new GUI_V_2.ErrorTxtBox();
+            this.errorTxtBox9 = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button10 = new System.Windows.Forms.Button();
-            this.errorTxtBox11 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox10 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox9 = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox12 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox5 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox4 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox3 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox2 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox8 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox7 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox6 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -133,6 +132,19 @@
             this.label8.TabIndex = 83;
             this.label8.Text = "DESCUENTO";
             // 
+            // errorTxtBox12
+            // 
+            this.errorTxtBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox12.Limpiar = false;
+            this.errorTxtBox12.Location = new System.Drawing.Point(811, 40);
+            this.errorTxtBox12.Name = "errorTxtBox12";
+            this.errorTxtBox12.Size = new System.Drawing.Size(100, 26);
+            this.errorTxtBox12.TabIndex = 82;
+            this.errorTxtBox12.Text = "0";
+            this.errorTxtBox12.Validar = true;
+            // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -169,6 +181,19 @@
             this.button6.Text = "AGREGAR";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // errorTxtBox5
+            // 
+            this.errorTxtBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox5.Enabled = false;
+            this.errorTxtBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox5.Limpiar = false;
+            this.errorTxtBox5.Location = new System.Drawing.Point(698, 40);
+            this.errorTxtBox5.Name = "errorTxtBox5";
+            this.errorTxtBox5.Size = new System.Drawing.Size(101, 26);
+            this.errorTxtBox5.TabIndex = 79;
+            this.errorTxtBox5.Validar = true;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -180,6 +205,33 @@
             this.label2.Size = new System.Drawing.Size(65, 18);
             this.label2.TabIndex = 78;
             this.label2.Text = "PRECIO";
+            // 
+            // errorTxtBox4
+            // 
+            this.errorTxtBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox4.Limpiar = false;
+            this.errorTxtBox4.Location = new System.Drawing.Point(538, 40);
+            this.errorTxtBox4.Name = "errorTxtBox4";
+            this.errorTxtBox4.Size = new System.Drawing.Size(81, 26);
+            this.errorTxtBox4.TabIndex = 77;
+            this.errorTxtBox4.Validar = true;
+            // 
+            // errorTxtBox3
+            // 
+            this.errorTxtBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox3.Enabled = false;
+            this.errorTxtBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.errorTxtBox3.Limpiar = false;
+            this.errorTxtBox3.Location = new System.Drawing.Point(181, 40);
+            this.errorTxtBox3.Name = "errorTxtBox3";
+            this.errorTxtBox3.Size = new System.Drawing.Size(266, 26);
+            this.errorTxtBox3.TabIndex = 76;
+            this.errorTxtBox3.Text = "Descripción de producto";
+            this.errorTxtBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorTxtBox3.Validar = true;
             // 
             // label3
             // 
@@ -211,6 +263,18 @@
             this.button4.TabIndex = 68;
             this.button4.Text = "Ver";
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // errorTxtBox2
+            // 
+            this.errorTxtBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox2.Limpiar = false;
+            this.errorTxtBox2.Location = new System.Drawing.Point(92, 40);
+            this.errorTxtBox2.Name = "errorTxtBox2";
+            this.errorTxtBox2.Size = new System.Drawing.Size(83, 26);
+            this.errorTxtBox2.TabIndex = 1;
+            this.errorTxtBox2.Validar = true;
             // 
             // panel4
             // 
@@ -253,6 +317,46 @@
             this.comboBox1.TabIndex = 72;
             this.comboBox1.Text = "VENDEDOR";
             // 
+            // errorTxtBox8
+            // 
+            this.errorTxtBox8.Enabled = false;
+            this.errorTxtBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox8.Limpiar = false;
+            this.errorTxtBox8.Location = new System.Drawing.Point(784, 5);
+            this.errorTxtBox8.Name = "errorTxtBox8";
+            this.errorTxtBox8.Size = new System.Drawing.Size(167, 26);
+            this.errorTxtBox8.TabIndex = 71;
+            this.errorTxtBox8.Text = "FAC000000";
+            this.errorTxtBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorTxtBox8.Validar = true;
+            // 
+            // errorTxtBox7
+            // 
+            this.errorTxtBox7.Enabled = false;
+            this.errorTxtBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox7.Limpiar = false;
+            this.errorTxtBox7.Location = new System.Drawing.Point(957, 5);
+            this.errorTxtBox7.Name = "errorTxtBox7";
+            this.errorTxtBox7.Size = new System.Drawing.Size(156, 26);
+            this.errorTxtBox7.TabIndex = 70;
+            this.errorTxtBox7.Text = "COMPROBANTE";
+            this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorTxtBox7.Validar = true;
+            // 
+            // errorTxtBox6
+            // 
+            this.errorTxtBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox6.Enabled = false;
+            this.errorTxtBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox6.Limpiar = false;
+            this.errorTxtBox6.Location = new System.Drawing.Point(156, 6);
+            this.errorTxtBox6.Name = "errorTxtBox6";
+            this.errorTxtBox6.Size = new System.Drawing.Size(369, 26);
+            this.errorTxtBox6.TabIndex = 69;
+            this.errorTxtBox6.Text = "Nombre cliente";
+            this.errorTxtBox6.Validar = true;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,6 +375,18 @@
             this.button1.Text = "CLIENTES";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // errorTxtBox1
+            // 
+            this.errorTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox1.Limpiar = false;
+            this.errorTxtBox1.Location = new System.Drawing.Point(83, 6);
+            this.errorTxtBox1.Name = "errorTxtBox1";
+            this.errorTxtBox1.Size = new System.Drawing.Size(67, 26);
+            this.errorTxtBox1.TabIndex = 1;
+            this.errorTxtBox1.Validar = true;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -288,9 +404,8 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button10);
+            this.panel3.Controls.Add(this.btn_cotizar);
+            this.panel3.Controls.Add(this.btn_cobrar);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.btn_volver);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -337,41 +452,42 @@
             this.button8.Text = "CANCELAR";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btn_cotizar
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.Tomato;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(891, 8);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 102);
-            this.button5.TabIndex = 68;
-            this.button5.Text = "CRÉDITO";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_cotizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cotizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_cotizar.FlatAppearance.BorderSize = 0;
+            this.btn_cotizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_cotizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cotizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cotizar.ForeColor = System.Drawing.Color.White;
+            this.btn_cotizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cotizar.Image")));
+            this.btn_cotizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cotizar.Location = new System.Drawing.Point(858, 8);
+            this.btn_cotizar.Name = "btn_cotizar";
+            this.btn_cotizar.Size = new System.Drawing.Size(205, 102);
+            this.btn_cotizar.TabIndex = 67;
+            this.btn_cotizar.Text = "COTIZACIÓN";
+            this.btn_cotizar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_cobrar
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(680, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(205, 102);
-            this.button3.TabIndex = 67;
-            this.button3.Text = "COTIZACIÓN";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_cobrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cobrar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_cobrar.FlatAppearance.BorderSize = 0;
+            this.btn_cobrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_cobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cobrar.ForeColor = System.Drawing.Color.White;
+            this.btn_cobrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cobrar.Image")));
+            this.btn_cobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cobrar.Location = new System.Drawing.Point(1069, 8);
+            this.btn_cobrar.Name = "btn_cobrar";
+            this.btn_cobrar.Size = new System.Drawing.Size(192, 102);
+            this.btn_cobrar.TabIndex = 66;
+            this.btn_cobrar.Text = "CROBRAR";
+            this.btn_cobrar.UseVisualStyleBackColor = false;
+            this.btn_cobrar.Click += new System.EventHandler(this.button10_Click);
             // 
             // button2
             // 
@@ -425,14 +541,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodPro,
@@ -445,21 +561,21 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1269, 284);
             this.dataGridView1.TabIndex = 0;
@@ -517,73 +633,6 @@
             this.panel6.Size = new System.Drawing.Size(1269, 90);
             this.panel6.TabIndex = 4;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 53);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 18);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "DESCUENTO:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(734, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 18);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "TOTAL NETO:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(512, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 18);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "+ ITBIS:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(234, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 18);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "TOTAL BRUTO:";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.LimeGreen;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(1077, 8);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(180, 102);
-            this.button10.TabIndex = 66;
-            this.button10.Text = "EFECTIVO";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
             // errorTxtBox11
             // 
             this.errorTxtBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -595,6 +644,17 @@
             this.errorTxtBox11.TabIndex = 77;
             this.errorTxtBox11.Text = "0.00";
             this.errorTxtBox11.Validar = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(0, 53);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 18);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "DESCUENTO:";
             // 
             // errorTxtBox10
             // 
@@ -637,122 +697,43 @@
             this.txt_total_bruto.Text = "0.00";
             this.txt_total_bruto.Validar = true;
             // 
-            // errorTxtBox12
+            // label6
             // 
-            this.errorTxtBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox12.Limpiar = false;
-            this.errorTxtBox12.Location = new System.Drawing.Point(811, 40);
-            this.errorTxtBox12.Name = "errorTxtBox12";
-            this.errorTxtBox12.Size = new System.Drawing.Size(100, 26);
-            this.errorTxtBox12.TabIndex = 82;
-            this.errorTxtBox12.Text = "0";
-            this.errorTxtBox12.Validar = true;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(734, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 18);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "TOTAL NETO:";
             // 
-            // errorTxtBox5
+            // label5
             // 
-            this.errorTxtBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox5.Enabled = false;
-            this.errorTxtBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox5.Limpiar = false;
-            this.errorTxtBox5.Location = new System.Drawing.Point(698, 40);
-            this.errorTxtBox5.Name = "errorTxtBox5";
-            this.errorTxtBox5.Size = new System.Drawing.Size(101, 26);
-            this.errorTxtBox5.TabIndex = 79;
-            this.errorTxtBox5.Validar = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(512, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 18);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "+ ITBIS:";
             // 
-            // errorTxtBox4
+            // label4
             // 
-            this.errorTxtBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox4.Limpiar = false;
-            this.errorTxtBox4.Location = new System.Drawing.Point(538, 40);
-            this.errorTxtBox4.Name = "errorTxtBox4";
-            this.errorTxtBox4.Size = new System.Drawing.Size(81, 26);
-            this.errorTxtBox4.TabIndex = 77;
-            this.errorTxtBox4.Validar = true;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(234, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 18);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "TOTAL BRUTO:";
             // 
-            // errorTxtBox3
+            // timer1
             // 
-            this.errorTxtBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox3.Enabled = false;
-            this.errorTxtBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.errorTxtBox3.Limpiar = false;
-            this.errorTxtBox3.Location = new System.Drawing.Point(181, 40);
-            this.errorTxtBox3.Name = "errorTxtBox3";
-            this.errorTxtBox3.Size = new System.Drawing.Size(266, 26);
-            this.errorTxtBox3.TabIndex = 76;
-            this.errorTxtBox3.Text = "Descripción de producto";
-            this.errorTxtBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox3.Validar = true;
-            // 
-            // errorTxtBox2
-            // 
-            this.errorTxtBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox2.Limpiar = false;
-            this.errorTxtBox2.Location = new System.Drawing.Point(92, 40);
-            this.errorTxtBox2.Name = "errorTxtBox2";
-            this.errorTxtBox2.Size = new System.Drawing.Size(83, 26);
-            this.errorTxtBox2.TabIndex = 1;
-            this.errorTxtBox2.Validar = true;
-            // 
-            // errorTxtBox8
-            // 
-            this.errorTxtBox8.Enabled = false;
-            this.errorTxtBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox8.Limpiar = false;
-            this.errorTxtBox8.Location = new System.Drawing.Point(784, 5);
-            this.errorTxtBox8.Name = "errorTxtBox8";
-            this.errorTxtBox8.Size = new System.Drawing.Size(167, 26);
-            this.errorTxtBox8.TabIndex = 71;
-            this.errorTxtBox8.Text = "FAC000000";
-            this.errorTxtBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox8.Validar = true;
-            // 
-            // errorTxtBox7
-            // 
-            this.errorTxtBox7.Enabled = false;
-            this.errorTxtBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox7.Limpiar = false;
-            this.errorTxtBox7.Location = new System.Drawing.Point(957, 5);
-            this.errorTxtBox7.Name = "errorTxtBox7";
-            this.errorTxtBox7.Size = new System.Drawing.Size(156, 26);
-            this.errorTxtBox7.TabIndex = 70;
-            this.errorTxtBox7.Text = "COMPROBANTE";
-            this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox7.Validar = true;
-            // 
-            // errorTxtBox6
-            // 
-            this.errorTxtBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox6.Enabled = false;
-            this.errorTxtBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox6.Limpiar = false;
-            this.errorTxtBox6.Location = new System.Drawing.Point(156, 6);
-            this.errorTxtBox6.Name = "errorTxtBox6";
-            this.errorTxtBox6.Size = new System.Drawing.Size(369, 26);
-            this.errorTxtBox6.TabIndex = 69;
-            this.errorTxtBox6.Text = "Nombre cliente";
-            this.errorTxtBox6.Validar = true;
-            // 
-            // errorTxtBox1
-            // 
-            this.errorTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox1.Limpiar = false;
-            this.errorTxtBox1.Location = new System.Drawing.Point(83, 6);
-            this.errorTxtBox1.Name = "errorTxtBox1";
-            this.errorTxtBox1.Size = new System.Drawing.Size(67, 26);
-            this.errorTxtBox1.TabIndex = 1;
-            this.errorTxtBox1.Validar = true;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // VentasModoTouch
             // 
@@ -786,7 +767,7 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_cotizar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_volver;
         private System.Windows.Forms.Panel panel4;
@@ -798,7 +779,6 @@
         private ErrorTxtBox errorTxtBox2;
         private System.Windows.Forms.Label label3;
         private ErrorTxtBox errorTxtBox3;
-        private System.Windows.Forms.Button button5;
         private ErrorTxtBox errorTxtBox4;
         private System.Windows.Forms.Label label2;
         private ErrorTxtBox errorTxtBox5;
@@ -831,6 +811,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label fecha_hora;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btn_cobrar;
     }
 }
