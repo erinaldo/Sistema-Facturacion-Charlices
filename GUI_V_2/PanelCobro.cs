@@ -29,15 +29,17 @@ namespace GUI_V_2
                            this.DisplayRectangle);
         }
 
-        double monto_actual, pago;
+        double monto_actual=0, pago=0;
 
         private void txt_pago_TextChanged(object sender, EventArgs e)
         {
             try
             {
+              //  if (txt_pago.Text.Equals("")) txt_devuelto.Text = "0";            
                 monto_actual = Convert.ToDouble(txt_monto.Text.Trim());
                 pago = Convert.ToDouble(txt_pago.Text.Trim());
                 txt_devuelto.Text = (pago - monto_actual).ToString();
+
             }
             catch (Exception error)
             {
@@ -62,7 +64,7 @@ namespace GUI_V_2
         }
 
         private void panel_dociento_Click(object sender, EventArgs e)
-        {
+        {  
             Calcular(200);
         }
 
@@ -71,18 +73,19 @@ namespace GUI_V_2
             Calcular(100);
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txt_pago.Text= "0";
+            txt_devuelto.Text = "0";
+        }
+
         private void Calcular(double mas){
             try
             {
-                pago = Convert.ToDouble(txt_pago.Text.Trim());
-                if (pago >= 0)
-                {  
+                if (txt_pago.Text.Equals("")) txt_pago.Text = "0";
+                    pago = Convert.ToDouble(txt_pago.Text.Trim());
                     txt_pago.Text = (pago + mas).ToString();
-                }
-                else
-                {
-                    txt_pago.Text =   mas.ToString();
-                }
+
             }
             catch (Exception error)
             {

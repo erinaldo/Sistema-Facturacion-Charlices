@@ -51,6 +51,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -73,6 +74,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -95,9 +97,9 @@
             this.panel2.Controls.Add(this.panel_mil);
             this.panel2.Controls.Add(this.panel_dociento);
             this.panel2.Controls.Add(this.panel_cien);
-            this.panel2.Location = new System.Drawing.Point(9, 414);
+            this.panel2.Location = new System.Drawing.Point(15, 414);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1059, 114);
+            this.panel2.Size = new System.Drawing.Size(1059, 128);
             this.panel2.TabIndex = 96;
             // 
             // panel_cien
@@ -106,7 +108,7 @@
             this.panel_cien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_cien.Location = new System.Drawing.Point(3, 3);
             this.panel_cien.Name = "panel_cien";
-            this.panel_cien.Size = new System.Drawing.Size(199, 104);
+            this.panel_cien.Size = new System.Drawing.Size(199, 122);
             this.panel_cien.TabIndex = 0;
             this.panel_cien.Click += new System.EventHandler(this.panel_cien_Click);
             // 
@@ -116,7 +118,7 @@
             this.panel_dociento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_dociento.Location = new System.Drawing.Point(215, 3);
             this.panel_dociento.Name = "panel_dociento";
-            this.panel_dociento.Size = new System.Drawing.Size(199, 104);
+            this.panel_dociento.Size = new System.Drawing.Size(199, 122);
             this.panel_dociento.TabIndex = 1;
             this.panel_dociento.Click += new System.EventHandler(this.panel_dociento_Click);
             // 
@@ -126,7 +128,7 @@
             this.panel_quiniento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_quiniento.Location = new System.Drawing.Point(427, 3);
             this.panel_quiniento.Name = "panel_quiniento";
-            this.panel_quiniento.Size = new System.Drawing.Size(199, 104);
+            this.panel_quiniento.Size = new System.Drawing.Size(199, 122);
             this.panel_quiniento.TabIndex = 1;
             this.panel_quiniento.Click += new System.EventHandler(this.panel_quiniento_Click);
             // 
@@ -136,7 +138,7 @@
             this.panel_dosmil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_dosmil.Location = new System.Drawing.Point(846, 3);
             this.panel_dosmil.Name = "panel_dosmil";
-            this.panel_dosmil.Size = new System.Drawing.Size(199, 104);
+            this.panel_dosmil.Size = new System.Drawing.Size(199, 122);
             this.panel_dosmil.TabIndex = 2;
             this.panel_dosmil.Click += new System.EventHandler(this.panel_dosmil_Click);
             // 
@@ -146,7 +148,7 @@
             this.panel_mil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_mil.Location = new System.Drawing.Point(637, 3);
             this.panel_mil.Name = "panel_mil";
-            this.panel_mil.Size = new System.Drawing.Size(199, 104);
+            this.panel_mil.Size = new System.Drawing.Size(199, 122);
             this.panel_mil.TabIndex = 3;
             this.panel_mil.Click += new System.EventHandler(this.panel_mil_Click);
             // 
@@ -202,7 +204,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button2.BackColor = System.Drawing.Color.Olive;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -278,7 +280,7 @@
             this.txt_monto.Name = "txt_monto";
             this.txt_monto.Size = new System.Drawing.Size(504, 62);
             this.txt_monto.TabIndex = 103;
-            this.txt_monto.Text = "500";
+            this.txt_monto.Text = "473";
             this.txt_monto.Validar = true;
             // 
             // txt_pago
@@ -339,6 +341,24 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "PAGO RÁPIDO";
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(708, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(88, 37);
+            this.button4.TabIndex = 100;
+            this.button4.Text = "LIMPIAR";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // PanelCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,5 +408,6 @@
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
     }
 }
