@@ -21,5 +21,17 @@ namespace GUI_V_2
         {
 
         }
+
+        private void Entradas_Paint(object sender, PaintEventArgs e)
+        {
+
+            e.Graphics.DrawRectangle(new Pen(Color.Blue, 3),
+                           this.DisplayRectangle);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

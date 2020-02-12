@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class FormInicioResumen : Form
+    public partial class FormCaja : Form
     {
-        public FormInicioResumen()
+        public FormCaja()
         {
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
-            lblFecha.Text = DateTime.Now.ToLongDateString();
+            Entradas obj = new Entradas();
+            obj.ShowDialog();
+
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-
+            Salidas obj = new Salidas();
+            obj.ShowDialog();
         }
     }
 }
