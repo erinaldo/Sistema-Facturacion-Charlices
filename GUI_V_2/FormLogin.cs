@@ -15,6 +15,7 @@ namespace GUI_V_2
         public FormLogin()
         {
             InitializeComponent();
+            btn_entrar.Focus();
         }
         private void textBox1_DoubleClick(object sender, EventArgs e)
         {
@@ -26,36 +27,21 @@ namespace GUI_V_2
         {
             this.Close();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-                {
-                    VisitLink();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error, intente de nuevo mas tarde.");
-                }
-            }
-
-            private void VisitLink()
-            {
-                // Change the color of the link text by setting LinkVisited
-                // to true.
-                linkLabel1.LinkVisited = true;
-                //Call the Process.Start method to open the default browser
-                //with a URL:
-                System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=18098862933&text=Soporte%20!");
-            }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             Form1 ventana = new Form1();
-            ventana.Show();
-          
+            ventana.Show(); 
         }
+
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ( e.KeyCode==Keys.Enter)
+            {
+                btn_entrar.PerformClick();
+            }
+        }
+
     }
     }

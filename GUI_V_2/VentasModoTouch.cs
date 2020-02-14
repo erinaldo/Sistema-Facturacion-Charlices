@@ -51,5 +51,32 @@ namespace GUI_V_2
             obj.ShowDialog();
 
         }
+
+        //Funciones rapidas con teclas
+        private void VentasModoTouch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+            btn_volver.PerformClick();
+
+            }
+
+            if (e.KeyCode == Keys.F12)
+            {
+                btn_cobrar.PerformClick();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                btn_verProductos.PerformClick();
+            }
+
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("VER PRODCUTOS");
+        }
     }
 }

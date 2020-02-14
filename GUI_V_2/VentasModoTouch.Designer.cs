@@ -44,7 +44,7 @@
             this.errorTxtBox4 = new GUI_V_2.ErrorTxtBox();
             this.errorTxtBox3 = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_verProductos = new System.Windows.Forms.Button();
             this.errorTxtBox2 = new GUI_V_2.ErrorTxtBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fecha_hora = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.panel5.Controls.Add(this.errorTxtBox4);
             this.panel5.Controls.Add(this.errorTxtBox3);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.btn_verProductos);
             this.panel5.Controls.Add(this.errorTxtBox2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 43);
@@ -160,6 +160,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 39);
             this.button7.TabIndex = 81;
+            this.button7.TabStop = false;
             this.button7.Text = "Borrar";
             this.button7.UseVisualStyleBackColor = false;
             // 
@@ -176,9 +177,10 @@
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(926, 28);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 39);
+            this.button6.Size = new System.Drawing.Size(173, 39);
             this.button6.TabIndex = 80;
-            this.button6.Text = "AGREGAR";
+            this.button6.TabStop = false;
+            this.button6.Text = "AGREGAR [ENTER]";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // errorTxtBox5
@@ -192,6 +194,7 @@
             this.errorTxtBox5.Name = "errorTxtBox5";
             this.errorTxtBox5.Size = new System.Drawing.Size(101, 26);
             this.errorTxtBox5.TabIndex = 79;
+            this.errorTxtBox5.TabStop = false;
             this.errorTxtBox5.Validar = true;
             // 
             // label2
@@ -216,6 +219,7 @@
             this.errorTxtBox4.Name = "errorTxtBox4";
             this.errorTxtBox4.Size = new System.Drawing.Size(81, 26);
             this.errorTxtBox4.TabIndex = 77;
+            this.errorTxtBox4.Text = "1";
             this.errorTxtBox4.Validar = true;
             // 
             // errorTxtBox3
@@ -229,6 +233,7 @@
             this.errorTxtBox3.Name = "errorTxtBox3";
             this.errorTxtBox3.Size = new System.Drawing.Size(266, 26);
             this.errorTxtBox3.TabIndex = 76;
+            this.errorTxtBox3.TabStop = false;
             this.errorTxtBox3.Text = "Descripción de producto";
             this.errorTxtBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.errorTxtBox3.Validar = true;
@@ -246,23 +251,25 @@
             this.label3.Text = "CANTIDAD";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button4
+            // btn_verProductos
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btn_verProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(6, 29);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 38);
-            this.button4.TabIndex = 68;
-            this.button4.Text = "Ver";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_verProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btn_verProductos.FlatAppearance.BorderSize = 0;
+            this.btn_verProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_verProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_verProductos.ForeColor = System.Drawing.Color.White;
+            this.btn_verProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_verProductos.Location = new System.Drawing.Point(6, 29);
+            this.btn_verProductos.Name = "btn_verProductos";
+            this.btn_verProductos.Size = new System.Drawing.Size(80, 38);
+            this.btn_verProductos.TabIndex = 68;
+            this.btn_verProductos.TabStop = false;
+            this.btn_verProductos.Text = "Ver [F5]";
+            this.btn_verProductos.UseVisualStyleBackColor = false;
+            this.btn_verProductos.Click += new System.EventHandler(this.button4_Click);
             // 
             // errorTxtBox2
             // 
@@ -326,6 +333,7 @@
             this.errorTxtBox8.Name = "errorTxtBox8";
             this.errorTxtBox8.Size = new System.Drawing.Size(167, 26);
             this.errorTxtBox8.TabIndex = 71;
+            this.errorTxtBox8.TabStop = false;
             this.errorTxtBox8.Text = "FAC000000";
             this.errorTxtBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.errorTxtBox8.Validar = true;
@@ -339,6 +347,7 @@
             this.errorTxtBox7.Name = "errorTxtBox7";
             this.errorTxtBox7.Size = new System.Drawing.Size(156, 26);
             this.errorTxtBox7.TabIndex = 70;
+            this.errorTxtBox7.TabStop = false;
             this.errorTxtBox7.Text = "COMPROBANTE";
             this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.errorTxtBox7.Validar = true;
@@ -354,6 +363,7 @@
             this.errorTxtBox6.Name = "errorTxtBox6";
             this.errorTxtBox6.Size = new System.Drawing.Size(369, 26);
             this.errorTxtBox6.TabIndex = 69;
+            this.errorTxtBox6.TabStop = false;
             this.errorTxtBox6.Text = "Nombre cliente";
             this.errorTxtBox6.Validar = true;
             // 
@@ -430,6 +440,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(180, 102);
             this.button9.TabIndex = 70;
+            this.button9.TabStop = false;
             this.button9.Text = "LIMPIAR";
             this.button9.UseVisualStyleBackColor = false;
             // 
@@ -449,6 +460,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(180, 102);
             this.button8.TabIndex = 69;
+            this.button8.TabStop = false;
             this.button8.Text = "CANCELAR";
             this.button8.UseVisualStyleBackColor = false;
             // 
@@ -463,10 +475,11 @@
             this.btn_cotizar.ForeColor = System.Drawing.Color.White;
             this.btn_cotizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cotizar.Image")));
             this.btn_cotizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cotizar.Location = new System.Drawing.Point(858, 8);
+            this.btn_cotizar.Location = new System.Drawing.Point(836, 8);
             this.btn_cotizar.Name = "btn_cotizar";
             this.btn_cotizar.Size = new System.Drawing.Size(205, 102);
             this.btn_cotizar.TabIndex = 67;
+            this.btn_cotizar.TabStop = false;
             this.btn_cotizar.Text = "COTIZACIÓN";
             this.btn_cotizar.UseVisualStyleBackColor = false;
             // 
@@ -481,11 +494,12 @@
             this.btn_cobrar.ForeColor = System.Drawing.Color.White;
             this.btn_cobrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cobrar.Image")));
             this.btn_cobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cobrar.Location = new System.Drawing.Point(1069, 8);
+            this.btn_cobrar.Location = new System.Drawing.Point(1047, 8);
             this.btn_cobrar.Name = "btn_cobrar";
-            this.btn_cobrar.Size = new System.Drawing.Size(192, 102);
+            this.btn_cobrar.Size = new System.Drawing.Size(214, 102);
             this.btn_cobrar.TabIndex = 66;
-            this.btn_cobrar.Text = "CROBRAR";
+            this.btn_cobrar.TabStop = false;
+            this.btn_cobrar.Text = "CROBRAR [F12]";
             this.btn_cobrar.UseVisualStyleBackColor = false;
             this.btn_cobrar.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -523,7 +537,8 @@
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(185, 102);
             this.btn_volver.TabIndex = 65;
-            this.btn_volver.Text = "VOLVER";
+            this.btn_volver.TabStop = false;
+            this.btn_volver.Text = "SALIR [ESC]";
             this.btn_volver.UseVisualStyleBackColor = false;
             this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
@@ -642,6 +657,7 @@
             this.errorTxtBox11.Name = "errorTxtBox11";
             this.errorTxtBox11.Size = new System.Drawing.Size(115, 40);
             this.errorTxtBox11.TabIndex = 77;
+            this.errorTxtBox11.TabStop = false;
             this.errorTxtBox11.Text = "0.00";
             this.errorTxtBox11.Validar = true;
             // 
@@ -668,6 +684,7 @@
             this.errorTxtBox10.Name = "errorTxtBox10";
             this.errorTxtBox10.Size = new System.Drawing.Size(414, 67);
             this.errorTxtBox10.TabIndex = 75;
+            this.errorTxtBox10.TabStop = false;
             this.errorTxtBox10.Text = "0.00";
             this.errorTxtBox10.Validar = true;
             // 
@@ -681,6 +698,7 @@
             this.errorTxtBox9.Name = "errorTxtBox9";
             this.errorTxtBox9.Size = new System.Drawing.Size(153, 40);
             this.errorTxtBox9.TabIndex = 74;
+            this.errorTxtBox9.TabStop = false;
             this.errorTxtBox9.Text = "0.00";
             this.errorTxtBox9.Validar = true;
             // 
@@ -694,6 +712,7 @@
             this.txt_total_bruto.Name = "txt_total_bruto";
             this.txt_total_bruto.Size = new System.Drawing.Size(153, 40);
             this.txt_total_bruto.TabIndex = 73;
+            this.txt_total_bruto.TabStop = false;
             this.txt_total_bruto.Text = "0.00";
             this.txt_total_bruto.Validar = true;
             // 
@@ -746,10 +765,12 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "VentasModoTouch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pizza Grande";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VentasModoTouch_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -775,7 +796,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_verProductos;
         private ErrorTxtBox errorTxtBox2;
         private System.Windows.Forms.Label label3;
         private ErrorTxtBox errorTxtBox3;
