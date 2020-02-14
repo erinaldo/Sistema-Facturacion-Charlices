@@ -43,6 +43,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,8 +73,9 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(142, 57);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(210, 24);
+            this.textBox4.Size = new System.Drawing.Size(252, 24);
             this.textBox4.TabIndex = 100;
+            this.textBox4.Text = "Mi empresa";
             // 
             // label4
             // 
@@ -109,8 +112,9 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(142, 93);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 24);
+            this.textBox1.Size = new System.Drawing.Size(244, 24);
             this.textBox1.TabIndex = 94;
+            this.textBox1.Text = "Carretera Principal";
             // 
             // btnCerrar
             // 
@@ -158,11 +162,13 @@
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(142, 136);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(210, 24);
+            this.textBox7.Size = new System.Drawing.Size(140, 24);
             this.textBox7.TabIndex = 120;
+            this.textBox7.Text = "809-242-7798";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Pesos Dominicanos",
@@ -170,7 +176,7 @@
             "Euro"});
             this.comboBox1.Location = new System.Drawing.Point(142, 175);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
+            this.comboBox1.Size = new System.Drawing.Size(161, 24);
             this.comboBox1.TabIndex = 121;
             // 
             // pictureBox1
@@ -199,12 +205,32 @@
             this.button3.Text = "Cargar logo";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // ConGen
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(32, 254);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(177, 20);
+            this.label6.TabIndex = 124;
+            this.label6.Text = "Términos y condiciones ";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(35, 277);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(190, 205);
+            this.richTextBox1.TabIndex = 125;
+            this.richTextBox1.Text = "No hay devoluciones de dinero.       GRACIAS POR PREFERIRNOS !!";
+            // 
+            // FormConGen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(727, 494);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBox1);
@@ -220,7 +246,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ConGen";
+            this.Name = "FormConGen";
             this.Text = "ConGen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -243,5 +269,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

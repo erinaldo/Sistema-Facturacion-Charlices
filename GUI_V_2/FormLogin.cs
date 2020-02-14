@@ -27,12 +27,12 @@ namespace GUI_V_2
         {
             this.Close();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 ventana = new Form1();
-            ventana.Show(); 
+         Form1 ventana = new Form1();
+         ventana.Show();
+         this.Hide();
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)

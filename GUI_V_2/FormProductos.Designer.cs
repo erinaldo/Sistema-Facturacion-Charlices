@@ -306,6 +306,7 @@
             // 
             // CanExi
             // 
+            this.CanExi.Enabled = false;
             this.CanExi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CanExi.Limpiar = false;
             this.CanExi.Location = new System.Drawing.Point(138, 401);

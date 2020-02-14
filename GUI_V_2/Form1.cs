@@ -176,7 +176,6 @@ namespace GUI_V_2
                 MessageBox.Show("SALIDA");
             }
         }
-        
 
         //Funciones rapidas... para rapido acceso !
         private void Form1_KeyDown_1(object sender, KeyEventArgs e)
@@ -186,13 +185,13 @@ namespace GUI_V_2
                 VentasModoTouch obj = new VentasModoTouch();
                 obj.ShowDialog();
             }
-
             if (e.KeyCode == Keys.F7)
             {
                 Salidas obj = new Salidas();
                 obj.ShowDialog();
             }
         }
+
         private void btn_vender_Click(object sender, EventArgs e)
         {
             VentasModoTouch obj = new VentasModoTouch();

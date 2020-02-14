@@ -15,6 +15,7 @@ namespace GUI_V_2
         public FormConGen()
         {
             InitializeComponent();
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
