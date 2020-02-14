@@ -18,6 +18,18 @@ namespace GUI_V_2
             InitializeComponent();
            
         }
+
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                //DisplayText, Asuming you have a textbox do something like this:
+                MessageBox.Show("VENTAS");
+            }
+        }
+
+
         private void btnMenu_Click(object sender, EventArgs e)
         {
             Animar();
@@ -155,5 +167,45 @@ namespace GUI_V_2
             //with a URL:
             System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=18098862933&text=Soporte%20!");
         }
+
+        private void btn_salida_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F7)
+            {
+                //DisplayText, Asuming you have a textbox do something like this:
+                MessageBox.Show("SALIDA");
+            }
+        }
+        
+
+        //Funciones rapidas... para rapido acceso !
+        private void Form1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                VentasModoTouch obj = new VentasModoTouch();
+                obj.ShowDialog();
+            }
+
+            if (e.KeyCode == Keys.F7)
+            {
+                Salidas obj = new Salidas();
+                obj.ShowDialog();
+            }
+        }
+        private void btn_vender_Click(object sender, EventArgs e)
+        {
+            VentasModoTouch obj = new VentasModoTouch();
+            obj.ShowDialog();
+        }
+
+        private void btn_salida_Click(object sender, EventArgs e)
+        {
+            Salidas obj = new Salidas();
+            obj.ShowDialog();
+        }
+
+
+
     }
 }

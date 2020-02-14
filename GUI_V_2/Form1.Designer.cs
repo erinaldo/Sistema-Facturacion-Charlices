@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblcorreo = new System.Windows.Forms.Label();
             this.lbluser = new System.Windows.Forms.Label();
@@ -42,12 +43,13 @@
             this.btn_man = new System.Windows.Forms.Button();
             this.btnlogoInicio = new System.Windows.Forms.PictureBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.btn_salida = new System.Windows.Forms.Button();
+            this.btn_vender = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.iconminimizar = new System.Windows.Forms.PictureBox();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
@@ -77,6 +79,23 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(250, 650);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 360);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(257, 40);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "CAJA";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -242,6 +261,8 @@
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.White;
+            this.BarraTitulo.Controls.Add(this.btn_salida);
+            this.BarraTitulo.Controls.Add(this.btn_vender);
             this.BarraTitulo.Controls.Add(this.linkLabel1);
             this.BarraTitulo.Controls.Add(this.iconminimizar);
             this.BarraTitulo.Controls.Add(this.iconcerrar);
@@ -252,6 +273,54 @@
             this.BarraTitulo.Size = new System.Drawing.Size(1050, 45);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // btn_salida
+            // 
+            this.btn_salida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_salida.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_salida.FlatAppearance.BorderSize = 0;
+            this.btn_salida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_salida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salida.ForeColor = System.Drawing.Color.White;
+            this.btn_salida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_salida.Location = new System.Drawing.Point(715, 2);
+            this.btn_salida.Name = "btn_salida";
+            this.btn_salida.Size = new System.Drawing.Size(148, 37);
+            this.btn_salida.TabIndex = 128;
+            this.btn_salida.Text = "SALIDA [F7]";
+            this.btn_salida.UseVisualStyleBackColor = false;
+            this.btn_salida.Click += new System.EventHandler(this.btn_salida_Click);
+            // 
+            // btn_vender
+            // 
+            this.btn_vender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_vender.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_vender.FlatAppearance.BorderSize = 0;
+            this.btn_vender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_vender.ForeColor = System.Drawing.Color.White;
+            this.btn_vender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_vender.Location = new System.Drawing.Point(561, 3);
+            this.btn_vender.Name = "btn_vender";
+            this.btn_vender.Size = new System.Drawing.Size(148, 37);
+            this.btn_vender.TabIndex = 127;
+            this.btn_vender.Text = "VENDER [F5]";
+            this.btn_vender.UseVisualStyleBackColor = false;
+            this.btn_vender.Click += new System.EventHandler(this.btn_vender_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(869, 9);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(74, 20);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Soporte !";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // iconminimizar
             // 
@@ -302,35 +371,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1050, 605);
             this.panelContenedor.TabIndex = 2;
             // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 360);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(257, 40);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "CAJA";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(869, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(74, 20);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Soporte !";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,12 +381,14 @@
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1300, 650);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown_1);
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -381,6 +423,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btn_vender;
+        private System.Windows.Forms.Button btn_salida;
     }
 }
 
