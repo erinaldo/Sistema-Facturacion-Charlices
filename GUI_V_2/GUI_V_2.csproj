@@ -234,6 +234,12 @@
     <Compile Include="FormSuplidores.Designer.cs">
       <DependentUpon>FormSuplidores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSuplidores.resx">
       <DependentUpon>FormSuplidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>

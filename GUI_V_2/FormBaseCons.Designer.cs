@@ -146,6 +146,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaseCons";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBaseCons";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormBaseCons_Paint);
             this.ResumeLayout(false);

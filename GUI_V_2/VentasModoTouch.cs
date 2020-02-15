@@ -59,19 +59,17 @@ namespace GUI_V_2
             if (e.KeyCode == Keys.Escape)
             {
             btn_volver.PerformClick();
-
             }
 
             if (e.KeyCode == Keys.F12)
             {
-                btn_cobrar.PerformClick();
+            btn_cobrar.PerformClick();
             }
+
             if (e.KeyCode == Keys.F5)
             {
-                btn_verProductos.PerformClick();
+            btn_verProductos.PerformClick();
             }
-
-
 
         }
 
