@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_volver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_dosmil = new System.Windows.Forms.Panel();
             this.panel_quiniento = new System.Windows.Forms.Panel();
@@ -212,7 +212,7 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Controls.Add(this.button2);
             this.panel8.Controls.Add(this.button1);
-            this.panel8.Controls.Add(this.button3);
+            this.panel8.Controls.Add(this.btn_volver);
             this.panel8.Location = new System.Drawing.Point(837, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(219, 327);
@@ -266,24 +266,24 @@
             this.button1.Text = "CON TICKET";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_volver
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Brown;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(204, 58);
-            this.button3.TabIndex = 97;
-            this.button3.Text = "VOLVER";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_volver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_volver.BackColor = System.Drawing.Color.Brown;
+            this.btn_volver.FlatAppearance.BorderSize = 0;
+            this.btn_volver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_volver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_volver.ForeColor = System.Drawing.Color.White;
+            this.btn_volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_volver.Image")));
+            this.btn_volver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_volver.Location = new System.Drawing.Point(9, 11);
+            this.btn_volver.Name = "btn_volver";
+            this.btn_volver.Size = new System.Drawing.Size(204, 58);
+            this.btn_volver.TabIndex = 97;
+            this.btn_volver.Text = "VOLVER [ESC]";
+            this.btn_volver.UseVisualStyleBackColor = false;
+            this.btn_volver.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel2
             // 
@@ -371,10 +371,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "PanelCobro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PanelCobro";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelCobro_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PanelCobro_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -398,7 +400,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_volver;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox c_metodopago;

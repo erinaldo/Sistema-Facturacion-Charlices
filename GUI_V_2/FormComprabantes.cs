@@ -16,5 +16,11 @@ namespace GUI_V_2
         {
             InitializeComponent();
         }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsComprobante obj = new ConsComprobante();
+            obj.ShowDialog();
+        }
     }
 }

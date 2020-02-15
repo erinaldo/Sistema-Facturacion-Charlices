@@ -16,5 +16,10 @@ namespace GUI_V_2
         {
             InitializeComponent();
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {   FormProductos obj = new FormProductos();
+            obj.ShowDialog();
+        }
     }
 }

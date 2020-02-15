@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBaseCons));
             this.label2 = new System.Windows.Forms.Label();
-            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Label();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.errorTxtBox1 = new GUI_V_2.ErrorTxtBox();
             this.SuspendLayout();
             // 
             // label2
@@ -46,27 +48,17 @@
             this.label2.TabIndex = 93;
             this.label2.Text = "Form Base Consultas";
             // 
-            // errorTxtBox1
-            // 
-            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox1.Limpiar = false;
-            this.errorTxtBox1.Location = new System.Drawing.Point(146, 113);
-            this.errorTxtBox1.Name = "errorTxtBox1";
-            this.errorTxtBox1.Size = new System.Drawing.Size(289, 35);
-            this.errorTxtBox1.TabIndex = 95;
-            this.errorTxtBox1.Validar = false;
-            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(735, 108);
+            this.button1.Location = new System.Drawing.Point(747, 108);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 40);
+            this.button1.Size = new System.Drawing.Size(188, 40);
             this.button1.TabIndex = 108;
             this.button1.Text = "SELECCIONAR";
             this.button1.UseVisualStyleBackColor = false;
@@ -92,12 +84,52 @@
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.Color.DimGray;
-            this.btn_cerrar.Location = new System.Drawing.Point(905, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(915, 9);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(30, 29);
             this.btn_cerrar.TabIndex = 110;
             this.btn_cerrar.Text = "X";
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btn_editar.ForeColor = System.Drawing.Color.White;
+            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_editar.Location = new System.Drawing.Point(606, 108);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(135, 40);
+            this.btn_editar.TabIndex = 111;
+            this.btn_editar.Text = "EDITAR";
+            this.btn_editar.UseVisualStyleBackColor = false;
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_nuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btn_nuevo.ForeColor = System.Drawing.Color.White;
+            this.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nuevo.Location = new System.Drawing.Point(501, 108);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(99, 40);
+            this.btn_nuevo.TabIndex = 112;
+            this.btn_nuevo.Text = "NUEVO";
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            // 
+            // errorTxtBox1
+            // 
+            this.errorTxtBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox1.Limpiar = false;
+            this.errorTxtBox1.Location = new System.Drawing.Point(146, 113);
+            this.errorTxtBox1.Name = "errorTxtBox1";
+            this.errorTxtBox1.Size = new System.Drawing.Size(289, 35);
+            this.errorTxtBox1.TabIndex = 95;
+            this.errorTxtBox1.Validar = false;
             // 
             // FormBaseCons
             // 
@@ -105,6 +137,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(957, 542);
+            this.Controls.Add(this.btn_nuevo);
+            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button1);
@@ -113,6 +147,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaseCons";
             this.Text = "FormBaseCons";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormBaseCons_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +160,7 @@
         public ErrorTxtBox errorTxtBox1;
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label btn_cerrar;
+        public System.Windows.Forms.Button btn_editar;
+        public System.Windows.Forms.Button btn_nuevo;
     }
 }

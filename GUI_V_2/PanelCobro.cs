@@ -18,19 +18,26 @@ namespace GUI_V_2
             c_metodopago.SelectedIndex = 0;
         }
 
+
+        //Boton volver
         private void button3_Click(object sender, EventArgs e)
         {
+            DialogResult pregunta = MessageBox.Show("Salir ve cobro ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (pregunta == DialogResult.Yes) { 
             this.Close();
+            }
         }
 
+        //metodo que aplica el borde al panel
         private void PanelCobro_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.Blue, 3),
                            this.DisplayRectangle);
         }
-
+        
         double monto_actual=0, pago=0;
-
+        
+        //Evento que hace el calculo del devuelto para el cliente.
         private void txt_pago_TextChanged(object sender, EventArgs e)
         {
             try
@@ -79,6 +86,15 @@ namespace GUI_V_2
             txt_devuelto.Text = "0";
         }
 
+        private void PanelCobro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Escape)
+            {
+                btn_volver.PerformClick();
+            }
+        }
+
+        //Metodo que manda el monto seleccionado con el usuario
         private void Calcular(double mas){
             try
             {

@@ -94,10 +94,11 @@
             this.Nom.Location = new System.Drawing.Point(125, 99);
             this.Nom.Size = new System.Drawing.Size(232, 26);
             // 
-            // button1
+            // btn_consultar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(624, 380);
+            this.btn_consultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_consultar.Location = new System.Drawing.Point(624, 380);
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // PreNormal
             // 
@@ -370,7 +371,7 @@
             this.Name = "FormProductos";
             this.Text = "Productos";
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);

@@ -131,5 +131,11 @@ namespace GUI_V_2
                 //Guardar Error
             }
         }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsSup obj = new ConsSup();
+            obj.ShowDialog();
+        }
     }
 }

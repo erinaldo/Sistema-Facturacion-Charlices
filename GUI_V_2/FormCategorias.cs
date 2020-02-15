@@ -126,5 +126,12 @@ namespace GUI_V_2
                 //Guardar Error
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsCatProd obj = new ConsCatProd();
+            obj.ShowDialog();
+
+        }
     }
 }

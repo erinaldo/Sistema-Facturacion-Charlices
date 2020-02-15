@@ -18,5 +18,11 @@ namespace GUI_V_2.Consultas
 
 
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            FormClientes obj = new FormClientes();
+            obj.ShowDialog();
+        }
     }
 }

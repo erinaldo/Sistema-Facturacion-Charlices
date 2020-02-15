@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_V_2.Consultas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,7 +77,14 @@ namespace GUI_V_2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("VER PRODCUTOS");
+            ConsPro obj = new ConsPro();
+            obj.ShowDialog();
+        }
+
+        private void btn_clientes_Click(object sender, EventArgs e)
+        {
+            ConsCli obj = new ConsCli();
+            obj.ShowDialog();
         }
     }
 }

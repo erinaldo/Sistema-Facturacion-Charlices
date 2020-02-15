@@ -40,15 +40,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ComDisp = new GUI_V_2.ErrorTxtBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.NumOrden = new GUI_V_2.ErrorTxtBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaLim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NumOrden = new GUI_V_2.ErrorTxtBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,10 +102,11 @@
             this.Codigo.Location = new System.Drawing.Point(179, 95);
             this.Codigo.Size = new System.Drawing.Size(252, 26);
             // 
-            // button1
+            // btn_consultar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(919, 405);
+            this.btn_consultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_consultar.Location = new System.Drawing.Point(919, 405);
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // label3
             // 
@@ -243,37 +244,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(640, 349);
             this.dataGridView1.TabIndex = 115;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(681, 169);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 28);
-            this.comboBox1.TabIndex = 116;
-            this.comboBox1.Text = "FILTRAR NRO. ORDEN";
-            // 
-            // NumOrden
-            // 
-            this.NumOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NumOrden.Limpiar = false;
-            this.NumOrden.Location = new System.Drawing.Point(640, 55);
-            this.NumOrden.Name = "NumOrden";
-            this.NumOrden.Size = new System.Drawing.Size(100, 26);
-            this.NumOrden.TabIndex = 117;
-            this.NumOrden.Validar = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(524, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 20);
-            this.label8.TabIndex = 118;
-            this.label8.Text = "NRO. ORDEN";
-            // 
             // CodPro
             // 
             this.CodPro.FillWeight = 61.85785F;
@@ -311,6 +281,37 @@
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(681, 169);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(232, 28);
+            this.comboBox1.TabIndex = 116;
+            this.comboBox1.Text = "FILTRAR NRO. ORDEN";
+            // 
+            // NumOrden
+            // 
+            this.NumOrden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.NumOrden.Limpiar = false;
+            this.NumOrden.Location = new System.Drawing.Point(640, 55);
+            this.NumOrden.Name = "NumOrden";
+            this.NumOrden.Size = new System.Drawing.Size(100, 26);
+            this.NumOrden.TabIndex = 117;
+            this.NumOrden.Validar = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(524, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.TabIndex = 118;
+            this.label8.Text = "NRO. ORDEN";
+            // 
             // FormComprabantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,7 +332,7 @@
             this.Name = "FormComprabantes";
             this.Text = "Comprabantes";
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.ComUsa, 0);
             this.Controls.SetChildIndex(this.TipCom, 0);

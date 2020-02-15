@@ -39,7 +39,7 @@
             this.btn_cerrar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.estado = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_consultar = new System.Windows.Forms.Button();
             this.Nom = new GUI_V_2.ErrorTxtBox();
             this.Codigo = new GUI_V_2.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -153,20 +153,21 @@
             this.estado.Size = new System.Drawing.Size(121, 28);
             this.estado.TabIndex = 106;
             // 
-            // button1
+            // btn_consultar
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(612, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 44);
-            this.button1.TabIndex = 107;
-            this.button1.Text = "CONSULTAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_consultar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btn_consultar.ForeColor = System.Drawing.Color.White;
+            this.btn_consultar.Image = ((System.Drawing.Image)(resources.GetObject("btn_consultar.Image")));
+            this.btn_consultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_consultar.Location = new System.Drawing.Point(612, 319);
+            this.btn_consultar.Name = "btn_consultar";
+            this.btn_consultar.Size = new System.Drawing.Size(180, 44);
+            this.btn_consultar.TabIndex = 107;
+            this.btn_consultar.Text = "CONSULTAR";
+            this.btn_consultar.UseVisualStyleBackColor = false;
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // Nom
             // 
@@ -196,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(804, 544);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_consultar);
             this.Controls.Add(this.estado);
             this.Controls.Add(this.Nom);
             this.Controls.Add(this.label2);
@@ -209,7 +210,9 @@
             this.Controls.Add(this.btn_guardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBaseMan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBaseMan";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormBaseMan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,7 +230,7 @@
         public System.Windows.Forms.ComboBox estado;
         public ErrorTxtBox Nom;
         public ErrorTxtBox Codigo;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btn_consultar;
         public System.Windows.Forms.Label btn_cerrar;
     }
 }

@@ -21,5 +21,11 @@ namespace GUI_V_2
         {
             this.Close();
         }
+
+        private void FormBaseCons_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.Black, 3),
+                        this.DisplayRectangle);
+        }
     }
 }

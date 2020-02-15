@@ -18,11 +18,10 @@ namespace GUI_V_2
             TipoPro.SelectedIndex = 0;
         }
 
-
-
-
-
-
-
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsPro obj = new ConsPro();
+            obj.ShowDialog();
+        }
     }
 }

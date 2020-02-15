@@ -56,6 +56,15 @@
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(953, 9);
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(642, 108);
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Location = new System.Drawing.Point(537, 108);
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -152,7 +161,10 @@
             this.ClientSize = new System.Drawing.Size(995, 531);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsSup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsSup";
+            this.Controls.SetChildIndex(this.btn_editar, 0);
+            this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.errorTxtBox1, 0);
             this.Controls.SetChildIndex(this.button1, 0);

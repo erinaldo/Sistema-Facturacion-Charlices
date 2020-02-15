@@ -62,6 +62,15 @@
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(917, 9);
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(606, 134);
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Location = new System.Drawing.Point(501, 134);
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -131,6 +140,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsCatProd";
             this.Text = "ConsCatProd";
+            this.Controls.SetChildIndex(this.btn_editar, 0);
+            this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.errorTxtBox1, 0);
             this.Controls.SetChildIndex(this.button1, 0);

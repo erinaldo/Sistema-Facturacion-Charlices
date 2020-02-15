@@ -16,5 +16,11 @@ namespace GUI_V_2
         {
             InitializeComponent();
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            ConsPro obj = new ConsPro();
+            obj.ShowDialog();
+        }
     }
 }

@@ -21,5 +21,11 @@ namespace GUI_V_2
         {
             this.Close();
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            FormUsuarios obj = new FormUsuarios();
+            obj.ShowDialog();
+        }
     }
 }

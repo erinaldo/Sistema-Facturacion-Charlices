@@ -16,6 +16,7 @@ namespace GUI_V_2
         {
             InitializeComponent();
             estado.SelectedIndex = 0;
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,9 +24,6 @@ namespace GUI_V_2
             if (Utilidades.ValidarFormulario(this, errorProvider1) == true)
                 return;
             
-
-
-
 
 
         }
@@ -36,6 +34,17 @@ namespace GUI_V_2
         }
 
         private void bnt_eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormBaseMan_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.Black, 3),
+                         this.DisplayRectangle);
+        }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
         {
 
         }

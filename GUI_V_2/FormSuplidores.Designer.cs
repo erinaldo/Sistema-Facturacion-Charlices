@@ -82,6 +82,10 @@
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             this.Codigo.Validated += new System.EventHandler(this.Codigo_Validated);
             // 
+            // btn_consultar
+            // 
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
+            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,7 +192,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuplidores";
             this.Text = "Suplidores";
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btn_cerrar, 0);
+            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);

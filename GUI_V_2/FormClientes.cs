@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_V_2.Consultas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -129,6 +130,12 @@ namespace GUI_V_2
 
                 //Guardar Error
             }
+        }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsCli obj = new ConsCli();
+            obj.ShowDialog();
         }
     }
 }

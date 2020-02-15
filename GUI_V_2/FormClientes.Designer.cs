@@ -93,9 +93,10 @@
             this.Codigo.Size = new System.Drawing.Size(225, 26);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
-            // button1
+            // btn_consultar
             // 
-            this.button1.Location = new System.Drawing.Point(612, 334);
+            this.btn_consultar.Location = new System.Drawing.Point(612, 334);
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // TelCli
             // 
@@ -222,6 +223,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormClientes";
             this.Text = "Clientes";
+            this.Controls.SetChildIndex(this.btn_cerrar, 0);
             this.Controls.SetChildIndex(this.TelCli, 0);
             this.Controls.SetChildIndex(this.DirCli, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -230,7 +232,7 @@
             this.Controls.SetChildIndex(this.TipCli, 0);
             this.Controls.SetChildIndex(this.CorCli, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
