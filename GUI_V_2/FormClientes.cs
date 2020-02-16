@@ -24,6 +24,8 @@ namespace GUI_V_2
         {
             try
             {
+                if (Utilidades.ValidarFormulario(this, errorProvider1) == true) return;
+
                 using (CRUD_MODEL tabla = new CRUD_MODEL())
                 {
                     if (id == 0)
