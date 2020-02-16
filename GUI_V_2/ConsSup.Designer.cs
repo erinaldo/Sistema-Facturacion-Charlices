@@ -28,125 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridSuplidores = new System.Windows.Forms.DataGridView();
+            this.CodSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLA_RNC_Sup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIRSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CorSup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuplidores)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(146, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Size = new System.Drawing.Size(190, 31);
             this.label2.Text = "SUPLIDORES";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(783, 108);
+            this.button1.Location = new System.Drawing.Point(1044, 133);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            // 
+            // filtro
+            // 
+            this.filtro.Margin = new System.Windows.Forms.Padding(5);
+            this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
+            // 
+            // label16
+            // 
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(953, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1271, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(642, 108);
+            this.btn_editar.Location = new System.Drawing.Point(856, 133);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(5);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(537, 108);
+            this.btn_nuevo.Location = new System.Drawing.Point(716, 133);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // dataGridView1
+            // dataGridSuplidores
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodPro,
-            this.NomPro,
-            this.DesPro,
-            this.PrePro,
-            this.CanPro,
-            this.TotalPro,
+            this.dataGridSuplidores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridSuplidores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridSuplidores.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSuplidores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridSuplidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSuplidores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodSup,
+            this.NomSup,
+            this.CLA_RNC_Sup,
+            this.TelSup,
+            this.DIRSup,
+            this.CorSup,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 154);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(971, 365);
-            this.dataGridView1.TabIndex = 112;
+            this.dataGridSuplidores.Location = new System.Drawing.Point(13, 192);
+            this.dataGridSuplidores.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridSuplidores.Name = "dataGridSuplidores";
+            this.dataGridSuplidores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSuplidores.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridSuplidores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridSuplidores.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridSuplidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridSuplidores.Size = new System.Drawing.Size(1295, 449);
+            this.dataGridSuplidores.TabIndex = 113;
             // 
-            // CodPro
+            // CodSup
             // 
-            this.CodPro.FillWeight = 50.32217F;
-            this.CodPro.HeaderText = "CODIGO";
-            this.CodPro.Name = "CodPro";
-            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodSup.FillWeight = 50.32217F;
+            this.CodSup.HeaderText = "CÓDIGO";
+            this.CodSup.Name = "CodSup";
+            this.CodSup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // NomPro
+            // NomSup
             // 
-            this.NomPro.FillWeight = 158.1699F;
-            this.NomPro.HeaderText = "NOMBRE";
-            this.NomPro.Name = "NomPro";
+            this.NomSup.FillWeight = 158.1699F;
+            this.NomSup.HeaderText = "NOMBRE";
+            this.NomSup.Name = "NomSup";
             // 
-            // DesPro
+            // CLA_RNC_Sup
             // 
-            this.DesPro.FillWeight = 70.77158F;
-            this.DesPro.HeaderText = "CLA/RNC";
-            this.DesPro.Name = "DesPro";
+            this.CLA_RNC_Sup.FillWeight = 70.77158F;
+            this.CLA_RNC_Sup.HeaderText = "CLA/RNC";
+            this.CLA_RNC_Sup.Name = "CLA_RNC_Sup";
             // 
-            // PrePro
+            // TelSup
             // 
-            this.PrePro.FillWeight = 88.83237F;
-            this.PrePro.HeaderText = "TELEFONO";
-            this.PrePro.Name = "PrePro";
+            this.TelSup.FillWeight = 88.83237F;
+            this.TelSup.HeaderText = "TELÉFONO";
+            this.TelSup.Name = "TelSup";
             // 
-            // CanPro
+            // DIRSup
             // 
-            this.CanPro.FillWeight = 179.1635F;
-            this.CanPro.HeaderText = "DIRECCION";
-            this.CanPro.Name = "CanPro";
+            this.DIRSup.FillWeight = 179.1635F;
+            this.DIRSup.HeaderText = "DIRECCION";
+            this.DIRSup.Name = "DIRSup";
             // 
-            // TotalPro
+            // CorSup
             // 
-            this.TotalPro.FillWeight = 101.8669F;
-            this.TotalPro.HeaderText = "CORREO";
-            this.TotalPro.Name = "TotalPro";
+            this.CorSup.FillWeight = 101.8669F;
+            this.CorSup.HeaderText = "CORREO";
+            this.CorSup.Name = "CorSup";
             // 
             // estatus
             // 
@@ -156,22 +169,22 @@
             // 
             // ConsSup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 531);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1327, 654);
+            this.Controls.Add(this.dataGridSuplidores);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ConsSup";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsSup";
             this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox1, 0);
+            this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label16, 0);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.SetChildIndex(this.dataGridSuplidores, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridSuplidores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,13 +192,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DesPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrePro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CanPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPro;
+        private System.Windows.Forms.DataGridView dataGridSuplidores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodSup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomSup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLA_RNC_Sup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelSup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIRSup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CorSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
     }
 }

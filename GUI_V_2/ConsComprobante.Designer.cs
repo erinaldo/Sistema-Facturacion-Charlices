@@ -59,9 +59,9 @@
             // 
             // errorTxtBox1
             // 
-            this.errorTxtBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.errorTxtBox1.Location = new System.Drawing.Point(147, 119);
-            this.errorTxtBox1.Size = new System.Drawing.Size(218, 35);
+            this.filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.filtro.Location = new System.Drawing.Point(147, 119);
+            this.filtro.Size = new System.Drawing.Size(218, 35);
             // 
             // label16
             // 
@@ -246,7 +246,7 @@
             this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.errorTxtBox1, 0);
+            this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label16, 0);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
