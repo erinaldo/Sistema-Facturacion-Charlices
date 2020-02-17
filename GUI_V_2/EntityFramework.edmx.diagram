@@ -5,10 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e8ddb22970c04fd5b4d6dec311af1432" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.comprobantes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Categorias" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="Model.Clientes" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="Model.Suplidores" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.Productos" Width="1.5" PointX="5.625" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Unidades_medidas" Width="1.5" PointX="3.375" PointY="8.875" />
+        <EntityTypeShape EntityType="Model.Usuarios" Width="1.5" PointX="5.375" PointY="5.75" />
+        <AssociationConnector Association="Model.FK_CATEGORIAS" />
+        <AssociationConnector Association="Model.FK_UNIDADES_MEDIDAS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

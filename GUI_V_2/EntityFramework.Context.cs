@@ -25,9 +25,11 @@ namespace GUI_V_2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<comprobantes> comprobantes { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Suplidores> Suplidores { get; set; }
+        public virtual DbSet<Productos> Productos { get; set; }
+        public virtual DbSet<Unidades_medidas> Unidades_medidas { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }
