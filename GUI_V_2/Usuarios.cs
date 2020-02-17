@@ -12,9 +12,18 @@ namespace GUI_V_2
     using System;
     using System.Collections.Generic;
     
-    public partial class comprobantes
+    public partial class Usuarios
     {
         public int id { get; set; }
-        public string vxcv { get; set; }
+        public string codigo { get; set; }
+        public string nombre_completo { get; set; }
+        public string usuario { get; set; }
+        public string password { get; set; }
+        public byte tipo_usuario { get; set; }
+        public string ced_rnc { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+        public string correo { get; set; }
+        public bool estado { get; set; }
     }
 }

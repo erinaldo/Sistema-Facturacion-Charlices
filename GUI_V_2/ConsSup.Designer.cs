@@ -176,6 +176,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ConsSup";
             this.Text = "ConsSup";
+            this.Load += new System.EventHandler(this.ConsSup_Load);
             this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);

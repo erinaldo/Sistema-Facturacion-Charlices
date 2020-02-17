@@ -22,5 +22,6 @@ namespace GUI_V_2
         public byte tipo_cliente { get; set; }
         public string correo { get; set; }
         public bool estado { get; set; }
+        public string cla_rnc { get; set; }
     }
 }

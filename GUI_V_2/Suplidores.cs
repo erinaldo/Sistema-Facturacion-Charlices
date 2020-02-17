@@ -21,5 +21,6 @@ namespace GUI_V_2
         public string telefono { get; set; }
         public string direccion { get; set; }
         public bool estado { get; set; }
+        public string correo { get; set; }
     }
 }

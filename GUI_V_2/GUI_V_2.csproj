@@ -70,9 +70,6 @@
     <Compile Include="Clientes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
-    <Compile Include="comprobantes.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
-    </Compile>
     <Compile Include="ConsCatProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +217,9 @@
     <Compile Include="PanelCobro.Designer.cs">
       <DependentUpon>PanelCobro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormReportes.cs">
@@ -247,6 +247,12 @@
       <DependentUpon>Salidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Suplidores.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unidades_medidas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />

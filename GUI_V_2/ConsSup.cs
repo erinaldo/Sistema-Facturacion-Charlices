@@ -61,5 +61,10 @@ namespace GUI_V_2
         {
             LlenarDataGrid(filtro.Text);
         }
+
+        private void ConsSup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

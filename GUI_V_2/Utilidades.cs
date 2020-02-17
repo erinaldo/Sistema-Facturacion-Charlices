@@ -54,6 +54,12 @@ namespace GUI_V_2
                 else if (Item is DataGridView dataGrid)
                 {
                     dataGrid.Rows.Clear();
+                }else if(Item is ComboBox combox)
+                {
+                    combox.SelectedIndex = 0;
+                }else if (Item is NumericUpDown numeric)
+                {
+                    numeric.Value = 0;
                 }
                 if (Item.Controls.Count > 0)
                 {
