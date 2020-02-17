@@ -62,11 +62,10 @@ namespace GUI_V_2
                     if (id == 0)
                     {
                         MessageBox.Show("El cliente se ha registrado correctamente.");
-                        id = 0;
+                        Utilidades.LimpiarControles(this);
                     }
                     else MessageBox.Show("El cliente se ha modificado correctamente.");
 
-                    Utilidades.LimpiarControles(this);
                 }
 
             }
@@ -98,6 +97,8 @@ namespace GUI_V_2
                     }
                     else
                     {
+                        id = 0;
+                        bnt_eliminar.Enabled = false;
                         Codigo.Limpiar = false;
                         Utilidades.LimpiarControles(this);
                         Codigo.Limpiar = true;
@@ -122,6 +123,7 @@ namespace GUI_V_2
                         tabla.SaveChanges();
                         MessageBox.Show("El cliente se ha eliminado correctamente.");
                         Utilidades.LimpiarControles(this);
+                        bnt_eliminar.Enabled = false;
                         id = 0;
                     }
                 }
@@ -138,6 +140,11 @@ namespace GUI_V_2
         {
             ConsCli obj = new ConsCli();
             obj.ShowDialog();
+        }
+
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

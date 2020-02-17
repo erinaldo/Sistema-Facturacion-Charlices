@@ -38,74 +38,77 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.CedCli = new GUI_V_2.ErrorTxtBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Size = new System.Drawing.Size(148, 31);
             this.label1.Text = "CLIENTES";
             // 
             // bnt_eliminar
             // 
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.bnt_eliminar.Location = new System.Drawing.Point(612, 385);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.bnt_eliminar.Location = new System.Drawing.Point(816, 474);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
             // 
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btn_guardar.Location = new System.Drawing.Point(612, 438);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar.Location = new System.Drawing.Point(816, 539);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(44, 366);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(59, 450);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // label5
             // 
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.label5.Text = "CÓDIGO";
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(162, 363);
-            this.estado.Margin = new System.Windows.Forms.Padding(4);
-            this.estado.Size = new System.Drawing.Size(137, 28);
+            this.estado.Location = new System.Drawing.Point(216, 447);
+            this.estado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.estado.Size = new System.Drawing.Size(181, 33);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
-            this.Nom.Location = new System.Drawing.Point(162, 102);
-            this.Nom.Margin = new System.Windows.Forms.Padding(4);
-            this.Nom.Size = new System.Drawing.Size(225, 26);
+            this.Nom.Location = new System.Drawing.Point(216, 126);
+            this.Nom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Nom.Size = new System.Drawing.Size(299, 30);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Location = new System.Drawing.Point(162, 58);
-            this.Codigo.Margin = new System.Windows.Forms.Padding(4);
-            this.Codigo.Size = new System.Drawing.Size(225, 26);
+            this.Codigo.Location = new System.Drawing.Point(216, 71);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Codigo.Size = new System.Drawing.Size(299, 30);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // btn_consultar
             // 
-            this.btn_consultar.Location = new System.Drawing.Point(612, 334);
+            this.btn_consultar.Location = new System.Drawing.Point(816, 411);
+            this.btn_consultar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // TelCli
             // 
             this.TelCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelCli.Limpiar = false;
-            this.TelCli.Location = new System.Drawing.Point(162, 187);
+            this.TelCli.Location = new System.Drawing.Point(216, 230);
+            this.TelCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TelCli.MaxLength = 15;
             this.TelCli.Name = "TelCli";
-            this.TelCli.Size = new System.Drawing.Size(137, 26);
+            this.TelCli.Size = new System.Drawing.Size(181, 30);
             this.TelCli.TabIndex = 107;
             this.TelCli.Validar = true;
             // 
@@ -113,10 +116,11 @@
             // 
             this.DirCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirCli.Limpiar = true;
-            this.DirCli.Location = new System.Drawing.Point(162, 230);
+            this.DirCli.Location = new System.Drawing.Point(216, 283);
+            this.DirCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DirCli.MaxLength = 40;
             this.DirCli.Name = "DirCli";
-            this.DirCli.Size = new System.Drawing.Size(278, 26);
+            this.DirCli.Size = new System.Drawing.Size(369, 30);
             this.DirCli.TabIndex = 108;
             this.DirCli.Validar = true;
             // 
@@ -124,9 +128,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(40, 193);
+            this.label3.Location = new System.Drawing.Point(53, 238);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.Size = new System.Drawing.Size(120, 25);
             this.label3.TabIndex = 110;
             this.label3.Text = "TELÉFONO";
             // 
@@ -134,9 +139,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(40, 233);
+            this.label4.Location = new System.Drawing.Point(53, 287);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.Size = new System.Drawing.Size(122, 25);
             this.label4.TabIndex = 111;
             this.label4.Text = "DIRECCIÓN";
             // 
@@ -144,9 +150,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(40, 280);
+            this.label6.Location = new System.Drawing.Point(53, 345);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.Size = new System.Drawing.Size(148, 25);
             this.label6.TabIndex = 112;
             this.label6.Text = "TIPO CLIENTE";
             // 
@@ -158,19 +165,21 @@
             "NORMAL",
             "FAMILIA",
             "Empleado"});
-            this.TipCli.Location = new System.Drawing.Point(162, 277);
+            this.TipCli.Location = new System.Drawing.Point(216, 341);
+            this.TipCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TipCli.Name = "TipCli";
-            this.TipCli.Size = new System.Drawing.Size(137, 28);
+            this.TipCli.Size = new System.Drawing.Size(181, 33);
             this.TipCli.TabIndex = 113;
             // 
             // CorCli
             // 
             this.CorCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorCli.Limpiar = true;
-            this.CorCli.Location = new System.Drawing.Point(162, 321);
+            this.CorCli.Location = new System.Drawing.Point(216, 395);
+            this.CorCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CorCli.MaxLength = 60;
             this.CorCli.Name = "CorCli";
-            this.CorCli.Size = new System.Drawing.Size(225, 26);
+            this.CorCli.Size = new System.Drawing.Size(299, 30);
             this.CorCli.TabIndex = 114;
             this.CorCli.Validar = true;
             // 
@@ -178,9 +187,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(40, 324);
+            this.label7.Location = new System.Drawing.Point(53, 399);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.Size = new System.Drawing.Size(98, 25);
             this.label7.TabIndex = 115;
             this.label7.Text = "CORREO";
             // 
@@ -188,9 +198,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(40, 147);
+            this.label8.Location = new System.Drawing.Point(53, 181);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 20);
+            this.label8.Size = new System.Drawing.Size(110, 25);
             this.label8.TabIndex = 116;
             this.label8.Text = "CLA / RNC";
             // 
@@ -198,18 +209,19 @@
             // 
             this.CedCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CedCli.Limpiar = true;
-            this.CedCli.Location = new System.Drawing.Point(162, 144);
+            this.CedCli.Location = new System.Drawing.Point(216, 177);
+            this.CedCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CedCli.Name = "CedCli";
-            this.CedCli.Size = new System.Drawing.Size(170, 26);
+            this.CedCli.Size = new System.Drawing.Size(225, 30);
             this.CedCli.TabIndex = 117;
             this.CedCli.Validar = true;
             // 
             // FormClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(818, 553);
+            this.ClientSize = new System.Drawing.Size(1091, 681);
             this.Controls.Add(this.CedCli);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -220,9 +232,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DirCli);
             this.Controls.Add(this.TelCli);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FormClientes";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.FormClientes_Load);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
             this.Controls.SetChildIndex(this.TelCli, 0);
             this.Controls.SetChildIndex(this.DirCli, 0);
@@ -244,6 +257,7 @@
             this.Controls.SetChildIndex(this.estado, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.CedCli, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
