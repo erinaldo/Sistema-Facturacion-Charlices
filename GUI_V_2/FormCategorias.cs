@@ -62,11 +62,10 @@ namespace GUI_V_2
                     if (id == 0)
                     {
                         MessageBox.Show("La categoría se ha registrado correctamente.");
-                        id = 0;
+                        Utilidades.LimpiarControles(this);
                     }
                     else MessageBox.Show("La categoría se ha modificado correctamente.");
                      
-                    Utilidades.LimpiarControles(this);
                 }
                 
             }
@@ -93,6 +92,8 @@ namespace GUI_V_2
                     }
                     else
                     {
+                        id = 0;
+                        bnt_eliminar.Enabled = false;
                         Codigo.Limpiar = false;
                         Utilidades.LimpiarControles(this);
                         Codigo.Limpiar = true;
@@ -117,6 +118,7 @@ namespace GUI_V_2
                         tabla.SaveChanges();
                         MessageBox.Show("La categoría se ha eliminado correctamente.");
                         Utilidades.LimpiarControles(this);
+                        bnt_eliminar.Enabled = false;
                         id = 0;
                     }
                 }
