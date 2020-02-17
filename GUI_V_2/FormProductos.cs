@@ -124,7 +124,6 @@ namespace GUI_V_2
                     if (id == 0)
                     {
                         MessageBox.Show("El producto se ha registrado correctamente.");
-                        id = 0;
                         Utilidades.LimpiarControles(this);
                     }
                     else MessageBox.Show("El producto se ha modificado correctamente.");
@@ -165,12 +164,41 @@ namespace GUI_V_2
                     }
                     else
                     {
+                        id = 0;
                         Codigo.Limpiar = false;
                         Utilidades.LimpiarControles(this);
                         Codigo.Limpiar = true;
                     }
 
                 }
+            }
+        }
+
+        private void bnt_eliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("¿Seguro que quieres eliminar el producto?", "Eliminar", MessageBoxButtons.YesNo);
+            if (res == DialogResult.No) return;
+            try
+            {
+                using (CRUD_MODEL db = new CRUD_MODEL())
+                {
+                    var producto = db.Productos.FirstOrDefault(a => a.id == id);
+                    if (producto != null)
+                    {
+                        producto.estado = false;
+                        db.SaveChanges();
+                        MessageBox.Show("El producto se ha eliminado correctamente.");
+                        Utilidades.LimpiarControles(this);
+                        bnt_eliminar.Enabled = false;
+                        id = 0;
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                //Guardar Error
             }
         }
     }

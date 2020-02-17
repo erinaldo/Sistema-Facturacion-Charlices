@@ -73,6 +73,7 @@
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bnt_eliminar.Location = new System.Drawing.Point(832, 529);
             this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5);
+            this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
             // 
