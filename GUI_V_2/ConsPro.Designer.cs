@@ -31,61 +31,69 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridVProducto = new System.Windows.Forms.DataGridView();
             this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DesPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreVen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VentaPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CatPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreNor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreEmp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itbis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reorden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(145, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Size = new System.Drawing.Size(189, 31);
             this.label2.Text = "PRODUCTOS";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1046, 103);
+            this.button1.Location = new System.Drawing.Point(1395, 127);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
-            // errorTxtBox1
+            // filtro
             // 
             this.filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.filtro.Location = new System.Drawing.Point(146, 108);
+            this.filtro.Location = new System.Drawing.Point(195, 133);
+            this.filtro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(12, 118);
+            this.label16.Location = new System.Drawing.Point(16, 145);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Text = "Filtrar búsqueda:";
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1216, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1621, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(905, 103);
+            this.btn_editar.Location = new System.Drawing.Point(1207, 127);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(800, 103);
+            this.btn_nuevo.Location = new System.Drawing.Point(1067, 127);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
-            // dataGridView1
+            // dataGridVProducto
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridVProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridVProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridVProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridVProducto.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,24 +101,25 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridVProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridVProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridVProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodPro,
             this.NomPro,
-            this.DesPro,
-            this.PrePro,
-            this.PreVen,
-            this.PreCom,
-            this.VentaPor,
+            this.CatPro,
+            this.PreNor,
+            this.PreEmp,
+            this.PreEmpresa,
+            this.Unidad,
             this.itbis,
             this.CanPro,
             this.Reorden,
             this.TipPro,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 149);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridVProducto.Location = new System.Drawing.Point(16, 183);
+            this.dataGridVProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridVProducto.Name = "dataGridVProducto";
+            this.dataGridVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,22 +127,22 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridVProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridVProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1234, 376);
-            this.dataGridView1.TabIndex = 113;
+            this.dataGridVProducto.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridVProducto.Size = new System.Drawing.Size(1645, 463);
+            this.dataGridVProducto.TabIndex = 113;
             // 
             // CodPro
             // 
             this.CodPro.FillWeight = 75.9566F;
-            this.CodPro.HeaderText = "CODIGO";
+            this.CodPro.HeaderText = "CÓDIGO";
             this.CodPro.Name = "CodPro";
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -143,40 +152,40 @@
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
             // 
-            // DesPro
+            // CatPro
             // 
-            this.DesPro.FillWeight = 131.5148F;
-            this.DesPro.HeaderText = "CATEGORIA";
-            this.DesPro.Name = "DesPro";
+            this.CatPro.FillWeight = 131.5148F;
+            this.CatPro.HeaderText = "CATEGORÍA";
+            this.CatPro.Name = "CatPro";
             // 
-            // PrePro
+            // PreNor
             // 
-            this.PrePro.FillWeight = 91.71454F;
-            this.PrePro.HeaderText = "FECHA VENCIMIENTO";
-            this.PrePro.Name = "PrePro";
+            this.PreNor.FillWeight = 90.24084F;
+            this.PreNor.HeaderText = "$NORMAL";
+            this.PreNor.Name = "PreNor";
             // 
-            // PreVen
+            // PreEmp
             // 
-            this.PreVen.FillWeight = 90.24084F;
-            this.PreVen.HeaderText = "$ VENTA";
-            this.PreVen.Name = "PreVen";
+            this.PreEmp.HeaderText = "$EMPLEADO";
+            this.PreEmp.Name = "PreEmp";
+            this.PreEmp.ReadOnly = true;
             // 
-            // PreCom
+            // PreEmpresa
             // 
-            this.PreCom.FillWeight = 93.70741F;
-            this.PreCom.HeaderText = "$ COMPRA";
-            this.PreCom.Name = "PreCom";
+            this.PreEmpresa.HeaderText = "$EMPRESA";
+            this.PreEmpresa.Name = "PreEmpresa";
+            this.PreEmpresa.ReadOnly = true;
             // 
-            // VentaPor
+            // Unidad
             // 
-            this.VentaPor.FillWeight = 125.6611F;
-            this.VentaPor.HeaderText = "VENTA POR";
-            this.VentaPor.Name = "VentaPor";
+            this.Unidad.FillWeight = 125.6611F;
+            this.Unidad.HeaderText = "UNIDAD-MEDIDA";
+            this.Unidad.Name = "Unidad";
             // 
             // itbis
             // 
             this.itbis.FillWeight = 76.79168F;
-            this.itbis.HeaderText = "ITBS";
+            this.itbis.HeaderText = "ITIBS";
             this.itbis.Name = "itbis";
             // 
             // CanPro
@@ -205,12 +214,14 @@
             // 
             // ConsPro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 537);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1677, 661);
+            this.Controls.Add(this.dataGridVProducto);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "ConsPro";
             this.Text = "ConsPro";
+            this.Load += new System.EventHandler(this.ConsPro_Load);
             this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -218,8 +229,8 @@
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label16, 0);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.SetChildIndex(this.dataGridVProducto, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,14 +238,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridVProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DesPro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrePro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PreVen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PreCom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VentaPor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CatPro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PreNor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PreEmp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PreEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn itbis;
         private System.Windows.Forms.DataGridViewTextBoxColumn CanPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reorden;

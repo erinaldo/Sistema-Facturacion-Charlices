@@ -58,7 +58,7 @@
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(996, 133);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(251, 49);
             this.button1.TabIndex = 108;
@@ -77,7 +77,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(158, 25);
             this.label16.TabIndex = 109;
-            this.label16.Text = "Filtrar busqueda:";
+            this.label16.Text = "Filtrar búsqueda:";
             // 
             // btn_cerrar
             // 
@@ -104,7 +104,7 @@
             this.btn_editar.ForeColor = System.Drawing.Color.White;
             this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_editar.Location = new System.Drawing.Point(808, 133);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(180, 49);
             this.btn_editar.TabIndex = 111;
@@ -120,7 +120,7 @@
             this.btn_nuevo.ForeColor = System.Drawing.Color.White;
             this.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nuevo.Location = new System.Drawing.Point(668, 133);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(132, 49);
             this.btn_nuevo.TabIndex = 112;
@@ -132,7 +132,7 @@
             this.filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filtro.Limpiar = false;
             this.filtro.Location = new System.Drawing.Point(195, 139);
-            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4);
             this.filtro.Name = "filtro";
             this.filtro.Size = new System.Drawing.Size(384, 41);
             this.filtro.TabIndex = 95;
@@ -152,7 +152,7 @@
             this.Controls.Add(this.filtro);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBaseCons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBaseCons";
