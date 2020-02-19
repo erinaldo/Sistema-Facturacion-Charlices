@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.TipCom = new System.Windows.Forms.ComboBox();
             this.CodSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,9 +44,6 @@
             this.Usados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantDisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.TipCom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,49 +54,50 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(839, 114);
+            this.button1.Location = new System.Drawing.Point(824, 67);
             // 
-            // errorTxtBox1
+            // filtro
             // 
-            this.filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.filtro.Location = new System.Drawing.Point(147, 119);
+            this.filtro.Location = new System.Drawing.Point(144, 72);
             this.filtro.Size = new System.Drawing.Size(218, 35);
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(13, 129);
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.Location = new System.Drawing.Point(10, 82);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1009, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1009, 6);
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(698, 114);
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.Location = new System.Drawing.Point(683, 67);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(613, 114);
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_nuevo.Location = new System.Drawing.Point(598, 67);
             this.btn_nuevo.Size = new System.Drawing.Size(79, 40);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodSer,
@@ -108,89 +109,33 @@
             this.Usados,
             this.CantDisp,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1027, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(1027, 402);
             this.dataGridView1.TabIndex = 114;
-            // 
-            // CodSer
-            // 
-            this.CodSer.FillWeight = 165.6182F;
-            this.CodSer.HeaderText = "Serie";
-            this.CodSer.Name = "CodSer";
-            this.CodSer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // NomPro
-            // 
-            this.NomPro.FillWeight = 150.824F;
-            this.NomPro.HeaderText = "TIPO";
-            this.NomPro.Name = "NomPro";
-            // 
-            // NumOrden
-            // 
-            this.NumOrden.FillWeight = 74.12904F;
-            this.NumOrden.HeaderText = "NRO. ORDEN";
-            this.NumOrden.Name = "NumOrden";
-            // 
-            // DesComp
-            // 
-            this.DesComp.FillWeight = 142.1446F;
-            this.DesComp.HeaderText = "DESCRIPCION";
-            this.DesComp.Name = "DesComp";
-            // 
-            // FechaOrden
-            // 
-            this.FechaOrden.FillWeight = 71.59579F;
-            this.FechaOrden.HeaderText = "FECHA ORDEN";
-            this.FechaOrden.Name = "FechaOrden";
-            // 
-            // FechaLimite
-            // 
-            this.FechaLimite.FillWeight = 68.85379F;
-            this.FechaLimite.HeaderText = "FECHA LIMITE";
-            this.FechaLimite.Name = "FechaLimite";
-            // 
-            // Usados
-            // 
-            this.Usados.FillWeight = 65.88577F;
-            this.Usados.HeaderText = "USADOS";
-            this.Usados.Name = "Usados";
-            // 
-            // CantDisp
-            // 
-            this.CantDisp.FillWeight = 62.67315F;
-            this.CantDisp.HeaderText = "DISPONIBLES";
-            this.CantDisp.Name = "CantDisp";
-            // 
-            // estatus
-            // 
-            this.estatus.FillWeight = 66.07618F;
-            this.estatus.HeaderText = "ESTADO";
-            this.estatus.Name = "estatus";
             // 
             // comboBox2
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(371, 60);
+            this.comboBox2.Location = new System.Drawing.Point(368, 13);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(80, 28);
             this.comboBox2.TabIndex = 119;
@@ -198,7 +143,6 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
@@ -206,7 +150,7 @@
             "USADOS",
             "VENCIDOS",
             "TODOS"});
-            this.comboBox3.Location = new System.Drawing.Point(371, 94);
+            this.comboBox3.Location = new System.Drawing.Point(368, 47);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(146, 28);
             this.comboBox3.TabIndex = 120;
@@ -226,11 +170,66 @@
             "Registro de gastos menores (B13)",
             "Regímenes especiales de tributación (B14)",
             "Comprobantes Gubernamentales (B15)"});
-            this.TipCom.Location = new System.Drawing.Point(371, 128);
+            this.TipCom.Location = new System.Drawing.Point(368, 81);
             this.TipCom.Name = "TipCom";
             this.TipCom.Size = new System.Drawing.Size(224, 26);
             this.TipCom.TabIndex = 121;
             this.TipCom.Text = "TIPO";
+            // 
+            // CodSer
+            // 
+            this.CodSer.FillWeight = 75.75062F;
+            this.CodSer.HeaderText = "Serie";
+            this.CodSer.Name = "CodSer";
+            this.CodSer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // NomPro
+            // 
+            this.NomPro.FillWeight = 135.3797F;
+            this.NomPro.HeaderText = "TIPO";
+            this.NomPro.Name = "NomPro";
+            // 
+            // NumOrden
+            // 
+            this.NumOrden.FillWeight = 97.94966F;
+            this.NumOrden.HeaderText = "# ORDEN";
+            this.NumOrden.Name = "NumOrden";
+            // 
+            // DesComp
+            // 
+            this.DesComp.FillWeight = 88.10159F;
+            this.DesComp.HeaderText = "DESCRIPCION";
+            this.DesComp.Name = "DesComp";
+            // 
+            // FechaOrden
+            // 
+            this.FechaOrden.FillWeight = 101.9623F;
+            this.FechaOrden.HeaderText = "FECHA ORDEN";
+            this.FechaOrden.Name = "FechaOrden";
+            // 
+            // FechaLimite
+            // 
+            this.FechaLimite.FillWeight = 98.91788F;
+            this.FechaLimite.HeaderText = "FECHA LIMITE";
+            this.FechaLimite.Name = "FechaLimite";
+            // 
+            // Usados
+            // 
+            this.Usados.FillWeight = 83.34077F;
+            this.Usados.HeaderText = "USADOS";
+            this.Usados.Name = "Usados";
+            // 
+            // CantDisp
+            // 
+            this.CantDisp.FillWeight = 105.1961F;
+            this.CantDisp.HeaderText = "DISPONIBLES";
+            this.CantDisp.Name = "CantDisp";
+            // 
+            // estatus
+            // 
+            this.estatus.FillWeight = 81.20193F;
+            this.estatus.HeaderText = "ESTADO";
+            this.estatus.Name = "estatus";
             // 
             // ConsComprobante
             // 
@@ -263,6 +262,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox TipCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodSer;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumOrden;
@@ -272,8 +274,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usados;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantDisp;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox TipCom;
     }
 }

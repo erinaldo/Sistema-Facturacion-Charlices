@@ -16,19 +16,7 @@ namespace GUI_V_2
         public Form1()
         {
             InitializeComponent();
-           
         }
-
-
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F5)
-            {
-                //DisplayText, Asuming you have a textbox do something like this:
-                MessageBox.Show("VENTAS");
-            }
-        }
-
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -39,7 +27,6 @@ namespace GUI_V_2
         {
             Application.Exit();
         }
-
      
         private void iconminimizar_Click(object sender, EventArgs e)
         {
@@ -53,8 +40,8 @@ namespace GUI_V_2
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
+  //      ReleaseCapture();
+  //      SendMessage(this.Handle,0x112,0xf012,0);
         }
 
         private void AbrirFormEnPanel(object Formhijo)
@@ -92,9 +79,6 @@ namespace GUI_V_2
             AbrirFormEnPanel(new FormClientes());
             AnimacionPequena();
         }
-
-
-
 
         private void Animar() {
             if (MenuVertical.Width == 250)
@@ -168,15 +152,7 @@ namespace GUI_V_2
             System.Diagnostics.Process.Start("https://api.whatsapp.com/send?phone=18098862933&text=Soporte%20!");
         }
 
-        private void btn_salida_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F7)
-            {
-                //DisplayText, Asuming you have a textbox do something like this:
-                MessageBox.Show("SALIDA");
-            }
-        }
-
+   
         //Funciones rapidas... para rapido acceso !
         private void Form1_KeyDown_1(object sender, KeyEventArgs e)
         {
@@ -203,8 +179,6 @@ namespace GUI_V_2
             Salidas obj = new Salidas();
             obj.ShowDialog();
         }
-
-
 
     }
 }

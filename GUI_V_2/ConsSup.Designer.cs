@@ -44,39 +44,43 @@
             // 
             // label2
             // 
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Size = new System.Drawing.Size(190, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Size = new System.Drawing.Size(146, 25);
             this.label2.Text = "SUPLIDORES";
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1044, 133);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Location = new System.Drawing.Point(683, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // filtro
             // 
-            this.filtro.Margin = new System.Windows.Forms.Padding(5);
+            this.filtro.Location = new System.Drawing.Point(140, 38);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.Location = new System.Drawing.Point(6, 48);
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1271, 11);
-            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btn_cerrar.Location = new System.Drawing.Point(953, 9);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(856, 133);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.Location = new System.Drawing.Point(542, 33);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(716, 133);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_nuevo.Location = new System.Drawing.Point(437, 33);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // dataGridSuplidores
@@ -86,7 +90,7 @@
             this.dataGridSuplidores.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -101,8 +105,7 @@
             this.DIRSup,
             this.CorSup,
             this.estatus});
-            this.dataGridSuplidores.Location = new System.Drawing.Point(13, 192);
-            this.dataGridSuplidores.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridSuplidores.Location = new System.Drawing.Point(10, 80);
             this.dataGridSuplidores.Name = "dataGridSuplidores";
             this.dataGridSuplidores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -116,12 +119,12 @@
             this.dataGridSuplidores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridSuplidores.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridSuplidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSuplidores.Size = new System.Drawing.Size(1295, 449);
+            this.dataGridSuplidores.Size = new System.Drawing.Size(971, 441);
             this.dataGridSuplidores.TabIndex = 113;
             // 
             // CodSup
@@ -169,11 +172,11 @@
             // 
             // ConsSup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 654);
+            this.ClientSize = new System.Drawing.Size(995, 531);
             this.Controls.Add(this.dataGridSuplidores);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConsSup";
             this.Text = "ConsSup";
             this.Load += new System.EventHandler(this.ConsSup_Load);

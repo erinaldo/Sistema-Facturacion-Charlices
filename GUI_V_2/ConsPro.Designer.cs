@@ -49,55 +49,57 @@
             // 
             // label2
             // 
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Size = new System.Drawing.Size(189, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.Text = "PRODUCTOS";
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1395, 127);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Location = new System.Drawing.Point(690, 31);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // filtro
             // 
-            this.filtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.filtro.Location = new System.Drawing.Point(195, 133);
-            this.filtro.Margin = new System.Windows.Forms.Padding(5);
+            this.filtro.Location = new System.Drawing.Point(147, 36);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             this.filtro.Leave += new System.EventHandler(this.filtro_Leave);
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(16, 145);
-            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.Location = new System.Drawing.Point(13, 46);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1621, 11);
-            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btn_cerrar.Location = new System.Drawing.Point(1216, 9);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // btn_editar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(1207, 127);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_editar.Location = new System.Drawing.Point(549, 31);
+            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(1067, 127);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_nuevo.Location = new System.Drawing.Point(444, 31);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // dataGridVProducto
             // 
-            this.dataGridVProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridVProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridVProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridVProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridVProducto.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -117,8 +119,7 @@
             this.Reorden,
             this.TipPro,
             this.estatus});
-            this.dataGridVProducto.Location = new System.Drawing.Point(16, 183);
-            this.dataGridVProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridVProducto.Location = new System.Drawing.Point(12, 78);
             this.dataGridVProducto.Name = "dataGridVProducto";
             this.dataGridVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -132,94 +133,96 @@
             this.dataGridVProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridVProducto.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVProducto.Size = new System.Drawing.Size(1645, 463);
+            this.dataGridVProducto.Size = new System.Drawing.Size(1234, 447);
             this.dataGridVProducto.TabIndex = 113;
             // 
             // CodPro
             // 
-            this.CodPro.FillWeight = 75.9566F;
+            this.CodPro.FillWeight = 77.96619F;
             this.CodPro.HeaderText = "CÓDIGO";
             this.CodPro.Name = "CodPro";
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
             // 
-            this.NomPro.FillWeight = 117.7887F;
+            this.NomPro.FillWeight = 120.905F;
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
             // 
             // CatPro
             // 
-            this.CatPro.FillWeight = 131.5148F;
+            this.CatPro.FillWeight = 134.9943F;
             this.CatPro.HeaderText = "CATEGORÍA";
             this.CatPro.Name = "CatPro";
             // 
             // PreNor
             // 
-            this.PreNor.FillWeight = 90.24084F;
+            this.PreNor.FillWeight = 92.62835F;
             this.PreNor.HeaderText = "$NORMAL";
             this.PreNor.Name = "PreNor";
             // 
             // PreEmp
             // 
+            this.PreEmp.FillWeight = 102.6457F;
             this.PreEmp.HeaderText = "$EMPLEADO";
             this.PreEmp.Name = "PreEmp";
             this.PreEmp.ReadOnly = true;
             // 
             // PreEmpresa
             // 
+            this.PreEmpresa.FillWeight = 102.6457F;
             this.PreEmpresa.HeaderText = "$EMPRESA";
             this.PreEmpresa.Name = "PreEmpresa";
             this.PreEmpresa.ReadOnly = true;
             // 
             // Unidad
             // 
-            this.Unidad.FillWeight = 125.6611F;
+            this.Unidad.FillWeight = 128.9857F;
             this.Unidad.HeaderText = "UNIDAD-MEDIDA";
             this.Unidad.Name = "Unidad";
             // 
             // itbis
             // 
-            this.itbis.FillWeight = 76.79168F;
+            this.itbis.FillWeight = 78.82336F;
             this.itbis.HeaderText = "ITIBS";
             this.itbis.Name = "itbis";
             // 
             // CanPro
             // 
-            this.CanPro.FillWeight = 107.3515F;
+            this.CanPro.FillWeight = 110.1917F;
             this.CanPro.HeaderText = "CANTIDAD";
             this.CanPro.Name = "CanPro";
             // 
             // Reorden
             // 
-            this.Reorden.FillWeight = 82.33041F;
+            this.Reorden.FillWeight = 84.50864F;
             this.Reorden.HeaderText = "RE-ORDEN";
             this.Reorden.Name = "Reorden";
             // 
             // TipPro
             // 
-            this.TipPro.FillWeight = 115.5709F;
+            this.TipPro.FillWeight = 118.6286F;
             this.TipPro.HeaderText = "TIPO";
             this.TipPro.Name = "TipPro";
             // 
             // estatus
             // 
-            this.estatus.FillWeight = 91.37048F;
+            this.estatus.FillWeight = 61.65366F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
             // 
             // ConsPro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1677, 661);
+            this.ClientSize = new System.Drawing.Size(1258, 537);
             this.Controls.Add(this.dataGridVProducto);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConsPro";
             this.Text = "ConsPro";
             this.Load += new System.EventHandler(this.ConsPro_Load);

@@ -100,9 +100,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_consultas.AutoSize = true;
-            this.panel_consultas.Location = new System.Drawing.Point(12, 185);
+            this.panel_consultas.Location = new System.Drawing.Point(12, 156);
             this.panel_consultas.Name = "panel_consultas";
-            this.panel_consultas.Size = new System.Drawing.Size(1009, 435);
+            this.panel_consultas.Size = new System.Drawing.Size(1009, 464);
             this.panel_consultas.TabIndex = 50;
             // 
             // panel13
