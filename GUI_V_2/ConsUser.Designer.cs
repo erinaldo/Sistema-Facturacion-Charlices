@@ -52,7 +52,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(683, 24);
+            this.button1.Location = new System.Drawing.Point(542, 24);
             // 
             // filtro
             // 
@@ -67,11 +67,6 @@
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(1017, 9);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(542, 24);
             // 
             // btn_nuevo
             // 
@@ -97,48 +92,56 @@
             this.estatus.FillWeight = 52.41302F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
             // 
             // TotalPro
             // 
             this.TotalPro.FillWeight = 104.9513F;
             this.TotalPro.HeaderText = "CORREO";
             this.TotalPro.Name = "TotalPro";
+            this.TotalPro.ReadOnly = true;
             // 
             // DesPro
             // 
             this.DesPro.FillWeight = 53.18349F;
             this.DesPro.HeaderText = "TIPO";
             this.DesPro.Name = "DesPro";
+            this.DesPro.ReadOnly = true;
             // 
             // CanPro
             // 
             this.CanPro.FillWeight = 184.5884F;
             this.CanPro.HeaderText = "DIRECCION";
             this.CanPro.Name = "CanPro";
+            this.CanPro.ReadOnly = true;
             // 
             // PrePro
             // 
             this.PrePro.FillWeight = 88.5353F;
             this.PrePro.HeaderText = "TELEFONO";
             this.PrePro.Name = "PrePro";
+            this.PrePro.ReadOnly = true;
             // 
             // CedCli
             // 
             this.CedCli.FillWeight = 101.5227F;
             this.CedCli.HeaderText = "CLA/RCN";
             this.CedCli.Name = "CedCli";
+            this.CedCli.ReadOnly = true;
             // 
             // NomPro
             // 
             this.NomPro.FillWeight = 162.959F;
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
             // 
             // CodPro
             // 
             this.CodPro.FillWeight = 51.84586F;
             this.CodPro.HeaderText = "CODIGO";
             this.CodPro.Name = "CodPro";
+            this.CodPro.ReadOnly = true;
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridView1
@@ -169,6 +172,7 @@
             this.estatus});
             this.dataGridView1.Location = new System.Drawing.Point(12, 70);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -198,7 +202,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsUser";
             this.Text = "ConsUser";
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -223,6 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CedCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

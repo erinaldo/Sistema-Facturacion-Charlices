@@ -51,8 +51,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(696, 28);
+            this.button1.Location = new System.Drawing.Point(553, 28);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
@@ -70,12 +71,6 @@
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(916, 9);
             this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(553, 28);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4);
             // 
             // btn_nuevo
             // 
@@ -191,7 +186,6 @@
             this.Name = "ConsCli";
             this.Text = "W";
             this.Load += new System.EventHandler(this.ConsCli_Load);
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
@@ -206,8 +200,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn CedCli;
@@ -216,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        public System.Windows.Forms.DataGridView dataGridClientes;
     }
 }

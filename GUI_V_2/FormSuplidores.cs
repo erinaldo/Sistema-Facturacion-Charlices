@@ -140,7 +140,12 @@ namespace GUI_V_2
         private void btn_consultar_Click(object sender, EventArgs e)
         {
             ConsSup obj = new ConsSup();
-            obj.ShowDialog();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+                Codigo.Text = obj.dataGridSuplidores.Rows[obj.dataGridSuplidores.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

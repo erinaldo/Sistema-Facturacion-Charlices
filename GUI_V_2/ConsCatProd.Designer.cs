@@ -45,7 +45,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 42);
+            this.button1.Location = new System.Drawing.Point(546, 42);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
@@ -62,11 +63,6 @@
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(917, 5);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(546, 42);
             // 
             // btn_nuevo
             // 
@@ -144,7 +140,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsCatProd";
             this.Text = "ConsCatProd";
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
@@ -159,10 +154,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

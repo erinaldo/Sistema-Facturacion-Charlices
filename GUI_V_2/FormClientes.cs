@@ -139,7 +139,12 @@ namespace GUI_V_2
         private void btn_consultar_Click(object sender, EventArgs e)
         {
             ConsCli obj = new ConsCli();
-            obj.ShowDialog();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+                Codigo.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void FormClientes_Load(object sender, EventArgs e)

@@ -91,5 +91,13 @@ namespace GUI_V_2
         {
             LlenarDataGrid(filtro.Text.Trim());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridVProducto.Rows.Count == 0)
+                return;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
     }
 }

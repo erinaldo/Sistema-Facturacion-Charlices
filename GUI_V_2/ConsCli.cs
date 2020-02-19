@@ -63,5 +63,13 @@ namespace GUI_V_2.Consultas
         {
             LlenarDataGrid(filtro.Text.Trim());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridClientes.Rows.Count == 0)
+                return;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
     }
 }

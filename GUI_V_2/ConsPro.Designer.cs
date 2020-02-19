@@ -55,13 +55,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(690, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(551, 31);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
             this.filtro.Location = new System.Drawing.Point(147, 36);
-            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             this.filtro.Leave += new System.EventHandler(this.filtro_Leave);
             // 
@@ -76,17 +77,11 @@
             this.btn_cerrar.Location = new System.Drawing.Point(1216, 9);
             this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(549, 31);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_nuevo.Location = new System.Drawing.Point(444, 31);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // dataGridVProducto
@@ -222,11 +217,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 537);
             this.Controls.Add(this.dataGridVProducto);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConsPro";
             this.Text = "ConsPro";
             this.Load += new System.EventHandler(this.ConsPro_Load);
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
@@ -241,8 +235,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridVProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CatPro;
@@ -255,5 +247,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Reorden;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        public System.Windows.Forms.DataGridView dataGridVProducto;
     }
 }

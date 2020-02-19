@@ -21,5 +21,13 @@ namespace GUI_V_2
         {   FormProductos obj = new FormProductos();
             obj.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+                return;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
     }
 }

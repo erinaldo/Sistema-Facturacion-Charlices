@@ -49,6 +49,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.NumOrden = new GUI_V_2.ErrorTxtBox();
             this.label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,6 +225,7 @@
             this.estatus});
             this.dataGridView1.Location = new System.Drawing.Point(273, 203);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -249,6 +251,7 @@
             this.CodPro.FillWeight = 61.85785F;
             this.CodPro.HeaderText = "ORDEN";
             this.CodPro.Name = "CodPro";
+            this.CodPro.ReadOnly = true;
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
@@ -256,30 +259,35 @@
             this.NomPro.FillWeight = 198.0502F;
             this.NomPro.HeaderText = "TIPO";
             this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
             // 
             // DesPro
             // 
             this.DesPro.FillWeight = 111.3903F;
             this.DesPro.HeaderText = "SERIE";
             this.DesPro.Name = "DesPro";
+            this.DesPro.ReadOnly = true;
             // 
             // CanPro
             // 
             this.CanPro.FillWeight = 67.61398F;
             this.CanPro.HeaderText = "FECHA ORDEN";
             this.CanPro.Name = "CanPro";
+            this.CanPro.ReadOnly = true;
             // 
             // FechaLim
             // 
             this.FechaLim.FillWeight = 69.53754F;
             this.FechaLim.HeaderText = "FECHA LIMITE";
             this.FechaLim.Name = "FechaLim";
+            this.FechaLim.ReadOnly = true;
             // 
             // estatus
             // 
             this.estatus.FillWeight = 100.85F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
             // 
             // comboBox1
             // 
@@ -354,6 +362,7 @@
             this.Controls.SetChildIndex(this.comboBox1, 0);
             this.Controls.SetChildIndex(this.NumOrden, 0);
             this.Controls.SetChildIndex(this.label8, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

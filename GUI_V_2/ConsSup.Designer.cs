@@ -50,13 +50,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(683, 33);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(544, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
             this.filtro.Location = new System.Drawing.Point(140, 38);
-            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             // 
             // label16
@@ -70,21 +71,18 @@
             this.btn_cerrar.Location = new System.Drawing.Point(953, 9);
             this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(542, 33);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_nuevo.Location = new System.Drawing.Point(437, 33);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // dataGridSuplidores
             // 
+            this.dataGridSuplidores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridSuplidores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridSuplidores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridSuplidores.BackgroundColor = System.Drawing.Color.White;
@@ -107,6 +105,7 @@
             this.estatus});
             this.dataGridSuplidores.Location = new System.Drawing.Point(10, 80);
             this.dataGridSuplidores.Name = "dataGridSuplidores";
+            this.dataGridSuplidores.ReadOnly = true;
             this.dataGridSuplidores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -124,7 +123,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridSuplidores.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridSuplidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSuplidores.Size = new System.Drawing.Size(971, 441);
+            this.dataGridSuplidores.Size = new System.Drawing.Size(973, 441);
             this.dataGridSuplidores.TabIndex = 113;
             // 
             // CodSup
@@ -132,6 +131,7 @@
             this.CodSup.FillWeight = 50.32217F;
             this.CodSup.HeaderText = "CÓDIGO";
             this.CodSup.Name = "CodSup";
+            this.CodSup.ReadOnly = true;
             this.CodSup.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomSup
@@ -139,36 +139,42 @@
             this.NomSup.FillWeight = 158.1699F;
             this.NomSup.HeaderText = "NOMBRE";
             this.NomSup.Name = "NomSup";
+            this.NomSup.ReadOnly = true;
             // 
             // CLA_RNC_Sup
             // 
             this.CLA_RNC_Sup.FillWeight = 70.77158F;
             this.CLA_RNC_Sup.HeaderText = "CLA/RNC";
             this.CLA_RNC_Sup.Name = "CLA_RNC_Sup";
+            this.CLA_RNC_Sup.ReadOnly = true;
             // 
             // TelSup
             // 
             this.TelSup.FillWeight = 88.83237F;
             this.TelSup.HeaderText = "TELÉFONO";
             this.TelSup.Name = "TelSup";
+            this.TelSup.ReadOnly = true;
             // 
             // DIRSup
             // 
             this.DIRSup.FillWeight = 179.1635F;
             this.DIRSup.HeaderText = "DIRECCION";
             this.DIRSup.Name = "DIRSup";
+            this.DIRSup.ReadOnly = true;
             // 
             // CorSup
             // 
             this.CorSup.FillWeight = 101.8669F;
             this.CorSup.HeaderText = "CORREO";
             this.CorSup.Name = "CorSup";
+            this.CorSup.ReadOnly = true;
             // 
             // estatus
             // 
             this.estatus.FillWeight = 50.87267F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
             // 
             // ConsSup
             // 
@@ -176,11 +182,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 531);
             this.Controls.Add(this.dataGridSuplidores);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConsSup";
             this.Text = "ConsSup";
             this.Load += new System.EventHandler(this.ConsSup_Load);
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
@@ -195,8 +200,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridSuplidores;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLA_RNC_Sup;
@@ -204,5 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DIRSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorSup;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        public System.Windows.Forms.DataGridView dataGridSuplidores;
     }
 }

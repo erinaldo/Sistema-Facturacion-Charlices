@@ -25,7 +25,12 @@ namespace GUI_V_2
         private void btn_consultar_Click(object sender, EventArgs e)
         {
             ConsPro obj = new ConsPro();
-            obj.ShowDialog();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+                Codigo.Text = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void FormProductos_Load(object sender, EventArgs e)

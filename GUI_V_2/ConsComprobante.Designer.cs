@@ -32,9 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.TipCom = new System.Windows.Forms.ComboBox();
             this.CodSer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             this.Usados = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantDisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.TipCom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(824, 67);
+            this.button1.Location = new System.Drawing.Point(683, 67);
             // 
             // filtro
             // 
@@ -69,11 +69,6 @@
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(1009, 6);
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_editar.Location = new System.Drawing.Point(683, 67);
             // 
             // btn_nuevo
             // 
@@ -111,6 +106,7 @@
             this.estatus});
             this.dataGridView1.Location = new System.Drawing.Point(12, 113);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -130,6 +126,70 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1027, 402);
             this.dataGridView1.TabIndex = 114;
+            // 
+            // CodSer
+            // 
+            this.CodSer.FillWeight = 75.75062F;
+            this.CodSer.HeaderText = "Serie";
+            this.CodSer.Name = "CodSer";
+            this.CodSer.ReadOnly = true;
+            this.CodSer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // NomPro
+            // 
+            this.NomPro.FillWeight = 135.3797F;
+            this.NomPro.HeaderText = "TIPO";
+            this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
+            // 
+            // NumOrden
+            // 
+            this.NumOrden.FillWeight = 97.94966F;
+            this.NumOrden.HeaderText = "# ORDEN";
+            this.NumOrden.Name = "NumOrden";
+            this.NumOrden.ReadOnly = true;
+            // 
+            // DesComp
+            // 
+            this.DesComp.FillWeight = 88.10159F;
+            this.DesComp.HeaderText = "DESCRIPCION";
+            this.DesComp.Name = "DesComp";
+            this.DesComp.ReadOnly = true;
+            // 
+            // FechaOrden
+            // 
+            this.FechaOrden.FillWeight = 101.9623F;
+            this.FechaOrden.HeaderText = "FECHA ORDEN";
+            this.FechaOrden.Name = "FechaOrden";
+            this.FechaOrden.ReadOnly = true;
+            // 
+            // FechaLimite
+            // 
+            this.FechaLimite.FillWeight = 98.91788F;
+            this.FechaLimite.HeaderText = "FECHA LIMITE";
+            this.FechaLimite.Name = "FechaLimite";
+            this.FechaLimite.ReadOnly = true;
+            // 
+            // Usados
+            // 
+            this.Usados.FillWeight = 83.34077F;
+            this.Usados.HeaderText = "USADOS";
+            this.Usados.Name = "Usados";
+            this.Usados.ReadOnly = true;
+            // 
+            // CantDisp
+            // 
+            this.CantDisp.FillWeight = 105.1961F;
+            this.CantDisp.HeaderText = "DISPONIBLES";
+            this.CantDisp.Name = "CantDisp";
+            this.CantDisp.ReadOnly = true;
+            // 
+            // estatus
+            // 
+            this.estatus.FillWeight = 81.20193F;
+            this.estatus.HeaderText = "ESTADO";
+            this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
             // 
             // comboBox2
             // 
@@ -176,61 +236,6 @@
             this.TipCom.TabIndex = 121;
             this.TipCom.Text = "TIPO";
             // 
-            // CodSer
-            // 
-            this.CodSer.FillWeight = 75.75062F;
-            this.CodSer.HeaderText = "Serie";
-            this.CodSer.Name = "CodSer";
-            this.CodSer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // NomPro
-            // 
-            this.NomPro.FillWeight = 135.3797F;
-            this.NomPro.HeaderText = "TIPO";
-            this.NomPro.Name = "NomPro";
-            // 
-            // NumOrden
-            // 
-            this.NumOrden.FillWeight = 97.94966F;
-            this.NumOrden.HeaderText = "# ORDEN";
-            this.NumOrden.Name = "NumOrden";
-            // 
-            // DesComp
-            // 
-            this.DesComp.FillWeight = 88.10159F;
-            this.DesComp.HeaderText = "DESCRIPCION";
-            this.DesComp.Name = "DesComp";
-            // 
-            // FechaOrden
-            // 
-            this.FechaOrden.FillWeight = 101.9623F;
-            this.FechaOrden.HeaderText = "FECHA ORDEN";
-            this.FechaOrden.Name = "FechaOrden";
-            // 
-            // FechaLimite
-            // 
-            this.FechaLimite.FillWeight = 98.91788F;
-            this.FechaLimite.HeaderText = "FECHA LIMITE";
-            this.FechaLimite.Name = "FechaLimite";
-            // 
-            // Usados
-            // 
-            this.Usados.FillWeight = 83.34077F;
-            this.Usados.HeaderText = "USADOS";
-            this.Usados.Name = "Usados";
-            // 
-            // CantDisp
-            // 
-            this.CantDisp.FillWeight = 105.1961F;
-            this.CantDisp.HeaderText = "DISPONIBLES";
-            this.CantDisp.Name = "CantDisp";
-            // 
-            // estatus
-            // 
-            this.estatus.FillWeight = 81.20193F;
-            this.estatus.HeaderText = "ESTADO";
-            this.estatus.Name = "estatus";
-            // 
             // ConsComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,7 +247,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsComprobante";
             this.Text = "ConsComprobante";
-            this.Controls.SetChildIndex(this.btn_editar, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
