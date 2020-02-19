@@ -36,6 +36,7 @@ namespace GUI_V_2
                             cla_rnc = CedSup.Text.Trim(),
                             telefono = TelSup.Text.Trim(),
                             direccion = DirSup.Text.Trim(),
+                            correo = CorSup.Text.Trim(),
                             estado = true
                         };
 
@@ -51,6 +52,7 @@ namespace GUI_V_2
                             suplidor.cla_rnc = CedSup.Text.Trim();
                             suplidor.telefono = TelSup.Text.Trim();
                             suplidor.direccion = DirSup.Text.Trim();
+                            suplidor.correo = CorSup.Text.Trim();
                             suplidor.estado = estado.SelectedIndex == 0 ? true : false;
                         }
                     }
