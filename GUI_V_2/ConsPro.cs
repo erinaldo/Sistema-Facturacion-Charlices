@@ -101,5 +101,15 @@ namespace GUI_V_2
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void dataGridVProducto_DoubleClick(object sender, EventArgs e)
+        {
+            button1.PerformClick();
+        }
+
+        private void dataGridVProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button1.PerformClick();
+        }
     }
 }

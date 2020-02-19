@@ -130,7 +130,7 @@
             this.dataGridSuplidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridSuplidores.Size = new System.Drawing.Size(973, 441);
             this.dataGridSuplidores.TabIndex = 113;
-            this.dataGridSuplidores.DoubleClick += new System.EventHandler(this.dataGridSuplidores_DoubleClick);
+            this.dataGridSuplidores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSuplidores_CellDoubleClick);
             // 
             // CodSup
             // 

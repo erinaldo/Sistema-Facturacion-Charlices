@@ -131,6 +131,8 @@
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridClientes.Size = new System.Drawing.Size(934, 458);
             this.dataGridClientes.TabIndex = 113;
+            this.dataGridClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellDoubleClick);
+            this.dataGridClientes.DoubleClick += new System.EventHandler(this.dataGridClientes_DoubleClick);
             // 
             // CodCli
             // 

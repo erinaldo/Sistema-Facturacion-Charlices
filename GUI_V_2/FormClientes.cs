@@ -88,6 +88,7 @@ namespace GUI_V_2
                     if (cliente != null)
                     {
                         Nom.Text = cliente.nombre_completo;
+                        CedCli.Text = cliente.cla_rnc;
                         TelCli.Text = cliente.telefono;
                         DirCli.Text = cliente.direccion;
                         TipCli.SelectedIndex = cliente.tipo_cliente - 1;

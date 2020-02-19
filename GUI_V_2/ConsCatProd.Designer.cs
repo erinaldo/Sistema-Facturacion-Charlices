@@ -112,6 +112,8 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(942, 436);
             this.dataGridView1.TabIndex = 113;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // CodPro
             // 
@@ -140,6 +142,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsCatProd";
             this.Text = "ConsCatProd";
+            this.Controls.SetChildIndex(this.nro_registros, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);

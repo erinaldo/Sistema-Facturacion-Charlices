@@ -81,5 +81,10 @@ namespace GUI_V_2
     
 
         }
+
+        private void dataGridSuplidores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button1.PerformClick();  
+        }
     }
 }

@@ -24,5 +24,15 @@ namespace GUI_V_2
             FormComprabantes obj = new FormComprabantes();
             obj.ShowDialog();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            button1.PerformClick();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            button1.PerformClick();
+        }
     }
 }
