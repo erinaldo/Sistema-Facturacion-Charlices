@@ -79,8 +79,8 @@
             // 
             // nro_registros
             // 
-            this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nro_registros.Location = new System.Drawing.Point(960, 97);
+            this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nro_registros.Location = new System.Drawing.Point(960, 94);
             // 
             // dataGridView1
             // 

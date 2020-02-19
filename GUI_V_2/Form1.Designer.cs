@@ -39,7 +39,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.btncom = new System.Windows.Forms.Button();
             this.btnsup = new System.Windows.Forms.Button();
-            this.btnven = new System.Windows.Forms.Button();
             this.btn_man = new System.Windows.Forms.Button();
             this.btnlogoInicio = new System.Windows.Forms.PictureBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
@@ -71,7 +70,6 @@
             this.MenuVertical.Controls.Add(this.button6);
             this.MenuVertical.Controls.Add(this.btncom);
             this.MenuVertical.Controls.Add(this.btnsup);
-            this.MenuVertical.Controls.Add(this.btnven);
             this.MenuVertical.Controls.Add(this.btn_man);
             this.MenuVertical.Controls.Add(this.btnlogoInicio);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
@@ -89,7 +87,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 360);
+            this.button2.Location = new System.Drawing.Point(3, 294);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(257, 40);
             this.button2.TabIndex = 19;
@@ -106,7 +104,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 480);
+            this.button1.Location = new System.Drawing.Point(15, 414);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(257, 40);
             this.button1.TabIndex = 18;
@@ -170,7 +168,7 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(12, 418);
+            this.button6.Location = new System.Drawing.Point(15, 352);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(257, 40);
             this.button6.TabIndex = 6;
@@ -187,7 +185,7 @@
             this.btncom.ForeColor = System.Drawing.Color.White;
             this.btncom.Image = ((System.Drawing.Image)(resources.GetObject("btncom.Image")));
             this.btncom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncom.Location = new System.Drawing.Point(0, 303);
+            this.btncom.Location = new System.Drawing.Point(3, 237);
             this.btncom.Name = "btncom";
             this.btncom.Size = new System.Drawing.Size(250, 40);
             this.btncom.TabIndex = 5;
@@ -204,30 +202,13 @@
             this.btnsup.ForeColor = System.Drawing.Color.White;
             this.btnsup.Image = ((System.Drawing.Image)(resources.GetObject("btnsup.Image")));
             this.btnsup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsup.Location = new System.Drawing.Point(0, 244);
+            this.btnsup.Location = new System.Drawing.Point(3, 178);
             this.btnsup.Name = "btnsup";
             this.btnsup.Size = new System.Drawing.Size(250, 40);
             this.btnsup.TabIndex = 4;
             this.btnsup.Text = "REPORTES";
             this.btnsup.UseVisualStyleBackColor = true;
             this.btnsup.Click += new System.EventHandler(this.btnsup_Click);
-            // 
-            // btnven
-            // 
-            this.btnven.FlatAppearance.BorderSize = 0;
-            this.btnven.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnven.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnven.ForeColor = System.Drawing.Color.White;
-            this.btnven.Image = ((System.Drawing.Image)(resources.GetObject("btnven.Image")));
-            this.btnven.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnven.Location = new System.Drawing.Point(12, 185);
-            this.btnven.Name = "btnven";
-            this.btnven.Size = new System.Drawing.Size(225, 40);
-            this.btnven.TabIndex = 2;
-            this.btnven.Text = "CONSULTAS";
-            this.btnven.UseVisualStyleBackColor = true;
-            this.btnven.Click += new System.EventHandler(this.btnven_Click);
             // 
             // btn_man
             // 
@@ -415,7 +396,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btncom;
         private System.Windows.Forms.Button btnsup;
-        private System.Windows.Forms.Button btnven;
         private System.Windows.Forms.Label lblcorreo;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.PictureBox pictureBox2;

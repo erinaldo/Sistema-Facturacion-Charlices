@@ -103,11 +103,6 @@
             this.Codigo.Location = new System.Drawing.Point(179, 95);
             this.Codigo.Size = new System.Drawing.Size(252, 26);
             // 
-            // btn_consultar
-            // 
-            this.btn_consultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_consultar.Location = new System.Drawing.Point(919, 405);
-            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // label3
             // 
@@ -340,7 +335,6 @@
             this.Name = "FormComprabantes";
             this.Text = "Comprabantes";
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.ComUsa, 0);
             this.Controls.SetChildIndex(this.TipCom, 0);

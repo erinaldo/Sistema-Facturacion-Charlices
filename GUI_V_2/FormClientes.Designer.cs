@@ -96,10 +96,6 @@
             // 
             // btn_consultar
             // 
-            this.btn_consultar.Location = new System.Drawing.Point(816, 411);
-            this.btn_consultar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
-            // 
             // TelCli
             // 
             this.TelCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,7 +241,6 @@
             this.Controls.SetChildIndex(this.TipCli, 0);
             this.Controls.SetChildIndex(this.CorCli, 0);
             this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);

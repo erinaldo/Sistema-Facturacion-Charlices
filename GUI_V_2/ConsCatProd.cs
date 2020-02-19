@@ -40,30 +40,39 @@ namespace GUI_V_2
 
                 dataGridView1.DataSource = categorias.ToList();
             }
+            nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
 
         private void btn_nuevo_Click(object sender, EventArgs e)
-        {   FormProductos obj = new FormProductos();
+        {   FormCategorias obj = new FormCategorias();
             obj.ShowDialog();
+            LlenarDataGrid();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
                 return;
-            DialogResult = DialogResult.OK;
-            Close();
+           
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            button1.PerformClick();
-        }
-
+        
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.PerformClick();
+            Editar();
+        }
+
+        private void Editar()
+        {
+            if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
+            {
+                FormCategorias obj = new FormCategorias();
+                obj.Show();
+                obj.Codigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

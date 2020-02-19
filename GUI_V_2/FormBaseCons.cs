@@ -27,5 +27,11 @@ namespace GUI_V_2
             e.Graphics.DrawRectangle(new Pen(Color.Black, 3),
                         this.DisplayRectangle);
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

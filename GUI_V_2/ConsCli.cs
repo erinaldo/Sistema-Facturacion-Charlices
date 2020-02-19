@@ -25,8 +25,6 @@ namespace GUI_V_2.Consultas
             CorCli.DataPropertyName = "correo";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
-
-            nro_registros.Text = dataGridClientes.Rows.Count.ToString() + " REGISTROS.";
         }
 
         public void LlenarDataGrid(string condicion = "")
@@ -47,13 +45,14 @@ namespace GUI_V_2.Consultas
 
                 dataGridClientes.DataSource = clientes.ToList();
             }
-
+            nro_registros.Text = dataGridClientes.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             FormClientes obj = new FormClientes();
             obj.ShowDialog();
+            LlenarDataGrid();
         }
 
         private void ConsCli_Load(object sender, EventArgs e)
@@ -70,18 +69,23 @@ namespace GUI_V_2.Consultas
         {
             if (dataGridClientes.Rows.Count == 0)
                 return;
-            DialogResult = DialogResult.OK;
-            Close();
-        }
 
-        private void dataGridClientes_DoubleClick(object sender, EventArgs e)
-        {
-            button1.PerformClick();
         }
-
+        
         private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.PerformClick();
+            Editar();
+        }
+        private void Editar()
+        {
+            if (this.dataGridClientes.Rows.Count > 0 && dataGridClientes.SelectedRows.Count > 0)
+            {
+                FormSuplidores obj = new FormSuplidores();
+                obj.Show();
+                obj.Codigo.Text = dataGridClientes.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

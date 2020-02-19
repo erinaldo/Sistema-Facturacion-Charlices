@@ -30,13 +30,13 @@ namespace GUI_V_2
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
 
-            nro_registros.Text = dataGridVProducto.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            ConsPro obj = new ConsPro();
+            FormProductos obj = new FormProductos();
             obj.ShowDialog();
+            LlenarDataGrid();
         }
 
         private void ConsPro_Load(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace GUI_V_2
 
                     dataGridVProducto.DataSource = productos.ToList();
             }
-
+            nro_registros.Text = dataGridVProducto.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void filtro_Leave(object sender, EventArgs e)

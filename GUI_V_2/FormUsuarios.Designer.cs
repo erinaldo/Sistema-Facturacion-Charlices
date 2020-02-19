@@ -71,10 +71,7 @@
             // 
             this.Nom.Size = new System.Drawing.Size(262, 26);
             // 
-            // button1
-            // 
-            this.btn_consultar.Click += new System.EventHandler(this.button1_Click);
-            // 
+ 
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(766, 9);
@@ -269,7 +266,6 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
-            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

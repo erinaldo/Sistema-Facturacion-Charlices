@@ -81,7 +81,7 @@
             // 
             // nro_registros
             // 
-            this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nro_registros.Location = new System.Drawing.Point(867, 59);
             // 
             // dataGridClientes
@@ -132,7 +132,6 @@
             this.dataGridClientes.Size = new System.Drawing.Size(934, 458);
             this.dataGridClientes.TabIndex = 113;
             this.dataGridClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellDoubleClick);
-            this.dataGridClientes.DoubleClick += new System.EventHandler(this.dataGridClientes_DoubleClick);
             // 
             // CodCli
             // 

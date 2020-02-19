@@ -130,17 +130,6 @@ namespace GUI_V_2
                 //Guardar Error
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ConsCatProd obj = new ConsCatProd();
-            if (obj.ShowDialog() == DialogResult.OK)
-            {
-                Codigo.Text = obj.dataGridView1.Rows[obj.dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                Codigo.Focus();
-                SendKeys.Send("{TAB}");
-            }
-
-        }
+        
     }
 }

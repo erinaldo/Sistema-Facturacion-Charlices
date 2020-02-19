@@ -16,7 +16,6 @@ namespace GUI_V_2
         {
             InitializeComponent();
 
-            nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -32,7 +31,18 @@ namespace GUI_V_2
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.PerformClick();
+            Editar();
+        }
+        private void Editar()
+        {
+            if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
+            {
+                FormComprabantes obj = new FormComprabantes();
+                obj.Show();
+                obj.Codigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

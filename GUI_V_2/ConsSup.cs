@@ -20,11 +20,10 @@ namespace GUI_V_2
             NomSup.DataPropertyName = "nombre_completo";
             CLA_RNC_Sup.DataPropertyName = "cla_rnc";
             TelSup.DataPropertyName = "telefono";
+            CorSup.DataPropertyName = "correo";
             DIRSup.DataPropertyName = "direccion";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
-
-            nro_registros.Text = dataGridSuplidores.Rows.Count.ToString() + " REGISTROS.";
         }
 
         public void LlenarDataGrid(string condicion = "")
@@ -45,12 +44,14 @@ namespace GUI_V_2
 
                 dataGridSuplidores.DataSource = suplidores.ToList();
             }
+            nro_registros.Text = dataGridSuplidores.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             FormSuplidores obj = new FormSuplidores();
             obj.ShowDialog();
+            LlenarDataGrid();
         }
 
         private void label16_Click(object sender, EventArgs e)
@@ -84,7 +85,20 @@ namespace GUI_V_2
 
         private void dataGridSuplidores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.PerformClick();  
+            Editar();
+        }
+
+
+        private void Editar()
+        {
+            if (this.dataGridSuplidores.Rows.Count > 0 && dataGridSuplidores.SelectedRows.Count > 0)
+            {
+                FormSuplidores obj = new FormSuplidores();
+                obj.Show();
+                obj.Codigo.Text = dataGridSuplidores.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

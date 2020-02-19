@@ -113,13 +113,6 @@
             this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
-            // btn_consultar
-            // 
-            this.btn_consultar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_consultar.Location = new System.Drawing.Point(612, 330);
-            this.btn_consultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
-            // 
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(774, 9);
@@ -374,7 +367,6 @@
             this.Controls.SetChildIndex(this.TipoPro, 0);
             this.Controls.SetChildIndex(this.label15, 0);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);

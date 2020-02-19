@@ -37,6 +37,7 @@
             this.TelSup = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CorSup = new GUI_V_2.ErrorTxtBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +85,7 @@
             // 
             // btn_consultar
             // 
-            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
+           
             // 
             // textBox3
             // 
@@ -193,7 +194,6 @@
             this.Name = "FormSuplidores";
             this.Text = "Suplidores";
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
-            this.Controls.SetChildIndex(this.btn_consultar, 0);
             this.Controls.SetChildIndex(this.btn_guardar, 0);
             this.Controls.SetChildIndex(this.bnt_eliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -211,6 +211,7 @@
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.CorSup, 0);
             this.Controls.SetChildIndex(this.label7, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

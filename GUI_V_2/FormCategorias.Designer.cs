@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,10 +83,6 @@
             this.Codigo.Margin = new System.Windows.Forms.Padding(4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
-            // button1
-            // 
-            this.btn_consultar.Location = new System.Drawing.Point(612, 322);
-            this.btn_consultar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCategorias
             // 
@@ -96,6 +93,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCategorias";
             this.Text = "Categorias";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

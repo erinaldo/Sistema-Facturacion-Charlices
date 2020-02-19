@@ -93,10 +93,10 @@ namespace GUI_V_2
                         CedSup.Text = suplidor.cla_rnc;
                         TelSup.Text = suplidor.telefono;
                         DirSup.Text = suplidor.direccion;
+                        CorSup.Text = suplidor.correo;
                         estado.SelectedIndex = 0;
                         id = suplidor.id;
                         bnt_eliminar.Enabled = true;
-
                     }
                     else
                     {

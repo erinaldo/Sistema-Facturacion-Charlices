@@ -58,7 +58,7 @@ namespace GUI_V_2
 
         private void btnprod_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormMantenimientos());
+            AbrirFormEnPanel(new FormCONSULTAS());
             AnimacionPequena();
         }
 
@@ -73,12 +73,7 @@ namespace GUI_V_2
             btnlogoInicio_Click(null,e);
             AnimacionPequena();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new FormClientes());
-            AnimacionPequena();
-        }
+        
 
         private void Animar() {
             if (MenuVertical.Width == 250)

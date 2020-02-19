@@ -34,8 +34,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.filtro = new GUI_V_2.ErrorTxtBox();
             this.nro_registros = new System.Windows.Forms.Label();
+            this.filtro = new GUI_V_2.ErrorTxtBox();
             this.SuspendLayout();
             // 
             // label2
@@ -105,6 +105,16 @@
             this.btn_nuevo.TabIndex = 112;
             this.btn_nuevo.Text = "NUEVO";
             this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
+            // 
+            // nro_registros
+            // 
+            this.nro_registros.AutoSize = true;
+            this.nro_registros.Location = new System.Drawing.Point(830, 9);
+            this.nro_registros.Name = "nro_registros";
+            this.nro_registros.Size = new System.Drawing.Size(79, 13);
+            this.nro_registros.TabIndex = 113;
+            this.nro_registros.Text = "0 REGISTROS";
             // 
             // filtro
             // 
@@ -115,15 +125,6 @@
             this.filtro.Size = new System.Drawing.Size(289, 35);
             this.filtro.TabIndex = 95;
             this.filtro.Validar = false;
-            // 
-            // nro_registros
-            // 
-            this.nro_registros.AutoSize = true;
-            this.nro_registros.Location = new System.Drawing.Point(830, 9);
-            this.nro_registros.Name = "nro_registros";
-            this.nro_registros.Size = new System.Drawing.Size(79, 13);
-            this.nro_registros.TabIndex = 113;
-            this.nro_registros.Text = "0 REGISTROS";
             // 
             // FormBaseCons
             // 
