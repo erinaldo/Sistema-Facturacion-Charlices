@@ -34,6 +34,7 @@ namespace GUI_V_2
                         {
                             codigo = Codigo.Text.Trim(),
                             nombre_completo = Nom.Text.Trim(),
+                            cla_rnc = CedCli.Text.Trim(),
                             telefono = TelCli.Text.Trim(),
                             direccion = DirCli.Text.Trim(),
                             tipo_cliente = Byte.Parse((TipCli.SelectedIndex + 1).ToString()),
@@ -50,6 +51,7 @@ namespace GUI_V_2
                         if (cliente != null)
                         {
                             cliente.nombre_completo = Nom.Text.Trim();
+                            cliente.cla_rnc = CedCli.Text.Trim();
                             cliente.telefono = TelCli.Text.Trim();
                             cliente.direccion = DirCli.Text.Trim();
                             cliente.tipo_cliente = Byte.Parse((TipCli.SelectedIndex + 1).ToString());
