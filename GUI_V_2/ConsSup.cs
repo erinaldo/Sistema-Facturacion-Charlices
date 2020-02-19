@@ -43,7 +43,6 @@ namespace GUI_V_2
 
                 dataGridSuplidores.DataSource = suplidores.ToList();
             }
-
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
