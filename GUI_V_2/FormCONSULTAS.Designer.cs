@@ -90,9 +90,9 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Location = new System.Drawing.Point(12, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(160, 29);
+            this.label15.Size = new System.Drawing.Size(233, 29);
             this.label15.TabIndex = 49;
-            this.label15.Text = "CONSULTAS";
+            this.label15.Text = "MANTENIMIENTOS";
             // 
             // panel_consultas
             // 

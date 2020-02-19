@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 485);
+            this.ClientSize = new System.Drawing.Size(682, 503);
             this.Name = "FormReportes";
             this.Text = "REPORTE PAPA";
             this.ResumeLayout(false);
