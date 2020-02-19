@@ -102,9 +102,8 @@ namespace GUI_V_2
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new FormUsuarios());
-            AnimacionPequena();
-        }
+            MessageBox.Show("EN PROCESO DE DESARROLLO...","AVISO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+;        }
 
         private void btnven_Click(object sender, EventArgs e) 
         {

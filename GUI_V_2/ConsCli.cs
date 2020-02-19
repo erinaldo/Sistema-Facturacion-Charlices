@@ -25,6 +25,8 @@ namespace GUI_V_2.Consultas
             CorCli.DataPropertyName = "correo";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
+
+            nro_registros.Text = dataGridClientes.Rows.Count.ToString() + " REGISTROS.";
         }
 
         public void LlenarDataGrid(string condicion = "")

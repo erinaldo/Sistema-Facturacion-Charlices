@@ -35,6 +35,7 @@
             this.btn_cerrar = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.filtro = new GUI_V_2.ErrorTxtBox();
+            this.nro_registros = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -115,12 +116,22 @@
             this.filtro.TabIndex = 95;
             this.filtro.Validar = false;
             // 
+            // nro_registros
+            // 
+            this.nro_registros.AutoSize = true;
+            this.nro_registros.Location = new System.Drawing.Point(830, 9);
+            this.nro_registros.Name = "nro_registros";
+            this.nro_registros.Size = new System.Drawing.Size(79, 13);
+            this.nro_registros.TabIndex = 113;
+            this.nro_registros.Text = "0 REGISTROS";
+            // 
             // FormBaseCons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(957, 542);
+            this.Controls.Add(this.nro_registros);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.label16);
@@ -145,5 +156,6 @@
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label btn_cerrar;
         public System.Windows.Forms.Button btn_nuevo;
+        public System.Windows.Forms.Label nro_registros;
     }
 }

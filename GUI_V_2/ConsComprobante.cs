@@ -15,6 +15,8 @@ namespace GUI_V_2
         public ConsComprobante()
         {
             InitializeComponent();
+
+            nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)

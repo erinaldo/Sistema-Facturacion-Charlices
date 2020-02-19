@@ -23,6 +23,8 @@ namespace GUI_V_2
             DIRSup.DataPropertyName = "direccion";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
+
+            nro_registros.Text = dataGridSuplidores.Rows.Count.ToString() + " REGISTROS.";
         }
 
         public void LlenarDataGrid(string condicion = "")
@@ -72,6 +74,12 @@ namespace GUI_V_2
                 return;
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void dataGridSuplidores_DoubleClick(object sender, EventArgs e)
+        {
+    
+
         }
     }
 }

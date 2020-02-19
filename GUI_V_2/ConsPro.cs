@@ -29,6 +29,8 @@ namespace GUI_V_2
             TipPro.DataPropertyName = "tipo_producto";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
+
+            nro_registros.Text = dataGridVProducto.Rows.Count.ToString() + " REGISTROS.";
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
