@@ -35,6 +35,7 @@
             this.btn_cerrar = new System.Windows.Forms.Label();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.nro_registros = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.filtro = new GUI_V_2.ErrorTxtBox();
             this.SuspendLayout();
             // 
@@ -116,6 +117,20 @@
             this.nro_registros.TabIndex = 113;
             this.nro_registros.Text = "0 REGISTROS";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(741, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 40);
+            this.button2.TabIndex = 114;
+            this.button2.Text = "IMPRIMIR";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // filtro
             // 
             this.filtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(957, 542);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.nro_registros);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.btn_cerrar);
@@ -158,5 +174,6 @@
         public System.Windows.Forms.Label btn_cerrar;
         public System.Windows.Forms.Button btn_nuevo;
         public System.Windows.Forms.Label nro_registros;
+        public System.Windows.Forms.Button button2;
     }
 }

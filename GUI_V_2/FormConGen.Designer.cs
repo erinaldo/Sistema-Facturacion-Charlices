@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConGen));
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.NomEmpresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DirEmpresa = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NumEmpresa = new System.Windows.Forms.TextBox();
+            this.MonedaEmpresa = new System.Windows.Forms.ComboBox();
+            this.LogoEmpresa = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.TerminosEmpresa = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // label17
@@ -68,14 +68,14 @@
             this.label5.TabIndex = 101;
             this.label5.Text = "EMPRESA:";
             // 
-            // textBox4
+            // NomEmpresa
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(142, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(252, 24);
-            this.textBox4.TabIndex = 100;
-            this.textBox4.Text = "Mi empresa";
+            this.NomEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomEmpresa.Location = new System.Drawing.Point(142, 57);
+            this.NomEmpresa.Name = "NomEmpresa";
+            this.NomEmpresa.Size = new System.Drawing.Size(252, 24);
+            this.NomEmpresa.TabIndex = 100;
+            this.NomEmpresa.Text = "Sociio Coding";
             // 
             // label4
             // 
@@ -107,14 +107,14 @@
             this.label2.TabIndex = 97;
             this.label2.Text = "DIRECCION:";
             // 
-            // textBox1
+            // DirEmpresa
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(142, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 24);
-            this.textBox1.TabIndex = 94;
-            this.textBox1.Text = "Carretera Principal";
+            this.DirEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DirEmpresa.Location = new System.Drawing.Point(142, 93);
+            this.DirEmpresa.Name = "DirEmpresa";
+            this.DirEmpresa.Size = new System.Drawing.Size(244, 24);
+            this.DirEmpresa.TabIndex = 94;
+            this.DirEmpresa.Text = "Carretera Principal";
             // 
             // btnCerrar
             // 
@@ -157,37 +157,37 @@
             this.label1.TabIndex = 91;
             this.label1.Text = "CONFURACIONES GENERALES";
             // 
-            // textBox7
+            // NumEmpresa
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(142, 136);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 24);
-            this.textBox7.TabIndex = 120;
-            this.textBox7.Text = "809-242-7798";
+            this.NumEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumEmpresa.Location = new System.Drawing.Point(142, 136);
+            this.NumEmpresa.Name = "NumEmpresa";
+            this.NumEmpresa.Size = new System.Drawing.Size(140, 24);
+            this.NumEmpresa.TabIndex = 120;
+            this.NumEmpresa.Text = "809-886-2933";
             // 
-            // comboBox1
+            // MonedaEmpresa
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.MonedaEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonedaEmpresa.FormattingEnabled = true;
+            this.MonedaEmpresa.Items.AddRange(new object[] {
             "Pesos Dominicanos",
             "Dolar Americano",
             "Euro"});
-            this.comboBox1.Location = new System.Drawing.Point(142, 175);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 24);
-            this.comboBox1.TabIndex = 121;
+            this.MonedaEmpresa.Location = new System.Drawing.Point(142, 172);
+            this.MonedaEmpresa.Name = "MonedaEmpresa";
+            this.MonedaEmpresa.Size = new System.Drawing.Size(161, 28);
+            this.MonedaEmpresa.TabIndex = 121;
             // 
-            // pictureBox1
+            // LogoEmpresa
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(245, 206);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 285);
-            this.pictureBox1.TabIndex = 122;
-            this.pictureBox1.TabStop = false;
+            this.LogoEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LogoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("LogoEmpresa.Image")));
+            this.LogoEmpresa.Location = new System.Drawing.Point(245, 206);
+            this.LogoEmpresa.Name = "LogoEmpresa";
+            this.LogoEmpresa.Size = new System.Drawing.Size(277, 285);
+            this.LogoEmpresa.TabIndex = 122;
+            this.LogoEmpresa.TabStop = false;
             // 
             // button3
             // 
@@ -215,13 +215,13 @@
             this.label6.TabIndex = 124;
             this.label6.Text = "Términos y condiciones ";
             // 
-            // richTextBox1
+            // TerminosEmpresa
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(35, 277);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(190, 205);
-            this.richTextBox1.TabIndex = 125;
-            this.richTextBox1.Text = "No hay devoluciones de dinero.       GRACIAS POR PREFERIRNOS !!";
+            this.TerminosEmpresa.Location = new System.Drawing.Point(35, 277);
+            this.TerminosEmpresa.Name = "TerminosEmpresa";
+            this.TerminosEmpresa.Size = new System.Drawing.Size(190, 205);
+            this.TerminosEmpresa.TabIndex = 125;
+            this.TerminosEmpresa.Text = "No hay devoluciones de dinero.       GRACIAS POR PREFERIRNOS !!";
             // 
             // FormConGen
             // 
@@ -229,26 +229,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(727, 494);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.TerminosEmpresa);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.LogoEmpresa);
+            this.Controls.Add(this.MonedaEmpresa);
+            this.Controls.Add(this.NumEmpresa);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.NomEmpresa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DirEmpresa);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConGen";
             this.Text = "ConGen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoEmpresa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,19 +257,19 @@
         #endregion
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.TextBox NomEmpresa;
+        public System.Windows.Forms.TextBox DirEmpresa;
+        public System.Windows.Forms.TextBox NumEmpresa;
+        public System.Windows.Forms.ComboBox MonedaEmpresa;
+        public System.Windows.Forms.RichTextBox TerminosEmpresa;
+        public System.Windows.Forms.PictureBox LogoEmpresa;
     }
 }

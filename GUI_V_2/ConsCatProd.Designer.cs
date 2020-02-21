@@ -70,6 +70,11 @@
             this.btn_nuevo.Location = new System.Drawing.Point(441, 42);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(740, 42);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -116,20 +121,20 @@
             // 
             // CodPro
             // 
-            this.CodPro.FillWeight = 51.95889F;
+            this.CodPro.FillWeight = 27.18787F;
             this.CodPro.HeaderText = "CODIGO";
             this.CodPro.Name = "CodPro";
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
             // 
-            this.NomPro.FillWeight = 163.3143F;
+            this.NomPro.FillWeight = 182.057F;
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
             // 
             // estatus
             // 
-            this.estatus.FillWeight = 52.52729F;
+            this.estatus.FillWeight = 58.55558F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
             // 
@@ -141,6 +146,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ConsCatProd";
             this.Text = "ConsCatProd";
+            this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.nro_registros, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -156,9 +162,9 @@
         }
 
         #endregion
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
-        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

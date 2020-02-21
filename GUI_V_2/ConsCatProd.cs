@@ -74,5 +74,19 @@ namespace GUI_V_2
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try {
+                ImprimirTabla(dataGridView1, "Sociio Codign", "Reporte Categoria Productos");
+            }
+            catch (Exception Aa)
+            {
+                //Error
+            }
+
+        }
+        
+
     }
 }
