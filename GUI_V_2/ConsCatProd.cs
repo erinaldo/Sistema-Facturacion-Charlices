@@ -78,7 +78,7 @@ namespace GUI_V_2
         private void button2_Click(object sender, EventArgs e)
         {
             try {
-                ImprimirTabla(dataGridView1, "Sociio Codign", "Reporte Categoria Productos");
+                ImprimirTabla(dataGridView1, "Reporte Categoria Productos");
             }
             catch (Exception Aa)
             {

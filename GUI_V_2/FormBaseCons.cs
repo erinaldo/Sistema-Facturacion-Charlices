@@ -37,8 +37,17 @@ namespace GUI_V_2
         }
 
         //Metodo para generar los reportes
-      public void ImprimirTabla(DataGridView tabla, String Empresa, String NomRep)
+      public void ImprimirTabla(DataGridView tabla, String NomRep)
         {
+            //Esto es para tomar los atributos puestos en condifuracion
+            FormConGen ConGen = new FormConGen();
+            String Empresa = ConGen.NomEmpresa.Text.Trim();
+            
+            
+            int alto = tabla.Size.Height;
+            int ancho = tabla.Size.Width;
+            tabla.Width = 210;
+            tabla.Height = 297;
             DGVPrinter printer = new DGVPrinter();
             printer.Title = " " + Empresa + "";
             printer.SubTitle = NomRep   ;
@@ -46,7 +55,8 @@ namespace GUI_V_2
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
-            printer.HeaderCellAlignment = StringAlignment.Center;
+            printer.TableAlignment = DGVPrinter.Alignment.Left;
+            printer.HeaderCellAlignment = StringAlignment.Near;
             printer.HeaderCellFormatFlags = StringFormatFlags.DirectionRightToLeft;
             printer.Footer = DateTime.Now.ToLongTimeString()+ " - "+DateTime.Now.ToLongDateString();
             printer.FooterColor = Color.Black;
@@ -56,8 +66,8 @@ namespace GUI_V_2
             printer.printDocument.DefaultPageSettings.Landscape = true;
             printer.printDocument.DocumentName = NomRep+" - "+ DateTime.Now.ToShortDateString();
             printer.PrintDataGridView(tabla);
-        
-
+            tabla.Width = ancho;
+            tabla.Height = alto;
         }
     }
 }
