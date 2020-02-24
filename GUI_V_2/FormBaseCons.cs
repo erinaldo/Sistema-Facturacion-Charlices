@@ -41,9 +41,8 @@ namespace GUI_V_2
         {
             //Esto es para tomar los atributos puestos en condifuracion
             FormConGen ConGen = new FormConGen();
-            String Empresa = ConGen.NomEmpresa.Text.Trim();
-            
-            
+            String Empresa = ConGen.NomEmpresa.Text.Trim(); 
+
             int alto = tabla.Size.Height;
             int ancho = tabla.Size.Width;
             tabla.Width = 210;
@@ -55,9 +54,8 @@ namespace GUI_V_2
             printer.PageNumbers = true;
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
-            printer.TableAlignment = DGVPrinter.Alignment.Left;
-            printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.HeaderCellFormatFlags = StringFormatFlags.DirectionRightToLeft;
+            printer.TableAlignment = DGVPrinter.Alignment.Right;
+            printer.HeaderCellAlignment = StringAlignment.Far;
             printer.Footer = DateTime.Now.ToLongTimeString()+ " - "+DateTime.Now.ToLongDateString();
             printer.FooterColor = Color.Black;
             printer.SubTitleSpacing = 15;

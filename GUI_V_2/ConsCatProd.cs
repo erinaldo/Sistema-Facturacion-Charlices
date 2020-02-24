@@ -84,7 +84,6 @@ namespace GUI_V_2
             {
                 //Error
             }
-
         }
         
 

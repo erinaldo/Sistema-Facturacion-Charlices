@@ -87,5 +87,19 @@ namespace GUI_V_2.Consultas
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+             ImprimirTabla(dataGridClientes, "Reporte Clientes");
+
+
+            }
+            catch (Exception Aa)
+            {
+                //Error
+            }
+        }
     }
 }
