@@ -39,6 +39,12 @@ namespace GUI_V_2
         //Metodo para generar los reportes
       public void ImprimirTabla(DataGridView tabla, String NomRep)
         {
+            if (tabla.Rows.Count > 0 == false)
+            {
+                MessageBox.Show("No hay registros para imprimir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             //Esto es para tomar los atributos puestos en condifuracion
             FormConGen ConGen = new FormConGen();
             String Empresa = ConGen.NomEmpresa.Text.Trim(); 

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridVProducto = new System.Windows.Forms.DataGridView();
             this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,22 +90,34 @@
             this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nro_registros.Location = new System.Drawing.Point(1167, 62);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(746, 31);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dataGridVProducto
             // 
+            this.dataGridVProducto.AllowUserToAddRows = false;
+            this.dataGridVProducto.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridVProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridVProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridVProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridVProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridVProducto.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridVProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridVProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridVProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridVProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridVProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridVProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridVProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodPro,
@@ -121,22 +134,23 @@
             this.estatus});
             this.dataGridVProducto.Location = new System.Drawing.Point(12, 78);
             this.dataGridVProducto.Name = "dataGridVProducto";
+            this.dataGridVProducto.ReadOnly = true;
             this.dataGridVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridVProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridVProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridVProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridVProducto.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridVProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridVProducto.Size = new System.Drawing.Size(1234, 447);
             this.dataGridVProducto.TabIndex = 113;
@@ -145,78 +159,88 @@
             // 
             // CodPro
             // 
-            this.CodPro.FillWeight = 77.96619F;
+            this.CodPro.FillWeight = 88.0878F;
             this.CodPro.HeaderText = "CÓDIGO";
             this.CodPro.Name = "CodPro";
+            this.CodPro.ReadOnly = true;
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
             // 
-            this.NomPro.FillWeight = 120.905F;
+            this.NomPro.FillWeight = 136.6009F;
             this.NomPro.HeaderText = "NOMBRE";
             this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
             // 
             // CatPro
             // 
-            this.CatPro.FillWeight = 134.9943F;
+            this.CatPro.FillWeight = 152.5193F;
             this.CatPro.HeaderText = "CATEGORÍA";
             this.CatPro.Name = "CatPro";
+            this.CatPro.ReadOnly = true;
             // 
             // PreNor
             // 
-            this.PreNor.FillWeight = 92.62835F;
+            this.PreNor.FillWeight = 104.6534F;
             this.PreNor.HeaderText = "$NORMAL";
             this.PreNor.Name = "PreNor";
+            this.PreNor.ReadOnly = true;
             // 
             // PreEmp
             // 
-            this.PreEmp.FillWeight = 102.6457F;
+            this.PreEmp.FillWeight = 115.9712F;
             this.PreEmp.HeaderText = "$EMPLEADO";
             this.PreEmp.Name = "PreEmp";
             this.PreEmp.ReadOnly = true;
             // 
             // PreEmpresa
             // 
-            this.PreEmpresa.FillWeight = 102.6457F;
+            this.PreEmpresa.FillWeight = 115.9712F;
             this.PreEmpresa.HeaderText = "$EMPRESA";
             this.PreEmpresa.Name = "PreEmpresa";
             this.PreEmpresa.ReadOnly = true;
             // 
             // Unidad
             // 
-            this.Unidad.FillWeight = 128.9857F;
+            this.Unidad.FillWeight = 145.7307F;
             this.Unidad.HeaderText = "UNIDAD-MEDIDA";
             this.Unidad.Name = "Unidad";
+            this.Unidad.ReadOnly = true;
             // 
             // itbis
             // 
-            this.itbis.FillWeight = 78.82336F;
+            this.itbis.FillWeight = 57.79596F;
             this.itbis.HeaderText = "ITIBS";
             this.itbis.Name = "itbis";
+            this.itbis.ReadOnly = true;
             // 
             // CanPro
             // 
-            this.CanPro.FillWeight = 110.1917F;
+            this.CanPro.FillWeight = 73.98438F;
             this.CanPro.HeaderText = "CANTIDAD";
             this.CanPro.Name = "CanPro";
+            this.CanPro.ReadOnly = true;
             // 
             // Reorden
             // 
-            this.Reorden.FillWeight = 84.50864F;
+            this.Reorden.FillWeight = 95.47959F;
             this.Reorden.HeaderText = "RE-ORDEN";
             this.Reorden.Name = "Reorden";
+            this.Reorden.ReadOnly = true;
             // 
             // TipPro
             // 
-            this.TipPro.FillWeight = 118.6286F;
+            this.TipPro.FillWeight = 58.12479F;
             this.TipPro.HeaderText = "TIPO";
             this.TipPro.Name = "TipPro";
+            this.TipPro.ReadOnly = true;
             // 
             // estatus
             // 
-            this.estatus.FillWeight = 61.65366F;
+            this.estatus.FillWeight = 69.65758F;
             this.estatus.HeaderText = "ESTADO";
             this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
             // 
             // ConsPro
             // 
@@ -228,6 +252,7 @@
             this.Name = "ConsPro";
             this.Text = "ConsPro";
             this.Load += new System.EventHandler(this.ConsPro_Load);
+            this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.nro_registros, 0);
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -243,6 +268,7 @@
         }
 
         #endregion
+        public System.Windows.Forms.DataGridView dataGridVProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CatPro;
@@ -255,6 +281,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Reorden;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
-        public System.Windows.Forms.DataGridView dataGridVProducto;
     }
 }

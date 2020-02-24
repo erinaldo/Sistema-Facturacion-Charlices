@@ -111,5 +111,19 @@ namespace GUI_V_2
         {
             button1.PerformClick();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ImprimirTabla(dataGridVProducto, "Reporte de Productos");
+
+            }
+            catch (Exception Aa)
+            {
+                //Error
+            }
+        }
+
     }
 }
