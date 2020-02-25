@@ -1,6 +1,6 @@
 ﻿namespace GUI_V_2
 {
-    partial class ConsCatProd
+    partial class ConsUniMed
     {
         /// <summary>
         /// Required designer variable.
@@ -44,39 +44,40 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(293, 25);
-            this.label2.Text = "CATEGORIA DE PROCUTOS";
+            this.label2.Size = new System.Drawing.Size(240, 25);
+            this.label2.Text = "UNIADES DE MEDIDAS";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(546, 42);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(546, 52);
             // 
             // filtro
             // 
-            this.filtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.filtro.Location = new System.Drawing.Point(146, 47);
+            this.filtro.Location = new System.Drawing.Point(146, 57);
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(12, 52);
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.Location = new System.Drawing.Point(12, 67);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(917, 5);
+            this.btn_cerrar.Location = new System.Drawing.Point(939, 9);
             // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_nuevo.Location = new System.Drawing.Point(441, 42);
+            this.btn_nuevo.Location = new System.Drawing.Point(441, 52);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
+            // 
+            // nro_registros
+            // 
+            this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nro_registros.Location = new System.Drawing.Point(890, 79);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(740, 42);
+            this.button2.Location = new System.Drawing.Point(740, 52);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
@@ -107,7 +108,7 @@
             this.CodPro,
             this.NomPro,
             this.estatus});
-            this.dataGridView1.Location = new System.Drawing.Point(5, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,8 +128,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(942, 436);
-            this.dataGridView1.TabIndex = 113;
+            this.dataGridView1.Size = new System.Drawing.Size(957, 376);
+            this.dataGridView1.TabIndex = 115;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // CodPro
@@ -159,22 +160,22 @@
             this.estatus.Name = "estatus";
             this.estatus.ReadOnly = true;
             // 
-            // ConsCatProd
+            // ConsUniMed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 536);
+            this.ClientSize = new System.Drawing.Size(981, 486);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ConsCatProd";
-            this.Text = "ConsCatProd";
-            this.Controls.SetChildIndex(this.button2, 0);
-            this.Controls.SetChildIndex(this.nro_registros, 0);
-            this.Controls.SetChildIndex(this.btn_nuevo, 0);
+            this.Name = "ConsUniMed";
+            this.Text = "ConsUniMed";
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label16, 0);
             this.Controls.SetChildIndex(this.btn_cerrar, 0);
+            this.Controls.SetChildIndex(this.btn_nuevo, 0);
+            this.Controls.SetChildIndex(this.nro_registros, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -183,6 +184,7 @@
         }
 
         #endregion
+
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;

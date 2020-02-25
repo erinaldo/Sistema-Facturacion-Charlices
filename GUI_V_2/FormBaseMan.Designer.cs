@@ -59,6 +59,7 @@
             this.bnt_eliminar.Name = "bnt_eliminar";
             this.bnt_eliminar.Size = new System.Drawing.Size(180, 45);
             this.bnt_eliminar.TabIndex = 89;
+            this.bnt_eliminar.TabStop = false;
             this.bnt_eliminar.Text = "ELIMINAR";
             this.bnt_eliminar.UseVisualStyleBackColor = false;
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
@@ -77,6 +78,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(180, 45);
             this.btn_guardar.TabIndex = 88;
+            this.btn_guardar.TabStop = false;
             this.btn_guardar.Text = "GUARDAR";
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.button1_Click);
@@ -151,6 +153,7 @@
             this.estado.Name = "estado";
             this.estado.Size = new System.Drawing.Size(121, 28);
             this.estado.TabIndex = 106;
+            this.estado.TabStop = false;
             // 
             // Nom
             // 

@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsUniMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsUniMed.Designer.cs">
+      <DependentUpon>ConsUniMed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,12 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUnidadesMedidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUnidadesMedidas.Designer.cs">
+      <DependentUpon>FormUnidadesMedidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +284,9 @@
     <Compile Include="VentasModoTouch.Designer.cs">
       <DependentUpon>VentasModoTouch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConsUniMed.resx">
+      <DependentUpon>ConsUniMed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCaja.resx">
       <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUnidadesMedidas.resx">
+      <DependentUpon>FormUnidadesMedidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>

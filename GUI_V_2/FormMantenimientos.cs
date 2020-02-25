@@ -58,5 +58,10 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new FormComprabantes());
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new FormUnidadesMedidas());
+        }
     }
 }
