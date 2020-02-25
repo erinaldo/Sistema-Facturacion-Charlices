@@ -110,6 +110,7 @@ namespace GUI_V_2
         private void dataGridVProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Editar();
+            LlenarDataGrid();
           }
         
         private void Editar()
@@ -122,6 +123,7 @@ namespace GUI_V_2
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {

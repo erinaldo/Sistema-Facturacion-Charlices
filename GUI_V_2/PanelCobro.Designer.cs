@@ -143,7 +143,7 @@
             // 
             // txt_pago
             // 
-            this.txt_pago.BackColor = System.Drawing.Color.Khaki;
+            this.txt_pago.BackColor = System.Drawing.Color.White;
             this.txt_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pago.Limpiar = false;
             this.txt_pago.Location = new System.Drawing.Point(198, 130);
@@ -156,7 +156,7 @@
             // 
             // txt_monto
             // 
-            this.txt_monto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txt_monto.BackColor = System.Drawing.Color.Khaki;
             this.txt_monto.Enabled = false;
             this.txt_monto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_monto.Limpiar = false;
@@ -169,7 +169,7 @@
             // 
             // txt_devuelto
             // 
-            this.txt_devuelto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.txt_devuelto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_devuelto.Enabled = false;
             this.txt_devuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_devuelto.Limpiar = false;
