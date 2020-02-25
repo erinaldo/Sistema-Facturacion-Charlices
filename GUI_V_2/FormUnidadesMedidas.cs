@@ -84,11 +84,12 @@ namespace GUI_V_2
                         bnt_eliminar.Enabled = false;
                         Codigo.Limpiar = false;
                         Utilidades.LimpiarControles(this);
-                        Nom.Text = "";
                         Codigo.Limpiar = true;
+                        Nom.Text = "";
                     }
 
                 }
+
             }
         }
     }
