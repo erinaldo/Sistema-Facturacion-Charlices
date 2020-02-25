@@ -47,6 +47,8 @@
             this.precio_normal = new System.Windows.Forms.NumericUpDown();
             this.precio_empleado = new System.Windows.Forms.NumericUpDown();
             this.precio_empresa = new System.Windows.Forms.NumericUpDown();
+            this.btn_nueva_categoria = new System.Windows.Forms.Button();
+            this.btn_nueva_unidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reorden)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadPro)).BeginInit();
@@ -72,7 +74,7 @@
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bnt_eliminar.Location = new System.Drawing.Point(612, 380);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
@@ -81,12 +83,12 @@
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btn_guardar.Location = new System.Drawing.Point(612, 429);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(30, 388);
+            this.label19.Location = new System.Drawing.Point(42, 389);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // label5
@@ -97,20 +99,20 @@
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(113, 380);
-            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estado.Location = new System.Drawing.Point(123, 385);
+            this.estado.Margin = new System.Windows.Forms.Padding(4);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
             this.Nom.Location = new System.Drawing.Point(125, 96);
-            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4);
             this.Nom.Size = new System.Drawing.Size(232, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // btn_cerrar
@@ -161,7 +163,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.Location = new System.Drawing.Point(30, 347);
+            this.label10.Location = new System.Drawing.Point(39, 347);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 20);
             this.label10.TabIndex = 117;
@@ -179,7 +181,7 @@
             "METROS",
             "QUILOGRAMOS",
             "ONZAS"});
-            this.unidadMedidaCombox.Location = new System.Drawing.Point(176, 339);
+            this.unidadMedidaCombox.Location = new System.Drawing.Point(185, 339);
             this.unidadMedidaCombox.Name = "unidadMedidaCombox";
             this.unidadMedidaCombox.Size = new System.Drawing.Size(166, 28);
             this.unidadMedidaCombox.TabIndex = 118;
@@ -322,12 +324,46 @@
             this.precio_empresa.Size = new System.Drawing.Size(73, 26);
             this.precio_empresa.TabIndex = 134;
             // 
+            // btn_nueva_categoria
+            // 
+            this.btn_nueva_categoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_nueva_categoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_nueva_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nueva_categoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btn_nueva_categoria.ForeColor = System.Drawing.Color.White;
+            this.btn_nueva_categoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nueva_categoria.Location = new System.Drawing.Point(348, 299);
+            this.btn_nueva_categoria.Name = "btn_nueva_categoria";
+            this.btn_nueva_categoria.Size = new System.Drawing.Size(73, 28);
+            this.btn_nueva_categoria.TabIndex = 135;
+            this.btn_nueva_categoria.Text = "NUEVO";
+            this.btn_nueva_categoria.UseVisualStyleBackColor = false;
+            this.btn_nueva_categoria.Click += new System.EventHandler(this.btn_nueva_categoria_Click);
+            // 
+            // btn_nueva_unidad
+            // 
+            this.btn_nueva_unidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_nueva_unidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_nueva_unidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nueva_unidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btn_nueva_unidad.ForeColor = System.Drawing.Color.White;
+            this.btn_nueva_unidad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nueva_unidad.Location = new System.Drawing.Point(357, 338);
+            this.btn_nueva_unidad.Name = "btn_nueva_unidad";
+            this.btn_nueva_unidad.Size = new System.Drawing.Size(73, 28);
+            this.btn_nueva_unidad.TabIndex = 136;
+            this.btn_nueva_unidad.Text = "NUEVO";
+            this.btn_nueva_unidad.UseVisualStyleBackColor = false;
+            this.btn_nueva_unidad.Click += new System.EventHandler(this.btn_nueva_unidad_Click);
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 536);
+            this.Controls.Add(this.btn_nueva_unidad);
+            this.Controls.Add(this.btn_nueva_categoria);
             this.Controls.Add(this.precio_empresa);
             this.Controls.Add(this.precio_empleado);
             this.Controls.Add(this.precio_normal);
@@ -347,7 +383,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.FormProductos_Load);
@@ -380,6 +416,8 @@
             this.Controls.SetChildIndex(this.precio_normal, 0);
             this.Controls.SetChildIndex(this.precio_empleado, 0);
             this.Controls.SetChildIndex(this.precio_empresa, 0);
+            this.Controls.SetChildIndex(this.btn_nueva_categoria, 0);
+            this.Controls.SetChildIndex(this.btn_nueva_unidad, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reorden)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cantidadPro)).EndInit();
@@ -411,5 +449,7 @@
         private System.Windows.Forms.NumericUpDown precio_normal;
         private System.Windows.Forms.NumericUpDown precio_empleado;
         private System.Windows.Forms.NumericUpDown precio_empresa;
+        public System.Windows.Forms.Button btn_nueva_categoria;
+        public System.Windows.Forms.Button btn_nueva_unidad;
     }
 }

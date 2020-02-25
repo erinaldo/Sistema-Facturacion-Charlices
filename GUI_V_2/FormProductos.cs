@@ -206,5 +206,19 @@ namespace GUI_V_2
                 //Guardar Error
             }
         }
+
+        private void btn_nueva_categoria_Click(object sender, EventArgs e)
+        {
+            FormCategorias obj = new FormCategorias();
+            obj.ShowDialog();
+            LlenarComboxCategorias();
+        }
+
+        private void btn_nueva_unidad_Click(object sender, EventArgs e)
+        {
+            FormUnidadesMedidas obj = new FormUnidadesMedidas();
+            obj.ShowDialog();
+            LlenarComboxUnidadMedidas();
+        }
     }
 }
