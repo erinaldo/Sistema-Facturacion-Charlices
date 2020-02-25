@@ -109,9 +109,20 @@ namespace GUI_V_2
 
         private void dataGridVProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.PerformClick();
+            Editar();
+          }
+        
+        private void Editar()
+        {
+            if (this.dataGridVProducto.Rows.Count > 0 && dataGridVProducto.SelectedRows.Count > 0)
+            {
+                FormProductos obj = new FormProductos();
+                obj.Show();
+                obj.Codigo.Text = dataGridVProducto.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Focus();
+                SendKeys.Send("{TAB}");
+            }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             try

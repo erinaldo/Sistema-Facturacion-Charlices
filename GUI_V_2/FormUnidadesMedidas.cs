@@ -45,8 +45,8 @@ namespace GUI_V_2
                             unidade.nombre = Nom.Text;
                         }
                     }
-                    tabla.SaveChanges();
 
+                    tabla.SaveChanges();
                     if (id == 0)
                     {
                         MessageBox.Show("La categoría se ha registrado correctamente.");

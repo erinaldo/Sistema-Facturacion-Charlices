@@ -155,7 +155,6 @@
             this.dataGridVProducto.Size = new System.Drawing.Size(1234, 447);
             this.dataGridVProducto.TabIndex = 113;
             this.dataGridVProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVProducto_CellDoubleClick);
-            this.dataGridVProducto.DoubleClick += new System.EventHandler(this.dataGridVProducto_DoubleClick);
             // 
             // CodPro
             // 

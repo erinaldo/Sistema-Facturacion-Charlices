@@ -213,12 +213,29 @@ namespace GUI_V_2
             obj.ShowDialog();
             LlenarComboxCategorias();
         }
-
+       
         private void btn_nueva_unidad_Click(object sender, EventArgs e)
         {
             FormUnidadesMedidas obj = new FormUnidadesMedidas();
             obj.ShowDialog();
             LlenarComboxUnidadMedidas();
+        }
+
+        //por si hay articulos que tienen el mismo precio no tenga que joder con escribir mucho.
+        private void precio_normal_KeyDown(object sender, KeyEventArgs e)
+        {
+        
+        }
+
+        private void precio_normal_ValueChanged(object sender, EventArgs e)
+        {
+            precio_empleado.Value = precio_normal.Value;
+            precio_empresa.Value = precio_normal.Value;
+        }
+
+        private void precio_normal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }

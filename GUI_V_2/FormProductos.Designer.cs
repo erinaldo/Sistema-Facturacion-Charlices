@@ -143,7 +143,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(214, 134);
+            this.label8.Location = new System.Drawing.Point(223, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 15);
             this.label8.TabIndex = 115;
@@ -153,7 +153,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(304, 134);
+            this.label9.Location = new System.Drawing.Point(315, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 15);
             this.label9.TabIndex = 116;
@@ -209,6 +209,7 @@
             this.itbis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.itbis.FormattingEnabled = true;
             this.itbis.Items.AddRange(new object[] {
+            "0%",
             "18%",
             "2%"});
             this.itbis.Location = new System.Drawing.Point(125, 186);
@@ -290,38 +291,40 @@
             this.precio_normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.precio_normal.Location = new System.Drawing.Point(125, 152);
             this.precio_normal.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});
             this.precio_normal.Name = "precio_normal";
-            this.precio_normal.Size = new System.Drawing.Size(73, 26);
+            this.precio_normal.Size = new System.Drawing.Size(95, 26);
             this.precio_normal.TabIndex = 132;
+            this.precio_normal.ValueChanged += new System.EventHandler(this.precio_normal_ValueChanged);
+            this.precio_normal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_normal_KeyPress);
             // 
             // precio_empleado
             // 
             this.precio_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.precio_empleado.Location = new System.Drawing.Point(217, 152);
+            this.precio_empleado.Location = new System.Drawing.Point(226, 152);
             this.precio_empleado.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});
             this.precio_empleado.Name = "precio_empleado";
-            this.precio_empleado.Size = new System.Drawing.Size(73, 26);
+            this.precio_empleado.Size = new System.Drawing.Size(86, 26);
             this.precio_empleado.TabIndex = 133;
             // 
             // precio_empresa
             // 
             this.precio_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.precio_empresa.Location = new System.Drawing.Point(296, 152);
+            this.precio_empresa.Location = new System.Drawing.Point(318, 152);
             this.precio_empresa.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});
             this.precio_empresa.Name = "precio_empresa";
-            this.precio_empresa.Size = new System.Drawing.Size(73, 26);
+            this.precio_empresa.Size = new System.Drawing.Size(103, 26);
             this.precio_empresa.TabIndex = 134;
             // 
             // btn_nueva_categoria
@@ -386,7 +389,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProductos";
             this.Text = "Productos";
-            this.Load += new System.EventHandler(this.FormProductos_Load);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label8, 0);

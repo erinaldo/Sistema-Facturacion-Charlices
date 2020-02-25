@@ -73,5 +73,7 @@ namespace GUI_V_2
             tabla.Width = ancho;
             tabla.Height = alto;
         }
+
+
     }
 }
