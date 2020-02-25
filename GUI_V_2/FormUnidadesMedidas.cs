@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI_V_2
-{
-    public partial class FormUnidadesMedidas : FormBaseMan
+{   public partial class FormUnidadesMedidas : FormBaseMan
     {
         public FormUnidadesMedidas()
         {
@@ -94,3 +93,4 @@ namespace GUI_V_2
         }
     }
 }
+

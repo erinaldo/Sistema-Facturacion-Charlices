@@ -43,11 +43,25 @@ namespace GUI_V_2
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
+     
+
+        ) //deje este error aproposito para recordar lo que hacia
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                ImprimirTabla(dataGridView1, "Reporte Unidades de Medidas");
+                List<UnidadesMedidas> lista = new List<UnidadesMedidas>();
+                lista.Clear();
+
+
+                foreach(DataGridViewRow i in dataGridView1.Rows)
+                {
+                    lista.Add(new UnidadesMedidas {
+                    Codigo = dataGridView1.Rows[0].Cells[0].Value.ToString(), 
+                    Nombre = dataGridView1.Rows[0].Cells[0].Value.ToString(),
+                    Estado = Convert.ToBoolean(dataGridView1.Rows[0].Cells[0].Value)
+                    });
+                }
             }
             catch (Exception Aa)
             {
@@ -79,4 +93,14 @@ namespace GUI_V_2
             }
         }
     }
+}
+
+
+public class UnidadesMedidas
+{
+    public String Codigo { get; set; }
+
+    public String Nombre { get; set; }
+    public Boolean Estado { get; set; }
+
 }
