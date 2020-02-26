@@ -21,10 +21,9 @@ namespace GUI_V_2.Reportes
         
         private void FormReportes_Load(object sender, EventArgs e)
         {
-            reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetProductos", Productos));
+            
             this.reportViewer1.RefreshReport();
-
+            this.reportViewer1.RefreshReport();
         }
     }
 }

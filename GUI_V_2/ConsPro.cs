@@ -1,4 +1,5 @@
 ﻿using GUI_V_2.Reportes;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,19 +127,22 @@ namespace GUI_V_2
             }
             
         }
+
+
+        ReportDataSource rs = new ReportDataSource();
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                FormReportesDatos Rep = new FormReportesDatos();
+                FormReportesDatos Repor = new FormReportesDatos();
+              
                 List<ProductosClass> lista = new List<ProductosClass>();
                 lista.Clear();
-                int a = 0;
-
-
-                for (int p = 0; p < dataGridVProducto.RowCount; p++){
-                   
-                    lista.Add(new ProductosClass{
+                
+                for (int p = 0; p < dataGridVProducto.Rows.Count ; p++){
+                        lista.Add(new ProductosClass {
                         Codigo = dataGridVProducto.Rows[p].Cells[0].Value.ToString(),
                         Nombre = dataGridVProducto.Rows[p].Cells[1].Value.ToString(),
                         Categoria = dataGridVProducto.Rows[p].Cells[2].Value.ToString(),
@@ -150,11 +154,16 @@ namespace GUI_V_2
                         Cantiadad = dataGridVProducto.Rows[p].Cells[8].Value.ToString(),
                         Reorden = dataGridVProducto.Rows[p].Cells[9].Value.ToString(),
                         Tipo = dataGridVProducto.Rows[p].Cells[10].Value.ToString(),
-                        Estado = Convert.ToBoolean(dataGridVProducto.Rows[p].Cells[11].Value)
+                        Estado = dataGridVProducto.Rows[p].Cells[11].Value.ToString()
                     });
                 }
-                Rep.ShowDialog();
-              
+                
+                rs.Name = "DataSet1";
+                rs.Value = lista;
+                Repor.reportViewer1.LocalReport.DataSources.Clear();
+                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+              //  Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Report1.rdlc";
+                Repor.ShowDialog();
             }
             catch (Exception Aa)
             {
@@ -168,17 +177,17 @@ namespace GUI_V_2
 
 public class ProductosClass
 {
-    public String Codigo { get; set; }
-    public String Nombre { get; set; }
-    public String Categoria { get; set; }
-    public String Normal { get; set; }
-    public String Empleado { get; set; }
-    public String Empresa { get; set; }
-    public String Unidad { get; set; }
-    public String ITBIS { get; set; }
-    public String Cantiadad { get; set; }
-    public String Reorden { get; set; }
-    public String Tipo { get; set; }
-    public Boolean Estado { get; set; }
+    public string Codigo { get; set; }
+    public string Nombre { get; set; }
+    public string Categoria { get; set; }
+    public string Normal { get; set; }
+    public string Empleado { get; set; }
+    public string Empresa { get; set; }
+    public string Unidad { get; set; }
+    public string ITBIS { get; set; }
+    public string Cantiadad { get; set; }
+    public string Reorden { get; set; }
+    public string Tipo { get; set; }
+    public string Estado { get; set; }
     
 }
