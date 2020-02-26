@@ -162,7 +162,7 @@ namespace GUI_V_2
                 rs.Value = lista;
                 Repor.reportViewer1.LocalReport.DataSources.Clear();
                 Repor.reportViewer1.LocalReport.DataSources.Add(rs);
-              //  Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Report1.rdlc";
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.Report1.rdlc";
                 Repor.ShowDialog();
             }
             catch (Exception Aa)

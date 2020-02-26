@@ -24,6 +24,7 @@ namespace GUI_V_2.Reportes
             
             this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
     }
 }
