@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_V_2.Reportes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -129,33 +130,35 @@ namespace GUI_V_2
         {
             try
             {
+                FormReportesDatos Rep = new FormReportesDatos();
                 List<ProductosClass> lista = new List<ProductosClass>();
                 lista.Clear();
+                int a = 0;
 
 
-                foreach (DataGridViewRow i in dataGridVProducto.Rows)
-                {
-                    lista.Add(new ProductosClass
-                    {
-                        Codigo = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Nombre = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Categoria = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Normal = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Empleado = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Empresa = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Unidad = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        ITBIS = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Cantiadad = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Reorden = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Tipo = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
-                        Estado = Convert.ToBoolean(dataGridVProducto.Rows[0].Cells[0].Value)
+                for (int p = 0; p < dataGridVProducto.RowCount; p++){
+                   
+                    lista.Add(new ProductosClass{
+                        Codigo = dataGridVProducto.Rows[p].Cells[0].Value.ToString(),
+                        Nombre = dataGridVProducto.Rows[p].Cells[1].Value.ToString(),
+                        Categoria = dataGridVProducto.Rows[p].Cells[2].Value.ToString(),
+                        Normal = dataGridVProducto.Rows[p].Cells[3].Value.ToString(),
+                        Empleado = dataGridVProducto.Rows[p].Cells[4].Value.ToString(),
+                        Empresa = dataGridVProducto.Rows[p].Cells[5].Value.ToString(),
+                        Unidad = dataGridVProducto.Rows[p].Cells[6].Value.ToString(),
+                        ITBIS = dataGridVProducto.Rows[p].Cells[7].Value.ToString(),
+                        Cantiadad = dataGridVProducto.Rows[p].Cells[8].Value.ToString(),
+                        Reorden = dataGridVProducto.Rows[p].Cells[9].Value.ToString(),
+                        Tipo = dataGridVProducto.Rows[p].Cells[10].Value.ToString(),
+                        Estado = Convert.ToBoolean(dataGridVProducto.Rows[p].Cells[11].Value)
                     });
                 }
-
+                Rep.ShowDialog();
+              
             }
             catch (Exception Aa)
             {
-                //Error
+                MessageBox.Show("Hubo un fallo Charly");
             }
         }
 
