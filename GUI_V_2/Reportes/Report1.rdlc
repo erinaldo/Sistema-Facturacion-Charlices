@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.61333in</Width>
+              <Width>0.4675in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25695in</Width>
+              <Width>1.40278in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.93055in</Width>
@@ -44,7 +44,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.34896in</Height>
+              <Height>0.21354in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -55,7 +55,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CODIGO</Value>
+                              <Value>COD.</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -454,8 +454,7 @@
                       <rd:DefaultName>Codigo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -484,8 +483,7 @@
                       <rd:DefaultName>Nombre</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -514,8 +512,7 @@
                       <rd:DefaultName>Categoria</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -544,8 +541,7 @@
                       <rd:DefaultName>Normal</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -574,8 +570,7 @@
                       <rd:DefaultName>Empleado</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -604,8 +599,7 @@
                       <rd:DefaultName>Empresa</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -634,8 +628,7 @@
                       <rd:DefaultName>Unidad</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -664,8 +657,7 @@
                       <rd:DefaultName>ITBIS</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -694,8 +686,7 @@
                       <rd:DefaultName>Cantiadad</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -724,8 +715,7 @@
                       <rd:DefaultName>Reorden</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -754,8 +744,7 @@
                       <rd:DefaultName>Tipo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -784,8 +773,7 @@
                       <rd:DefaultName>Estado</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -826,9 +814,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.06944in</Top>
+        <Top>0.19444in</Top>
         <Left>0.09833in</Left>
-        <Height>0.69792in</Height>
+        <Height>0.5625in</Height>
         <Width>9.54389in</Width>
         <Style>
           <Border>
@@ -837,10 +825,14 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>12.44375cm</Height>
-    <Style />
+    <Height>5.46757cm</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
-  <Width>24.75584cm</Width>
+  <Width>24.70292cm</Width>
   <Page>
     <PageHeader>
       <Height>1.5625in</Height>
@@ -867,7 +859,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.60416in</Top>
-          <Left>2.09361in</Left>
+          <Left>1.96861in</Left>
           <Height>0.25in</Height>
           <Width>6.44792in</Width>
           <Style>
@@ -889,8 +881,7 @@
                 <TextRun>
                   <Value>CANABACOA GRILL</Value>
                   <Style>
-                    <FontFamily>Segoe UI Light</FontFamily>
-                    <FontSize>16pt</FontSize>
+                    <FontSize>18pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -900,9 +891,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.19444in</Top>
-          <Left>2.09361in</Left>
+          <Left>1.96861in</Left>
           <Height>0.38195in</Height>
-          <Width>2.25in</Width>
+          <Width>2.72918in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -934,9 +925,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.90159cm</Top>
-          <Left>5.31777cm</Left>
+          <Left>5.00027cm</Left>
           <Height>0.39236in</Height>
-          <Width>2.77084in</Width>
+          <Width>3.32292in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -952,14 +943,14 @@
           <Source>Embedded</Source>
           <Value>LogoCanabacoaGrill</Value>
           <Sizing>Fit</Sizing>
-          <Top>0.19444in</Top>
-          <Left>0.62018cm</Left>
-          <Height>1.34028in</Height>
+          <Top>0.13888in</Top>
+          <Left>0.24976cm</Left>
+          <Height>1.38195in</Height>
           <Width>1.72444in</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
-              <Style>Solid</Style>
+              <Style>None</Style>
             </Border>
           </Style>
         </Image>
@@ -982,8 +973,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.86805in</Top>
-          <Left>2.07971in</Left>
+          <Top>0.87847in</Top>
+          <Left>1.96861in</Left>
           <Height>0.25in</Height>
           <Width>1.62847in</Width>
           <ZIndex>4</ZIndex>
@@ -1006,6 +997,7 @@
                 <TextRun>
                   <Value>="FECHA: " &amp; Globals!ExecutionTime</Value>
                   <Style>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -1016,7 +1008,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
-          <Top>1.28472in</Top>
+          <Top>1.27083in</Top>
           <Left>6.49875in</Left>
           <Height>0.25in</Height>
           <Width>3.14348in</Width>
@@ -1031,13 +1023,141 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Pag " &amp; Globals!PageNumber</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Light</FontFamily>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.13888in</Top>
+          <Left>6.97612in</Left>
+          <Height>0.26756in</Height>
+          <Width>2.66611in</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line2">
+          <Top>1.5625in</Top>
+          <Left>0.09834in</Left>
+          <Height>0in</Height>
+          <Width>9.54389in</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
-          <Style>None</Style>
+          <Style>Solid</Style>
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>0.54167in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>TOTAL DE PRODUCTOS REGISTRADOS:</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Light</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.13888in</Top>
+          <Left>0.09833in</Left>
+          <Height>0.34048in</Height>
+          <Width>4.12028in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>= CountRows ( "DataSet1" )</Value>
+                  <Style>
+                    <FontFamily>Segoe UI Light</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.13888in</Top>
+          <Left>5.52195in</Left>
+          <Height>0.34048in</Height>
+          <Width>4.12028in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>Solid</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1in</LeftMargin>
