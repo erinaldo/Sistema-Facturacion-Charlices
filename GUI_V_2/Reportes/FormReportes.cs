@@ -16,5 +16,11 @@ namespace GUI_V_2.Reportes
         {
             InitializeComponent();
         }
+
+        private void FormReportes_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

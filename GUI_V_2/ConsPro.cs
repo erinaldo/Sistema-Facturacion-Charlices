@@ -129,7 +129,28 @@ namespace GUI_V_2
         {
             try
             {
-                ImprimirTabla(dataGridVProducto, "Reporte de Productos");
+                List<ProductosClass> lista = new List<ProductosClass>();
+                lista.Clear();
+
+
+                foreach (DataGridViewRow i in dataGridVProducto.Rows)
+                {
+                    lista.Add(new ProductosClass
+                    {
+                        Codigo = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Nombre = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Categoria = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Normal = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Empleado = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Empresa = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Unidad = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        ITBIS = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Cantiadad = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Reorden = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Tipo = dataGridVProducto.Rows[0].Cells[0].Value.ToString(),
+                        Estado = Convert.ToBoolean(dataGridVProducto.Rows[0].Cells[0].Value)
+                    });
+                }
 
             }
             catch (Exception Aa)
@@ -139,4 +160,22 @@ namespace GUI_V_2
         }
 
     }
+}
+
+
+public class ProductosClass
+{
+    public String Codigo { get; set; }
+    public String Nombre { get; set; }
+    public String Categoria { get; set; }
+    public String Normal { get; set; }
+    public String Empleado { get; set; }
+    public String Empresa { get; set; }
+    public String Unidad { get; set; }
+    public String ITBIS { get; set; }
+    public String Cantiadad { get; set; }
+    public String Reorden { get; set; }
+    public String Tipo { get; set; }
+    public Boolean Estado { get; set; }
+    
 }

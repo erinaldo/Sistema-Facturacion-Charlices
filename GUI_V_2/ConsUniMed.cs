@@ -43,9 +43,7 @@ namespace GUI_V_2
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
-     
-
-        ) //deje este error aproposito para recordar lo que hacia
+        
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -96,10 +94,10 @@ namespace GUI_V_2
 }
 
 
+//metodo setter y getter
 public class UnidadesMedidas
 {
     public String Codigo { get; set; }
-
     public String Nombre { get; set; }
     public Boolean Estado { get; set; }
 
