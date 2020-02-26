@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ProductosClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ProductosClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosClassBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ProductosClassBindingSource
-            // 
-            this.ProductosClassBindingSource.DataSource = typeof(ProductosClass);
             // 
             // reportViewer1
             // 
@@ -46,6 +42,10 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(961, 379);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // ProductosClassBindingSource
+            // 
+            this.ProductosClassBindingSource.DataSource = typeof(ProductosClass);
             // 
             // FormReportesDatos
             // 
