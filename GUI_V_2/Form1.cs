@@ -16,7 +16,12 @@ namespace GUI_V_2
         public Form1()
         {
             InitializeComponent();
+            Loading.Show();
         }
+
+
+        VentanaLoading Loading = new VentanaLoading();
+
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
