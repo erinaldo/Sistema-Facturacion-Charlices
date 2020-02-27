@@ -31,8 +31,9 @@ namespace GUI_V_2
         private void button1_Click(object sender, EventArgs e)
         {
          Form1 ventana = new Form1();
-         ventana.Show();
-         this.Hide();
+            this.Hide();
+            ventana.Show();
+   
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)

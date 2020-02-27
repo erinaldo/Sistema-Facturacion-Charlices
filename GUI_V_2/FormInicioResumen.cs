@@ -15,16 +15,18 @@ namespace GUI_V_2
         public FormInicioResumen()
         {
             InitializeComponent();
+            Barra.Show();
             Codigo.DataPropertyName = "codigo";
             Nombre.DataPropertyName = "nombre_producto";
             Cantidad.DataPropertyName = "cantidad";
             RedordenD.DataPropertyName = "re_orden";
             EstadoD.DataPropertyName = "estado";
-
+          
             LlenarTablaGrid();
             CargarDatosResumen();
         }
 
+        VentanaLoading Barra = new VentanaLoading();
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
