@@ -251,6 +251,7 @@ namespace GUI_V_2
             txt_total_bruto.Text = subtotalFac.ToString();
             txt_total_itbis.Text = itbisFac.ToString();
             txt_total_neto.Text = (subtotalFac + itbisFac).ToString();
+            calcularDesc();
 
             codigo_pro.Text = "";
             nombre_pro.Text = "";
@@ -309,8 +310,10 @@ namespace GUI_V_2
                 if (dataGridViewProducto.Rows.Count == 0)
                 {
                     txt_total_bruto.Text = "0";
-                    txt_total_neto.Text = "0";
+                    txt_total_neto.Text  = "0";
                     txt_total_itbis.Text = "0";
+                    txt_descuento.Text   = "0";
+                    txt_total_desc.Text =  "0";
                     return;
                 }
 
@@ -319,7 +322,7 @@ namespace GUI_V_2
                 txt_total_neto.Text = rTotal.ToString();
                 txt_total_bruto.Text = rSubTotal.ToString();
                 txt_total_itbis.Text = rItbis.ToString();
-
+                calcularDesc();
             }
             else
             {
@@ -343,6 +346,31 @@ namespace GUI_V_2
         private void btn_cotizar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void errorTxtBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                calcularDesc();
+            }
+
+             
+        }
+
+        public void calcularDesc()
+        {
+            double descuento = Double.Parse(txt_descuento.Text.Trim());
+            if (descuento >= 0 && descuento <= 100)
+            {
+                double totalSinDesc = Double.Parse(txt_total_bruto.Text) + Double.Parse(txt_total_itbis.Text);
+                double desc = Convert.ToDouble(txt_descuento.Text);
+                double descAplicado = (totalSinDesc * (desc / 100));
+                double totalConDesc = totalSinDesc - descAplicado;
+                txt_total_neto.Text = totalConDesc.ToString("N2");
+                txt_total_desc.Text = descAplicado.ToString("N2");
+            }
         }
     }
 
