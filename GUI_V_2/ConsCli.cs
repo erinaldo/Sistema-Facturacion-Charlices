@@ -80,7 +80,7 @@ namespace GUI_V_2.Consultas
         {
             if (this.dataGridClientes.Rows.Count > 0 && dataGridClientes.SelectedRows.Count > 0)
             {
-                FormSuplidores obj = new FormSuplidores();
+                FormClientes obj = new FormClientes();
                 obj.Show();
                 obj.Codigo.Text = dataGridClientes.CurrentRow.Cells[0].Value.ToString();
                 obj.Codigo.Focus();
