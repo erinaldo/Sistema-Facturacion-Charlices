@@ -817,7 +817,7 @@
         <Top>0.19444in</Top>
         <Left>0.09833in</Left>
         <Height>0.5625in</Height>
-        <Width>9.18973in</Width>
+        <Width>9.18974in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -839,7 +839,7 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox2">
+        <Textbox Name="Txt_DirEmpresa">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -857,11 +857,10 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.60416in</Top>
           <Left>1.96861in</Left>
           <Height>0.25in</Height>
-          <Width>6.44792in</Width>
+          <Width>7.31945in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -872,7 +871,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox7">
+        <Textbox Name="Txt_NomEmpresa">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -889,7 +888,6 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.19444in</Top>
           <Left>1.96861in</Left>
           <Height>0.38195in</Height>
@@ -905,7 +903,7 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox8">
+        <Textbox Name="Txt_NombreReporte">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -923,7 +921,6 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.90159cm</Top>
           <Left>5.00027cm</Left>
           <Height>0.39236in</Height>
@@ -954,7 +951,7 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox9">
+        <Textbox Name="Txt_NumEmpresa">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -972,7 +969,6 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.87847in</Top>
           <Left>1.96861in</Left>
           <Height>0.25in</Height>

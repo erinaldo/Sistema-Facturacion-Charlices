@@ -118,6 +118,7 @@
             // btn_cerrar
             // 
             this.btn_cerrar.Location = new System.Drawing.Point(774, 9);
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // label4
             // 

@@ -24,12 +24,19 @@ namespace GUI_V_2
 
         private void btn_consultar_Click(object sender, EventArgs e)
         {
-            ConsPro obj = new ConsPro();
-            if (obj.ShowDialog() == DialogResult.OK)
+            try
             {
-                Codigo.Text = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                Codigo.Focus();
-                SendKeys.Send("{TAB}");
+                ConsPro obj = new ConsPro();
+                if (obj.ShowDialog() == DialogResult.OK)
+                {
+                    Codigo.Text = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    Codigo.Focus();
+                    SendKeys.Send("{TAB}");
+                }
+            }
+            catch (Exception aaaa)
+            {
+                //error
             }
         }
 
@@ -146,36 +153,43 @@ namespace GUI_V_2
 
         private void Codigo_Leave(object sender, EventArgs e)
         {
-            if (Codigo.Text.Trim().Equals("") == false)
+            try
             {
-                using (CRUD_MODEL db = new CRUD_MODEL())
+                if (Codigo.Text.Trim().Equals("") == false)
                 {
-                    var producto = db.Productos.Where(a => a.codigo == Codigo.Text && a.estado == true).SingleOrDefault();
-                    if (producto != null)
+                    using (CRUD_MODEL db = new CRUD_MODEL())
                     {
-                        Nom.Text                         = producto.nombre;
-                        precio_normal.Value              = producto.precio_normal;
-                        precio_empleado.Value            = producto.precio_empleado;
-                        precio_empresa.Value             = producto.precio_empresa;
-                        itbis.SelectedIndex              = producto.itbis == 18 ? 0 : 1;
-                        cantidadPro.Value                = producto.cantidad;
-                        reorden.Value                    = producto.re_orden;
-                        categoriasCombox.SelectedValue   = producto.id_categoria;
-                        unidadMedidaCombox.SelectedValue = producto.id_unidad_medida;
-                        TipoPro.SelectedIndex            = producto.tipo_producto == 1 ? 0 : 1;
-                        estado.SelectedIndex             = 0;
-                        id                               = producto.id;
-                        bnt_eliminar.Enabled             = true;
-                    }
-                    else
-                    {
-                        id = 0;
-                        Codigo.Limpiar = false;
-                        Utilidades.LimpiarControles(this);
-                        Codigo.Limpiar = true;
-                    }
+                        var producto = db.Productos.Where(a => a.codigo == Codigo.Text && a.estado == true).SingleOrDefault();
+                        if (producto != null)
+                        {
+                            Nom.Text = producto.nombre;
+                            precio_normal.Value = producto.precio_normal;
+                            precio_empleado.Value = producto.precio_empleado;
+                            precio_empresa.Value = producto.precio_empresa;
+                            itbis.SelectedIndex = producto.itbis == 18 ? 0 : 1;
+                            cantidadPro.Value = producto.cantidad;
+                            reorden.Value = producto.re_orden;
+                            categoriasCombox.SelectedValue = producto.id_categoria;
+                            unidadMedidaCombox.SelectedValue = producto.id_unidad_medida;
+                            TipoPro.SelectedIndex = producto.tipo_producto == 1 ? 0 : 1;
+                            estado.SelectedIndex = 0;
+                            id = producto.id;
+                            bnt_eliminar.Enabled = true;
+                        }
+                        else
+                        {
+                            id = 0;
+                            Codigo.Limpiar = false;
+                            Utilidades.LimpiarControles(this);
+                            Codigo.Limpiar = true;
+                        }
 
+                    }
                 }
+            }
+            catch (Exception asa)
+            {
+               
             }
         }
 
@@ -209,17 +223,29 @@ namespace GUI_V_2
 
         private void btn_nueva_categoria_Click(object sender, EventArgs e)
         {
-            FormCategorias obj = new FormCategorias();
-            obj.ShowDialog();
-            LlenarComboxCategorias();
+            try
+            {
+                FormCategorias obj = new FormCategorias();
+                obj.ShowDialog();
+                LlenarComboxCategorias();
+            }catch(Exception asaa)
+            {
+                //Error
+            }
         }
        
         private void btn_nueva_unidad_Click(object sender, EventArgs e)
         {
-            FormUnidadesMedidas obj = new FormUnidadesMedidas();
+            try
+            {
+                FormUnidadesMedidas obj = new FormUnidadesMedidas();
             obj.ShowDialog();
             LlenarComboxUnidadMedidas();
-        }
+            }catch(Exception asaa)
+            {
+                //Error
+            }
+}
 
         //por si hay articulos que tienen el mismo precio no tenga que joder con escribir mucho.
         private void precio_normal_KeyDown(object sender, KeyEventArgs e)
@@ -236,6 +262,13 @@ namespace GUI_V_2
         private void precio_normal_KeyPress(object sender, KeyPressEventArgs e)
         {
            
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+         ConsPro obj = new ConsPro();
+         obj.btn_nuevo.PerformClick();
+            
         }
     }
 }

@@ -51,7 +51,7 @@ namespace GUI_V_2
         {
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
-                //IQueryable<Productos> 
+               
         
                 var productos =  from pro in DB.Productos join cat in DB.Categorias on pro.id_categoria
                                                    equals cat.id join unidad in DB.Unidades_medidas on pro.id_unidad_medida
@@ -117,6 +117,7 @@ namespace GUI_V_2
         
         private void Editar()
         {
+            
             if (this.dataGridVProducto.Rows.Count > 0 && dataGridVProducto.SelectedRows.Count > 0)
             {
                 FormProductos obj = new FormProductos();
@@ -124,14 +125,15 @@ namespace GUI_V_2
                 obj.Codigo.Text = dataGridVProducto.CurrentRow.Cells[0].Value.ToString();
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
+               
+
             }
-            
+
         }
 
 
         ReportDataSource rs = new ReportDataSource();
-
-
+        //Boton para imprimir
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -164,6 +166,8 @@ namespace GUI_V_2
                 Repor.reportViewer1.LocalReport.DataSources.Add(rs);
                 Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.Report1.rdlc";
                 Repor.ShowDialog();
+
+
             }
             catch (Exception Aa)
             {
