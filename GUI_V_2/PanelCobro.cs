@@ -16,6 +16,27 @@ namespace GUI_V_2
         {
             InitializeComponent();
             c_metodopago.SelectedIndex = 0;
+            LlenarComboxMetodosPagos();
+
+        }
+
+        public void LlenarComboxMetodosPagos()
+        {
+            c_metodopago.DisplayMember = "nombre";
+            c_metodopago.ValueMember = "id";
+            try
+            {
+                using (CRUD_MODEL db = new CRUD_MODEL())
+                {
+                    IQueryable<Metodos_Pagos> metodos = db.Metodos_Pagos.Where(m => m.estado == true).OrderBy(m => m.nombre);
+                    c_metodopago.DataSource = metodos.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
 
@@ -92,6 +113,23 @@ namespace GUI_V_2
             {
                 btn_volver.PerformClick();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            this.Hide();
+        }
+
+        private void PanelCobro_Load(object sender, EventArgs e)
+        {
+
         }
 
         //Metodo que manda el monto seleccionado con el usuario
