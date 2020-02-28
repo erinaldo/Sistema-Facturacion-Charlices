@@ -131,7 +131,7 @@ namespace GUI_V_2
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
                       usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                       NFC_comprobante = "prueba",
-                      metodo_pago_id = id_metodo_pago
+                      metodo_pago_id = metodo_pago
                   };
                     DB.Facturas.Add(factura);
 
