@@ -24,6 +24,7 @@ namespace GUI_V_2
             InitializeComponent();
             GenerarCodigoFac();
             LlenarComboxCombrobantes();
+            LlenarComboxVendedores();
         }
         public void LlenarComboxCombrobantes()
         {
@@ -35,6 +36,25 @@ namespace GUI_V_2
                 {
                     IQueryable<Combrobantes> comprobante = db.Combrobantes.Where(c => c.estado == true && c.usados<=c.cantidad_limite).OrderBy(c => c.tipo);
                     comboBoxCombrobante.DataSource = comprobante.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        public void LlenarComboxVendedores()
+        {
+            comboBoxVendedores.DisplayMember = "tipo";
+            comboBoxVendedores.ValueMember = "id";
+            try
+            {
+                using (CRUD_MODEL db = new CRUD_MODEL())
+                {
+                    IQueryable<Usuarios> usuario = db.Usuarios.Where(u => u.estado == true).OrderBy(u => u.nombre_completo);
+                    comboBoxVendedores.DataSource = usuario.ToList();
                 }
             }
             catch (Exception)
@@ -88,8 +108,11 @@ namespace GUI_V_2
         {
             PanelCobro obj = new PanelCobro();
             obj.txt_monto.Text = txt_total_neto.Text;
-            obj.ShowDialog();
-            CrearFactura();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+                CrearFactura();
+
+            }
 
         }
 
@@ -105,6 +128,7 @@ namespace GUI_V_2
                       itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
                       descuento = Double.Parse(txt_total_desc.Text.Trim()),
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
+                      usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                       NFC_comprobante = "prueba"
                   };
                     DB.Facturas.Add(factura);
