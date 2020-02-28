@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_verProductos = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBoxCombrobante = new System.Windows.Forms.ComboBox();
             this.fecha_hora = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_clientes = new System.Windows.Forms.Button();
@@ -79,10 +80,9 @@
             this.nombre_pro = new GUI_V_2.ErrorTxtBox();
             this.codigo_pro = new GUI_V_2.ErrorTxtBox();
             this.txt_codigo_fac = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox7 = new GUI_V_2.ErrorTxtBox();
+            this.txt_serie_comprobante = new GUI_V_2.ErrorTxtBox();
             this.txt_nombre_cliente = new GUI_V_2.ErrorTxtBox();
             this.txt_codigo_cliente = new GUI_V_2.ErrorTxtBox();
-            this.comboBoxCombrobante = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -170,7 +170,7 @@
             this.button7.Size = new System.Drawing.Size(100, 48);
             this.button7.TabIndex = 81;
             this.button7.TabStop = false;
-            this.button7.Text = " ";
+            this.button7.Text = "BORRAR";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -249,7 +249,7 @@
             this.panel4.Controls.Add(this.fecha_hora);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.txt_codigo_fac);
-            this.panel4.Controls.Add(this.errorTxtBox7);
+            this.panel4.Controls.Add(this.txt_serie_comprobante);
             this.panel4.Controls.Add(this.txt_nombre_cliente);
             this.panel4.Controls.Add(this.btn_clientes);
             this.panel4.Controls.Add(this.txt_codigo_cliente);
@@ -261,6 +261,17 @@
             this.panel4.Size = new System.Drawing.Size(1692, 53);
             this.panel4.TabIndex = 3;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // comboBoxCombrobante
+            // 
+            this.comboBoxCombrobante.FormattingEnabled = true;
+            this.comboBoxCombrobante.Location = new System.Drawing.Point(877, 15);
+            this.comboBoxCombrobante.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxCombrobante.Name = "comboBoxCombrobante";
+            this.comboBoxCombrobante.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxCombrobante.TabIndex = 74;
+            this.comboBoxCombrobante.Text = "COMBROBANTE";
+            this.comboBoxCombrobante.SelectedIndexChanged += new System.EventHandler(this.comboBoxCombrobante_SelectedIndexChanged);
             // 
             // fecha_hora
             // 
@@ -804,20 +815,20 @@
             this.txt_codigo_fac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_codigo_fac.Validar = true;
             // 
-            // errorTxtBox7
+            // txt_serie_comprobante
             // 
-            this.errorTxtBox7.Enabled = false;
-            this.errorTxtBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox7.Limpiar = false;
-            this.errorTxtBox7.Location = new System.Drawing.Point(1276, 6);
-            this.errorTxtBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.errorTxtBox7.Name = "errorTxtBox7";
-            this.errorTxtBox7.Size = new System.Drawing.Size(207, 30);
-            this.errorTxtBox7.TabIndex = 70;
-            this.errorTxtBox7.TabStop = false;
-            this.errorTxtBox7.Text = "COMPROBANTE";
-            this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox7.Validar = true;
+            this.txt_serie_comprobante.Enabled = false;
+            this.txt_serie_comprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_serie_comprobante.Limpiar = false;
+            this.txt_serie_comprobante.Location = new System.Drawing.Point(1276, 6);
+            this.txt_serie_comprobante.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_serie_comprobante.Name = "txt_serie_comprobante";
+            this.txt_serie_comprobante.Size = new System.Drawing.Size(207, 30);
+            this.txt_serie_comprobante.TabIndex = 70;
+            this.txt_serie_comprobante.TabStop = false;
+            this.txt_serie_comprobante.Text = "COMPROBANTE";
+            this.txt_serie_comprobante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_serie_comprobante.Validar = true;
             // 
             // txt_nombre_cliente
             // 
@@ -848,16 +859,6 @@
             this.txt_codigo_cliente.TabIndex = 1;
             this.txt_codigo_cliente.Validar = true;
             this.txt_codigo_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox1_KeyPress);
-            // 
-            // comboBoxCombrobante
-            // 
-            this.comboBoxCombrobante.FormattingEnabled = true;
-            this.comboBoxCombrobante.Location = new System.Drawing.Point(877, 15);
-            this.comboBoxCombrobante.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxCombrobante.Name = "comboBoxCombrobante";
-            this.comboBoxCombrobante.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxCombrobante.TabIndex = 74;
-            this.comboBoxCombrobante.Text = "COMBROBANTE";
             // 
             // VentasModoTouch
             // 
@@ -916,7 +917,7 @@
         private System.Windows.Forms.DataGridView dataGridViewProducto;
         private System.Windows.Forms.Panel panel6;
         private ErrorTxtBox txt_codigo_fac;
-        private ErrorTxtBox errorTxtBox7;
+        private ErrorTxtBox txt_serie_comprobante;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

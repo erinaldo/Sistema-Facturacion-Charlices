@@ -13,8 +13,12 @@ namespace GUI_V_2
 {
     public partial class VentasModoTouch : Form
     {
+
+        
         double itbisPro =  0;
-        int id_cliente  =  0; 
+        int id_cliente  =  0;
+        int id_comprobante = 0;
+
         public VentasModoTouch()
         {
             InitializeComponent();
@@ -462,6 +466,36 @@ namespace GUI_V_2
         private void dataGridViewProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBoxCombrobante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int indexSeleccionado = comboBoxCombrobante.SelectedIndex;
+                if (indexSeleccionado < 0) return;
+                using(CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    int idCombrobante = int.Parse(comboBoxCombrobante.SelectedValue.ToString());
+                    IQueryable<Combrobantes> combrobante = DB.Combrobantes.Where(c => c.id == idCombrobante);
+                    var resComprobante = combrobante.FirstOrDefault();
+                    if (resComprobante != null)
+                    {
+                        int usados = int.Parse(resComprobante.usados.ToString() + 1);
+                        String usadost = Convert.ToString(usados).PadLeft(8, '0');
+
+                        txt_serie_comprobante.Text = resComprobante.serie + "" + usadost;
+                        id_comprobante = resComprobante.id;
+                    }
+
+                    
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 
