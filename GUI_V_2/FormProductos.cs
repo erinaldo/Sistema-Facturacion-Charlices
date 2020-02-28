@@ -159,7 +159,7 @@ namespace GUI_V_2
                 {
                     using (CRUD_MODEL db = new CRUD_MODEL())
                     {
-                        var producto = db.Productos.Where(a => a.codigo == Codigo.Text && a.estado == true).SingleOrDefault();
+                        var producto = db.Productos.Where(a => a.codigo == Codigo.Text.Trim() && a.estado == true).SingleOrDefault();
                         if (producto != null)
                         {
                             Nom.Text = producto.nombre;
@@ -189,7 +189,6 @@ namespace GUI_V_2
             }
             catch (Exception asa)
             {
-               
             }
         }
 
@@ -269,6 +268,11 @@ namespace GUI_V_2
          ConsPro obj = new ConsPro();
          obj.btn_nuevo.PerformClick();
             
+        }
+
+        private void FormProductos_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

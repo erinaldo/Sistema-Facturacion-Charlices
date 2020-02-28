@@ -21,6 +21,9 @@
         <AssociationConnector Association="Model.FK_PRODUCTOS" />
         <EntityTypeShape EntityType="Model.Combrobantes" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="Model.FK_COMPROBANTES1" />
+        <AssociationConnector Association="Model.FK_Facturas_Vendedor" />
+        <EntityTypeShape EntityType="Model.Metodos_Pagos" Width="1.5" PointX="0.75" PointY="7.875" />
+        <AssociationConnector Association="Model.FK_Facturas_METOGO_PAGO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

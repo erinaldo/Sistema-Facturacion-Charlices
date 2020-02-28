@@ -34,5 +34,6 @@ namespace GUI_V_2
         public virtual DbSet<Facturas> Facturas { get; set; }
         public virtual DbSet<Detalles_Facturas> Detalles_Facturas { get; set; }
         public virtual DbSet<Combrobantes> Combrobantes { get; set; }
+        public virtual DbSet<Metodos_Pagos> Metodos_Pagos { get; set; }
     }
 }

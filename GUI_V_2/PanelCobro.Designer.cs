@@ -430,7 +430,6 @@
         private System.Windows.Forms.Button btn_volver;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox c_metodopago;
         private ErrorTxtBox txt_pago;
         private ErrorTxtBox txt_devuelto;
         public System.Windows.Forms.Label label4;
@@ -439,5 +438,6 @@
         public System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_limpiar;
         public ErrorTxtBox txt_monto;
+        public System.Windows.Forms.ComboBox c_metodopago;
     }
 }

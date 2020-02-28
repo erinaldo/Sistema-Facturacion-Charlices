@@ -12,25 +12,20 @@ namespace GUI_V_2
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuarios
+    public partial class Combrobantes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
+        public Combrobantes()
         {
             this.Facturas = new HashSet<Facturas>();
         }
     
         public int id { get; set; }
-        public string codigo { get; set; }
-        public string nombre_completo { get; set; }
-        public string usuario { get; set; }
-        public string password { get; set; }
-        public byte tipo_usuario { get; set; }
-        public string ced_rnc { get; set; }
-        public string telefono { get; set; }
-        public string direccion { get; set; }
-        public string correo { get; set; }
-        public bool estado { get; set; }
+        public string tipo { get; set; }
+        public string serie { get; set; }
+        public int usados { get; set; }
+        public int cantidad_limite { get; set; }
+        public Nullable<bool> estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facturas> Facturas { get; set; }

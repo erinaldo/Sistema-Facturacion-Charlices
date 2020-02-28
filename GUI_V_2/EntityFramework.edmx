@@ -39,16 +39,11 @@
           <Property Name="cantidad_limite" Type="int" Nullable="false" />
           <Property Name="estado" Type="bit" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Detalles_Facturas">
           <Key>
-            <PropertyRef Name="id_factura" />
-            <PropertyRef Name="id_producto" />
-            <PropertyRef Name="cantidad_producto" />
-            <PropertyRef Name="precio_producto" />
-            <PropertyRef Name="itbis" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="id_factura" Type="int" Nullable="false" />
           <Property Name="id_producto" Type="int" Nullable="false" />
           <Property Name="cantidad_producto" Type="int" Nullable="false" />
@@ -68,6 +63,16 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <Property Name="itbis_total" Type="float" Nullable="false" />
           <Property Name="NFC_comprobante" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="comprobante_id" Type="int" Nullable="false" />
+          <Property Name="usuario_vendedor_id" Type="int" Nullable="false" />
+          <Property Name="metodo_pago_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -160,6 +165,42 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Facturas_CAJERO">
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
+          <End Role="Facturas1" Type="Self.Facturas" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_METOGO_PAGO">
+          <End Role="Metodos_Pagos" Type="Self.Metodos_Pagos" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pagos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="metodo_pago_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_Vendedor">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_vendedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ID_CLIENTE">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
@@ -200,20 +241,13 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalles_Facturas" EntityType="Self.Detalles_Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Metodos_Pagos" EntityType="Self.Metodos_Pagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suplidores" EntityType="Self.Suplidores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unidades_medidas" EntityType="Self.Unidades_medidas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Detalles_Facturas" EntityType="Self.Detalles_Facturas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Detalles_Facturas].[id_factura] AS [id_factura], 
-    [Detalles_Facturas].[id_producto] AS [id_producto], 
-    [Detalles_Facturas].[cantidad_producto] AS [cantidad_producto], 
-    [Detalles_Facturas].[precio_producto] AS [precio_producto], 
-    [Detalles_Facturas].[itbis] AS [itbis]
-    FROM [dbo].[Detalles_Facturas] AS [Detalles_Facturas]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_CATEGORIAS" Association="Self.FK_CATEGORIAS">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
@@ -225,6 +259,18 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <AssociationSet Name="FK_FACTURAS" Association="Self.FK_FACTURAS">
             <End Role="Facturas" EntitySet="Facturas" />
             <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_CAJERO" Association="Self.FK_Facturas_CAJERO">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Facturas1" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_METOGO_PAGO" Association="Self.FK_Facturas_METOGO_PAGO">
+            <End Role="Metodos_Pagos" EntitySet="Metodos_Pagos" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_Vendedor" Association="Self.FK_Facturas_Vendedor">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
           <AssociationSet Name="FK_ID_CLIENTE" Association="Self.FK_ID_CLIENTE">
             <End Role="Clientes" EntitySet="Clientes" />
@@ -279,6 +325,15 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <EntitySet Name="Combrobantes" EntityType="Model.Combrobantes" />
           <AssociationSet Name="FK_COMPROBANTES1" Association="Model.FK_COMPROBANTES1">
             <End Role="Combrobantes" EntitySet="Combrobantes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_Vendedor" Association="Model.FK_Facturas_Vendedor">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <EntitySet Name="Metodos_Pagos" EntityType="Model.Metodos_Pagos" />
+          <AssociationSet Name="FK_Facturas_METOGO_PAGO" Association="Model.FK_Facturas_METOGO_PAGO">
+            <End Role="Metodos_Pagos" EntitySet="Metodos_Pagos" />
             <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
         </EntityContainer>
@@ -365,6 +420,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <Property Name="direccion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_Vendedor" FromRole="Usuarios" ToRole="Facturas" />
         </EntityType>
         <Association Name="FK_CATEGORIAS">
           <End Type="Model.Categorias" Role="Categorias" Multiplicity="1" />
@@ -408,6 +464,10 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_FACTURAS" FromRole="Facturas" ToRole="Detalles_Facturas" />
           <Property Name="comprobante_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Combrobantes" Relationship="Model.FK_COMPROBANTES1" FromRole="Facturas" ToRole="Combrobantes" />
+          <Property Name="usuario_vendedor_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Facturas_Vendedor" FromRole="Facturas" ToRole="Usuarios" />
+          <Property Name="metodo_pago_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Metodos_Pagos" Relationship="Model.FK_Facturas_METOGO_PAGO" FromRole="Facturas" ToRole="Metodos_Pagos" />
         </EntityType>
         <EntityType Name="Detalles_Facturas">
           <Key>
@@ -416,6 +476,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
             <PropertyRef Name="cantidad_producto" />
             <PropertyRef Name="precio_producto" />
             <PropertyRef Name="itbis" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="id_factura" Type="Int32" Nullable="false" />
           <Property Name="id_producto" Type="Int32" Nullable="false" />
@@ -424,6 +485,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <Property Name="itbis" Type="Double" Nullable="false" />
           <NavigationProperty Name="Facturas" Relationship="Model.FK_FACTURAS" FromRole="Detalles_Facturas" ToRole="Facturas" />
           <NavigationProperty Name="Productos" Relationship="Model.FK_PRODUCTOS" FromRole="Detalles_Facturas" ToRole="Productos" />
+          <Property Name="id" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_ID_CLIENTE">
           <End Type="Model.Clientes" Role="Clientes" Multiplicity="1" />
@@ -494,6 +556,39 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
             </Principal>
             <Dependent Role="Facturas">
               <PropertyRef Name="comprobante_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_Vendedor">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_vendedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_METOGO_PAGO" FromRole="Metodos_Pagos" ToRole="Facturas" />
+        </EntityType>
+        <Association Name="FK_Facturas_METOGO_PAGO">
+          <End Type="Model.Metodos_Pagos" Role="Metodos_Pagos" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pagos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="metodo_pago_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -590,6 +685,8 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <EntitySetMapping Name="Facturas">
             <EntityTypeMapping TypeName="Model.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="metodo_pago_id" ColumnName="metodo_pago_id" />
+                <ScalarProperty Name="usuario_vendedor_id" ColumnName="usuario_vendedor_id" />
                 <ScalarProperty Name="comprobante_id" ColumnName="comprobante_id" />
                 <ScalarProperty Name="NFC_comprobante" ColumnName="NFC_comprobante" />
                 <ScalarProperty Name="itbis_total" ColumnName="itbis_total" />
@@ -605,6 +702,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <EntitySetMapping Name="Detalles_Facturas">
             <EntityTypeMapping TypeName="Model.Detalles_Facturas">
               <MappingFragment StoreEntitySet="Detalles_Facturas">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="itbis" ColumnName="itbis" />
                 <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
                 <ScalarProperty Name="cantidad_producto" ColumnName="cantidad_producto" />
@@ -621,6 +719,15 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
                 <ScalarProperty Name="usados" ColumnName="usados" />
                 <ScalarProperty Name="serie" ColumnName="serie" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Metodos_Pagos">
+            <EntityTypeMapping TypeName="Model.Metodos_Pagos">
+              <MappingFragment StoreEntitySet="Metodos_Pagos">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
