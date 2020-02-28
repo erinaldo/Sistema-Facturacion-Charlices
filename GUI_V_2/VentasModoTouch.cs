@@ -19,6 +19,24 @@ namespace GUI_V_2
         {
             InitializeComponent();
             GenerarCodigoFac();
+            LlenarComboxCombrobantes();
+        }
+        public void LlenarComboxCombrobantes()
+        {
+            comboBoxCombrobante.DisplayMember = "tipo";
+            comboBoxCombrobante.ValueMember = "id";
+            try
+            {
+                using (CRUD_MODEL db = new CRUD_MODEL())
+                {
+                    IQueryable<Combrobantes> comprobante = db.Combrobantes.Where(c => c.estado == true && c.usados<=c.cantidad_limite).OrderBy(c => c.tipo);
+                    comboBoxCombrobante.DataSource = comprobante.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 
@@ -437,6 +455,11 @@ namespace GUI_V_2
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
