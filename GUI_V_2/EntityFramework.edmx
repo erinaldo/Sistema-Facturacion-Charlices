@@ -28,6 +28,17 @@
           <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="cla_rnc" Type="varchar" MaxLength="25" />
         </EntityType>
+        <EntityType Name="Combrobantes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="usados" Type="int" Nullable="false" />
+          <Property Name="cantidad_limite" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Facturas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Detalles_Facturas">
@@ -56,6 +67,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <Property Name="subtotal" Type="float" Nullable="false" />
           <Property Name="itbis_total" Type="float" Nullable="false" />
           <Property Name="NFC_comprobante" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="comprobante_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -125,14 +137,14 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_COMPROBANTES">
-          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-          <End Role="Facturas1" Type="Self.Facturas" Multiplicity="0..1" />
+          <End Role="Combrobantes" Type="Self.Combrobantes" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Facturas">
+            <Principal Role="Combrobantes">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Facturas1">
-              <PropertyRef Name="id" />
+            <Dependent Role="Facturas">
+              <PropertyRef Name="comprobante_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -187,6 +199,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suplidores" EntityType="Self.Suplidores" Schema="dbo" store:Type="Tables" />
@@ -206,8 +219,8 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
           <AssociationSet Name="FK_COMPROBANTES" Association="Self.FK_COMPROBANTES">
+            <End Role="Combrobantes" EntitySet="Combrobantes" />
             <End Role="Facturas" EntitySet="Facturas" />
-            <End Role="Facturas1" EntitySet="Facturas" />
           </AssociationSet>
           <AssociationSet Name="FK_FACTURAS" Association="Self.FK_FACTURAS">
             <End Role="Facturas" EntitySet="Facturas" />
@@ -262,6 +275,11 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <AssociationSet Name="FK_PRODUCTOS" Association="Model.FK_PRODUCTOS">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <EntitySet Name="Combrobantes" EntityType="Model.Combrobantes" />
+          <AssociationSet Name="FK_COMPROBANTES1" Association="Model.FK_COMPROBANTES1">
+            <End Role="Combrobantes" EntitySet="Combrobantes" />
+            <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categorias">
@@ -388,6 +406,8 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <NavigationProperty Name="Facturas1" Relationship="Model.FK_COMPROBANTES" FromRole="Facturas" ToRole="Facturas1" />
           <NavigationProperty Name="Facturas2" Relationship="Model.FK_COMPROBANTES" FromRole="Facturas1" ToRole="Facturas" />
           <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_FACTURAS" FromRole="Facturas" ToRole="Detalles_Facturas" />
+          <Property Name="comprobante_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Combrobantes" Relationship="Model.FK_COMPROBANTES1" FromRole="Facturas" ToRole="Combrobantes" />
         </EntityType>
         <EntityType Name="Detalles_Facturas">
           <Key>
@@ -450,6 +470,30 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
             </Principal>
             <Dependent Role="Detalles_Facturas">
               <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Combrobantes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="usados" Type="Int32" Nullable="false" />
+          <Property Name="cantidad_limite" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_COMPROBANTES1" FromRole="Combrobantes" ToRole="Facturas" />
+        </EntityType>
+        <Association Name="FK_COMPROBANTES1">
+          <End Type="Model.Combrobantes" Role="Combrobantes" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Combrobantes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="comprobante_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -546,6 +590,7 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
           <EntitySetMapping Name="Facturas">
             <EntityTypeMapping TypeName="Model.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="comprobante_id" ColumnName="comprobante_id" />
                 <ScalarProperty Name="NFC_comprobante" ColumnName="NFC_comprobante" />
                 <ScalarProperty Name="itbis_total" ColumnName="itbis_total" />
                 <ScalarProperty Name="subtotal" ColumnName="subtotal" />
@@ -565,6 +610,18 @@ advertencia 6002: La tabla o vista 'Facturacion-SociioCoding.dbo.Detalles_Factur
                 <ScalarProperty Name="cantidad_producto" ColumnName="cantidad_producto" />
                 <ScalarProperty Name="id_producto" ColumnName="id_producto" />
                 <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Combrobantes">
+            <EntityTypeMapping TypeName="Model.Combrobantes">
+              <MappingFragment StoreEntitySet="Combrobantes">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cantidad_limite" ColumnName="cantidad_limite" />
+                <ScalarProperty Name="usados" ColumnName="usados" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
