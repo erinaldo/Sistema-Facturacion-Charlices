@@ -47,7 +47,7 @@ namespace GUI_V_2
 
         public void LlenarComboxVendedores()
         {
-            comboBoxVendedores.DisplayMember = "tipo";
+            comboBoxVendedores.DisplayMember = "nombre_completo";
             comboBoxVendedores.ValueMember = "id";
             try
             {
@@ -110,6 +110,7 @@ namespace GUI_V_2
             obj.txt_monto.Text = txt_total_neto.Text;
             if (obj.ShowDialog() == DialogResult.OK)
             {
+                MessageBox.Show("entro");
                 int id_metodo_pago = int.Parse(obj.c_metodopago.SelectedValue.ToString());
                 CrearFactura(id_metodo_pago);
 
@@ -131,9 +132,12 @@ namespace GUI_V_2
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
                       usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                       NFC_comprobante = "prueba",
-                      metodo_pago_id = metodo_pago
+                      metodo_pago_id = metodo_pago,
+                      comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
                   };
                     DB.Facturas.Add(factura);
+                    DB.SaveChanges();
+
 
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                     {
@@ -145,20 +149,21 @@ namespace GUI_V_2
                             int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
                             producto.cantidad -= cantidaProVendida;
+
                             Detalles_Facturas detalles_fac = new Detalles_Facturas
                             {
                                 id_factura = int.Parse(txt_codigo_fac.Text.Trim()),
                                 id_producto = producto.id,
                                 cantidad_producto = cantidaProVendida,
                                 precio_producto = precioProVenta,
-                                itbis = itbisProVenta
+                                itbis = 18
                             };
 
                             DB.Detalles_Facturas.Add(detalles_fac);
+                            DB.SaveChanges();
                         }
 
                     }
-                    DB.SaveChanges();
                     GenerarCodigoFac();
                 }
 
@@ -166,6 +171,7 @@ namespace GUI_V_2
             catch(Exception err)
             {
 
+                MessageBox.Show(err.ToString());
             }
         }
 
@@ -535,6 +541,11 @@ namespace GUI_V_2
             {
 
             }
+        }
+
+        private void txt_nombre_cliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
