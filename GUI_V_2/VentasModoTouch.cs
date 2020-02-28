@@ -13,11 +13,34 @@ namespace GUI_V_2
 {
     public partial class VentasModoTouch : Form
     {
-        double itbisPro = 0;
+        double itbisPro =  0;
+        int id_cliente  =  0; 
         public VentasModoTouch()
         {
             InitializeComponent();
+            GenerarCodigoFac();
+
         }
+
+        public void GenerarCodigoFac()
+        {
+            using (CRUD_MODEL DB = new CRUD_MODEL())
+            {
+                IQueryable<Facturas> factura = DB.Facturas.OrderByDescending(f => f.id);
+                var resp = factura.FirstOrDefault();
+                if (resp == null)
+                {
+                    txt_codigo_fac.Text = "1";
+                }
+                else
+                {
+                    txt_codigo_fac.Text = (resp.id + 1).ToString();
+                }
+
+
+            }
+        }
+
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
@@ -44,6 +67,45 @@ namespace GUI_V_2
             PanelCobro obj = new PanelCobro();
             obj.txt_monto.Text = txt_total_neto.Text;
             obj.ShowDialog();
+            CrearFactura();
+
+        }
+
+        public void CrearFactura()
+        {
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                  Facturas factura = new Facturas  {
+                      id_cliente = id_cliente,
+                      subtotal   = Double.Parse(txt_total_bruto.Text.Trim()),
+                      itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
+                      descuento = Double.Parse(txt_total_desc.Text.Trim()),
+                      total = Double.Parse(txt_total_bruto.Text.Trim()),
+                      NFC_comprobante = "prueba"
+                  };
+                    DB.Facturas.Add(factura);
+
+                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                    {
+                        string codigoPro = registsros.Cells[0].Value.ToString();
+                        var producto = DB.Productos.FirstOrDefault(a => a.codigo == codigoPro);
+                        if (producto != null)
+                        {
+                            producto.cantidad -= int.Parse(registsros.Cells[3].Value.ToString());
+                        }
+
+                    }
+                    DB.SaveChanges();
+                    GenerarCodigoFac();
+                }
+
+            }
+            catch(Exception err)
+            {
+
+            }
         }
 
         //Funciones rapidas con teclas
@@ -138,10 +200,11 @@ namespace GUI_V_2
                     if (respcliente != null)
                     {
                         txt_nombre_cliente.Text = respcliente.nombre_completo;
-                        
+                        id_cliente = respcliente.id;
                     }
                     else
                     {
+                        id_cliente = 0;
                         txt_nombre_cliente.Text = "";
                         MessageBox.Show("no");
                     }
@@ -371,6 +434,11 @@ namespace GUI_V_2
                 txt_total_neto.Text = totalConDesc.ToString("N2");
                 txt_total_desc.Text = descAplicado.ToString("N2");
             }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

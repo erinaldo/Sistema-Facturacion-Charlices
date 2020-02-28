@@ -30,22 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasModoTouch));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.disponible_pro = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txt_descuento = new GUI_V_2.ErrorTxtBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.precio_pro = new GUI_V_2.ErrorTxtBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cantidad_pro = new GUI_V_2.ErrorTxtBox();
+            this.nombre_pro = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_verProductos = new System.Windows.Forms.Button();
+            this.codigo_pro = new GUI_V_2.ErrorTxtBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fecha_hora = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_codigo_fac = new GUI_V_2.ErrorTxtBox();
+            this.errorTxtBox7 = new GUI_V_2.ErrorTxtBox();
+            this.txt_nombre_cliente = new GUI_V_2.ErrorTxtBox();
             this.btn_clientes = new System.Windows.Forms.Button();
+            this.txt_codigo_cliente = new GUI_V_2.ErrorTxtBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -64,24 +73,15 @@
             this.ItbPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txt_total_desc = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txt_total_neto = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_itbis = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txt_total_desc = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_neto = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_itbis = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
-            this.txt_descuento = new GUI_V_2.ErrorTxtBox();
-            this.precio_pro = new GUI_V_2.ErrorTxtBox();
-            this.cantidad_pro = new GUI_V_2.ErrorTxtBox();
-            this.nombre_pro = new GUI_V_2.ErrorTxtBox();
-            this.codigo_pro = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox8 = new GUI_V_2.ErrorTxtBox();
-            this.errorTxtBox7 = new GUI_V_2.ErrorTxtBox();
-            this.txt_nombre_cliente = new GUI_V_2.ErrorTxtBox();
-            this.txt_codigo_cliente = new GUI_V_2.ErrorTxtBox();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -152,6 +152,21 @@
             this.label8.TabIndex = 83;
             this.label8.Text = "DESCUENTO";
             // 
+            // txt_descuento
+            // 
+            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descuento.Limpiar = false;
+            this.txt_descuento.Location = new System.Drawing.Point(1081, 49);
+            this.txt_descuento.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(132, 30);
+            this.txt_descuento.TabIndex = 82;
+            this.txt_descuento.Text = "0";
+            this.txt_descuento.Validar = true;
+            this.txt_descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox12_KeyPress);
+            // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -169,7 +184,7 @@
             this.button7.Size = new System.Drawing.Size(100, 48);
             this.button7.TabIndex = 81;
             this.button7.TabStop = false;
-            this.button7.Text = "Borrar";
+            this.button7.Text = " ";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -194,6 +209,21 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // precio_pro
+            // 
+            this.precio_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.precio_pro.Enabled = false;
+            this.precio_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precio_pro.Limpiar = false;
+            this.precio_pro.Location = new System.Drawing.Point(931, 49);
+            this.precio_pro.Margin = new System.Windows.Forms.Padding(4);
+            this.precio_pro.Name = "precio_pro";
+            this.precio_pro.Size = new System.Drawing.Size(133, 30);
+            this.precio_pro.TabIndex = 79;
+            this.precio_pro.TabStop = false;
+            this.precio_pro.Validar = true;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -206,6 +236,38 @@
             this.label2.Size = new System.Drawing.Size(80, 24);
             this.label2.TabIndex = 78;
             this.label2.Text = "PRECIO";
+            // 
+            // cantidad_pro
+            // 
+            this.cantidad_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cantidad_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantidad_pro.Limpiar = false;
+            this.cantidad_pro.Location = new System.Drawing.Point(717, 49);
+            this.cantidad_pro.Margin = new System.Windows.Forms.Padding(4);
+            this.cantidad_pro.Name = "cantidad_pro";
+            this.cantidad_pro.Size = new System.Drawing.Size(107, 30);
+            this.cantidad_pro.TabIndex = 77;
+            this.cantidad_pro.Text = "1";
+            this.cantidad_pro.Validar = true;
+            this.cantidad_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_pro_KeyPress);
+            // 
+            // nombre_pro
+            // 
+            this.nombre_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.nombre_pro.Enabled = false;
+            this.nombre_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nombre_pro.Limpiar = false;
+            this.nombre_pro.Location = new System.Drawing.Point(241, 49);
+            this.nombre_pro.Margin = new System.Windows.Forms.Padding(4);
+            this.nombre_pro.Name = "nombre_pro";
+            this.nombre_pro.Size = new System.Drawing.Size(353, 30);
+            this.nombre_pro.TabIndex = 76;
+            this.nombre_pro.TabStop = false;
+            this.nombre_pro.Text = "Descripción de producto";
+            this.nombre_pro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nombre_pro.Validar = true;
             // 
             // label3
             // 
@@ -241,12 +303,27 @@
             this.btn_verProductos.UseVisualStyleBackColor = false;
             this.btn_verProductos.Click += new System.EventHandler(this.button4_Click);
             // 
+            // codigo_pro
+            // 
+            this.codigo_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.codigo_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigo_pro.Limpiar = false;
+            this.codigo_pro.Location = new System.Drawing.Point(123, 49);
+            this.codigo_pro.Margin = new System.Windows.Forms.Padding(4);
+            this.codigo_pro.Name = "codigo_pro";
+            this.codigo_pro.Size = new System.Drawing.Size(109, 30);
+            this.codigo_pro.TabIndex = 1;
+            this.codigo_pro.Validar = true;
+            this.codigo_pro.TextChanged += new System.EventHandler(this.codigo_pro_TextChanged);
+            this.codigo_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigo_pro_KeyPress);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.fecha_hora);
             this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.errorTxtBox8);
+            this.panel4.Controls.Add(this.txt_codigo_fac);
             this.panel4.Controls.Add(this.errorTxtBox7);
             this.panel4.Controls.Add(this.txt_nombre_cliente);
             this.panel4.Controls.Add(this.btn_clientes);
@@ -258,6 +335,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1692, 53);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // fecha_hora
             // 
@@ -285,6 +363,52 @@
             this.comboBox1.TabIndex = 72;
             this.comboBox1.Text = "VENDEDOR";
             // 
+            // txt_codigo_fac
+            // 
+            this.txt_codigo_fac.Enabled = false;
+            this.txt_codigo_fac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo_fac.Limpiar = false;
+            this.txt_codigo_fac.Location = new System.Drawing.Point(1045, 6);
+            this.txt_codigo_fac.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_codigo_fac.Name = "txt_codigo_fac";
+            this.txt_codigo_fac.Size = new System.Drawing.Size(221, 30);
+            this.txt_codigo_fac.TabIndex = 71;
+            this.txt_codigo_fac.TabStop = false;
+            this.txt_codigo_fac.Text = "FAC000000";
+            this.txt_codigo_fac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_codigo_fac.Validar = true;
+            // 
+            // errorTxtBox7
+            // 
+            this.errorTxtBox7.Enabled = false;
+            this.errorTxtBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorTxtBox7.Limpiar = false;
+            this.errorTxtBox7.Location = new System.Drawing.Point(1276, 6);
+            this.errorTxtBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.errorTxtBox7.Name = "errorTxtBox7";
+            this.errorTxtBox7.Size = new System.Drawing.Size(207, 30);
+            this.errorTxtBox7.TabIndex = 70;
+            this.errorTxtBox7.TabStop = false;
+            this.errorTxtBox7.Text = "COMPROBANTE";
+            this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.errorTxtBox7.Validar = true;
+            // 
+            // txt_nombre_cliente
+            // 
+            this.txt_nombre_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_nombre_cliente.Enabled = false;
+            this.txt_nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre_cliente.Limpiar = false;
+            this.txt_nombre_cliente.Location = new System.Drawing.Point(208, 7);
+            this.txt_nombre_cliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nombre_cliente.Name = "txt_nombre_cliente";
+            this.txt_nombre_cliente.Size = new System.Drawing.Size(491, 30);
+            this.txt_nombre_cliente.TabIndex = 69;
+            this.txt_nombre_cliente.TabStop = false;
+            this.txt_nombre_cliente.Text = "Nombre cliente";
+            this.txt_nombre_cliente.Validar = true;
+            // 
             // btn_clientes
             // 
             this.btn_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -304,6 +428,20 @@
             this.btn_clientes.Text = "CLIENTES";
             this.btn_clientes.UseVisualStyleBackColor = false;
             this.btn_clientes.Click += new System.EventHandler(this.btn_clientes_Click);
+            // 
+            // txt_codigo_cliente
+            // 
+            this.txt_codigo_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_codigo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo_cliente.Limpiar = false;
+            this.txt_codigo_cliente.Location = new System.Drawing.Point(111, 7);
+            this.txt_codigo_cliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_codigo_cliente.Name = "txt_codigo_cliente";
+            this.txt_codigo_cliente.Size = new System.Drawing.Size(88, 30);
+            this.txt_codigo_cliente.TabIndex = 1;
+            this.txt_codigo_cliente.Validar = true;
+            this.txt_codigo_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox1_KeyPress);
             // 
             // label1
             // 
@@ -475,14 +613,14 @@
             this.dataGridViewProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewProducto.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodPro,
@@ -497,21 +635,21 @@
             this.dataGridViewProducto.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewProducto.Name = "dataGridViewProducto";
             this.dataGridViewProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridViewProducto.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Tomato;
+            this.dataGridViewProducto.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProducto.Size = new System.Drawing.Size(1692, 350);
             this.dataGridViewProducto.TabIndex = 0;
@@ -593,59 +731,6 @@
             this.panel6.Size = new System.Drawing.Size(1692, 111);
             this.panel6.TabIndex = 4;
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(657, 66);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(156, 24);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "- DESCUENTO:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(979, 65);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 24);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "TOTAL NETO:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(359, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 24);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "+ ITBIS:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 72);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 24);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "TOTAL BRUTO:";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // txt_total_desc
             // 
             this.txt_total_desc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -659,6 +744,18 @@
             this.txt_total_desc.TabStop = false;
             this.txt_total_desc.Text = "0.00";
             this.txt_total_desc.Validar = true;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(657, 66);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 24);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "- DESCUENTO:";
             // 
             // txt_total_neto
             // 
@@ -708,142 +805,46 @@
             this.txt_total_bruto.Validar = true;
             this.txt_total_bruto.TextChanged += new System.EventHandler(this.txt_total_bruto_TextChanged);
             // 
-            // txt_descuento
+            // label6
             // 
-            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descuento.Limpiar = false;
-            this.txt_descuento.Location = new System.Drawing.Point(1081, 49);
-            this.txt_descuento.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_descuento.Name = "txt_descuento";
-            this.txt_descuento.Size = new System.Drawing.Size(132, 30);
-            this.txt_descuento.TabIndex = 82;
-            this.txt_descuento.Text = "0";
-            this.txt_descuento.Validar = true;
-            this.txt_descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox12_KeyPress);
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(979, 65);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(147, 24);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "TOTAL NETO:";
             // 
-            // precio_pro
+            // label5
             // 
-            this.precio_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.precio_pro.Enabled = false;
-            this.precio_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precio_pro.Limpiar = false;
-            this.precio_pro.Location = new System.Drawing.Point(931, 49);
-            this.precio_pro.Margin = new System.Windows.Forms.Padding(4);
-            this.precio_pro.Name = "precio_pro";
-            this.precio_pro.Size = new System.Drawing.Size(133, 30);
-            this.precio_pro.TabIndex = 79;
-            this.precio_pro.TabStop = false;
-            this.precio_pro.Validar = true;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(359, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 24);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "+ ITBIS:";
             // 
-            // cantidad_pro
+            // label4
             // 
-            this.cantidad_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantidad_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad_pro.Limpiar = false;
-            this.cantidad_pro.Location = new System.Drawing.Point(717, 49);
-            this.cantidad_pro.Margin = new System.Windows.Forms.Padding(4);
-            this.cantidad_pro.Name = "cantidad_pro";
-            this.cantidad_pro.Size = new System.Drawing.Size(107, 30);
-            this.cantidad_pro.TabIndex = 77;
-            this.cantidad_pro.Text = "1";
-            this.cantidad_pro.Validar = true;
-            this.cantidad_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_pro_KeyPress);
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(4, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 24);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "TOTAL BRUTO:";
             // 
-            // nombre_pro
+            // timer1
             // 
-            this.nombre_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.nombre_pro.Enabled = false;
-            this.nombre_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nombre_pro.Limpiar = false;
-            this.nombre_pro.Location = new System.Drawing.Point(241, 49);
-            this.nombre_pro.Margin = new System.Windows.Forms.Padding(4);
-            this.nombre_pro.Name = "nombre_pro";
-            this.nombre_pro.Size = new System.Drawing.Size(353, 30);
-            this.nombre_pro.TabIndex = 76;
-            this.nombre_pro.TabStop = false;
-            this.nombre_pro.Text = "Descripción de producto";
-            this.nombre_pro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nombre_pro.Validar = true;
-            // 
-            // codigo_pro
-            // 
-            this.codigo_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.codigo_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigo_pro.Limpiar = false;
-            this.codigo_pro.Location = new System.Drawing.Point(123, 49);
-            this.codigo_pro.Margin = new System.Windows.Forms.Padding(4);
-            this.codigo_pro.Name = "codigo_pro";
-            this.codigo_pro.Size = new System.Drawing.Size(109, 30);
-            this.codigo_pro.TabIndex = 1;
-            this.codigo_pro.Validar = true;
-            this.codigo_pro.TextChanged += new System.EventHandler(this.codigo_pro_TextChanged);
-            this.codigo_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigo_pro_KeyPress);
-            // 
-            // errorTxtBox8
-            // 
-            this.errorTxtBox8.Enabled = false;
-            this.errorTxtBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox8.Limpiar = false;
-            this.errorTxtBox8.Location = new System.Drawing.Point(1045, 6);
-            this.errorTxtBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.errorTxtBox8.Name = "errorTxtBox8";
-            this.errorTxtBox8.Size = new System.Drawing.Size(221, 30);
-            this.errorTxtBox8.TabIndex = 71;
-            this.errorTxtBox8.TabStop = false;
-            this.errorTxtBox8.Text = "FAC000000";
-            this.errorTxtBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox8.Validar = true;
-            // 
-            // errorTxtBox7
-            // 
-            this.errorTxtBox7.Enabled = false;
-            this.errorTxtBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorTxtBox7.Limpiar = false;
-            this.errorTxtBox7.Location = new System.Drawing.Point(1276, 6);
-            this.errorTxtBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.errorTxtBox7.Name = "errorTxtBox7";
-            this.errorTxtBox7.Size = new System.Drawing.Size(207, 30);
-            this.errorTxtBox7.TabIndex = 70;
-            this.errorTxtBox7.TabStop = false;
-            this.errorTxtBox7.Text = "COMPROBANTE";
-            this.errorTxtBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.errorTxtBox7.Validar = true;
-            // 
-            // txt_nombre_cliente
-            // 
-            this.txt_nombre_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_nombre_cliente.Enabled = false;
-            this.txt_nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre_cliente.Limpiar = false;
-            this.txt_nombre_cliente.Location = new System.Drawing.Point(208, 7);
-            this.txt_nombre_cliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nombre_cliente.Name = "txt_nombre_cliente";
-            this.txt_nombre_cliente.Size = new System.Drawing.Size(491, 30);
-            this.txt_nombre_cliente.TabIndex = 69;
-            this.txt_nombre_cliente.TabStop = false;
-            this.txt_nombre_cliente.Text = "Nombre cliente";
-            this.txt_nombre_cliente.Validar = true;
-            // 
-            // txt_codigo_cliente
-            // 
-            this.txt_codigo_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_codigo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_cliente.Limpiar = false;
-            this.txt_codigo_cliente.Location = new System.Drawing.Point(111, 7);
-            this.txt_codigo_cliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_codigo_cliente.Name = "txt_codigo_cliente";
-            this.txt_codigo_cliente.Size = new System.Drawing.Size(88, 30);
-            this.txt_codigo_cliente.TabIndex = 1;
-            this.txt_codigo_cliente.Validar = true;
-            this.txt_codigo_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox1_KeyPress);
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // VentasModoTouch
             // 
@@ -901,7 +902,7 @@
         private ErrorTxtBox txt_nombre_cliente;
         private System.Windows.Forms.DataGridView dataGridViewProducto;
         private System.Windows.Forms.Panel panel6;
-        private ErrorTxtBox errorTxtBox8;
+        private ErrorTxtBox txt_codigo_fac;
         private ErrorTxtBox errorTxtBox7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
