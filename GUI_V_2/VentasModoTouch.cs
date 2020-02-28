@@ -110,13 +110,14 @@ namespace GUI_V_2
             obj.txt_monto.Text = txt_total_neto.Text;
             if (obj.ShowDialog() == DialogResult.OK)
             {
-                CrearFactura();
+                int id_metodo_pago = int.Parse(obj.c_metodopago.SelectedValue.ToString());
+                CrearFactura(id_metodo_pago);
 
             }
 
         }
 
-        public void CrearFactura()
+        public void CrearFactura(int metodo_pago)
         {
             try
             {
@@ -129,7 +130,8 @@ namespace GUI_V_2
                       descuento = Double.Parse(txt_total_desc.Text.Trim()),
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
                       usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
-                      NFC_comprobante = "prueba"
+                      NFC_comprobante = "prueba",
+                      metodo_pago_id = id_metodo_pago
                   };
                     DB.Facturas.Add(factura);
 
