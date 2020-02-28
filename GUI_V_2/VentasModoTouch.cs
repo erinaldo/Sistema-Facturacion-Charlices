@@ -115,7 +115,20 @@ namespace GUI_V_2
                         var producto = DB.Productos.FirstOrDefault(a => a.codigo == codigoPro);
                         if (producto != null)
                         {
-                            producto.cantidad -= int.Parse(registsros.Cells[3].Value.ToString());
+                            double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
+                            int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
+                            double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
+                            producto.cantidad -= cantidaProVendida;
+                            Detalles_Facturas detalles_fac = new Detalles_Facturas
+                            {
+                                id_factura = int.Parse(txt_codigo_fac.Text.Trim()),
+                                id_producto = producto.id,
+                                cantidad_producto = cantidaProVendida,
+                                precio_producto = precioProVenta,
+                                itbis = itbisProVenta
+                            };
+
+                            DB.Detalles_Facturas.Add(detalles_fac);
                         }
 
                     }
