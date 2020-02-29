@@ -149,5 +149,10 @@ namespace GUI_V_2
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void FormSuplidores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

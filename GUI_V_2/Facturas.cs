@@ -12,31 +12,35 @@ namespace GUI_V_2
     using System;
     using System.Collections.Generic;
     
-    public partial class Productos
+    public partial class Facturas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Productos()
+        public Facturas()
         {
             this.Detalles_Facturas = new HashSet<Detalles_Facturas>();
         }
     
         public int id { get; set; }
-        public string codigo { get; set; }
-        public string nombre { get; set; }
-        public int id_categoria { get; set; }
-        public decimal precio_normal { get; set; }
-        public decimal precio_empleado { get; set; }
-        public decimal precio_empresa { get; set; }
-        public int id_unidad_medida { get; set; }
-        public byte tipo_producto { get; set; }
-        public int itbis { get; set; }
-        public int cantidad { get; set; }
-        public int re_orden { get; set; }
-        public bool estado { get; set; }
+        public int id_cliente { get; set; }
+        public System.DateTime fecha { get; set; }
+        public double descuento { get; set; }
+        public double total { get; set; }
+        public double subtotal { get; set; }
+        public double itbis_total { get; set; }
+        public string NFC_comprobante { get; set; }
+        public int comprobante_id { get; set; }
+        public int usuario_vendedor_id { get; set; }
+        public int metodo_pago_id { get; set; }
+        public int usuario_cajero_id { get; set; }
     
-        public virtual Categorias Categorias { get; set; }
-        public virtual Unidades_medidas Unidades_medidas { get; set; }
+        public virtual Clientes Clientes { get; set; }
+        public virtual Facturas Facturas1 { get; set; }
+        public virtual Facturas Facturas2 { get; set; }
+        public virtual Combrobantes Combrobantes { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
+        public virtual Metodos_Pagos Metodos_Pagos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Facturas> Detalles_Facturas { get; set; }
+        public virtual Usuarios Usuarios1 { get; set; }
     }
 }

@@ -28,6 +28,53 @@
           <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="cla_rnc" Type="varchar" MaxLength="25" />
         </EntityType>
+        <EntityType Name="Combrobantes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="usados" Type="int" Nullable="false" />
+          <Property Name="cantidad_limite" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Detalles_Facturas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_factura" Type="int" Nullable="false" />
+          <Property Name="id_producto" Type="int" Nullable="false" />
+          <Property Name="cantidad_producto" Type="int" Nullable="false" />
+          <Property Name="precio_producto" Type="float" Nullable="false" />
+          <Property Name="itbis" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="descuento" Type="float" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="subtotal" Type="float" Nullable="false" />
+          <Property Name="itbis_total" Type="float" Nullable="false" />
+          <Property Name="NFC_comprobante" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="comprobante_id" Type="int" Nullable="false" />
+          <Property Name="usuario_vendedor_id" Type="int" Nullable="false" />
+          <Property Name="metodo_pago_id" Type="int" Nullable="false" />
+          <Property Name="usuario_cajero_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Productos">
           <Key>
             <PropertyRef Name="id" />
@@ -95,6 +142,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Detalles_Facturas_PRODUCTO">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="Detalles_Facturas" Type="Self.Detalles_Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Facturas">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_CAJERO">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_cajero_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_CLIENTE">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_COMBROBANTE">
+          <End Role="Combrobantes" Type="Self.Combrobantes" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Combrobantes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="comprobante_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_METOGO_PAGO">
+          <End Role="Metodos_Pagos" Type="Self.Metodos_Pagos" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pagos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="metodo_pago_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_VENDEDOR">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_vendedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UNIDADES_MEDIDAS">
           <End Role="Unidades_medidas" Type="Self.Unidades_medidas" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
@@ -107,9 +226,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FACT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGOFACT" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalles_Facturas" EntityType="Self.Detalles_Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Metodos_Pagos" EntityType="Self.Metodos_Pagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suplidores" EntityType="Self.Suplidores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unidades_medidas" EntityType="Self.Unidades_medidas" Schema="dbo" store:Type="Tables" />
@@ -117,6 +243,30 @@
           <AssociationSet Name="FK_CATEGORIAS" Association="Self.FK_CATEGORIAS">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Facturas_PRODUCTO" Association="Self.FK_Detalles_Facturas_PRODUCTO">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_CAJERO" Association="Self.FK_Facturas_CAJERO">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_CLIENTE" Association="Self.FK_Facturas_CLIENTE">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_COMBROBANTE" Association="Self.FK_Facturas_COMBROBANTE">
+            <End Role="Combrobantes" EntitySet="Combrobantes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_METOGO_PAGO" Association="Self.FK_Facturas_METOGO_PAGO">
+            <End Role="Metodos_Pagos" EntitySet="Metodos_Pagos" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_VENDEDOR" Association="Self.FK_Facturas_VENDEDOR">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
           <AssociationSet Name="FK_UNIDADES_MEDIDAS" Association="Self.FK_UNIDADES_MEDIDAS">
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
@@ -142,6 +292,45 @@
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
+          <EntitySet Name="Facturas" EntityType="Model.Facturas" />
+          <AssociationSet Name="FK_ID_CLIENTE" Association="Model.FK_ID_CLIENTE">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPROBANTES" Association="Model.FK_COMPROBANTES">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Facturas1" EntitySet="Facturas" />
+          </AssociationSet>
+          <EntitySet Name="Combrobantes" EntityType="Model.Combrobantes" />
+          <AssociationSet Name="FK_COMPROBANTES1" Association="Model.FK_COMPROBANTES1">
+            <End Role="Combrobantes" EntitySet="Combrobantes" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_Vendedor" Association="Model.FK_Facturas_Vendedor">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <EntitySet Name="Metodos_Pagos" EntityType="Model.Metodos_Pagos" />
+          <AssociationSet Name="FK_Facturas_METOGO_PAGO" Association="Model.FK_Facturas_METOGO_PAGO">
+            <End Role="Metodos_Pagos" EntitySet="Metodos_Pagos" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <EntitySet Name="Detalles_Facturas" EntityType="Model.Detalles_Facturas" />
+          <AssociationSet Name="FK_Detalles_Facturas_FACTURAS" Association="Model.FK_Detalles_Facturas_FACTURAS">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Facturas_PRODUCTO" Association="Model.FK_Detalles_Facturas_PRODUCTO">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_CAJERO" Association="Model.FK_Facturas_CAJERO">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <FunctionImport Name="FACT" ReturnType="Collection(Model.FACT_Result)">
+          <Parameter Name="CODIGOFACT" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Categorias">
           <Key>
@@ -166,6 +355,7 @@
           <Property Name="correo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="cla_rnc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_ID_CLIENTE" FromRole="Clientes" ToRole="Facturas" />
         </EntityType>
         <EntityType Name="Suplidores">
           <Key>
@@ -199,6 +389,7 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Categorias" Relationship="Model.FK_CATEGORIAS" FromRole="Productos" ToRole="Categorias" />
           <NavigationProperty Name="Unidades_medidas" Relationship="Model.FK_UNIDADES_MEDIDAS" FromRole="Productos" ToRole="Unidades_medidas" />
+          <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_Detalles_Facturas_PRODUCTO" FromRole="Productos" ToRole="Detalles_Facturas" />
         </EntityType>
         <EntityType Name="Unidades_medidas">
           <Key>
@@ -224,6 +415,8 @@
           <Property Name="direccion" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="correo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_Vendedor" FromRole="Usuarios" ToRole="Facturas" />
+          <NavigationProperty Name="Facturas1" Relationship="Model.FK_Facturas_CAJERO" FromRole="Usuarios" ToRole="Facturas" />
         </EntityType>
         <Association Name="FK_CATEGORIAS">
           <End Type="Model.Categorias" Role="Categorias" Multiplicity="1" />
@@ -249,6 +442,181 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="descuento" Type="Double" Nullable="false" />
+          <Property Name="total" Type="Double" Nullable="false" />
+          <Property Name="subtotal" Type="Double" Nullable="false" />
+          <Property Name="itbis_total" Type="Double" Nullable="false" />
+          <Property Name="NFC_comprobante" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Model.FK_ID_CLIENTE" FromRole="Facturas" ToRole="Clientes" />
+          <NavigationProperty Name="Facturas1" Relationship="Model.FK_COMPROBANTES" FromRole="Facturas" ToRole="Facturas1" />
+          <NavigationProperty Name="Facturas2" Relationship="Model.FK_COMPROBANTES" FromRole="Facturas1" ToRole="Facturas" />
+          <Property Name="comprobante_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Combrobantes" Relationship="Model.FK_COMPROBANTES1" FromRole="Facturas" ToRole="Combrobantes" />
+          <Property Name="usuario_vendedor_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_Facturas_Vendedor" FromRole="Facturas" ToRole="Usuarios" />
+          <Property Name="metodo_pago_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Metodos_Pagos" Relationship="Model.FK_Facturas_METOGO_PAGO" FromRole="Facturas" ToRole="Metodos_Pagos" />
+          <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_Detalles_Facturas_FACTURAS" FromRole="Facturas" ToRole="Detalles_Facturas" />
+          <Property Name="usuario_cajero_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios1" Relationship="Model.FK_Facturas_CAJERO" FromRole="Facturas" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_ID_CLIENTE">
+          <End Type="Model.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPROBANTES">
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Combrobantes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="serie" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="usados" Type="Int32" Nullable="false" />
+          <Property Name="cantidad_limite" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_COMPROBANTES1" FromRole="Combrobantes" ToRole="Facturas" />
+        </EntityType>
+        <Association Name="FK_COMPROBANTES1">
+          <End Type="Model.Combrobantes" Role="Combrobantes" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Combrobantes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="comprobante_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_Vendedor">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_vendedor_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Metodos_Pagos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_METOGO_PAGO" FromRole="Metodos_Pagos" ToRole="Facturas" />
+        </EntityType>
+        <Association Name="FK_Facturas_METOGO_PAGO">
+          <End Type="Model.Metodos_Pagos" Role="Metodos_Pagos" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metodos_Pagos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="metodo_pago_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Detalles_Facturas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id_factura" Type="Int32" Nullable="false" />
+          <Property Name="id_producto" Type="Int32" Nullable="false" />
+          <Property Name="cantidad_producto" Type="Int32" Nullable="false" />
+          <Property Name="precio_producto" Type="Double" Nullable="false" />
+          <Property Name="itbis" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Facturas" Relationship="Model.FK_Detalles_Facturas_FACTURAS" FromRole="Detalles_Facturas" ToRole="Facturas" />
+          <NavigationProperty Name="Productos" Relationship="Model.FK_Detalles_Facturas_PRODUCTO" FromRole="Detalles_Facturas" ToRole="Productos" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Detalles_Facturas_FACTURAS">
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="1" />
+          <End Type="Model.Detalles_Facturas" Role="Detalles_Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Facturas">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_Facturas_PRODUCTO">
+          <End Type="Model.Productos" Role="Productos" Multiplicity="1" />
+          <End Type="Model.Detalles_Facturas" Role="Detalles_Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Facturas">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_CAJERO">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="usuario_cajero_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="FACT_Result">
+          <Property Type="String" Name="nombre_completo" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="cla_rnc" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="id_facFormato" Nullable="false" MaxLength="11" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <Property Type="Int32" Name="cantidad_producto" Nullable="false" />
+          <Property Type="Double" Name="itbis" Nullable="false" />
+          <Property Type="Byte" Name="tipo_producto" Nullable="false" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="35" />
+          <Property Type="String" Name="tipo" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="NFC_comprobante" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="precio_producto" Nullable="false" MaxLength="44" />
+          <Property Type="String" Name="itbis_producto" Nullable="false" MaxLength="44" />
+          <Property Type="String" Name="total_factura" Nullable="false" MaxLength="44" />
+          <Property Type="String" Name="subtotal_factura" Nullable="false" MaxLength="44" />
+          <Property Type="String" Name="itbisTotal_factura" Nullable="false" MaxLength="44" />
+          <Property Type="String" Name="total_factura1" Nullable="false" MaxLength="44" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -339,6 +707,81 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="Model.Facturas">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="usuario_cajero_id" ColumnName="usuario_cajero_id" />
+                <ScalarProperty Name="metodo_pago_id" ColumnName="metodo_pago_id" />
+                <ScalarProperty Name="usuario_vendedor_id" ColumnName="usuario_vendedor_id" />
+                <ScalarProperty Name="comprobante_id" ColumnName="comprobante_id" />
+                <ScalarProperty Name="NFC_comprobante" ColumnName="NFC_comprobante" />
+                <ScalarProperty Name="itbis_total" ColumnName="itbis_total" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="descuento" ColumnName="descuento" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Combrobantes">
+            <EntityTypeMapping TypeName="Model.Combrobantes">
+              <MappingFragment StoreEntitySet="Combrobantes">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cantidad_limite" ColumnName="cantidad_limite" />
+                <ScalarProperty Name="usados" ColumnName="usados" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Metodos_Pagos">
+            <EntityTypeMapping TypeName="Model.Metodos_Pagos">
+              <MappingFragment StoreEntitySet="Metodos_Pagos">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detalles_Facturas">
+            <EntityTypeMapping TypeName="Model.Detalles_Facturas">
+              <MappingFragment StoreEntitySet="Detalles_Facturas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="itbis" ColumnName="itbis" />
+                <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+                <ScalarProperty Name="cantidad_producto" ColumnName="cantidad_producto" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="id_factura" ColumnName="id_factura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="FACT" FunctionName="Model.Store.FACT">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.FACT_Result">
+                <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
+                <ScalarProperty Name="cla_rnc" ColumnName="cla_rnc" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="id_facFormato" ColumnName="id_facFormato" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cantidad_producto" ColumnName="cantidad_producto" />
+                <ScalarProperty Name="itbis" ColumnName="itbis" />
+                <ScalarProperty Name="tipo_producto" ColumnName="tipo_producto" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="NFC_comprobante" ColumnName="NFC_comprobante" />
+                <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+                <ScalarProperty Name="itbis_producto" ColumnName="itbis_producto" />
+                <ScalarProperty Name="total_factura" ColumnName="total_factura" />
+                <ScalarProperty Name="subtotal_factura" ColumnName="subtotal_factura" />
+                <ScalarProperty Name="itbisTotal_factura" ColumnName="itbisTotal_factura" />
+                <ScalarProperty Name="total_factura1" ColumnName="total_factura1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

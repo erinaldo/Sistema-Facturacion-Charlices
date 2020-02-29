@@ -13,6 +13,18 @@
         <EntityTypeShape EntityType="Model.Usuarios" Width="1.5" PointX="5.375" PointY="5.75" />
         <AssociationConnector Association="Model.FK_CATEGORIAS" />
         <AssociationConnector Association="Model.FK_UNIDADES_MEDIDAS" />
+        <EntityTypeShape EntityType="Model.Facturas" Width="1.5" PointX="3" PointY="11.5" />
+        <AssociationConnector Association="Model.FK_ID_CLIENTE" />
+        <AssociationConnector Association="Model.FK_COMPROBANTES" />
+        <EntityTypeShape EntityType="Model.Combrobantes" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_COMPROBANTES1" />
+        <AssociationConnector Association="Model.FK_Facturas_Vendedor" />
+        <EntityTypeShape EntityType="Model.Metodos_Pagos" Width="1.5" PointX="0.75" PointY="7.875" />
+        <AssociationConnector Association="Model.FK_Facturas_METOGO_PAGO" />
+        <EntityTypeShape EntityType="Model.Detalles_Facturas" Width="1.5" PointX="7.875" PointY="7.125" />
+        <AssociationConnector Association="Model.FK_Detalles_Facturas_FACTURAS" />
+        <AssociationConnector Association="Model.FK_Detalles_Facturas_PRODUCTO" />
+        <AssociationConnector Association="Model.FK_Facturas_CAJERO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,5 +22,10 @@ namespace GUI_V_2
             ConsComprobante obj = new ConsComprobante();
             obj.ShowDialog();
         }
+
+        private void FormComprabantes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
