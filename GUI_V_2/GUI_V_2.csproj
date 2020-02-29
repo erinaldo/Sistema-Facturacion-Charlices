@@ -400,6 +400,7 @@
     <EmbeddedResource Include="Reportes\FormReportesDatos.resx">
       <DependentUpon>FormReportesDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepCli.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
@@ -421,6 +422,8 @@
       <DependentUpon>EntityFramework.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Clientes.datasource" />
+    <None Include="Properties\DataSources\ClientesClass.datasource" />
     <None Include="Properties\DataSources\ProductosClass.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

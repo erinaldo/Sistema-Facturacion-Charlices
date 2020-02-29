@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_V_2.Reportes;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,18 +90,58 @@ namespace GUI_V_2.Consultas
             }
         }
 
+        ReportDataSource rs = new ReportDataSource();
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-             ImprimirTabla(dataGridClientes, "Reporte Clientes");
+                FormReportesDatos Repor = new FormReportesDatos();
 
+                List<ClientesClass> lista = new List<ClientesClass>();
+                lista.Clear();
+
+                for (int p = 0; p < dataGridClientes.Rows.Count; p++)
+                {
+                    lista.Add(new ClientesClass
+                    {
+                        Codigo = dataGridClientes.Rows[p].Cells[0].Value.ToString(),
+                        Nombre = dataGridClientes.Rows[p].Cells[1].Value.ToString(),
+                        Cedula = dataGridClientes.Rows[p].Cells[2].Value.ToString(),
+                        Telefono = dataGridClientes.Rows[p].Cells[3].Value.ToString(),
+                        Direccion = dataGridClientes.Rows[p].Cells[4].Value.ToString(),
+                        Tipo = dataGridClientes.Rows[p].Cells[5].Value.ToString(),
+                        Correo = dataGridClientes.Rows[p].Cells[6].Value.ToString(),
+                        Estado = dataGridClientes.Rows[p].Cells[7].Value.ToString()
+                    });
+                }
+                rs.Name = "DataSetCli";
+                rs.Value = lista;
+                Repor.reportViewer1.LocalReport.DataSources.Clear();
+                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.RepCli.rdlc";
+                Repor.ShowDialog();
 
             }
             catch (Exception Aa)
             {
-                //Error
+                //   MessageBox.Show("Hubo un fallo Charly");
             }
         }
     }
 }
+
+
+
+public class ClientesClass
+{
+    public string Codigo { get; set; }
+    public string Nombre { get; set; }
+    public string Cedula { get; set; }
+    public string Telefono { get; set; }
+    public string Direccion { get; set; }
+    public string Correo { get; set; }
+    public string Tipo { get; set; }
+    public string Estado { get; set; }
+}
+
