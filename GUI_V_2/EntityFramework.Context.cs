@@ -12,6 +12,8 @@ namespace GUI_V_2
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class CRUD_MODEL : DbContext
     {
@@ -32,8 +34,17 @@ namespace GUI_V_2
         public virtual DbSet<Unidades_medidas> Unidades_medidas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Facturas> Facturas { get; set; }
-        public virtual DbSet<Detalles_Facturas> Detalles_Facturas { get; set; }
         public virtual DbSet<Combrobantes> Combrobantes { get; set; }
         public virtual DbSet<Metodos_Pagos> Metodos_Pagos { get; set; }
+        public virtual DbSet<Detalles_Facturas> Detalles_Facturas { get; set; }
+    
+        public virtual ObjectResult<FACT_Result> FACT(Nullable<int> cODIGOFACT)
+        {
+            var cODIGOFACTParameter = cODIGOFACT.HasValue ?
+                new ObjectParameter("CODIGOFACT", cODIGOFACT) :
+                new ObjectParameter("CODIGOFACT", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FACT_Result>("FACT", cODIGOFACTParameter);
+        }
     }
 }
