@@ -21,11 +21,10 @@ namespace GUI_V_2
             Cantidad.DataPropertyName = "cantidad";
             RedordenD.DataPropertyName = "re_orden";
             EstadoD.DataPropertyName = "estado";
-          
             LlenarTablaGrid();
             CargarDatosResumen();
         }
-
+      
         VentanaLoading Barra = new VentanaLoading();
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -38,7 +37,7 @@ namespace GUI_V_2
 
         }
 
-
+        int a = 0;
 
         public void CargarDatosResumen()
         {

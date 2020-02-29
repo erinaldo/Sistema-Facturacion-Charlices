@@ -12,19 +12,24 @@ namespace GUI_V_2
 {
     public partial class VentanaLoading : Form
     {
+        private int Tiempo;  
+
         public VentanaLoading()
         {
             InitializeComponent();
-            BarraPro.Value = 50;
+            Tiempo = 0;
             timer1.Start();
 
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            BarraPro.Increment(1);
-            if (BarraPro.Value==100)
+            Tiempo++;
+            label16.Text = "Cargando inicio, favor espere... " + Tiempo.ToString();
+            if (Tiempo == 3)
             {
+                label16.Text = "Listo...";
+                timer1.Stop();
                 this.Close();
             }
         }
