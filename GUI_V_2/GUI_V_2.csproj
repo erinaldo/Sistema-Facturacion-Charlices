@@ -403,6 +403,7 @@
     <EmbeddedResource Include="Reportes\RepCli.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\RepSup.rdlc" />
+    <EmbeddedResource Include="Reportes\RepUniMed.rdlc" />
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -427,6 +428,8 @@
     <None Include="Properties\DataSources\ClientesClass.datasource" />
     <None Include="Properties\DataSources\ProductosClass.datasource" />
     <None Include="Properties\DataSources\SuplidoresClass.datasource" />
+    <None Include="Properties\DataSources\UnidadesMedidasClass.datasource" />
+    <None Include="Properties\DataSources\Unidades_medidas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

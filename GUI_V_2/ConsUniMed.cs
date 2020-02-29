@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_V_2.Reportes;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,23 +45,36 @@ namespace GUI_V_2
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
 
-        
+
+        ReportDataSource rs = new ReportDataSource();
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                List<UnidadesMedidas> lista = new List<UnidadesMedidas>();
+                FormReportesDatos Repor = new FormReportesDatos();
+
+                List<UnidadesMedidasClass> lista = new List<UnidadesMedidasClass>();
                 lista.Clear();
 
-
-                foreach(DataGridViewRow i in dataGridView1.Rows)
-                {
-                    lista.Add(new UnidadesMedidas {
-                    Codigo = dataGridView1.Rows[0].Cells[0].Value.ToString(), 
-                    Nombre = dataGridView1.Rows[0].Cells[0].Value.ToString(),
-                    Estado = Convert.ToBoolean(dataGridView1.Rows[0].Cells[0].Value)
-                    });
+                     for (int p = 0; p < dataGridView1.Rows.Count; p++)
+                    {
+                        lista.Add(new UnidadesMedidasClass
+                        {
+                            Codigo = dataGridView1.Rows[p].Cells[0].Value.ToString(),
+                            Nombre = dataGridView1.Rows[p].Cells[1].Value.ToString(),
+                            Estado = dataGridView1.Rows[p].Cells[2].Value.ToString(),
+                        });
+                    
                 }
+
+                rs.Name = "DataSetUniMed";
+                rs.Value = lista;
+                Repor.reportViewer1.LocalReport.DataSources.Clear();
+                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.RepUniMed.rdlc";
+                Repor.ShowDialog();
+                
             }
             catch (Exception Aa)
             {
@@ -95,10 +110,10 @@ namespace GUI_V_2
 
 
 //metodo setter y getter
-public class UnidadesMedidas
+public class UnidadesMedidasClass
 {
-    public String Codigo { get; set; }
-    public String Nombre { get; set; }
-    public Boolean Estado { get; set; }
+    public string Codigo { get; set; }
+    public string Nombre { get; set; }
+    public string Estado { get; set; }
 
 }
