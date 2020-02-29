@@ -2,17 +2,17 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix5">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.89658in</Width>
+              <Width>3.06324in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.50074in</Width>
+              <Width>5.08408in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.79241in</Width>
+              <Width>1.04241in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -21,7 +21,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox41">
+                    <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -37,7 +37,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -53,7 +53,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox43">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -69,7 +69,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox43</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -85,7 +85,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox45">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -101,7 +101,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox45</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -228,10 +228,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetUniMed</DataSetName>
-        <Top>0.06944in</Top>
-        <Left>0.17249in</Left>
-        <Height>0.45834in</Height>
+        <DataSetName>DataSetCatPro</DataSetName>
+        <Top>0.05556in</Top>
+        <Left>0.11458in</Left>
+        <Height>0.45833in</Height>
         <Width>9.18973in</Width>
         <Style>
           <Border>
@@ -240,13 +240,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.875in</Height>
+    <Height>0.8125in</Height>
     <Style />
   </Body>
-  <Width>24.00337cm</Width>
+  <Width>23.89753cm</Width>
   <Page>
     <PageHeader>
-      <Height>1.58334in</Height>
+      <Height>1.5625in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -268,8 +268,8 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>0.59201in</Top>
-          <Left>2.04277in</Left>
+          <Top>0.57831in</Top>
+          <Left>1.98486in</Left>
           <Height>0.25in</Height>
           <Width>7.31945in</Width>
           <Style>
@@ -299,8 +299,8 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>0.18229in</Top>
-          <Left>2.04277in</Left>
+          <Top>0.16859in</Top>
+          <Left>1.98486in</Left>
           <Height>0.38195in</Height>
           <Width>2.72918in</Width>
           <ZIndex>1</ZIndex>
@@ -321,7 +321,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>REPORTE DE UNIDADES DE MEDIDAS</Value>
+                  <Value>REPORTE DE CATEGORIA DE PRODUCTOS</Value>
                   <Style>
                     <FontFamily>Segoe UI Light</FontFamily>
                     <FontSize>16pt</FontSize>
@@ -332,10 +332,10 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>2.83546cm</Top>
-          <Left>5.18864cm</Left>
+          <Top>2.80067cm</Top>
+          <Left>5.04155cm</Left>
           <Height>0.39236in</Height>
-          <Width>4.02667in</Width>
+          <Width>4.73152in</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -351,8 +351,8 @@
           <Source>Embedded</Source>
           <Value>LogoCanabacoaGrill</Value>
           <Sizing>Fit</Sizing>
-          <Top>0.12673in</Top>
-          <Left>0.43813cm</Left>
+          <Top>0.11303in</Top>
+          <Left>0.29104cm</Left>
           <Height>1.38195in</Height>
           <Width>1.72444in</Width>
           <ZIndex>3</ZIndex>
@@ -380,8 +380,8 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <Top>0.86632in</Top>
-          <Left>2.04277in</Left>
+          <Top>0.85262in</Top>
+          <Left>1.98486in</Left>
           <Height>0.25in</Height>
           <Width>1.62847in</Width>
           <ZIndex>4</ZIndex>
@@ -415,8 +415,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.12673in</Top>
-          <Left>6.69611in</Left>
+          <Top>0.11303in</Top>
+          <Left>6.6382in</Left>
           <Height>0.26756in</Height>
           <Width>2.66611in</Width>
           <ZIndex>5</ZIndex>
@@ -450,10 +450,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
-          <Top>1.25868in</Top>
-          <Left>6.21874in</Left>
+          <Top>1.24498in</Top>
+          <Left>6.85875in</Left>
           <Height>0.25in</Height>
-          <Width>3.14348in</Width>
+          <Width>2.44556in</Width>
           <ZIndex>6</ZIndex>
           <Style>
             <Border>
@@ -473,7 +473,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.50001in</Height>
+      <Height>0.6875in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -496,8 +496,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.06944in</Top>
-          <Left>0.17249in</Left>
+          <Top>0.18056in</Top>
+          <Left>0.10076in</Left>
           <Height>0.34048in</Height>
           <Width>4.97445in</Width>
           <Style>
@@ -517,7 +517,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>= CountRows("DataSetUniMed")</Value>
+                  <Value>= CountRows("DataSetCatPro")</Value>
                   <Style>
                     <FontFamily>Segoe UI Light</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -531,8 +531,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.06944in</Top>
-          <Left>5.37951in</Left>
+          <Top>0.18056in</Top>
+          <Left>5.30778in</Left>
           <Height>0.34048in</Height>
           <Width>3.99653in</Width>
           <ZIndex>1</ZIndex>
@@ -568,11 +568,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>a242d5f2-a26a-4cef-ac41-41c22b19f8aa</rd:DataSourceID>
+      <rd:DataSourceID>83fc3cd0-17da-4a7d-bc03-4be614da01b8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetUniMed">
+    <DataSet Name="DataSetCatPro">
       <Query>
         <DataSourceName>global</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -584,7 +584,7 @@
         </Field>
         <Field Name="Estado">
           <DataField>Estado</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Nombre">
           <DataField>Nombre</DataField>
@@ -593,8 +593,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>global</rd:DataSetName>
-        <rd:TableName>UnidadesMedidasClass</rd:TableName>
-        <rd:ObjectDataSourceType>UnidadesMedidasClass, GUI_V_2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>CatProClass</rd:TableName>
+        <rd:ObjectDataSourceType>CatProClass, GUI_V_2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -834,5 +834,5 @@ AAECBAgQIECAAAECDq4NECBAgAABAgQIECBAgMBCwMFd1CgEAQIECBAgQIAAAQIECDi4NkCAAAECBAgQ
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>f546ddae-eea9-43cc-9503-e4832d211f7a</rd:ReportID>
+  <rd:ReportID>99ad6f9e-e7ce-45d0-9d5f-3773e082df27</rd:ReportID>
 </Report>

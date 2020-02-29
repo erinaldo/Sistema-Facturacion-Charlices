@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI_V_2.Reportes;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,17 +77,50 @@ namespace GUI_V_2
             }
         }
 
+        ReportDataSource rs = new ReportDataSource();
+
         private void button2_Click(object sender, EventArgs e)
         {
-            try {
-                ImprimirTabla(dataGridView1, "Reporte Categoria Productos");
+            try
+            {
+                FormReportesDatos Repor = new FormReportesDatos();
+
+                List<CatProClass> lista = new List<CatProClass>();
+                lista.Clear();
+
+                for (int p = 0; p < dataGridView1.Rows.Count; p++)
+                {
+                    lista.Add(new CatProClass
+                    {
+                        Codigo = dataGridView1.Rows[p].Cells[0].Value.ToString(),
+                        Nombre = dataGridView1.Rows[p].Cells[1].Value.ToString(),
+                        Estado = dataGridView1.Rows[p].Cells[2].Value.ToString(),
+                    });
+                }
+                rs.Name = "DataSetCatPro";
+                rs.Value = lista;
+                Repor.reportViewer1.LocalReport.DataSources.Clear();
+                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.RepCatPro.rdlc";
+                Repor.ShowDialog();
+
             }
             catch (Exception Aa)
             {
                 //Error
             }
         }
-        
+
 
     }
+}
+
+
+//metodo setter y getter
+public class CatProClass
+{
+    public string Codigo { get; set; }
+    public string Nombre { get; set; }
+    public string Estado { get; set; }
+
 }

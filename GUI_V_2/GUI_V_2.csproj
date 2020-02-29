@@ -400,6 +400,7 @@
     <EmbeddedResource Include="Reportes\FormReportesDatos.resx">
       <DependentUpon>FormReportesDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepCatPro.rdlc" />
     <EmbeddedResource Include="Reportes\RepCli.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\RepSup.rdlc" />
@@ -424,6 +425,7 @@
       <DependentUpon>EntityFramework.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CatProClass.datasource" />
     <None Include="Properties\DataSources\Clientes.datasource" />
     <None Include="Properties\DataSources\ClientesClass.datasource" />
     <None Include="Properties\DataSources\ProductosClass.datasource" />

@@ -65,9 +65,7 @@ namespace GUI_V_2
                             Nombre = dataGridView1.Rows[p].Cells[1].Value.ToString(),
                             Estado = dataGridView1.Rows[p].Cells[2].Value.ToString(),
                         });
-                    
                 }
-
                 rs.Name = "DataSetUniMed";
                 rs.Value = lista;
                 Repor.reportViewer1.LocalReport.DataSources.Clear();
