@@ -156,7 +156,6 @@ namespace GUI_V_2
 
                             Detalles_Facturas detalles_fac = new Detalles_Facturas
                             {
-                                id_factura = int.Parse(txt_codigo_fac.Text.Trim()),
                                 id_producto = producto.id,
                                 cantidad_producto = cantidaProVendida,
                                 precio_producto = precioProVenta,
@@ -599,7 +598,148 @@ namespace GUI_V_2
         {
 
         }
-    }
 
+        private void Reservar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewProducto.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay producto agregado al carrito.");
+                return;
+            }
+
+            CrearReserva();
+        }
+
+
+        public void CrearReserva()
+        {
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    Ordenes_Reservadas orden = new Ordenes_Reservadas
+                    {
+                        id_cliente = id_cliente,
+                    };
+
+
+                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                    {
+                        string codigoPro = registsros.Cells[0].Value.ToString();
+                        var producto = DB.Productos.FirstOrDefault(a => a.codigo == codigoPro);
+                        if (producto != null)
+                        {
+                            double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
+                            int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
+                            double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
+                            if (producto.tipo_producto == 1) producto.cantidad -= cantidaProVendida;
+
+                            Detalles_Ordenes detalles_orden = new Detalles_Ordenes
+                            {
+                                id_producto = producto.id,
+                                cantidad_producto = cantidaProVendida,
+                                precio_producto = precioProVenta,
+                                itbis = itbisProVenta
+                            };
+                            orden.Detalles_Ordenes.Add(detalles_orden);
+                        }
+
+                    }
+                    DB.Ordenes_Reservadas.Add(orden);
+                    DB.SaveChanges();
+                    LimpiarCampo();
+                    MessageBox.Show("La orden se creo correctamente.");
+                }
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void txt_numero_orden_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                int codigo = int.Parse(txt_numero_orden.Text.Trim());
+                if (!codigo.Equals(""))
+                {
+                    OrdenByCodigo(codigo);
+                }
+            }
+
+        }
+
+        public void OrdenByCodigo(int codigo_orden)
+        {
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    var orden = from ord in DB.Ordenes_Reservadas
+                                join Deta_orden in DB.Detalles_Ordenes on ord.id
+                     equals Deta_orden.orden_id
+                                join pro in DB.Productos on Deta_orden.id_producto equals pro.id join cli in DB.Clientes on ord.id_cliente equals cli.id
+                                where ord.estado == false && ord.id == codigo_orden
+                                select new
+                                {
+                                    ord.id_cliente,
+                                    cliente_codigo = cli.codigo,
+                                    cli.nombre_completo,
+                                    pro.nombre,
+                                    pro.codigo,
+                                    Deta_orden.cantidad_producto,
+                                    Deta_orden.precio_producto,
+                                    Deta_orden.itbis,
+                                };
+                    
+
+
+                    if (orden != null)
+                    {
+                        dataGridViewProducto.Rows.Clear();
+                        double total_Sub = 0;
+                        double total_itbis = 0;
+                        foreach (var producto in orden.ToList())
+                        {
+                            txt_codigo_cliente.Text = producto.cliente_codigo;
+                            txt_nombre_cliente.Text = producto.nombre_completo;
+                            id_cliente = producto.id_cliente;
+                            int cantidad_pro = producto.cantidad_producto;
+                            double precio_pro = producto.precio_producto;
+                            double sub_total = cantidad_pro * precio_pro;
+                            double totalItbis = producto.itbis;
+                            double total = sub_total + totalItbis;
+                            total_Sub += sub_total;
+                            total_itbis += totalItbis;
+                            dataGridViewProducto.Rows.Add(producto.codigo, producto.nombre, producto.precio_producto, producto.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString());
+                        }
+
+                        txt_total_bruto.Text = total_Sub.ToString();
+                        txt_total_itbis.Text = total_itbis.ToString();
+                        txt_total_neto.Text = (total_itbis + total_Sub).ToString();
+                        txt_total_desc.Text = "0.0";
+                    }
+                    else
+                    {
+                        nombre_pro.Text = "Descripción de producto";
+                        precio_pro.Text = "";
+                        disponible_pro.Text = "";
+                        itbisPro = 0;
+                        MessageBox.Show("No existe un producto con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+    }
 
 }
