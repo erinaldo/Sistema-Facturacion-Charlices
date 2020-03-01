@@ -221,13 +221,23 @@ namespace GUI_V_2
             if (obj.ShowDialog() == DialogResult.OK)
             {
 
-
-                txt_codigo_cliente.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                txt_nombre_cliente.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                id_cliente = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
-                codigo_pro.Focus();
+                string codigo = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                string nombre = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                int id = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
+                SetCampoByCliente(nombre,codigo,id);
             }
         }
+
+
+        public void SetCampoByCliente(string nombre, string codigo, int id)
+        {
+            txt_codigo_cliente.Text = codigo;
+            txt_nombre_cliente.Text = nombre;
+            id_cliente = id;
+            codigo_pro.Focus();
+
+        }
+
 
         private void codigo_pro_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -283,20 +293,18 @@ namespace GUI_V_2
             cantidad_pro.Focus();
         }
 
-        public void ClienteByCodigo(string codigoPro)
+        public void ClienteByCodigo(string codigo_cliente)
         {
             try
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    IQueryable<Clientes> cliente = DB.Clientes.Where(p => p.codigo == codigoPro && p.estado == true);
+                    IQueryable<Clientes> cliente = DB.Clientes.Where(p => p.codigo == codigo_cliente && p.estado == true);
                     var respcliente = cliente.SingleOrDefault();
 
                     if (respcliente != null)
                     {
-                        txt_nombre_cliente.Text = respcliente.nombre_completo;
-                        id_cliente = respcliente.id;
-                        cantidad_pro.Focus();
+                        SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id);
                     }
                     else
                     {
