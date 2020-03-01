@@ -17,7 +17,7 @@ namespace GUI_V_2
             InitializeComponent();
             Barra.Show();
             Codigo.DataPropertyName = "codigo";
-            Nombre.DataPropertyName = "nombre_producto";
+            Nombre.DataPropertyName = "nombre";
             Cantidad.DataPropertyName = "cantidad";
             RedordenD.DataPropertyName = "re_orden";
             EstadoD.DataPropertyName = "estado";
@@ -67,22 +67,9 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    //IQueryable<Productos> 
-                    var productos = from pro in DB.Productos
-                                    join cat in DB.Categorias on pro.id_categoria
-                             equals cat.id
-                                    join unidad in DB.Unidades_medidas on pro.id_unidad_medida
-                      equals unidad.id
-                                    select new
-                                    {
-                                        pro.codigo,
-                                        nombre_producto = pro.nombre,
-                                        pro.cantidad,
-                                        pro.re_orden,
-                                        pro.estado,
-                                    };
-                    productos = productos.Where(pro => pro.estado==true && (pro.cantidad <= pro.re_orden));
-                    TablaProductos.DataSource = productos.ToList();
+                    IQueryable<Productos> productos = DB.Productos.Where(pro => pro.estado==true 
+                    && (pro.cantidad <= pro.re_orden) && pro.tipo_producto==1);
+                    TablaProductos.DataSource = productos.Select(p=>new {p.codigo,p.nombre,p.cantidad}) .ToList();
 
                 }
             }
@@ -91,7 +78,11 @@ namespace GUI_V_2
                 //error
             }
         }
-        
+
+        private void FormInicioResumen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
