@@ -18,6 +18,7 @@ namespace GUI_V_2.Consultas
         {
             InitializeComponent();
             dataGridClientes.AutoGenerateColumns = false;
+            id.DataPropertyName = "id";
             CodCli.DataPropertyName = "codigo";
             NomCli.DataPropertyName = "nombre_completo";
             CedCli.DataPropertyName = "cla_rnc";
@@ -69,8 +70,9 @@ namespace GUI_V_2.Consultas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridClientes.Rows.Count == 0)
-                return;
+            if (dataGridClientes.Rows.Count == 0) return;
+            DialogResult = DialogResult.OK;
+            Close();
 
         }
         
