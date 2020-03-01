@@ -37,6 +37,8 @@ namespace GUI_V_2
         public virtual DbSet<Combrobantes> Combrobantes { get; set; }
         public virtual DbSet<Metodos_Pagos> Metodos_Pagos { get; set; }
         public virtual DbSet<Detalles_Facturas> Detalles_Facturas { get; set; }
+        public virtual DbSet<Detalles_Ordenes> Detalles_Ordenes { get; set; }
+        public virtual DbSet<Ordenes_Reservadas> Ordenes_Reservadas { get; set; }
     
         public virtual ObjectResult<FACT_Result> FACT(Nullable<int> cODIGOFACT)
         {

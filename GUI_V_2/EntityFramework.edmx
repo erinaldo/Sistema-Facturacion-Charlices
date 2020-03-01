@@ -50,6 +50,17 @@
           <Property Name="precio_producto" Type="float" Nullable="false" />
           <Property Name="itbis" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="Detalles_Ordenes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="orden_id" Type="int" Nullable="false" />
+          <Property Name="id_producto" Type="int" Nullable="false" />
+          <Property Name="cantidad_producto" Type="int" Nullable="false" />
+          <Property Name="precio_producto" Type="float" Nullable="false" />
+          <Property Name="itbis" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Facturas">
           <Key>
             <PropertyRef Name="id" />
@@ -73,6 +84,14 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ordenes_Reservadas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Productos">
@@ -142,6 +161,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CLIENTE">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="Ordenes_Reservadas" Type="Self.Ordenes_Reservadas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ordenes_Reservadas">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Detalles_Facturas_PRODUCTO">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalles_Facturas" Type="Self.Detalles_Facturas" Multiplicity="*" />
@@ -150,6 +181,18 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Detalles_Facturas">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_ORDEN_PRODUCTO">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="Detalles_Ordenes" Type="Self.Detalles_Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Ordenes">
               <PropertyRef Name="id_producto" />
             </Dependent>
           </ReferentialConstraint>
@@ -214,6 +257,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ORDEN">
+          <End Role="Ordenes_Reservadas" Type="Self.Ordenes_Reservadas" Multiplicity="1" />
+          <End Role="Detalles_Ordenes" Type="Self.Detalles_Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ordenes_Reservadas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Ordenes">
+              <PropertyRef Name="orden_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UNIDADES_MEDIDAS">
           <End Role="Unidades_medidas" Type="Self.Unidades_medidas" Multiplicity="1" />
           <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
@@ -234,8 +289,10 @@
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detalles_Facturas" EntityType="Self.Detalles_Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detalles_Ordenes" EntityType="Self.Detalles_Ordenes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Metodos_Pagos" EntityType="Self.Metodos_Pagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ordenes_Reservadas" EntityType="Self.Ordenes_Reservadas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suplidores" EntityType="Self.Suplidores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unidades_medidas" EntityType="Self.Unidades_medidas" Schema="dbo" store:Type="Tables" />
@@ -244,9 +301,17 @@
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
+          <AssociationSet Name="FK_CLIENTE" Association="Self.FK_CLIENTE">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+          </AssociationSet>
           <AssociationSet Name="FK_Detalles_Facturas_PRODUCTO" Association="Self.FK_Detalles_Facturas_PRODUCTO">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_ORDEN_PRODUCTO" Association="Self.FK_Detalles_ORDEN_PRODUCTO">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Detalles_Ordenes" EntitySet="Detalles_Ordenes" />
           </AssociationSet>
           <AssociationSet Name="FK_Facturas_CAJERO" Association="Self.FK_Facturas_CAJERO">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -267,6 +332,10 @@
           <AssociationSet Name="FK_Facturas_VENDEDOR" Association="Self.FK_Facturas_VENDEDOR">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDEN" Association="Self.FK_ORDEN">
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+            <End Role="Detalles_Ordenes" EntitySet="Detalles_Ordenes" />
           </AssociationSet>
           <AssociationSet Name="FK_UNIDADES_MEDIDAS" Association="Self.FK_UNIDADES_MEDIDAS">
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
@@ -331,6 +400,20 @@
           <FunctionImport Name="FACT" ReturnType="Collection(Model.FACT_Result)">
           <Parameter Name="CODIGOFACT" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Detalles_Ordenes" EntityType="Model.Detalles_Ordenes" />
+          <EntitySet Name="Ordenes_Reservadas" EntityType="Model.Ordenes_Reservadas" />
+          <AssociationSet Name="FK_CLIENTE" Association="Model.FK_CLIENTE">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDEN" Association="Model.FK_ORDEN">
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+            <End Role="Detalles_Ordenes" EntitySet="Detalles_Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_ORDEN_PRODUCTO" Association="Model.FK_Detalles_ORDEN_PRODUCTO">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="Detalles_Ordenes" EntitySet="Detalles_Ordenes" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Categorias">
           <Key>
@@ -356,6 +439,7 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <Property Name="cla_rnc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Facturas" Relationship="Model.FK_ID_CLIENTE" FromRole="Clientes" ToRole="Facturas" />
+          <NavigationProperty Name="Ordenes_Reservadas" Relationship="Model.FK_CLIENTE" FromRole="Clientes" ToRole="Ordenes_Reservadas" />
         </EntityType>
         <EntityType Name="Suplidores">
           <Key>
@@ -390,6 +474,7 @@
           <NavigationProperty Name="Categorias" Relationship="Model.FK_CATEGORIAS" FromRole="Productos" ToRole="Categorias" />
           <NavigationProperty Name="Unidades_medidas" Relationship="Model.FK_UNIDADES_MEDIDAS" FromRole="Productos" ToRole="Unidades_medidas" />
           <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_Detalles_Facturas_PRODUCTO" FromRole="Productos" ToRole="Detalles_Facturas" />
+          <NavigationProperty Name="Detalles_Ordenes" Relationship="Model.FK_Detalles_ORDEN_PRODUCTO" FromRole="Productos" ToRole="Detalles_Ordenes" />
         </EntityType>
         <EntityType Name="Unidades_medidas">
           <Key>
@@ -617,6 +702,65 @@
           <Property Type="String" Name="itbisTotal_factura" Nullable="false" MaxLength="44" />
           <Property Type="String" Name="total_factura1" Nullable="false" MaxLength="44" />
         </ComplexType>
+        <EntityType Name="Detalles_Ordenes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="orden_id" Type="Int32" Nullable="false" />
+          <Property Name="id_producto" Type="Int32" Nullable="false" />
+          <Property Name="cantidad_producto" Type="Int32" Nullable="false" />
+          <Property Name="precio_producto" Type="Double" Nullable="false" />
+          <Property Name="itbis" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Ordenes_Reservadas" Relationship="Model.FK_ORDEN" FromRole="Detalles_Ordenes" ToRole="Ordenes_Reservadas" />
+          <NavigationProperty Name="Productos" Relationship="Model.FK_Detalles_ORDEN_PRODUCTO" FromRole="Detalles_Ordenes" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Ordenes_Reservadas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Model.FK_CLIENTE" FromRole="Ordenes_Reservadas" ToRole="Clientes" />
+          <NavigationProperty Name="Detalles_Ordenes" Relationship="Model.FK_ORDEN" FromRole="Ordenes_Reservadas" ToRole="Detalles_Ordenes" />
+        </EntityType>
+        <Association Name="FK_CLIENTE">
+          <End Type="Model.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="Model.Ordenes_Reservadas" Role="Ordenes_Reservadas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ordenes_Reservadas">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDEN">
+          <End Type="Model.Ordenes_Reservadas" Role="Ordenes_Reservadas" Multiplicity="1" />
+          <End Type="Model.Detalles_Ordenes" Role="Detalles_Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ordenes_Reservadas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Ordenes">
+              <PropertyRef Name="orden_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_ORDEN_PRODUCTO">
+          <End Type="Model.Productos" Role="Productos" Multiplicity="1" />
+          <End Type="Model.Detalles_Ordenes" Role="Detalles_Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Ordenes">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -782,6 +926,27 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Detalles_Ordenes">
+            <EntityTypeMapping TypeName="Model.Detalles_Ordenes">
+              <MappingFragment StoreEntitySet="Detalles_Ordenes">
+                <ScalarProperty Name="itbis" ColumnName="itbis" />
+                <ScalarProperty Name="precio_producto" ColumnName="precio_producto" />
+                <ScalarProperty Name="cantidad_producto" ColumnName="cantidad_producto" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="orden_id" ColumnName="orden_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ordenes_Reservadas">
+            <EntityTypeMapping TypeName="Model.Ordenes_Reservadas">
+              <MappingFragment StoreEntitySet="Ordenes_Reservadas">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

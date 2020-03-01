@@ -25,6 +25,11 @@
         <AssociationConnector Association="Model.FK_Detalles_Facturas_FACTURAS" />
         <AssociationConnector Association="Model.FK_Detalles_Facturas_PRODUCTO" />
         <AssociationConnector Association="Model.FK_Facturas_CAJERO" />
+        <EntityTypeShape EntityType="Model.Detalles_Ordenes" Width="1.5" PointX="5.25" PointY="17.125" />
+        <EntityTypeShape EntityType="Model.Ordenes_Reservadas" Width="1.5" PointX="3" PointY="17.375" />
+        <AssociationConnector Association="Model.FK_CLIENTE" />
+        <AssociationConnector Association="Model.FK_ORDEN" />
+        <AssociationConnector Association="Model.FK_Detalles_ORDEN_PRODUCTO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
