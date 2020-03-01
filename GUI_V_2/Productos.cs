@@ -18,6 +18,7 @@ namespace GUI_V_2
         public Productos()
         {
             this.Detalles_Facturas = new HashSet<Detalles_Facturas>();
+            this.Detalles_Ordenes = new HashSet<Detalles_Ordenes>();
         }
     
         public int id { get; set; }
@@ -38,5 +39,7 @@ namespace GUI_V_2
         public virtual Unidades_medidas Unidades_medidas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Facturas> Detalles_Facturas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Detalles_Ordenes> Detalles_Ordenes { get; set; }
     }
 }
