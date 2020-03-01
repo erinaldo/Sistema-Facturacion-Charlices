@@ -18,6 +18,7 @@ namespace GUI_V_2
         {
             InitializeComponent();
             dataGridVProducto.AutoGenerateColumns = false;
+            CodPro.DataPropertyName = "id";
             CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre_producto";
             CatPro.DataPropertyName = "nombre_categoria";
@@ -98,8 +99,7 @@ namespace GUI_V_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridVProducto.Rows.Count == 0)
-                return;
+            if (dataGridVProducto.Rows.Count == 0)  return;
             DialogResult = DialogResult.OK;
             Close();
         }

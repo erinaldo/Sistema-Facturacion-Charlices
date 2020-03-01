@@ -45,54 +45,57 @@
             this.Reorden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Size = new System.Drawing.Size(145, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Size = new System.Drawing.Size(189, 31);
             this.label2.Text = "PRODUCTOS";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(551, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(735, 38);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
-            this.filtro.Location = new System.Drawing.Point(147, 36);
-            this.filtro.Margin = new System.Windows.Forms.Padding(4);
+            this.filtro.Location = new System.Drawing.Point(196, 44);
+            this.filtro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             this.filtro.Leave += new System.EventHandler(this.filtro_Leave);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(13, 46);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(17, 57);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1216, 9);
-            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_cerrar.Location = new System.Drawing.Point(1621, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_nuevo.Location = new System.Drawing.Point(444, 31);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_nuevo.Location = new System.Drawing.Point(592, 38);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // nro_registros
             // 
             this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nro_registros.Location = new System.Drawing.Point(1167, 62);
+            this.nro_registros.Location = new System.Drawing.Point(1556, 76);
+            this.nro_registros.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(746, 31);
+            this.button2.Location = new System.Drawing.Point(995, 38);
+            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridVProducto
@@ -131,8 +134,10 @@
             this.CanPro,
             this.Reorden,
             this.TipPro,
-            this.estatus});
-            this.dataGridVProducto.Location = new System.Drawing.Point(12, 78);
+            this.estatus,
+            this.id});
+            this.dataGridVProducto.Location = new System.Drawing.Point(16, 96);
+            this.dataGridVProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridVProducto.Name = "dataGridVProducto";
             this.dataGridVProducto.ReadOnly = true;
             this.dataGridVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -152,7 +157,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridVProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVProducto.Size = new System.Drawing.Size(1234, 447);
+            this.dataGridVProducto.Size = new System.Drawing.Size(1645, 550);
             this.dataGridVProducto.TabIndex = 113;
             this.dataGridVProducto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVProducto_CellDoubleClick);
             // 
@@ -241,13 +246,20 @@
             this.estatus.Name = "estatus";
             this.estatus.ReadOnly = true;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
             // ConsPro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 537);
+            this.ClientSize = new System.Drawing.Size(1677, 661);
             this.Controls.Add(this.dataGridVProducto);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "ConsPro";
             this.Text = "ConsPro";
             this.Load += new System.EventHandler(this.ConsPro_Load);
@@ -280,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Reorden;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
