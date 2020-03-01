@@ -106,7 +106,13 @@ namespace GUI_V_2
 
         private void button10_Click(object sender, EventArgs e)
         {
-            PanelCobro obj = new PanelCobro();
+            if (dataGridViewProducto.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay producto agregado al carrito");
+                return;
+            }
+
+                PanelCobro obj = new PanelCobro();
             obj.txt_monto.Text = txt_total_neto.Text;
             if (obj.ShowDialog() == DialogResult.OK)
             {
@@ -154,7 +160,7 @@ namespace GUI_V_2
                                 id_producto = producto.id,
                                 cantidad_producto = cantidaProVendida,
                                 precio_producto = precioProVenta,
-                                itbis = 18
+                                itbis = itbisProVenta 
                             };
                             factura.Detalles_Facturas.Add(detalles_fac);
                         }
@@ -196,13 +202,31 @@ namespace GUI_V_2
         private void button4_Click(object sender, EventArgs e)
         {
             ConsPro obj = new ConsPro();
-            obj.ShowDialog();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+                string codigo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                string nombre_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                decimal precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
+                int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
+
+                SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro);
+
+            }
         }
 
         private void btn_clientes_Click(object sender, EventArgs e)
         {
             ConsCli obj = new ConsCli();
-            obj.ShowDialog();
+            if (obj.ShowDialog() == DialogResult.OK)
+            {
+
+
+                txt_codigo_cliente.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                txt_nombre_cliente.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                id_cliente = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
+                codigo_pro.Focus();
+            }
         }
 
         private void codigo_pro_KeyPress(object sender, KeyPressEventArgs e)
@@ -229,19 +253,16 @@ namespace GUI_V_2
 
                     if (respProducto != null)
                     {
-                        nombre_pro.Text = respProducto.nombre;
-                        precio_pro.Text = respProducto.precio_normal.ToString();
-                        CantidadDisponiblePro(codigoPro, int.Parse(respProducto.cantidad.ToString()));
-                        itbisPro = respProducto.itbis;
-                        cantidad_pro.Focus();
+                        SetCampoByProducto(respProducto.nombre,respProducto.precio_normal, codigoPro, respProducto.cantidad,respProducto.itbis);
                     }
                     else
                     {
-                        nombre_pro.Text = "";
+                        nombre_pro.Text = "Descripción de producto";
                         precio_pro.Text = "";
                         disponible_pro.Text = "";
                         itbisPro = 0;
-                        MessageBox.Show("no");
+                        MessageBox.Show("No existe un producto con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     }
                 }
             }
@@ -252,6 +273,15 @@ namespace GUI_V_2
 
         }
 
+        public void SetCampoByProducto(string nombre,decimal precio,string codigo,int cantidad,int itbis)
+        {
+            codigo_pro.Text = codigo;
+            nombre_pro.Text = nombre;
+            precio_pro.Text = precio.ToString();
+            CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
+            itbisPro = itbis;
+            cantidad_pro.Focus();
+        }
 
         public void ClienteByCodigo(string codigoPro)
         {
@@ -266,12 +296,13 @@ namespace GUI_V_2
                     {
                         txt_nombre_cliente.Text = respcliente.nombre_completo;
                         id_cliente = respcliente.id;
+                        cantidad_pro.Focus();
                     }
                     else
                     {
                         id_cliente = 0;
-                        txt_nombre_cliente.Text = "";
-                        MessageBox.Show("no");
+                        txt_nombre_cliente.Text = "Nombre cliente";
+                        MessageBox.Show("No existe un cliente con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
@@ -382,7 +413,7 @@ namespace GUI_V_2
             calcularDesc();
 
             codigo_pro.Text = "";
-            nombre_pro.Text = "";
+            nombre_pro.Text = "Descripción de producto";
             cantidad_pro.Text = "1";
             precio_pro.Text = "";
             disponible_pro.Text = "";
