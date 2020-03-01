@@ -152,7 +152,7 @@ namespace GUI_V_2
                             double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
                             int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
-                            producto.cantidad -= cantidaProVendida;
+                            if(producto.tipo_producto==1) producto.cantidad -= cantidaProVendida;
 
                             Detalles_Facturas detalles_fac = new Detalles_Facturas
                             {
@@ -168,6 +168,8 @@ namespace GUI_V_2
                     }
                     DB.Facturas.Add(factura);
                     DB.SaveChanges();
+                    LimpiarCampo();
+                    MessageBox.Show("La factura se creo correctamente.");
                     GenerarCodigoFac();
                 }
 
@@ -177,6 +179,16 @@ namespace GUI_V_2
 
                 MessageBox.Show(err.ToString());
             }
+        }
+
+        public void LimpiarCampo()
+        {
+            Utilidades.LimpiarControles(this);
+            txt_nombre_cliente.Text = "Nombre cliente";
+            txt_total_bruto.Text = "0.00";
+            txt_total_itbis.Text = "0.00";
+            txt_total_desc.Text = "0.00";
+            txt_total_neto.Text = "0.00";
         }
 
         //Funciones rapidas con teclas
@@ -209,8 +221,9 @@ namespace GUI_V_2
                 decimal precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
                 int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
                 int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
+                string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
 
-                SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro);
+                SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro, tipo_pro== "Inventario" ? 1 : 2);
 
             }
         }
@@ -263,7 +276,7 @@ namespace GUI_V_2
 
                     if (respProducto != null)
                     {
-                        SetCampoByProducto(respProducto.nombre,respProducto.precio_normal, codigoPro, respProducto.cantidad,respProducto.itbis);
+                        SetCampoByProducto(respProducto.nombre,respProducto.precio_normal, codigoPro, respProducto.cantidad,respProducto.itbis, respProducto.tipo_producto);
                     }
                     else
                     {
@@ -283,12 +296,14 @@ namespace GUI_V_2
 
         }
 
-        public void SetCampoByProducto(string nombre,decimal precio,string codigo,int cantidad,int itbis)
+        public void SetCampoByProducto(string nombre,decimal precio,string codigo,int cantidad,int itbis,int tipo_producto)
         {
             codigo_pro.Text = codigo;
             nombre_pro.Text = nombre;
             precio_pro.Text = precio.ToString();
-            CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
+            if (tipo_producto == 1) CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
+            else disponible_pro.Text = "Sin límite";
+            
             itbisPro = itbis;
             cantidad_pro.Focus();
         }
@@ -368,7 +383,7 @@ namespace GUI_V_2
                 return;
             }
             int cantidadCliPro = int.Parse(cantidad_pro.Text.Trim());
-            if (cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("Disponible:", "").ToString()))
+            if (!disponible_pro.Text.Trim().Contains("Sin límite") && cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("Disponible:", "").ToString()))
             {
                 MessageBox.Show($"La cantidad máxima disponible del producto {nombre_pro.Text.Trim()} es {disponible_pro.Text.Trim()} ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
