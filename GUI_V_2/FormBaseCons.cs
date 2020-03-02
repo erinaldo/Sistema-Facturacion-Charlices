@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGVPrinterHelper;
+
 
 namespace GUI_V_2
 {
@@ -35,7 +35,7 @@ namespace GUI_V_2
 
 
         }
-
+        /*
         //Metodo para generar los reportes
       public void ImprimirTabla(DataGridView tabla, String NomRep)
         {
@@ -73,7 +73,7 @@ namespace GUI_V_2
             tabla.Width = ancho;
             tabla.Height = alto;
         }
-
+        */
 
     }
 }
