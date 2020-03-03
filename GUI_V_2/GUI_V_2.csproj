@@ -450,6 +450,7 @@
     <None Include="Properties\DataSources\CatProClass.datasource" />
     <None Include="Properties\DataSources\Clientes.datasource" />
     <None Include="Properties\DataSources\ClientesClass.datasource" />
+    <None Include="Properties\DataSources\FacturaClass.datasource" />
     <None Include="Properties\DataSources\ProductosClass.datasource" />
     <None Include="Properties\DataSources\SuplidoresClass.datasource" />
     <None Include="Properties\DataSources\UnidadesMedidasClass.datasource" />

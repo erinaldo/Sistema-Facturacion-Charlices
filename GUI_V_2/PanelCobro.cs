@@ -184,6 +184,7 @@ namespace GUI_V_2
                     Descuento = ven.txt_total_desc.Text.Trim(),
                     NumFac = ven.txt_codigo_fac.Text.Trim(),
                     ITBIS = ven.txt_total_itbis.Text.Trim(),
+                    Total = ven.txt_total_neto.Text.Trim(),
                     Nota = TxtNota.Text.Trim(),
                     TipoPago = c_metodopago.SelectedValue.ToString(),
                 });
@@ -209,6 +210,7 @@ namespace GUI_V_2
 public class FacturaClass
 {
     public string NumFac { get; set; }
+    public string Total { get; set; }
     public string CodPro { get; set; }
     public string NomPro { get; set; }
     public string PrePro { get; set; }
