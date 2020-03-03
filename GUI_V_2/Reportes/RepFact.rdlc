@@ -144,7 +144,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>0001</Value>
+                <Value>=First(Fields!CodCli.Value, "DataSetFactura")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -178,7 +178,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>0009</Value>
+                <Value>=First(Fields!NumOrden.Value, "DataSetFactura")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -212,7 +212,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Jerinel Mendoza</Value>
+                <Value>=First(Fields!NomCli.Value, "DataSetFactura")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -280,7 +280,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>0000000009</Value>
+                <Value>=First(Fields!NumFac.Value, "DataSetFactura")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -348,7 +348,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>0009</Value>
+                <Value>=First(Fields!Comprobante.Value, "DataSetFactura")</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -699,7 +699,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>5.9793cm</Height>
+    <Height>4.55055cm</Height>
     <Style />
   </Body>
   <Width>8cm</Width>
@@ -824,7 +824,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>3.94229cm</Height>
+      <Height>5.95312cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -835,7 +835,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Un placer atenderle !!</Value>
+                  <Value>Gracias por preferirnos !</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                   </Style>
@@ -847,9 +847,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.1218cm</Top>
+          <Top>5.0268cm</Top>
           <Left>0cm</Left>
-          <Height>0.82049cm</Height>
+          <Height>0.58237cm</Height>
           <Width>8cm</Width>
           <Style>
             <Border>
@@ -881,8 +881,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.14111cm</Top>
-          <Left>0.1cm</Left>
+          <Top>1.72861cm</Top>
+          <Left>0.13528cm</Left>
           <Height>0.79403cm</Height>
           <Width>2.77813cm</Width>
           <ZIndex>1</ZIndex>
@@ -903,7 +903,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>0.00</Value>
+                  <Value>=First(Fields!Total.Value, "DataSetFactura")</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -916,8 +916,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.17639cm</Top>
-          <Left>3.05452cm</Left>
+          <Top>1.76389cm</Top>
+          <Left>3.0898cm</Left>
           <Height>0.75875cm</Height>
           <Width>4.7809cm</Width>
           <ZIndex>2</ZIndex>
@@ -938,7 +938,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Efectivo</Value>
+                  <Value>=First(Fields!TipoPago.Value, "DataSetFactura")</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -951,7 +951,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.11153cm</Top>
+          <Top>2.69903cm</Top>
           <Left>0.1353cm</Left>
           <Height>0.66174cm</Height>
           <Width>7.70012cm</Width>
@@ -985,7 +985,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.94966cm</Top>
+          <Top>3.53716cm</Top>
           <Left>0.14994cm</Left>
           <Height>0.66174cm</Height>
           <Width>1.31785cm</Width>
@@ -1007,7 +1007,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Con frito verde</Value>
+                  <Value>=First(Fields!Nota.Value, "DataSetFactura")</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1017,11 +1017,139 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.94966cm</Top>
+          <Top>3.53716cm</Top>
           <Left>1.64418cm</Left>
-          <Height>0.99575cm</Height>
+          <Height>1.34853cm</Height>
           <Width>6.19124cm</Width>
           <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox26">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>DESCUENTOS:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.06687cm</Top>
+          <Left>0.13528cm</Left>
+          <Height>0.55591cm</Height>
+          <Width>2.74284cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox27">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>TOTAL ITBS:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.40512cm</Top>
+          <Left>0.1cm</Left>
+          <Height>0.55591cm</Height>
+          <Width>2.27617cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox28">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Descuento.Value, "DataSetFactura")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.06687cm</Top>
+          <Left>3.0898cm</Left>
+          <Height>0.55591cm</Height>
+          <Width>4.74562cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!ITBIS.Value, "DataSetFactura")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.40512cm</Top>
+          <Left>3.05452cm</Left>
+          <Height>0.55591cm</Height>
+          <Width>4.74562cm</Width>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
