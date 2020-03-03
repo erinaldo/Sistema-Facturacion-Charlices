@@ -80,11 +80,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combrobantes.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="ConsUniMed.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsUniMed.Designer.cs">
       <DependentUpon>ConsUniMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Detalles_Facturas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalles_Ordenes.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FACT_Result.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
     <Compile Include="FormCaja.cs">
       <SubType>Form</SubType>
@@ -245,6 +260,12 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Metodos_Pagos.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ordenes_Reservadas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="PanelCobro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +423,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RepCatPro.rdlc" />
     <EmbeddedResource Include="Reportes\RepCli.rdlc" />
+    <EmbeddedResource Include="Reportes\RepFact.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\RepSup.rdlc" />
     <EmbeddedResource Include="Reportes\RepUniMed.rdlc" />
