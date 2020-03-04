@@ -1,4 +1,6 @@
 ﻿using GUI_V_2.Consultas;
+using GUI_V_2.Reportes;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -167,6 +169,7 @@ namespace GUI_V_2
                     }
                     DB.Facturas.Add(factura);
                     DB.SaveChanges();
+                    ImprimirFactura();
                     LimpiarCampo();
                     MessageBox.Show("La factura se creo correctamente.");
                     GenerarCodigoFac();
@@ -740,6 +743,85 @@ namespace GUI_V_2
             }
 
         }
-    }
 
+
+
+        ReportDataSource rs = new ReportDataSource();
+
+
+  public void ImprimirFactura()
+        {
+            try
+            {
+                FormReportesDatos Repor = new FormReportesDatos();
+                PanelCobro ven = new PanelCobro();
+                List<FacturaClass> lista = new List<FacturaClass>();
+                lista.Clear();
+
+                MessageBox.Show("Filas en la tabla: "+dataGridViewProducto.Rows.Count);
+                for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+                {
+                    MessageBox.Show("Nombre: " + dataGridViewProducto.Rows[p].Cells[1].Value.ToString());
+                    MessageBox.Show("Precio: " + dataGridViewProducto.Rows[p].Cells[2].Value.ToString());
+                    MessageBox.Show("Cantidad: " + dataGridViewProducto.Rows[p].Cells[3].Value.ToString());
+                    MessageBox.Show("SubTotal: " + dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+
+                    lista.Add(new FacturaClass
+                    {
+                        CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
+                        NomPro = dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                        PrePro = dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                        CanPro = dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                        SubTotal = dataGridViewProducto.Rows[p].Cells[4].Value.ToString(),
+                        CodCli = txt_codigo_cliente.Text.Trim(),
+                        NomCli = txt_nombre_cliente.Text.Trim(),
+                        Comprobante = txt_serie_comprobante.Text.Trim(),
+                        NumOrden = txt_numero_orden.Text.Trim(),
+                        Vendedor = comboBoxVendedores.SelectedItem.ToString(),
+                        Descuento = txt_total_desc.Text.Trim(),
+                        NumFac = txt_codigo_fac.Text.Trim(),
+                        ITBIS = txt_total_itbis.Text.Trim(),
+                        Total = txt_total_neto.Text.Trim(),
+                        Nota = ven.TxtNota.Text.Trim(),
+                        TipoPago = ven.c_metodopago.SelectedItem.ToString(),
+                    });
+                }
+            
+                rs.Name = "DataSetFactura";
+                rs.Value = lista;
+                Repor.reportViewer1.LocalReport.DataSources.Clear();
+                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.RepFact.rdlc";
+                Repor.ShowDialog();
+            }
+            catch (Exception aaaa)
+            {
+                //MessageBox.Show("Error al crear factura");
+            }
+        }
+
+
+    }
+}
+
+
+
+public class FacturaClass
+{
+    public string NumFac { get; set; }
+    public string Total { get; set; }
+    public string CodPro { get; set; }
+    public string NomPro { get; set; }
+    public string PrePro { get; set; }
+    public string CanPro { get; set; }
+    public string SubTotal { get; set; }
+    public string CodCli { get; set; }
+    public string NomCli { get; set; }
+    public string Comprobante { get; set; }
+    public string NumOrden { get; set; }
+    public string Vendedor { get; set; }
+    public string Descuento { get; set; }
+    public string ITBIS { get; set; }
+    public string Nota { get; set; }
+    public string TipoPago { get; set; }
 }

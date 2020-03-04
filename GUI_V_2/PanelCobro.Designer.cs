@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelCobro));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtNota = new System.Windows.Forms.RichTextBox();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.panel_dociento = new System.Windows.Forms.Panel();
             this.panel_cien = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtNota = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,6 +91,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1098, 333);
             this.panel1.TabIndex = 95;
+            // 
+            // TxtNota
+            // 
+            this.TxtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNota.Location = new System.Drawing.Point(448, 209);
+            this.TxtNota.Name = "TxtNota";
+            this.TxtNota.Size = new System.Drawing.Size(407, 116);
+            this.TxtNota.TabIndex = 108;
+            this.TxtNota.Text = "Doble click para agregar una nota";
             // 
             // btn_limpiar
             // 
@@ -364,15 +373,6 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "PAGO RÁPIDO";
             // 
-            // TxtNota
-            // 
-            this.TxtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNota.Location = new System.Drawing.Point(448, 209);
-            this.TxtNota.Name = "TxtNota";
-            this.TxtNota.Size = new System.Drawing.Size(407, 116);
-            this.TxtNota.TabIndex = 108;
-            this.TxtNota.Text = "Doble click para agregar una nota";
-            // 
             // PanelCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +426,6 @@
         private System.Windows.Forms.Button btn_limpiar;
         public ErrorTxtBox txt_monto;
         public System.Windows.Forms.ComboBox c_metodopago;
-        private System.Windows.Forms.RichTextBox TxtNota;
+        public System.Windows.Forms.RichTextBox TxtNota;
     }
 }
