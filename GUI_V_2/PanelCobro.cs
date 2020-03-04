@@ -17,9 +17,10 @@ namespace GUI_V_2
         public PanelCobro()
         {
             InitializeComponent();
-            c_metodopago.SelectedIndex = 0;
             LlenarComboxMetodosPagos();
-
+            c_metodopago.SelectedIndex = 2;
+            txt_pago.Focus();
+            
         }
 
         public void LlenarComboxMetodosPagos()

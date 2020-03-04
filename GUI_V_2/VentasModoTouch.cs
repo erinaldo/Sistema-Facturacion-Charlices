@@ -745,10 +745,9 @@ namespace GUI_V_2
         }
 
 
-
-        ReportDataSource rs = new ReportDataSource();
-
-
+    //Metodo para crear Factura 
+  ReportDataSource rs = new ReportDataSource();
+        
   public void ImprimirFactura()
         {
             try
@@ -757,15 +756,12 @@ namespace GUI_V_2
                 PanelCobro ven = new PanelCobro();
                 List<FacturaClass> lista = new List<FacturaClass>();
                 lista.Clear();
+                String notaTXT = ven.TxtNota.Text.Trim();
+                if (notaTXT == "Doble click para agregar una nota") notaTXT = "";
 
                 MessageBox.Show("Filas en la tabla: "+dataGridViewProducto.Rows.Count);
                 for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
                 {
-                    MessageBox.Show("Nombre: " + dataGridViewProducto.Rows[p].Cells[1].Value.ToString());
-                    MessageBox.Show("Precio: " + dataGridViewProducto.Rows[p].Cells[2].Value.ToString());
-                    MessageBox.Show("Cantidad: " + dataGridViewProducto.Rows[p].Cells[3].Value.ToString());
-                    MessageBox.Show("SubTotal: " + dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
-
                     lista.Add(new FacturaClass
                     {
                         CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
@@ -782,11 +778,13 @@ namespace GUI_V_2
                         NumFac = txt_codigo_fac.Text.Trim(),
                         ITBIS = txt_total_itbis.Text.Trim(),
                         Total = txt_total_neto.Text.Trim(),
-                        Nota = ven.TxtNota.Text.Trim(),
+                        Nota =notaTXT,
                         TipoPago = ven.c_metodopago.SelectedItem.ToString(),
                     });
                 }
-            
+                
+                
+
                 rs.Name = "DataSetFactura";
                 rs.Value = lista;
                 Repor.reportViewer1.LocalReport.DataSources.Clear();
