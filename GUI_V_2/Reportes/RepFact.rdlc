@@ -110,10 +110,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=TimeOfDay()</Value>
+                <Value>= Now() &amp; TimeOfDay()</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
-                  <Format>t</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -719,6 +718,9 @@
       <Border>
         <Style>Solid</Style>
       </Border>
+      <BottomBorder>
+        <Style>None</Style>
+      </BottomBorder>
       <LeftBorder>
         <Style>None</Style>
       </LeftBorder>

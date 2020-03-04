@@ -761,9 +761,6 @@ namespace GUI_V_2
                 lista.Clear();
                 String notaTXT = PaCobro.TxtNota.Text.Trim();
                 if (notaTXT == "Doble click para agregar una nota") notaTXT = "";
-
-
-                MessageBox.Show("Forma Pago: "+ PaCobro.c_metodopago.SelectedItem.ToString());
                 for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
                 {
                     lista.Add(new FacturaClass

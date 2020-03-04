@@ -100,6 +100,7 @@
             this.TxtNota.Size = new System.Drawing.Size(407, 116);
             this.TxtNota.TabIndex = 108;
             this.TxtNota.Text = "Doble click para agregar una nota";
+            this.TxtNota.DoubleClick += new System.EventHandler(this.TxtNota_DoubleClick);
             // 
             // btn_limpiar
             // 

@@ -189,6 +189,11 @@ namespace GUI_V_2
             }
         }
 
+        private void TxtNota_DoubleClick(object sender, EventArgs e)
+        {
+            TxtNota.Text = "";
+        }
+
         //Metodo que manda el monto seleccionado con el usuario
 
 
