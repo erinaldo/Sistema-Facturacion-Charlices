@@ -756,7 +756,6 @@ namespace GUI_V_2
             try
             {
                 FormReportesDatos Repor = new FormReportesDatos();
-               
                 List<FacturaClass> lista = new List<FacturaClass>();
                 lista.Clear();
                 String notaTXT = PaCobro.TxtNota.Text.Trim();
