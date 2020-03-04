@@ -164,6 +164,7 @@
             this.txt_pago.Text = "0";
             this.txt_pago.Validar = true;
             this.txt_pago.TextChanged += new System.EventHandler(this.txt_pago_TextChanged);
+            this.txt_pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pago_KeyPress);
             // 
             // txt_monto
             // 

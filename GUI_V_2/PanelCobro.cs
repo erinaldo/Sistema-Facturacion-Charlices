@@ -14,15 +14,18 @@ namespace GUI_V_2
 {
     public partial class PanelCobro : Form
     {
+     
+
         public PanelCobro()
         {
             InitializeComponent();
             LlenarComboxMetodosPagos();
             c_metodopago.SelectedIndex = 2;
             txt_pago.Focus();
-            
+
         }
 
+       
         public void LlenarComboxMetodosPagos()
         {
             c_metodopago.DisplayMember = "nombre";
@@ -119,18 +122,45 @@ namespace GUI_V_2
             }
         }
 
+
+        //Boton con ticket
         private void button1_Click(object sender, EventArgs e)
         {
-           
-            DialogResult = DialogResult.OK;
-            this.Hide();
+            try {
+                if (Convert.ToDouble(txt_pago.Text.Trim())>Convert.ToDouble(txt_monto.Text.Trim())) {
+                    Utilidades.ConFact = 1;
+                    DialogResult = DialogResult.OK;
+                    //this.Hide();
+                }
+                else{
+                    MessageBox.Show("El monto de la factura es mayor que el pago del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } catch (Exception asd)
+            {
+              //  MessageBox.Show("Error al convertir", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+
+        //Boton sin ticket
         private void button2_Click(object sender, EventArgs e)
         {
 
-            DialogResult = DialogResult.OK;
-            this.Hide();
+             try {
+                if (Convert.ToDouble(txt_pago.Text.Trim())>Convert.ToDouble(txt_monto.Text.Trim())) {
+                    Utilidades.ConFact = 0;      
+                    DialogResult = DialogResult.OK;
+                    //this.Hide();
+                }
+                else{
+                    MessageBox.Show("El monto de la factura es mayor que el pago del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } catch (Exception asd)
+            {
+              //  MessageBox.Show("Error al convertir", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PanelCobro_Load(object sender, EventArgs e)
@@ -138,7 +168,30 @@ namespace GUI_V_2
 
         }
 
+        //Solo numero TextBox
+        private void txt_pago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         //Metodo que manda el monto seleccionado con el usuario
+
+
         private void Calcular(double mas)
         {
             try

@@ -165,11 +165,14 @@ namespace GUI_V_2
                             };
                             factura.Detalles_Facturas.Add(detalles_fac);
                         }
-
                     }
                     DB.Facturas.Add(factura);
                     DB.SaveChanges();
-                    ImprimirFactura();
+                    
+                    if (Utilidades.ConFact==1)
+                    {
+                        ImprimirFactura();
+                    }
                     LimpiarCampo();
                     MessageBox.Show("La factura se creo correctamente.");
                     GenerarCodigoFac();
@@ -744,22 +747,23 @@ namespace GUI_V_2
 
         }
 
-
-    //Metodo para crear Factura 
-  ReportDataSource rs = new ReportDataSource();
+        PanelCobro PaCobro = new PanelCobro();
+        //Metodo para crear Factura 
+        ReportDataSource rs = new ReportDataSource();
         
   public void ImprimirFactura()
         {
             try
             {
                 FormReportesDatos Repor = new FormReportesDatos();
-                PanelCobro ven = new PanelCobro();
+               
                 List<FacturaClass> lista = new List<FacturaClass>();
                 lista.Clear();
-                String notaTXT = ven.TxtNota.Text.Trim();
+                String notaTXT = PaCobro.TxtNota.Text.Trim();
                 if (notaTXT == "Doble click para agregar una nota") notaTXT = "";
 
-                MessageBox.Show("Filas en la tabla: "+dataGridViewProducto.Rows.Count);
+
+                MessageBox.Show("Forma Pago: "+ PaCobro.c_metodopago.SelectedItem.ToString());
                 for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
                 {
                     lista.Add(new FacturaClass
@@ -779,7 +783,7 @@ namespace GUI_V_2
                         ITBIS = txt_total_itbis.Text.Trim(),
                         Total = txt_total_neto.Text.Trim(),
                         Nota =notaTXT,
-                        TipoPago = ven.c_metodopago.SelectedItem.ToString(),
+                        TipoPago = "Efectivo",
                     });
                 }
                 

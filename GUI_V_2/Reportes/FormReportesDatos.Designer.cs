@@ -40,6 +40,10 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.ShowBackButton = false;
+            this.reportViewer1.ShowPageNavigationControls = false;
+            this.reportViewer1.ShowRefreshButton = false;
+            this.reportViewer1.ShowStopButton = false;
             this.reportViewer1.Size = new System.Drawing.Size(961, 379);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -57,7 +61,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormReportesDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "REPORTE PAPA";
+            this.Text = "REPORTE / FACTURA";
             this.Load += new System.EventHandler(this.FormReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductosClassBindingSource)).EndInit();
             this.ResumeLayout(false);

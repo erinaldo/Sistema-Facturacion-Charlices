@@ -21,10 +21,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.10081cm</Top>
+        <Top>1.89797cm</Top>
         <Left>0.1cm</Left>
-        <Height>0.55591cm</Height>
-        <Width>1.20904cm</Width>
+        <Height>0.49417cm</Height>
+        <Width>1.36778cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -110,9 +110,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=CDate(Today()).ToString("MM/dd/yyyy")</Value>
+                <Value>=TimeOfDay()</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
+                  <Format>t</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -156,9 +157,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.13609cm</Top>
+        <Top>1.93325cm</Top>
         <Left>1.30904cm</Left>
-        <Height>0.52063cm</Height>
+        <Height>0.45889cm</Height>
         <Width>1.56908cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -224,9 +225,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.10081cm</Top>
+        <Top>1.89797cm</Top>
         <Left>2.87812cm</Left>
-        <Height>0.5559cm</Height>
+        <Height>0.49416cm</Height>
         <Width>4.9573cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -280,7 +281,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!NumFac.Value</Value>
+                <Value>="00000" &amp; Fields!NumFac.Value</Value>
                 <Style>
                   <FontSize>9pt</FontSize>
                 </Style>
@@ -395,7 +396,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.79782cm</Top>
+        <Top>2.53324cm</Top>
         <Left>0.13529cm</Left>
         <Height>0.50299cm</Height>
         <Width>1.06792cm</Width>
@@ -436,7 +437,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.79782cm</Top>
+        <Top>2.53324cm</Top>
         <Left>1.30904cm</Left>
         <Height>0.50299cm</Height>
         <Width>3.29694cm</Width>
@@ -477,7 +478,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.79782cm</Top>
+        <Top>2.53324cm</Top>
         <Left>4.67653cm</Left>
         <Height>0.50299cm</Height>
         <Width>1.44715cm</Width>
@@ -518,7 +519,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.79782cm</Top>
+        <Top>2.53324cm</Top>
         <Left>6.15896cm</Left>
         <Height>0.50299cm</Height>
         <Width>1.67646cm</Width>
@@ -627,7 +628,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!PrePro.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -642,6 +645,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-US</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -656,7 +660,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SubTotal.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -671,6 +677,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>es-US</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -695,7 +702,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetFactura</DataSetName>
-        <Top>3.4772cm</Top>
+        <Top>3.21262cm</Top>
         <Left>0.1cm</Left>
         <Height>0.6cm</Height>
         <Width>7.70014cm</Width>
@@ -707,17 +714,23 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.36534cm</Height>
+    <Height>4.0743cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
       </Border>
+      <LeftBorder>
+        <Style>None</Style>
+      </LeftBorder>
+      <RightBorder>
+        <Style>None</Style>
+      </RightBorder>
     </Style>
   </Body>
   <Width>8cm</Width>
   <Page>
     <PageHeader>
-      <Height>2.08787cm</Height>
+      <Height>1.91148cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -775,9 +788,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.66738cm</Top>
+          <Top>0.59682cm</Top>
           <Left>0.1cm</Left>
-          <Height>0.80285cm</Height>
+          <Height>0.87341cm</Height>
           <Width>7.73542cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
@@ -810,9 +823,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.54079cm</Top>
+          <Top>1.35558cm</Top>
           <Left>0.1cm</Left>
-          <Height>0.51181cm</Height>
+          <Height>0.5559cm</Height>
           <Width>7.73542cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
@@ -830,9 +843,6 @@
         <Border>
           <Style>None</Style>
         </Border>
-        <BottomBorder>
-          <Style>Dashed</Style>
-        </BottomBorder>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -929,6 +939,7 @@
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'$'#,0.00;('$'#,0.00)</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -951,6 +962,7 @@
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
+            <rd:FormatSymbolCulture>es-US</rd:FormatSymbolCulture>
           </Style>
         </Textbox>
         <Textbox Name="Textbox23">
@@ -1126,7 +1138,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Fields!Descuento.Value</Value>
-                  <Style />
+                  <Style>
+                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1148,6 +1162,7 @@
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
+            <rd:FormatSymbolCulture>es-US</rd:FormatSymbolCulture>
           </Style>
         </Textbox>
         <Textbox Name="Textbox29">
@@ -1158,7 +1173,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Fields!ITBIS.Value</Value>
-                  <Style />
+                  <Style>
+                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -1180,6 +1197,7 @@
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
             <PaddingBottom>2pt</PaddingBottom>
+            <rd:FormatSymbolCulture>es-US</rd:FormatSymbolCulture>
           </Style>
         </Textbox>
       </ReportItems>
@@ -1188,7 +1206,9 @@
           <Style>None</Style>
         </Border>
         <TopBorder>
-          <Style>Dashed</Style>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+          <Width>1pt</Width>
         </TopBorder>
       </Style>
     </PageFooter>
