@@ -690,8 +690,6 @@ namespace GUI_V_2
                     {
                         id_cliente = id_cliente,
                     };
-
-
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                     {
                         string codigoPro = registsros.Cells[0].Value.ToString();
