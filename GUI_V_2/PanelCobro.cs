@@ -126,6 +126,7 @@ namespace GUI_V_2
         //Boton con ticket
         private void button1_Click(object sender, EventArgs e)
         {
+            Utilidades.NotaVenta = TxtNota.Text.Trim();
             try {
                 if (Convert.ToDouble(txt_pago.Text.Trim())>Convert.ToDouble(txt_monto.Text.Trim())) {
                     Utilidades.ConFact = 1;
@@ -191,7 +192,7 @@ namespace GUI_V_2
 
         private void TxtNota_DoubleClick(object sender, EventArgs e)
         {
-            TxtNota.Text = "";
+          
         }
 
         //Metodo que manda el monto seleccionado con el usuario

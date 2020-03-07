@@ -9,6 +9,7 @@ namespace GUI_V_2
     class Utilidades
     {
         public static int ConFact = 1;
+        public static String NotaVenta = "";
 
         public static Boolean ValidarFormulario(Control objeto, ErrorProvider ErrorProvider)
         {

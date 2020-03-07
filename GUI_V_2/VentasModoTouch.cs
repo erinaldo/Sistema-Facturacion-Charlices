@@ -24,10 +24,20 @@ namespace GUI_V_2
         public VentasModoTouch()
         {
             InitializeComponent();
+
+            try { 
             GenerarCodigoFac();
             LlenarComboxCombrobantes();
             LlenarComboxVendedores();
+            }
+            catch (Exception a)
+            {
+                //error
+            }
+
         }
+
+
         public void LlenarComboxCombrobantes()
         {
             comboBoxCombrobante.DisplayMember = "tipo";
@@ -68,6 +78,7 @@ namespace GUI_V_2
 
         public void GenerarCodigoFac()
         {
+          try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 IQueryable<Facturas> factura = DB.Facturas.OrderByDescending(f => f.id);
@@ -80,9 +91,12 @@ namespace GUI_V_2
                 {
                     txt_codigo_fac.Text = (resp.id + 1).ToString();
                 }
-
-
-            }
+                
+             }
+          }catch(Exception a)
+          {
+                //error
+          }
         }
 
 
@@ -108,6 +122,7 @@ namespace GUI_V_2
 
         private void button10_Click(object sender, EventArgs e)
         {
+            try { 
             if (dataGridViewProducto.Rows.Count == 0)
             {
                 MessageBox.Show("No hay producto agregado al carrito");
@@ -120,9 +135,12 @@ namespace GUI_V_2
             {
                 int id_metodo_pago = int.Parse(obj.c_metodopago.SelectedValue.ToString());
                 CrearFactura(id_metodo_pago);
-
             }
-
+            }
+            catch (Exception a)
+            {
+                //error
+            }
         }
 
         public void CrearFactura(int metodo_pago)
@@ -218,31 +236,41 @@ namespace GUI_V_2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ConsPro obj = new ConsPro();
-            if (obj.ShowDialog() == DialogResult.OK)
+            try
             {
-                string codigo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                string nombre_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                decimal precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
-                int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
-                int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
-                string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
+                ConsPro obj = new ConsPro();
+                if (obj.ShowDialog() == DialogResult.OK)
+                {
+                    string codigo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    string nombre_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                    decimal precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                    int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
+                    int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
+                    string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
 
-                SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro, tipo_pro== "Inventario" ? 1 : 2);
-
+                    SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro, tipo_pro == "Inventario" ? 1 : 2);
+                }
+            }catch(Exception a)
+            {
+                //error
             }
         }
 
         private void btn_clientes_Click(object sender, EventArgs e)
         {
-            ConsCli obj = new ConsCli();
-            if (obj.ShowDialog() == DialogResult.OK)
+            try
             {
-
-                string codigo = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                string nombre = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                int id = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
-                SetCampoByCliente(nombre,codigo,id);
+                ConsCli obj = new ConsCli();
+                if (obj.ShowDialog() == DialogResult.OK)
+                {
+                    string codigo = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    string nombre = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
+                    int id = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
+                    SetCampoByCliente(nombre, codigo, id);
+                }
+            }catch(Exception a)
+            {
+                //error
             }
         }
 
@@ -259,14 +287,20 @@ namespace GUI_V_2
 
         private void codigo_pro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            try
             {
-                string codigo = codigo_pro.Text.Trim();
-                if (!codigo.Equals(""))
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    ProductoByCodigo(codigo);
-                }
+                    string codigo = codigo_pro.Text.Trim();
+                    if (!codigo.Equals(""))
+                    {
+                        ProductoByCodigo(codigo);
+                    }
 
+                }
+            }catch(Exception s)
+            {
+                //error
             }
         }
 
@@ -296,22 +330,27 @@ namespace GUI_V_2
             }
 
             catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+            //    MessageBox.Show(ex.ToString());
             }
-
         }
 
         public void SetCampoByProducto(string nombre,decimal precio,string codigo,int cantidad,int itbis,int tipo_producto)
         {
-            codigo_pro.Text = codigo;
-            nombre_pro.Text = nombre;
-            precio_pro.Text = precio.ToString();
-            if (tipo_producto == 1) CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
-            else disponible_pro.Text = "Sin límite";
-            
-            itbisPro = itbis;
-            cantidad_pro.Focus();
-        }
+            try
+            {
+                codigo_pro.Text = codigo;
+                nombre_pro.Text = nombre;
+                precio_pro.Text = precio.ToString();
+                if (tipo_producto == 1) CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
+                else disponible_pro.Text = "Sin límite";
+
+                itbisPro = itbis;
+                cantidad_pro.Focus();
+            }catch(Exception ccv)
+            {
+                //error
+            }
+            }
 
         public void ClienteByCodigo(string codigo_cliente)
         {
@@ -345,18 +384,22 @@ namespace GUI_V_2
 
         public void CantidadDisponiblePro(string codigo,int cantidad)
         {
-            foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+            try
             {
-                if (registsros.Cells[0].Value.ToString() == codigo)
+                foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                 {
-                    cantidad -= int.Parse(registsros.Cells[3].Value.ToString());
+                    if (registsros.Cells[0].Value.ToString() == codigo)
+                    {
+                        cantidad -= int.Parse(registsros.Cells[3].Value.ToString());
+                    }
+
                 }
 
-
+                disponible_pro.Text = "Disponible: " + cantidad.ToString();
+            }catch(Exception cc)
+            {
+                //error
             }
-
-            disponible_pro.Text = "Disponible: "  + cantidad.ToString();
-
         }
 
         private void codigo_pro_TextChanged(object sender, EventArgs e)
@@ -376,86 +419,91 @@ namespace GUI_V_2
 
         public void AgregarProductoCarrito()
         {
-            if (nombre_pro.Text.Trim().Equals("Descripción de producto"))
+            try
             {
-                MessageBox.Show("Por favor seleccionar un producto válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (cantidad_pro.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Por favor digite una cantidad.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            int cantidadCliPro = int.Parse(cantidad_pro.Text.Trim());
-            if (!disponible_pro.Text.Trim().Contains("Sin límite") && cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("Disponible:", "").ToString()))
-            {
-                MessageBox.Show($"La cantidad máxima disponible del producto {nombre_pro.Text.Trim()} es {disponible_pro.Text.Trim()} ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
-            bool proAddDataGrid = false;
-            double subtotalFac = 0;
-            double itbisFac = 0;
-
-            foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
-            {
-                if (registsros.Cells[0].Value.ToString() == codigo_pro.Text.Trim())
+                if (nombre_pro.Text.Trim().Equals("Descripción de producto"))
                 {
-                    double precioPro = Double.Parse(registsros.Cells[2].Value.ToString());
-                    int cantidadPro = int.Parse(registsros.Cells[3].Value.ToString());
-                    cantidadPro += cantidadCliPro;
-                    double subtotal = cantidadPro * precioPro;
-
-                    registsros.Cells[3].Value = cantidadPro.ToString();
-                    registsros.Cells[4].Value = subtotal.ToString();
-                    double totalItbis = (itbisPro / 100) * subtotal;
-                    registsros.Cells[5].Value = totalItbis.ToString();
-                    registsros.Cells[6].Value = totalItbis + subtotal;
-                    proAddDataGrid = true;
+                    MessageBox.Show("Por favor seleccionar un producto válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
 
-                subtotalFac += Double.Parse(registsros.Cells[4].Value.ToString());
-                itbisFac += Double.Parse(registsros.Cells[5].Value.ToString());
+                if (cantidad_pro.Text.Trim().Equals(""))
+                {
+                    MessageBox.Show("Por favor digite una cantidad.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                int cantidadCliPro = int.Parse(cantidad_pro.Text.Trim());
+                if (!disponible_pro.Text.Trim().Contains("Sin límite") && cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("Disponible:", "").ToString()))
+                {
+                    MessageBox.Show($"La cantidad máxima disponible del producto {nombre_pro.Text.Trim()} es {disponible_pro.Text.Trim()} ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-            }
 
-            if (!proAddDataGrid)
+                bool proAddDataGrid = false;
+                double subtotalFac = 0;
+                double itbisFac = 0;
+
+                foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                {
+                    if (registsros.Cells[0].Value.ToString() == codigo_pro.Text.Trim())
+                    {
+                        double precioPro = Double.Parse(registsros.Cells[2].Value.ToString());
+                        int cantidadPro = int.Parse(registsros.Cells[3].Value.ToString());
+                        cantidadPro += cantidadCliPro;
+                        double subtotal = cantidadPro * precioPro;
+
+                        registsros.Cells[3].Value = cantidadPro.ToString();
+                        registsros.Cells[4].Value = subtotal.ToString();
+                        double totalItbis = (itbisPro / 100) * subtotal;
+                        registsros.Cells[5].Value = totalItbis.ToString();
+                        registsros.Cells[6].Value = totalItbis + subtotal;
+                        proAddDataGrid = true;
+                    }
+
+                    subtotalFac += Double.Parse(registsros.Cells[4].Value.ToString());
+                    itbisFac += Double.Parse(registsros.Cells[5].Value.ToString());
+
+                }
+
+                if (!proAddDataGrid)
+                {
+                    int cantidadPro = int.Parse(cantidad_pro.Text.Trim());
+                    double precioPro = Double.Parse(precio_pro.Text.Trim());
+                    double subtotal = cantidadPro * precioPro;
+                    double totalItbis = (itbisPro / 100) * subtotal;
+                    double total = totalItbis + subtotal;
+                    dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
+                                                  subtotal, totalItbis, total);
+
+                    subtotalFac += subtotal;
+                    itbisFac += totalItbis;
+                }
+
+                txt_total_bruto.Text = subtotalFac.ToString();
+                txt_total_itbis.Text = itbisFac.ToString();
+                txt_total_neto.Text = (subtotalFac + itbisFac).ToString();
+                calcularDesc();
+
+                codigo_pro.Text = "";
+                nombre_pro.Text = "Descripción de producto";
+                cantidad_pro.Text = "1";
+                precio_pro.Text = "";
+                disponible_pro.Text = "";
+                codigo_pro.Focus();
+
+                /*txt_codigoPro.Text = "";
+                txt_nombrePro.Text = "";
+                txt_precioPro.Text = "";
+                txt_cantidadPro.Text = "";
+                txt_codigoPro.Focus();
+                txtSubTotal.Text = totalFact.ToString();
+                txtTotalItbis.Text = totalItbis.ToString();
+                txt_totalFactura.Text = (totalFact + totalItbis).ToString();*/
+            }catch(Exception ccv)
             {
-                int cantidadPro = int.Parse(cantidad_pro.Text.Trim());
-                double precioPro = Double.Parse(precio_pro.Text.Trim());
-                double subtotal = cantidadPro * precioPro;
-                double totalItbis = (itbisPro / 100) * subtotal;
-                double total = totalItbis + subtotal;
-                dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
-                                              subtotal, totalItbis, total);
-
-                subtotalFac += subtotal;
-                itbisFac += totalItbis;
+               //error
             }
-
-            txt_total_bruto.Text = subtotalFac.ToString();
-            txt_total_itbis.Text = itbisFac.ToString();
-            txt_total_neto.Text = (subtotalFac + itbisFac).ToString();
-            calcularDesc();
-
-            codigo_pro.Text = "";
-            nombre_pro.Text = "Descripción de producto";
-            cantidad_pro.Text = "1";
-            precio_pro.Text = "";
-            disponible_pro.Text = "";
-            codigo_pro.Focus();
-
-            /*txt_codigoPro.Text = "";
-            txt_nombrePro.Text = "";
-            txt_precioPro.Text = "";
-            txt_cantidadPro.Text = "";
-            txt_codigoPro.Focus();
-            txtSubTotal.Text = totalFact.ToString();
-            txtTotalItbis.Text = totalItbis.ToString();
-            txt_totalFactura.Text = (totalFact + totalItbis).ToString();*/
-
         }
 
         private void cantidad_pro_KeyPress(object sender, KeyPressEventArgs e)
@@ -473,60 +521,69 @@ namespace GUI_V_2
 
         private void button7_Click(object sender, EventArgs e)
         {
-
-          
-
-
-            if (dataGridViewProducto.Rows.Count > 0)
+            try
             {
-                string nombreProducto = dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[1].Value.ToString();
-                DialogResult pregunta = MessageBox.Show($"¿Esta seguro que desea borrar el producto '{nombreProducto}' del carrito?", "Confirme", MessageBoxButtons.YesNo);
-                if (pregunta != DialogResult.Yes)
+                if (dataGridViewProducto.Rows.Count > 0)
                 {
-                    return;
+                    string nombreProducto = dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[1].Value.ToString();
+                    DialogResult pregunta = MessageBox.Show($"¿Esta seguro que desea borrar el producto '{nombreProducto}' del carrito?", "Confirme", MessageBoxButtons.YesNo);
+                    if (pregunta != DialogResult.Yes)
+                    {
+                        return;
 
+                    }
+
+                    double rItbis = Double.Parse(txt_total_itbis.Text);
+                    double rSubTotal = Double.Parse(txt_total_bruto.Text);
+                    double rTotal = 0;
+
+                    rItbis -= Convert.ToDouble(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[5].Value);
+                    rSubTotal -= Convert.ToDouble(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[4].Value);
+                    dataGridViewProducto.Rows.RemoveAt(dataGridViewProducto.CurrentRow.Index);
+                    if (dataGridViewProducto.Rows.Count == 0)
+                    {
+                        txt_total_bruto.Text = "0";
+                        txt_total_neto.Text = "0";
+                        txt_total_itbis.Text = "0";
+                        txt_descuento.Text = "0";
+                        txt_total_desc.Text = "0";
+                        return;
+                    }
+
+                    rTotal = rItbis + rSubTotal;
+
+                    txt_total_neto.Text = rTotal.ToString();
+                    txt_total_bruto.Text = rSubTotal.ToString();
+                    txt_total_itbis.Text = rItbis.ToString();
+                    calcularDesc();
                 }
-
-                double rItbis    = Double.Parse(txt_total_itbis.Text);
-                double rSubTotal = Double.Parse(txt_total_bruto.Text);
-                double rTotal = 0;
-
-                rItbis -= Convert.ToDouble(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[5].Value);
-                rSubTotal -= Convert.ToDouble(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[4].Value);
-                dataGridViewProducto.Rows.RemoveAt(dataGridViewProducto.CurrentRow.Index);
-                if (dataGridViewProducto.Rows.Count == 0)
+                else
                 {
-                    txt_total_bruto.Text = "0";
-                    txt_total_neto.Text  = "0";
-                    txt_total_itbis.Text = "0";
-                    txt_descuento.Text   = "0";
-                    txt_total_desc.Text =  "0";
-                    return;
+                    MessageBox.Show("Debe de tener por lo menos un producto para poder borrar.");
                 }
-
-                rTotal = rItbis + rSubTotal;
-
-                txt_total_neto.Text = rTotal.ToString();
-                txt_total_bruto.Text = rSubTotal.ToString();
-                txt_total_itbis.Text = rItbis.ToString();
-                calcularDesc();
             }
-            else
+            catch (Exception vv)
             {
-                MessageBox.Show("Debe de tener por lo menos un producto para poder borrar.");
+                //Error
             }
         }
 
         private void errorTxtBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            try
             {
-                string codigo = txt_codigo_cliente.Text.Trim();
-                if (!codigo.Equals(""))
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    ClienteByCodigo(codigo);
-                }
+                    string codigo = txt_codigo_cliente.Text.Trim();
+                    if (!codigo.Equals(""))
+                    {
+                        ClienteByCodigo(codigo);
+                    }
 
+                }
+            }catch(Exception cc)
+            {
+                //error
             }
         }
 
@@ -548,15 +605,21 @@ namespace GUI_V_2
 
         public void calcularDesc()
         {
-            double descuento = Double.Parse(txt_descuento.Text.Trim());
-            if (descuento >= 0 && descuento <= 100)
+            try
             {
-                double totalSinDesc = Double.Parse(txt_total_bruto.Text) + Double.Parse(txt_total_itbis.Text);
-                double desc = Convert.ToDouble(txt_descuento.Text);
-                double descAplicado = (totalSinDesc * (desc / 100));
-                double totalConDesc = totalSinDesc - descAplicado;
-                txt_total_neto.Text = totalConDesc.ToString("N2");
-                txt_total_desc.Text = descAplicado.ToString("N2");
+                double descuento = Double.Parse(txt_descuento.Text.Trim());
+                if (descuento >= 0 && descuento <= 100)
+                {
+                    double totalSinDesc = Double.Parse(txt_total_bruto.Text) + Double.Parse(txt_total_itbis.Text);
+                    double desc = Convert.ToDouble(txt_descuento.Text);
+                    double descAplicado = (totalSinDesc * (desc / 100));
+                    double totalConDesc = totalSinDesc - descAplicado;
+                    txt_total_neto.Text = totalConDesc.ToString("N2");
+                    txt_total_desc.Text = descAplicado.ToString("N2");
+                }
+            }catch(Exception axx)
+            {
+                //error
             }
         }
 
@@ -667,15 +730,20 @@ namespace GUI_V_2
 
         private void txt_numero_orden_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            try
             {
-                int codigo = int.Parse(txt_numero_orden.Text.Trim());
-                if (!codigo.Equals(""))
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    OrdenByCodigo(codigo);
+                    int codigo = int.Parse(txt_numero_orden.Text.Trim());
+                    if (!codigo.Equals(""))
+                    {
+                        OrdenByCodigo(codigo);
+                    }
                 }
+            }catch(Exception aee)
+            {
+                //error
             }
-
         }
 
         public void OrdenByCodigo(int codigo_orden)
@@ -758,8 +826,6 @@ namespace GUI_V_2
                 FormReportesDatos Repor = new FormReportesDatos();
                 List<FacturaClass> lista = new List<FacturaClass>();
                 lista.Clear();
-                String notaTXT = PaCobro.TxtNota.Text.Trim();
-                if (notaTXT == "Doble click para agregar una nota") notaTXT = "";
                 for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
                 {
                     lista.Add(new FacturaClass
@@ -778,18 +844,16 @@ namespace GUI_V_2
                         NumFac = txt_codigo_fac.Text.Trim(),
                         ITBIS = txt_total_itbis.Text.Trim(),
                         Total = txt_total_neto.Text.Trim(),
-                        Nota =notaTXT,
+                        Nota = Utilidades.NotaVenta.ToString(),
                         TipoPago = "Efectivo",
                     });
                 }
                 
-                
-
-                rs.Name = "DataSetFactura";
+                rs.Name = "DataSetTicketVenta";
                 rs.Value = lista;
                 Repor.reportViewer1.LocalReport.DataSources.Clear();
                 Repor.reportViewer1.LocalReport.DataSources.Add(rs);
-                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.RepFact.rdlc";
+                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.TicketVenta.rdlc";
                 Repor.ShowDialog();
             }
             catch (Exception aaaa)

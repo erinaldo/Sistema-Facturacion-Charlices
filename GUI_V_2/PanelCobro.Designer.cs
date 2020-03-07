@@ -31,14 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelCobro));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TxtNota = new System.Windows.Forms.RichTextBox();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_pago = new GUI_V_2.ErrorTxtBox();
-            this.txt_monto = new GUI_V_2.ErrorTxtBox();
-            this.txt_devuelto = new GUI_V_2.ErrorTxtBox();
             this.c_metodopago = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -53,6 +49,11 @@
             this.panel_dociento = new System.Windows.Forms.Panel();
             this.panel_cien = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_pago = new GUI_V_2.ErrorTxtBox();
+            this.txt_monto = new GUI_V_2.ErrorTxtBox();
+            this.txt_devuelto = new GUI_V_2.ErrorTxtBox();
+            this.TxtNota = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,7 +66,7 @@
             this.label2.BackColor = System.Drawing.Color.DodgerBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(392, 5);
+            this.label2.Location = new System.Drawing.Point(404, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(238, 29);
             this.label2.TabIndex = 94;
@@ -77,6 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.TxtNota);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btn_limpiar);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -91,16 +93,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1098, 333);
             this.panel1.TabIndex = 95;
-            // 
-            // TxtNota
-            // 
-            this.TxtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNota.Location = new System.Drawing.Point(448, 209);
-            this.TxtNota.Name = "TxtNota";
-            this.TxtNota.Size = new System.Drawing.Size(407, 116);
-            this.TxtNota.TabIndex = 108;
-            this.TxtNota.Text = "Doble click para agregar una nota";
-            this.TxtNota.DoubleClick += new System.EventHandler(this.TxtNota_DoubleClick);
             // 
             // btn_limpiar
             // 
@@ -136,7 +128,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(73, 146);
+            this.label5.Location = new System.Drawing.Point(25, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 106;
@@ -147,51 +139,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 236);
+            this.label4.Location = new System.Drawing.Point(22, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 25);
             this.label4.TabIndex = 105;
             this.label4.Text = "Devuelta";
-            // 
-            // txt_pago
-            // 
-            this.txt_pago.BackColor = System.Drawing.Color.White;
-            this.txt_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pago.Limpiar = false;
-            this.txt_pago.Location = new System.Drawing.Point(198, 130);
-            this.txt_pago.Name = "txt_pago";
-            this.txt_pago.Size = new System.Drawing.Size(504, 62);
-            this.txt_pago.TabIndex = 104;
-            this.txt_pago.Text = "0";
-            this.txt_pago.Validar = true;
-            this.txt_pago.TextChanged += new System.EventHandler(this.txt_pago_TextChanged);
-            this.txt_pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pago_KeyPress);
-            // 
-            // txt_monto
-            // 
-            this.txt_monto.BackColor = System.Drawing.Color.Khaki;
-            this.txt_monto.Enabled = false;
-            this.txt_monto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_monto.Limpiar = false;
-            this.txt_monto.Location = new System.Drawing.Point(198, 57);
-            this.txt_monto.Name = "txt_monto";
-            this.txt_monto.Size = new System.Drawing.Size(504, 62);
-            this.txt_monto.TabIndex = 103;
-            this.txt_monto.Text = "473";
-            this.txt_monto.Validar = true;
-            // 
-            // txt_devuelto
-            // 
-            this.txt_devuelto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txt_devuelto.Enabled = false;
-            this.txt_devuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_devuelto.Limpiar = false;
-            this.txt_devuelto.Location = new System.Drawing.Point(13, 264);
-            this.txt_devuelto.Name = "txt_devuelto";
-            this.txt_devuelto.Size = new System.Drawing.Size(414, 62);
-            this.txt_devuelto.TabIndex = 102;
-            this.txt_devuelto.Text = "0";
-            this.txt_devuelto.Validar = true;
             // 
             // c_metodopago
             // 
@@ -375,6 +327,66 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "PAGO RÁPIDO";
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(443, 208);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 25);
+            this.label8.TabIndex = 109;
+            this.label8.Text = "Nota:";
+            // 
+            // txt_pago
+            // 
+            this.txt_pago.BackColor = System.Drawing.Color.White;
+            this.txt_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pago.Limpiar = false;
+            this.txt_pago.Location = new System.Drawing.Point(198, 130);
+            this.txt_pago.Name = "txt_pago";
+            this.txt_pago.Size = new System.Drawing.Size(504, 62);
+            this.txt_pago.TabIndex = 104;
+            this.txt_pago.Text = "0";
+            this.txt_pago.Validar = true;
+            this.txt_pago.TextChanged += new System.EventHandler(this.txt_pago_TextChanged);
+            this.txt_pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pago_KeyPress);
+            // 
+            // txt_monto
+            // 
+            this.txt_monto.BackColor = System.Drawing.Color.Khaki;
+            this.txt_monto.Enabled = false;
+            this.txt_monto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_monto.Limpiar = false;
+            this.txt_monto.Location = new System.Drawing.Point(198, 57);
+            this.txt_monto.Name = "txt_monto";
+            this.txt_monto.Size = new System.Drawing.Size(504, 62);
+            this.txt_monto.TabIndex = 103;
+            this.txt_monto.Text = "473";
+            this.txt_monto.Validar = true;
+            // 
+            // txt_devuelto
+            // 
+            this.txt_devuelto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txt_devuelto.Enabled = false;
+            this.txt_devuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_devuelto.Limpiar = false;
+            this.txt_devuelto.Location = new System.Drawing.Point(24, 237);
+            this.txt_devuelto.Name = "txt_devuelto";
+            this.txt_devuelto.Size = new System.Drawing.Size(400, 62);
+            this.txt_devuelto.TabIndex = 102;
+            this.txt_devuelto.Text = "0";
+            this.txt_devuelto.Validar = true;
+            // 
+            // TxtNota
+            // 
+            this.TxtNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNota.Location = new System.Drawing.Point(448, 237);
+            this.TxtNota.Multiline = true;
+            this.TxtNota.Name = "TxtNota";
+            this.TxtNota.Size = new System.Drawing.Size(348, 73);
+            this.TxtNota.TabIndex = 110;
+            // 
             // PanelCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +440,7 @@
         private System.Windows.Forms.Button btn_limpiar;
         public ErrorTxtBox txt_monto;
         public System.Windows.Forms.ComboBox c_metodopago;
-        public System.Windows.Forms.RichTextBox TxtNota;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox TxtNota;
     }
 }

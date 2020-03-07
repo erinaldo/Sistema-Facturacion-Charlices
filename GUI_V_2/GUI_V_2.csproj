@@ -427,6 +427,7 @@
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\RepSup.rdlc" />
     <EmbeddedResource Include="Reportes\RepUniMed.rdlc" />
+    <EmbeddedResource Include="Reportes\TicketVenta.rdlc" />
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
     </EmbeddedResource>
