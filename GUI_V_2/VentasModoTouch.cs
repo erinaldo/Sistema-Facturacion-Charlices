@@ -345,7 +345,10 @@ namespace GUI_V_2
                 nombre_pro.Text = nombre;
                 precio_pro.Text = precio.ToString();
                 if (tipo_producto == 1) CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
-                else disponible_pro.Text = "Sin límite";
+                else
+                {
+                    disponible_pro.Text = "Sin límite";
+                }
 
                 itbisPro = itbis;
                 cantidad_pro.Focus();
@@ -389,7 +392,23 @@ namespace GUI_V_2
         {
             try
             {
-                foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                /*total_producto.Text ="Total :" + cantidad.ToString();
+
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    var ordenes = from detalles in DB.Detalles_Ordenes
+                                    join orden in DB.Ordenes_Reservadas on detalles.orden_id
+                         equals orden.id
+                                    where (orden.estado == false && detalles.id_producto == id_producto)
+                                    select new
+                                    {
+                                       detalles.cantidad_producto
+                                    };
+
+                }*/
+                   
+
+                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                 {
                     if (registsros.Cells[0].Value.ToString() == codigo)
                     {

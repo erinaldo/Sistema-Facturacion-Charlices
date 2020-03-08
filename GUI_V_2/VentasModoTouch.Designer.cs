@@ -69,6 +69,14 @@
             this.btn_volver = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewProducto = new System.Windows.Forms.DataGridView();
+            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItbPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txt_total_desc = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,14 +87,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CanPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItbPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_orden_producto = new System.Windows.Forms.Label();
+            this.total_producto = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -111,6 +113,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.total_producto);
+            this.panel5.Controls.Add(this.cantidad_orden_producto);
             this.panel5.Controls.Add(this.txt_numero_orden);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.Reservar);
@@ -189,7 +193,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.disponible_pro.AutoSize = true;
             this.disponible_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disponible_pro.Location = new System.Drawing.Point(693, 4);
+            this.disponible_pro.Location = new System.Drawing.Point(927, 4);
             this.disponible_pro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.disponible_pro.Name = "disponible_pro";
             this.disponible_pro.Size = new System.Drawing.Size(119, 24);
@@ -725,6 +729,73 @@
             this.dataGridViewProducto.TabIndex = 0;
             this.dataGridViewProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducto_CellContentClick);
             // 
+            // CodPro
+            // 
+            this.CodPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CodPro.FillWeight = 61.19339F;
+            this.CodPro.Frozen = true;
+            this.CodPro.HeaderText = "CÓDIGO";
+            this.CodPro.Name = "CodPro";
+            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodPro.Width = 167;
+            // 
+            // NomPro
+            // 
+            this.NomPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomPro.FillWeight = 168.1775F;
+            this.NomPro.Frozen = true;
+            this.NomPro.HeaderText = "NOMBRE";
+            this.NomPro.Name = "NomPro";
+            this.NomPro.Width = 462;
+            // 
+            // PrePro
+            // 
+            this.PrePro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PrePro.FillWeight = 91.37045F;
+            this.PrePro.Frozen = true;
+            this.PrePro.HeaderText = "PRECIO";
+            this.PrePro.Name = "PrePro";
+            this.PrePro.Width = 250;
+            // 
+            // CanPro
+            // 
+            this.CanPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CanPro.FillWeight = 62.6336F;
+            this.CanPro.Frozen = true;
+            this.CanPro.HeaderText = "CANTIDAD";
+            this.CanPro.Name = "CanPro";
+            this.CanPro.Width = 173;
+            // 
+            // SubPro
+            // 
+            this.SubPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SubPro.FillWeight = 108.3121F;
+            this.SubPro.Frozen = true;
+            this.SubPro.HeaderText = "SUBTOTAL";
+            this.SubPro.Name = "SubPro";
+            this.SubPro.Width = 299;
+            // 
+            // ItbPro
+            // 
+            this.ItbPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ItbPro.Frozen = true;
+            this.ItbPro.HeaderText = "ITBIS";
+            this.ItbPro.Name = "ItbPro";
+            this.ItbPro.ReadOnly = true;
+            // 
+            // TotalPro
+            // 
+            this.TotalPro.FillWeight = 108.3121F;
+            this.TotalPro.HeaderText = "TOTAL";
+            this.TotalPro.Name = "TotalPro";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txt_total_desc);
@@ -857,72 +928,31 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // CodPro
+            // cantidad_orden_producto
             // 
-            this.CodPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CodPro.FillWeight = 61.19339F;
-            this.CodPro.Frozen = true;
-            this.CodPro.HeaderText = "CÓDIGO";
-            this.CodPro.Name = "CodPro";
-            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CodPro.Width = 167;
+            this.cantidad_orden_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cantidad_orden_producto.AutoSize = true;
+            this.cantidad_orden_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantidad_orden_producto.Location = new System.Drawing.Point(691, 4);
+            this.cantidad_orden_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cantidad_orden_producto.Name = "cantidad_orden_producto";
+            this.cantidad_orden_producto.Size = new System.Drawing.Size(152, 24);
+            this.cantidad_orden_producto.TabIndex = 88;
+            this.cantidad_orden_producto.Text = "Cant. Ordenadas";
             // 
-            // NomPro
+            // total_producto
             // 
-            this.NomPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.NomPro.FillWeight = 168.1775F;
-            this.NomPro.Frozen = true;
-            this.NomPro.HeaderText = "NOMBRE";
-            this.NomPro.Name = "NomPro";
-            this.NomPro.Width = 462;
-            // 
-            // PrePro
-            // 
-            this.PrePro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PrePro.FillWeight = 91.37045F;
-            this.PrePro.Frozen = true;
-            this.PrePro.HeaderText = "PRECIO";
-            this.PrePro.Name = "PrePro";
-            this.PrePro.Width = 250;
-            // 
-            // CanPro
-            // 
-            this.CanPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CanPro.FillWeight = 62.6336F;
-            this.CanPro.Frozen = true;
-            this.CanPro.HeaderText = "CANTIDAD";
-            this.CanPro.Name = "CanPro";
-            this.CanPro.Width = 173;
-            // 
-            // SubPro
-            // 
-            this.SubPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SubPro.FillWeight = 108.3121F;
-            this.SubPro.Frozen = true;
-            this.SubPro.HeaderText = "SUBTOTAL";
-            this.SubPro.Name = "SubPro";
-            this.SubPro.Width = 299;
-            // 
-            // ItbPro
-            // 
-            this.ItbPro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ItbPro.Frozen = true;
-            this.ItbPro.HeaderText = "ITBIS";
-            this.ItbPro.Name = "ItbPro";
-            this.ItbPro.ReadOnly = true;
-            // 
-            // TotalPro
-            // 
-            this.TotalPro.FillWeight = 108.3121F;
-            this.TotalPro.HeaderText = "TOTAL";
-            this.TotalPro.Name = "TotalPro";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.total_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.total_producto.AutoSize = true;
+            this.total_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_producto.Location = new System.Drawing.Point(556, 4);
+            this.total_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.total_producto.Name = "total_producto";
+            this.total_producto.Size = new System.Drawing.Size(51, 24);
+            this.total_producto.TabIndex = 89;
+            this.total_producto.Text = "Total";
             // 
             // VentasModoTouch
             // 
@@ -1011,5 +1041,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItbPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Label total_producto;
+        private System.Windows.Forms.Label cantidad_orden_producto;
     }
 }
