@@ -45,6 +45,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.TerminosEmpresa = new System.Windows.Forms.RichTextBox();
+            this.Correo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.RncEmpresa = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,13 +79,13 @@
             this.NomEmpresa.Name = "NomEmpresa";
             this.NomEmpresa.Size = new System.Drawing.Size(252, 24);
             this.NomEmpresa.TabIndex = 100;
-            this.NomEmpresa.Text = "Sociio Coding";
+            this.NomEmpresa.Text = "CANABACOA GRILL";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 214);
+            this.label4.Location = new System.Drawing.Point(360, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 99;
@@ -112,9 +116,9 @@
             this.DirEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirEmpresa.Location = new System.Drawing.Point(142, 93);
             this.DirEmpresa.Name = "DirEmpresa";
-            this.DirEmpresa.Size = new System.Drawing.Size(244, 24);
+            this.DirEmpresa.Size = new System.Drawing.Size(519, 24);
             this.DirEmpresa.TabIndex = 94;
-            this.DirEmpresa.Text = "Carretera Principal";
+            this.DirEmpresa.Text = "Carretera P. Canabacoa, detrás de la bomba Esso, al lado de Odalis Sonido.";
             // 
             // btnCerrar
             // 
@@ -162,9 +166,9 @@
             this.NumEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumEmpresa.Location = new System.Drawing.Point(142, 136);
             this.NumEmpresa.Name = "NumEmpresa";
-            this.NumEmpresa.Size = new System.Drawing.Size(140, 24);
+            this.NumEmpresa.Size = new System.Drawing.Size(106, 24);
             this.NumEmpresa.TabIndex = 120;
-            this.NumEmpresa.Text = "809-886-2933";
+            this.NumEmpresa.Text = "809-734-6223";
             // 
             // MonedaEmpresa
             // 
@@ -183,9 +187,9 @@
             // 
             this.LogoEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.LogoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("LogoEmpresa.Image")));
-            this.LogoEmpresa.Location = new System.Drawing.Point(245, 206);
+            this.LogoEmpresa.Location = new System.Drawing.Point(425, 140);
             this.LogoEmpresa.Name = "LogoEmpresa";
-            this.LogoEmpresa.Size = new System.Drawing.Size(277, 285);
+            this.LogoEmpresa.Size = new System.Drawing.Size(283, 255);
             this.LogoEmpresa.TabIndex = 122;
             this.LogoEmpresa.TabStop = false;
             // 
@@ -198,7 +202,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(142, 206);
+            this.button3.Location = new System.Drawing.Point(322, 172);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 36);
             this.button3.TabIndex = 123;
@@ -209,7 +213,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 254);
+            this.label6.Location = new System.Drawing.Point(31, 287);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 20);
             this.label6.TabIndex = 124;
@@ -217,11 +221,49 @@
             // 
             // TerminosEmpresa
             // 
-            this.TerminosEmpresa.Location = new System.Drawing.Point(35, 277);
+            this.TerminosEmpresa.Location = new System.Drawing.Point(35, 310);
             this.TerminosEmpresa.Name = "TerminosEmpresa";
-            this.TerminosEmpresa.Size = new System.Drawing.Size(190, 205);
+            this.TerminosEmpresa.Size = new System.Drawing.Size(190, 172);
             this.TerminosEmpresa.TabIndex = 125;
             this.TerminosEmpresa.Text = "No hay devoluciones de dinero.       GRACIAS POR PREFERIRNOS !!";
+            // 
+            // Correo
+            // 
+            this.Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Correo.Location = new System.Drawing.Point(141, 208);
+            this.Correo.Name = "Correo";
+            this.Correo.Size = new System.Drawing.Size(162, 24);
+            this.Correo.TabIndex = 127;
+            this.Correo.Text = "empresa@io.com";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(37, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 20);
+            this.label7.TabIndex = 126;
+            this.label7.Text = "CORREO:";
+            // 
+            // RncEmpresa
+            // 
+            this.RncEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RncEmpresa.Location = new System.Drawing.Point(141, 241);
+            this.RncEmpresa.Name = "RncEmpresa";
+            this.RncEmpresa.Size = new System.Drawing.Size(162, 24);
+            this.RncEmpresa.TabIndex = 129;
+            this.RncEmpresa.Text = " XXXXXXXXX-XX";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(37, 243);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 20);
+            this.label8.TabIndex = 128;
+            this.label8.Text = "CORREO:";
             // 
             // FormConGen
             // 
@@ -229,6 +271,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(727, 494);
+            this.Controls.Add(this.RncEmpresa);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Correo);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.TerminosEmpresa);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
@@ -271,5 +317,9 @@
         public System.Windows.Forms.ComboBox MonedaEmpresa;
         public System.Windows.Forms.RichTextBox TerminosEmpresa;
         public System.Windows.Forms.PictureBox LogoEmpresa;
+        public System.Windows.Forms.TextBox Correo;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox RncEmpresa;
+        private System.Windows.Forms.Label label8;
     }
 }

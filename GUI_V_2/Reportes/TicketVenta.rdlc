@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.21502cm</Width>
+              <Width>1.15975cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.06506cm</Width>
+              <Width>2.71875cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.4499cm</Width>
+              <Width>1.39463cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.66481cm</Width>
+              <Width>1.87358cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -33,6 +33,7 @@
                             <TextRun>
                               <Value>Unds.</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -77,6 +78,7 @@
                             <TextRun>
                               <Value>Producto</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -121,6 +123,7 @@
                             <TextRun>
                               <Value>Precio</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -165,6 +168,7 @@
                             <TextRun>
                               <Value>Sub Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -213,7 +217,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CanPro.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -242,7 +248,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!NomPro.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -271,7 +279,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!PrePro.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -300,7 +310,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SubTotal.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -345,7 +357,7 @@
         <Top>0.17639cm</Top>
         <Left>0.26141cm</Left>
         <Height>1.2cm</Height>
-        <Width>7.39479cm</Width>
+        <Width>7.14671cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -356,10 +368,10 @@
     <Height>1.66021cm</Height>
     <Style />
   </Body>
-  <Width>8.02599cm</Width>
+  <Width>7.60275cm</Width>
   <Page>
     <PageHeader>
-      <Height>4.01877cm</Height>
+      <Height>3.59544cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -372,7 +384,7 @@
                 <TextRun>
                   <Value>CANABACOA GRILL</Value>
                   <Style>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -383,10 +395,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.3175cm</Top>
-          <Left>0.26141cm</Left>
-          <Height>0.72912cm</Height>
-          <Width>7.39479cm</Width>
+          <Top>0cm</Top>
+          <Left>0.23442cm</Left>
+          <Height>0.59972cm</Height>
+          <Width>7.2007cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -414,10 +426,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.10344cm</Top>
-          <Left>0.30261cm</Left>
-          <Height>0.50712cm</Height>
-          <Width>2.48936cm</Width>
+          <Top>1.61245cm</Top>
+          <Left>0.26141cm</Left>
+          <Height>0.57768cm</Height>
+          <Width>2.33008cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -446,7 +458,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.86039cm</Top>
+          <Top>2.26068cm</Top>
           <Left>0.26141cm</Left>
           <Height>0.54391cm</Height>
           <Width>1.73271cm</Width>
@@ -478,10 +490,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.86039cm</Top>
+          <Top>2.26068cm</Top>
           <Left>2.06467cm</Left>
           <Height>0.54391cm</Height>
-          <Width>1.59686cm</Width>
+          <Width>1.33228cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -510,8 +522,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.82512cm</Top>
-          <Left>3.73209cm</Left>
+          <Top>2.26068cm</Top>
+          <Left>3.53806cm</Left>
           <Height>0.54391cm</Height>
           <Width>1.24977cm</Width>
           <ZIndex>4</ZIndex>
@@ -542,10 +554,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.81781cm</Top>
-          <Left>5.05241cm</Left>
-          <Height>0.58649cm</Height>
-          <Width>2.60379cm</Width>
+          <Top>2.26068cm</Top>
+          <Left>4.82311cm</Left>
+          <Height>0.54391cm</Height>
+          <Width>2.58501cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -574,10 +586,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.15245cm</Top>
-          <Left>0.32321cm</Left>
-          <Height>0.95099cm</Height>
-          <Width>7.33299cm</Width>
+          <Top>0.635cm</Top>
+          <Left>0.26141cm</Left>
+          <Height>0.97745cm</Height>
+          <Width>7.17371cm</Width>
           <ZIndex>6</ZIndex>
           <Style>
             <Border>
@@ -606,8 +618,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.47486cm</Top>
-          <Left>0.28841cm</Left>
+          <Top>2.9457cm</Top>
+          <Left>0.26141cm</Left>
           <Height>0.54391cm</Height>
           <Width>1.36175cm</Width>
           <ZIndex>7</ZIndex>
@@ -638,10 +650,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.43958cm</Top>
-          <Left>1.756cm</Left>
+          <Top>2.9457cm</Top>
+          <Left>1.79955cm</Left>
           <Height>0.54391cm</Height>
-          <Width>5.9002cm</Width>
+          <Width>5.60857cm</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>
@@ -661,7 +673,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>4.15396cm</Height>
+      <Height>3.57188cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -674,7 +686,7 @@
                 <TextRun>
                   <Value>TOTAL RD$:</Value>
                   <Style>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -687,8 +699,8 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.14111cm</Top>
           <Left>0.26141cm</Left>
-          <Height>0.72912cm</Height>
-          <Width>3.26729cm</Width>
+          <Height>0.68259cm</Height>
+          <Width>3.13554cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -708,7 +720,7 @@
                 <TextRun>
                   <Value>=First(Fields!Total.Value, "DataSetTicketVenta")</Value>
                   <Style>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -719,10 +731,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.14111cm</Top>
-          <Left>3.59925cm</Left>
+          <Top>0.09458cm</Top>
+          <Left>3.53806cm</Left>
           <Height>0.72912cm</Height>
-          <Width>4.05695cm</Width>
+          <Width>3.89706cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -741,10 +753,8 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ITBIS</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Value>ITBIS:</Value>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -776,9 +786,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!ITBIS.Value, "DataSetTicketVenta")</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -787,10 +795,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.97606cm</Top>
-          <Left>3.57226cm</Left>
-          <Height>0.54391cm</Height>
-          <Width>4.05694cm</Width>
+          <Top>0.92953cm</Top>
+          <Left>2.6203cm</Left>
+          <Height>0.59044cm</Height>
+          <Width>4.78782cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -810,9 +818,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>DESCUENTOS:</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -824,7 +830,7 @@
           <Top>1.66109cm</Top>
           <Left>0.23442cm</Left>
           <Height>0.59683cm</Height>
-          <Width>3.26729cm</Width>
+          <Width>2.68521cm</Width>
           <ZIndex>4</ZIndex>
           <Style>
             <Border>
@@ -844,9 +850,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!ITBIS.Value, "DataSetTicketVenta")</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -855,10 +859,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.66109cm</Top>
-          <Left>3.57226cm</Left>
+          <Top>1.61456cm</Top>
+          <Left>3.53806cm</Left>
           <Height>0.59683cm</Height>
-          <Width>4.05694cm</Width>
+          <Width>3.87006cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -872,7 +876,7 @@
         </Textbox>
         <Line Name="Line1">
           <Top>0.09458cm</Top>
-          <Left>0.30261cm</Left>
+          <Left>0.08768cm</Left>
           <Height>0cm</Height>
           <Width>7.35359cm</Width>
           <ZIndex>6</ZIndex>
@@ -890,9 +894,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>NOTA:</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -904,7 +906,7 @@
           <Top>2.36375cm</Top>
           <Left>0.23442cm</Left>
           <Height>0.59683cm</Height>
-          <Width>1.49458cm</Width>
+          <Width>1.25646cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -924,9 +926,7 @@
               <TextRuns>
                 <TextRun>
                   <Value>=First(Fields!Nota.Value, "DataSetTicketVenta")</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
+                  <Style />
                 </TextRun>
               </TextRuns>
               <Style>
@@ -936,9 +936,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>2.36375cm</Top>
-          <Left>1.90539cm</Left>
-          <Height>1.52287cm</Height>
-          <Width>5.72381cm</Width>
+          <Left>1.66727cm</Left>
+          <Height>0.96724cm</Height>
+          <Width>5.76785cm</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>
@@ -959,10 +959,10 @@
     </PageFooter>
     <PageHeight>11cm</PageHeight>
     <PageWidth>8cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
-    <RightMargin>0.5cm</RightMargin>
-    <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>0.5cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>

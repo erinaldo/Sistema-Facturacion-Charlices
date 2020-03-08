@@ -214,6 +214,70 @@ namespace GUI_V_2
             }
 
         }
+        FacturaClass DatosVenta = new FacturaClass();
+        public void ImprimirTicketVenta()
+        {
+            FormConGen empresa = new FormConGen();
+            
+            //Creamos una instancia d ela clase CrearTicket
+            Factura ticket = new Factura();
+            //Ya podemos usar todos sus metodos
+            ticket.AbreCajon();//Para abrir el cajon de dinero.
+
+            //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
+
+            //Datos de la cabecera del Ticket.
+            ticket.TextoCentro(empresa.NomEmpresa.Text);
+       //     ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
+            ticket.TextoIzquierda(empresa.DirEmpresa.Text);
+            ticket.TextoIzquierda(empresa.NumEmpresa.Text);
+            ticket.TextoIzquierda("R.N.C: "+ empresa.RncEmpresa.Text);
+        //    ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
+            ticket.TextoIzquierda("");
+            ticket.TextoExtremos("# ORDEN: ",DatosVenta.NumOrden); 
+            ticket.lineasAsteriscos();
+
+           
+            //Sub cabecera.
+            ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("Factura: " + DatosVenta.NumFac);
+            ticket.TextoIzquierda("Cliente: "+DatosVenta.CodCli+" - "+DatosVenta.NomCli);
+            ticket.TextoIzquierda("");
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), " " + DateTime.Now.ToShortTimeString());
+            ticket.lineasAsteriscos();
+
+            //Articulos a vender.
+            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE
+            ticket.lineasAsteriscos();
+            //Si tiene una DataGridView donde estan sus articulos a vender pueden usar esta manera para agregarlos al ticket.
+            //foreach (DataGridViewRow fila in dgvLista.Rows)//dgvLista es el nombre del datagridview
+            //{
+            //ticket.AgregaArticulo(fila.Cells[2].Value.ToString(), int.Parse(fila.Cells[5].Value.ToString()),
+            //decimal.Parse(fila.Cells[4].Value.ToString()), decimal.Parse(fila.Cells[6].Value.ToString()));
+            //}
+            ticket.AgregaArticulo("Articulo A", 2, 20, 40);
+            ticket.AgregaArticulo("Articulo B", 1, 10, 10);
+            ticket.AgregaArticulo("Este es un nombre largo del articulo, para mostrar como se bajan las lineas", 1, 30, 30);
+            ticket.lineasIgual();
+
+            //Resumen de la venta. Sólo son ejemplos
+            ticket.AgregarTotales("         SUBTOTAL......$", 100);
+            ticket.AgregarTotales("         IVA...........$", 10.04M);//La M indica que es un decimal en C#
+            ticket.AgregarTotales("         TOTAL.........$", 200);
+            ticket.TextoIzquierda("");
+            ticket.AgregarTotales("         EFECTIVO......$", 200);
+            ticket.AgregarTotales("         CAMBIO........$", 0);
+
+            //Texto final del Ticket.
+            ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("ARTÍCULOS VENDIDOS: 3");
+            ticket.TextoIzquierda("");
+            ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+            ticket.CortaTicket();
+            ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
+
+
+        }
 
     }
 }
