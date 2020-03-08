@@ -93,6 +93,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_cliente" Type="int" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="fecha" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -161,7 +162,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CLIENTE">
+        <Association Name="FK_CLIENTES">
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="Ordenes_Reservadas" Type="Self.Ordenes_Reservadas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -301,7 +302,7 @@
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
           </AssociationSet>
-          <AssociationSet Name="FK_CLIENTE" Association="Self.FK_CLIENTE">
+          <AssociationSet Name="FK_CLIENTES" Association="Self.FK_CLIENTES">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
           </AssociationSet>
@@ -724,6 +725,7 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Model.FK_CLIENTE" FromRole="Ordenes_Reservadas" ToRole="Clientes" />
           <NavigationProperty Name="Detalles_Ordenes" Relationship="Model.FK_ORDEN" FromRole="Ordenes_Reservadas" ToRole="Detalles_Ordenes" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
         <Association Name="FK_CLIENTE">
           <End Type="Model.Clientes" Role="Clientes" Multiplicity="1" />
@@ -941,6 +943,7 @@
           <EntitySetMapping Name="Ordenes_Reservadas">
             <EntityTypeMapping TypeName="Model.Ordenes_Reservadas">
               <MappingFragment StoreEntitySet="Ordenes_Reservadas">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
                 <ScalarProperty Name="id" ColumnName="id" />
