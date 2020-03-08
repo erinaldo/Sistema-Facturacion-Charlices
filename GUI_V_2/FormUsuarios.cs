@@ -28,5 +28,10 @@ namespace GUI_V_2
                 SendKeys.Send("{TAB}");
             }
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

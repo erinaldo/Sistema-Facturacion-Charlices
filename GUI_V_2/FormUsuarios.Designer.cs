@@ -42,11 +42,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.UsuPass = new GUI_V_2.ErrorTxtBox();
             this.label10 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Size = new System.Drawing.Size(139, 31);
             this.label1.Text = "USUARIO";
             // 
             // bnt_eliminar
@@ -58,31 +60,40 @@
             // 
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(44, 446);
+            this.label19.Location = new System.Drawing.Point(59, 549);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(125, 438);
+            this.estado.Location = new System.Drawing.Point(167, 539);
+            this.estado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             // 
             // Nom
             // 
-            this.Nom.Size = new System.Drawing.Size(262, 26);
+            this.Nom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Nom.Size = new System.Drawing.Size(348, 30);
             // 
- 
+            // Codigo
+            // 
+            this.Codigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(766, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1021, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // CedUsu
             // 
             this.CedUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CedUsu.Limpiar = true;
-            this.CedUsu.Location = new System.Drawing.Point(162, 233);
+            this.CedUsu.Location = new System.Drawing.Point(216, 287);
+            this.CedUsu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CedUsu.Name = "CedUsu";
-            this.CedUsu.Size = new System.Drawing.Size(170, 26);
+            this.CedUsu.Size = new System.Drawing.Size(225, 30);
             this.CedUsu.TabIndex = 126;
             this.CedUsu.Validar = true;
             // 
@@ -90,9 +101,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(40, 236);
+            this.label8.Location = new System.Drawing.Point(53, 290);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 20);
+            this.label8.Size = new System.Drawing.Size(110, 25);
             this.label8.TabIndex = 125;
             this.label8.Text = "CLA / RNC";
             // 
@@ -100,9 +112,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(40, 405);
+            this.label7.Location = new System.Drawing.Point(53, 498);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.Size = new System.Drawing.Size(98, 25);
             this.label7.TabIndex = 124;
             this.label7.Text = "CORREO";
             // 
@@ -110,10 +123,11 @@
             // 
             this.CorUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorUsu.Limpiar = true;
-            this.CorUsu.Location = new System.Drawing.Point(125, 399);
+            this.CorUsu.Location = new System.Drawing.Point(167, 491);
+            this.CorUsu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CorUsu.MaxLength = 60;
             this.CorUsu.Name = "CorUsu";
-            this.CorUsu.Size = new System.Drawing.Size(233, 26);
+            this.CorUsu.Size = new System.Drawing.Size(309, 30);
             this.CorUsu.TabIndex = 123;
             this.CorUsu.Validar = true;
             // 
@@ -121,9 +135,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(40, 365);
+            this.label6.Location = new System.Drawing.Point(53, 449);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 20);
+            this.label6.Size = new System.Drawing.Size(154, 25);
             this.label6.TabIndex = 122;
             this.label6.Text = "TIPO USUARIO";
             // 
@@ -131,9 +146,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(40, 320);
+            this.label4.Location = new System.Drawing.Point(53, 394);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.Size = new System.Drawing.Size(122, 25);
             this.label4.TabIndex = 121;
             this.label4.Text = "DIRECCIÓN";
             // 
@@ -141,9 +157,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(40, 282);
+            this.label3.Location = new System.Drawing.Point(53, 347);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.Size = new System.Drawing.Size(120, 25);
             this.label3.TabIndex = 120;
             this.label3.Text = "TELÉFONO";
             // 
@@ -151,10 +168,11 @@
             // 
             this.DirUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirUsu.Limpiar = true;
-            this.DirUsu.Location = new System.Drawing.Point(162, 317);
+            this.DirUsu.Location = new System.Drawing.Point(216, 390);
+            this.DirUsu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DirUsu.MaxLength = 40;
             this.DirUsu.Name = "DirUsu";
-            this.DirUsu.Size = new System.Drawing.Size(334, 26);
+            this.DirUsu.Size = new System.Drawing.Size(444, 30);
             this.DirUsu.TabIndex = 119;
             this.DirUsu.Validar = true;
             // 
@@ -162,10 +180,11 @@
             // 
             this.TelUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelUsu.Limpiar = false;
-            this.TelUsu.Location = new System.Drawing.Point(162, 276);
+            this.TelUsu.Location = new System.Drawing.Point(216, 340);
+            this.TelUsu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TelUsu.MaxLength = 15;
             this.TelUsu.Name = "TelUsu";
-            this.TelUsu.Size = new System.Drawing.Size(170, 26);
+            this.TelUsu.Size = new System.Drawing.Size(225, 30);
             this.TelUsu.TabIndex = 118;
             this.TelUsu.Validar = true;
             // 
@@ -176,18 +195,20 @@
             this.TipUsu.Items.AddRange(new object[] {
             "CAJERO",
             "ADMINISTRADOR"});
-            this.TipUsu.Location = new System.Drawing.Point(170, 357);
+            this.TipUsu.Location = new System.Drawing.Point(227, 439);
+            this.TipUsu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TipUsu.Name = "TipUsu";
-            this.TipUsu.Size = new System.Drawing.Size(188, 28);
+            this.TipUsu.Size = new System.Drawing.Size(249, 33);
             this.TipUsu.TabIndex = 127;
             // 
             // UsuNom
             // 
             this.UsuNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.UsuNom.Limpiar = true;
-            this.UsuNom.Location = new System.Drawing.Point(132, 145);
+            this.UsuNom.Location = new System.Drawing.Point(176, 178);
+            this.UsuNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsuNom.Name = "UsuNom";
-            this.UsuNom.Size = new System.Drawing.Size(183, 26);
+            this.UsuNom.Size = new System.Drawing.Size(243, 30);
             this.UsuNom.TabIndex = 129;
             this.UsuNom.Validar = true;
             // 
@@ -195,9 +216,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.Location = new System.Drawing.Point(40, 148);
+            this.label9.Location = new System.Drawing.Point(53, 182);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 20);
+            this.label9.Size = new System.Drawing.Size(102, 25);
             this.label9.TabIndex = 128;
             this.label9.Text = "USUARIO";
             // 
@@ -205,9 +227,10 @@
             // 
             this.UsuPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.UsuPass.Limpiar = true;
-            this.UsuPass.Location = new System.Drawing.Point(162, 187);
+            this.UsuPass.Location = new System.Drawing.Point(216, 230);
+            this.UsuPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsuPass.Name = "UsuPass";
-            this.UsuPass.Size = new System.Drawing.Size(183, 26);
+            this.UsuPass.Size = new System.Drawing.Size(243, 30);
             this.UsuPass.TabIndex = 131;
             this.UsuPass.Validar = true;
             // 
@@ -215,17 +238,18 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.Location = new System.Drawing.Point(40, 190);
+            this.label10.Location = new System.Drawing.Point(53, 234);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 20);
+            this.label10.Size = new System.Drawing.Size(152, 25);
             this.label10.TabIndex = 130;
             this.label10.Text = "CONTRASEÑA";
             // 
             // FormUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 483);
+            this.ClientSize = new System.Drawing.Size(1077, 594);
             this.Controls.Add(this.UsuPass);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.UsuNom);
@@ -240,6 +264,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DirUsu);
             this.Controls.Add(this.TelUsu);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
             this.Controls.SetChildIndex(this.TelUsu, 0);
@@ -266,6 +291,7 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

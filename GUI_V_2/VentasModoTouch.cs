@@ -20,6 +20,7 @@ namespace GUI_V_2
         double itbisPro =  0;
         int id_cliente  =  0;
         int id_comprobante = 0;
+        int id_producto = 0;
 
         public VentasModoTouch()
         {
@@ -315,6 +316,7 @@ namespace GUI_V_2
 
                     if (respProducto != null)
                     {
+                        id_producto = respProducto.id;
                         SetCampoByProducto(respProducto.nombre,respProducto.precio_normal, codigoPro, respProducto.cantidad,respProducto.itbis, respProducto.tipo_producto);
                     }
                     else
@@ -323,6 +325,7 @@ namespace GUI_V_2
                         precio_pro.Text = "";
                         disponible_pro.Text = "";
                         itbisPro = 0;
+                        id_producto = 0;
                         MessageBox.Show("No existe un producto con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
@@ -500,9 +503,10 @@ namespace GUI_V_2
                 txtSubTotal.Text = totalFact.ToString();
                 txtTotalItbis.Text = totalItbis.ToString();
                 txt_totalFactura.Text = (totalFact + totalItbis).ToString();*/
-            }catch(Exception ccv)
+            }
+            catch (Exception ccv)
             {
-               //error
+
             }
         }
 
@@ -522,7 +526,8 @@ namespace GUI_V_2
         private void button7_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
+
                 if (dataGridViewProducto.Rows.Count > 0)
                 {
                     string nombreProducto = dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[1].Value.ToString();
@@ -675,12 +680,48 @@ namespace GUI_V_2
                 MessageBox.Show("No hay producto agregado al carrito.");
                 return;
             }
+            if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
+            else ModificarReservaOrden();
 
-            CrearReserva();
         }
 
+        public void ModificarReservaOrden()
+        {
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    int orden_id = int.Parse(txt_numero_orden.Text.Trim());
+                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                    {
+                        int idPro = int.Parse(registsros.Cells[7].Value.ToString());
 
-        public void CrearReserva()
+                        var detalle_orden = DB.Detalles_Ordenes.FirstOrDefault(a => a.orden_id == orden_id && a.id_producto == idPro);
+
+                        if (detalle_orden != null)
+                        {
+                            double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
+                            int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
+                            double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
+                            detalle_orden.cantidad_producto = cantidaProVendida;
+                            detalle_orden.precio_producto = precioProVenta;
+                            detalle_orden.itbis = itbisProVenta;
+
+                        }
+
+                    }
+                    DB.SaveChanges();
+                    MessageBox.Show("La orden se modifico correctamente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+        public void CrearReservaOrden()
         {
             try
             {
@@ -756,12 +797,14 @@ namespace GUI_V_2
                                 join Deta_orden in DB.Detalles_Ordenes on ord.id
                      equals Deta_orden.orden_id
                                 join pro in DB.Productos on Deta_orden.id_producto equals pro.id join cli in DB.Clientes on ord.id_cliente equals cli.id
-                                where ord.estado == false && ord.id == codigo_orden
+                                where ord.id == codigo_orden
                                 select new
                                 {
+                                    ord.estado,
                                     ord.id_cliente,
                                     cliente_codigo = cli.codigo,
                                     cli.nombre_completo,
+                                    pro.id,
                                     pro.nombre,
                                     pro.codigo,
                                     Deta_orden.cantidad_producto,
@@ -776,21 +819,29 @@ namespace GUI_V_2
                         dataGridViewProducto.Rows.Clear();
                         double total_Sub = 0;
                         double total_itbis = 0;
-                        foreach (var producto in orden.ToList())
+                        foreach (var registro_orden in orden.ToList())
                         {
-                            txt_codigo_cliente.Text = producto.cliente_codigo;
-                            txt_nombre_cliente.Text = producto.nombre_completo;
-                            id_cliente = producto.id_cliente;
-                            int cantidad_pro = producto.cantidad_producto;
-                            double precio_pro = producto.precio_producto;
+                            if (registro_orden.estado)
+                            {
+                                MessageBox.Show("La orden ya había sido facturada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                break;
+                            }
+                            txt_codigo_cliente.Text = registro_orden.cliente_codigo;
+                            txt_nombre_cliente.Text = registro_orden.nombre_completo;
+                            id_cliente = registro_orden.id_cliente;
+                            int cantidad_pro = registro_orden.cantidad_producto;
+                            double precio_pro = registro_orden.precio_producto;
                             double sub_total = cantidad_pro * precio_pro;
-                            double totalItbis = producto.itbis;
+                            double totalItbis = registro_orden.itbis;
                             double total = sub_total + totalItbis;
                             total_Sub += sub_total;
                             total_itbis += totalItbis;
-                            dataGridViewProducto.Rows.Add(producto.codigo, producto.nombre, producto.precio_producto, producto.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString());
+                            dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(),registro_orden.id);
                         }
-
+                        if (total_Sub > 0)
+                        {
+                            Reservar.Text = "Modificar Orden";
+                        }
                         txt_total_bruto.Text = total_Sub.ToString();
                         txt_total_itbis.Text = total_itbis.ToString();
                         txt_total_neto.Text = (total_itbis + total_Sub).ToString();
@@ -802,8 +853,8 @@ namespace GUI_V_2
                         precio_pro.Text = "";
                         disponible_pro.Text = "";
                         itbisPro = 0;
-                        MessageBox.Show("No existe un producto con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                        Reservar.Text = "Reservar Orden";
+                        MessageBox.Show("No existe una orden con ese código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
