@@ -538,6 +538,34 @@ namespace GUI_V_2
 
                     }
 
+                    if(Reservar.Text.Equals("Modificar Orden"))
+                    {
+                        try
+                        {
+                            using (CRUD_MODEL DB = new CRUD_MODEL())
+                            {
+                                int id_orden = int.Parse(txt_numero_orden.Text);
+                                int id_productoOrden = int.Parse(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[7].Value.ToString());
+
+                                var detalles_orden = DB.Detalles_Ordenes.FirstOrDefault(a => a.orden_id == id_orden && a.id_producto == id_productoOrden);
+                             
+                               if (detalles_orden != null)
+                                {
+                                    DB.Detalles_Ordenes.Remove(detalles_orden);
+                                    DB.SaveChanges();
+                                }
+                            }
+
+                        }
+                        catch (Exception)
+                        {
+
+                            return;
+                            //Guardar Error
+                        }
+
+                    }
+
                     double rItbis = Double.Parse(txt_total_itbis.Text);
                     double rSubTotal = Double.Parse(txt_total_bruto.Text);
                     double rTotal = 0;
