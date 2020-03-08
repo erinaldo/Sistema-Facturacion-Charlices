@@ -23,6 +23,7 @@ namespace GUI_V_2
         public int id { get; set; }
         public int id_cliente { get; set; }
         public bool estado { get; set; }
+        public System.DateTime fecha { get; set; }
     
         public virtual Clientes Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
