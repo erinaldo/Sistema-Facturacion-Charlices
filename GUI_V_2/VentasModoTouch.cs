@@ -477,7 +477,7 @@ namespace GUI_V_2
                     double totalItbis = (itbisPro / 100) * subtotal;
                     double total = totalItbis + subtotal;
                     dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
-                                                  subtotal, totalItbis, total);
+                                                  subtotal, totalItbis, total,id_producto);
 
                     subtotalFac += subtotal;
                     itbisFac += totalItbis;
@@ -692,21 +692,44 @@ namespace GUI_V_2
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     int orden_id = int.Parse(txt_numero_orden.Text.Trim());
+                    var orden = DB.Ordenes_Reservadas.FirstOrDefault(a => a.id == orden_id);
+                    if (orden != null)
+                    {
+                        orden.id_cliente = id_cliente;
+                    }
+
+
+
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                     {
                         int idPro = int.Parse(registsros.Cells[7].Value.ToString());
 
                         var detalle_orden = DB.Detalles_Ordenes.FirstOrDefault(a => a.orden_id == orden_id && a.id_producto == idPro);
 
+                        double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
+                        int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
+                        double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
+
                         if (detalle_orden != null)
                         {
-                            double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
-                            int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
-                            double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
+                            
                             detalle_orden.cantidad_producto = cantidaProVendida;
                             detalle_orden.precio_producto = precioProVenta;
                             detalle_orden.itbis = itbisProVenta;
 
+                        }
+                        else
+                        {
+                            Detalles_Ordenes detalles_orden = new Detalles_Ordenes
+                            {
+                                orden_id = orden_id,
+                                id_producto = idPro,
+                                cantidad_producto = cantidaProVendida,
+                                precio_producto = precioProVenta,
+                                itbis = itbisProVenta
+                            };
+
+                            DB.Detalles_Ordenes.Add(detalles_orden);
                         }
 
                     }
