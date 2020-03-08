@@ -892,6 +892,7 @@ namespace GUI_V_2
                         if (total_Sub > 0)
                         {
                             Reservar.Text = "Modificar Orden";
+                            codigo_pro.Focus();
                         }
                         txt_total_bruto.Text = total_Sub.ToString();
                         txt_total_itbis.Text = total_itbis.ToString();
