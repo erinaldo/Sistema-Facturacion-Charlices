@@ -473,7 +473,7 @@ namespace GUI_V_2
                     return;
                 }
                 int cantidadCliPro = int.Parse(cantidad_pro.Text.Trim());
-                if (!disponible_pro.Text.Trim().Contains("Sin límite") && cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("Disponible:", "").ToString()))
+                if (!disponible_pro.Text.Trim().Contains("Sin límite") && cantidadCliPro > int.Parse(disponible_pro.Text.Trim().Replace("DISPONIBLE:", "").ToString()))
                 {
                     MessageBox.Show($"La cantidad máxima disponible del producto {nombre_pro.Text.Trim()} es {disponible_pro.Text.Trim()} ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
@@ -545,7 +545,7 @@ namespace GUI_V_2
             }
             catch (Exception ccv)
             {
-
+                MessageBox.Show(ccv.ToString());
             }
         }
 
