@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.total_producto = new System.Windows.Forms.Label();
+            this.cantidad_orden_producto = new System.Windows.Forms.Label();
             this.txt_numero_orden = new GUI_V_2.ErrorTxtBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Reservar = new System.Windows.Forms.Button();
@@ -87,8 +89,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cantidad_orden_producto = new System.Windows.Forms.Label();
-            this.total_producto = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -137,6 +137,32 @@
             this.panel5.Size = new System.Drawing.Size(1760, 91);
             this.panel5.TabIndex = 69;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // total_producto
+            // 
+            this.total_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.total_producto.AutoSize = true;
+            this.total_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_producto.Location = new System.Drawing.Point(556, 4);
+            this.total_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.total_producto.Name = "total_producto";
+            this.total_producto.Size = new System.Drawing.Size(72, 24);
+            this.total_producto.TabIndex = 89;
+            this.total_producto.Text = "TOTAL";
+            // 
+            // cantidad_orden_producto
+            // 
+            this.cantidad_orden_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cantidad_orden_producto.AutoSize = true;
+            this.cantidad_orden_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantidad_orden_producto.Location = new System.Drawing.Point(691, 4);
+            this.cantidad_orden_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cantidad_orden_producto.Name = "cantidad_orden_producto";
+            this.cantidad_orden_producto.Size = new System.Drawing.Size(138, 24);
+            this.cantidad_orden_producto.TabIndex = 88;
+            this.cantidad_orden_producto.Text = "RESERVADAS";
             // 
             // txt_numero_orden
             // 
@@ -927,32 +953,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // cantidad_orden_producto
-            // 
-            this.cantidad_orden_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantidad_orden_producto.AutoSize = true;
-            this.cantidad_orden_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad_orden_producto.Location = new System.Drawing.Point(691, 4);
-            this.cantidad_orden_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.cantidad_orden_producto.Name = "cantidad_orden_producto";
-            this.cantidad_orden_producto.Size = new System.Drawing.Size(152, 24);
-            this.cantidad_orden_producto.TabIndex = 88;
-            this.cantidad_orden_producto.Text = "Cant. Ordenadas";
-            // 
-            // total_producto
-            // 
-            this.total_producto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.total_producto.AutoSize = true;
-            this.total_producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_producto.Location = new System.Drawing.Point(556, 4);
-            this.total_producto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.total_producto.Name = "total_producto";
-            this.total_producto.Size = new System.Drawing.Size(51, 24);
-            this.total_producto.TabIndex = 89;
-            this.total_producto.Text = "Total";
             // 
             // VentasModoTouch
             // 

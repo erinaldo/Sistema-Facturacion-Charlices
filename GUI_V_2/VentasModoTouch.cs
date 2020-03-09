@@ -347,7 +347,8 @@ namespace GUI_V_2
                 if (tipo_producto == 1) CantidadDisponiblePro(codigo, int.Parse(cantidad.ToString()));
                 else
                 {
-                    disponible_pro.Text = "Sin límite";
+                    total_producto.Text = "TOTAL : Sin límite";
+                    disponible_pro.Text = "DISPONIBLE : Sin límite";
                 }
 
                 itbisPro = itbis;
@@ -392,32 +393,49 @@ namespace GUI_V_2
         {
             try
             {
-                /*total_producto.Text ="Total :" + cantidad.ToString();
+                total_producto.Text ="TOTAL :" + cantidad.ToString();
+
+                int id_orden = 0;
+                if (txt_numero_orden.Text.Trim().Equals("") == false)
+                {
+                   id_orden = int.Parse(txt_numero_orden.Text.Trim());
+                }
 
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var ordenes = from detalles in DB.Detalles_Ordenes
                                     join orden in DB.Ordenes_Reservadas on detalles.orden_id
                          equals orden.id
-                                    where (orden.estado == false && detalles.id_producto == id_producto)
+                                    where (orden.estado == false && detalles.id_producto == id_producto && ( id_orden==0 || detalles.orden_id!= id_orden))
+                                    group detalles by detalles.cantidad_producto into total 
+                                    let totalOrdenProducto = total.Sum(t=>t.cantidad_producto)
                                     select new
                                     {
-                                       detalles.cantidad_producto
+                                       totalOrdenProducto
                                     };
 
-                }*/
-                   
+                    var resultado = ordenes.FirstOrDefault();
+                    int cantidad_ordenada = 0;
+                    if (resultado != null) cantidad_ordenada = resultado.totalOrdenProducto;
 
+                    int cantidad_addCarrito = 0;
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                 {
                     if (registsros.Cells[0].Value.ToString() == codigo)
                     {
-                        cantidad -= int.Parse(registsros.Cells[3].Value.ToString());
+                            cantidad_addCarrito += int.Parse(registsros.Cells[3].Value.ToString());
                     }
 
                 }
 
-                disponible_pro.Text = "Disponible: " + cantidad.ToString();
+                    int sub_cantidadDisponible = cantidad - cantidad_addCarrito;
+                    cantidad_ordenada+= (cantidad - sub_cantidadDisponible);
+                    int totan_disponible = cantidad - cantidad_ordenada;
+                    cantidad_orden_producto.Text = "RESERVADAS : " + cantidad_ordenada;
+                    disponible_pro.Text = "DISPONIBLE: " + totan_disponible.ToString();
+                }
+
+              
             }catch(Exception cc)
             {
                 //error
@@ -511,7 +529,9 @@ namespace GUI_V_2
                 nombre_pro.Text = "Descripción de producto";
                 cantidad_pro.Text = "1";
                 precio_pro.Text = "";
-                disponible_pro.Text = "";
+                disponible_pro.Text = "DISPONIBLE";
+                total_producto.Text = "TOTAL";
+                cantidad_orden_producto.Text = "RESERVADAS";
                 codigo_pro.Focus();
 
                 /*txt_codigoPro.Text = "";
