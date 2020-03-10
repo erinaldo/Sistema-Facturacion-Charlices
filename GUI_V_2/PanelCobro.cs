@@ -126,10 +126,10 @@ namespace GUI_V_2
         //Boton con ticket
         private void button1_Click(object sender, EventArgs e)
         {
-            Utilidades.NotaVenta = TxtNota.Text.Trim();
             try {
-                if (Convert.ToDouble(txt_pago.Text.Trim())>Convert.ToDouble(txt_monto.Text.Trim())) {
+                if (Convert.ToDouble(txt_pago.Text.Trim()) >= Convert.ToDouble(txt_monto.Text.Trim())) {
                     Utilidades.ConFact = 1;
+                    Utilidades.NotaVenta = TxtNota.Text.Trim();
                     DialogResult = DialogResult.OK;
                     //this.Hide();
                 }
@@ -149,7 +149,7 @@ namespace GUI_V_2
         {
 
              try {
-                if (Convert.ToDouble(txt_pago.Text.Trim())>Convert.ToDouble(txt_monto.Text.Trim())) {
+                if (Convert.ToDouble(txt_pago.Text.Trim())>=Convert.ToDouble(txt_monto.Text.Trim())) {
                     Utilidades.ConFact = 0;      
                     DialogResult = DialogResult.OK;
                     //this.Hide();
@@ -214,6 +214,8 @@ namespace GUI_V_2
             }
 
         }
+
+        /*
         FacturaClass DatosVenta = new FacturaClass();
         public void ImprimirTicketVenta()
         {
@@ -275,9 +277,9 @@ namespace GUI_V_2
             ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
             ticket.CortaTicket();
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
-
-
         }
+        */
+
 
     }
 }

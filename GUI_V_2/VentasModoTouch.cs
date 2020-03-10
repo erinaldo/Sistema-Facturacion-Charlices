@@ -190,7 +190,7 @@ namespace GUI_V_2
                     
                     if (Utilidades.ConFact==1)
                     {
-                        ImprimirFactura();
+                       ImprimirTicketVenta();
                     }
                     LimpiarCampo();
                     MessageBox.Show("La factura se creo correctamente.");
@@ -1003,8 +1003,67 @@ namespace GUI_V_2
                 //MessageBox.Show("Error al crear factura");
             }
         }
+        
 
+        FacturaClass DatosVenta = new FacturaClass();
+        public void ImprimirTicketVenta()
+        {
+            FormConGen empresa = new FormConGen();
 
+            //Creamos una instancia d ela clase CrearTicket
+            Factura ticket = new Factura();
+            //Ya podemos usar todos sus metodos
+            ticket.AbreCajon();//Para abrir el cajon de dinero.
+
+            //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
+
+            //Datos de la cabecera del Ticket.
+            ticket.TextoCentro(empresa.NomEmpresa.Text);
+            // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
+            ticket.TextoIzquierda(empresa.DirEmpresa.Text);
+            ticket.TextoIzquierda(empresa.NumEmpresa.Text);
+            // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
+            // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
+            ticket.TextoIzquierda("");
+            ticket.TextoExtremos("# ORDEN: ", txt_numero_orden.Text.Trim());
+            ticket.TextoIzquierda("Factura: " + txt_codigo_fac.Text.Trim());
+            ticket.TextoIzquierda("Comprobante: " + txt_serie_comprobante.Text.Trim());
+            ticket.lineasAsteriscos();
+
+            //Sub cabecera.
+            ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + "-" + txt_nombre_cliente.Text.Trim());
+            ticket.TextoIzquierda("");
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), " " + DateTime.Now.ToShortTimeString());
+            ticket.lineasAsteriscos();
+
+            //Articulos a vender.
+            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
+            ticket.lineasAsteriscos();
+            //Agregando articulos al data GridView
+            for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+            {
+              ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                 dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                 dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                 dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+            }
+
+            ticket.lineasIgual();
+
+            //Resumen de la venta. Sólo son ejemplos
+            ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
+            ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
+            ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
+            ticket.TextoIzquierda("");
+
+            //Texto final del Ticket.
+            ticket.TextoIzquierda("NOTA: "+Utilidades.NotaVenta);
+            ticket.TextoIzquierda("");
+            ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+            ticket.CortaTicket();
+            ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
+            MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
+        }
     }
 }
 

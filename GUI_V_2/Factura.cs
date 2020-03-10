@@ -196,7 +196,7 @@ namespace GUI_V_2
             }
 
             //Metodo para agregar los totales d ela venta
-            public void AgregarTotales(string texto, decimal total)
+            public void AgregarTotales(string texto, string total)
             {
                 //Variables que usaremos
                 string resumen, valor, textoCompleto, espacios = "";
@@ -210,7 +210,7 @@ namespace GUI_V_2
                 { resumen = texto; }
 
                 textoCompleto = resumen;
-                valor = total.ToString("#,#.00");//Agregamos el total previo formateo.
+                valor = total.ToString();//Agregamos el total previo formateo.
 
                 //Obtenemos el numero de espacios restantes para alinearlos a la derecha
                 int nroEspacios = maxCar - (resumen.Length + valor.Length);
@@ -224,7 +224,7 @@ namespace GUI_V_2
             }
 
             //Metodo para agreagar articulos al ticket de venta
-            public void AgregaArticulo(string articulo, int cant, decimal precio, decimal importe)
+            public void AgregaArticulo(string articulo, string cant, string precio, string importe)
             {
                 //Valida que cant precio e importe esten dentro del rango.
                 if (cant.ToString().Length <= 5 && precio.ToString().Length <= 7 && importe.ToString().Length <= 8)
@@ -334,9 +334,11 @@ namespace GUI_V_2
             //Para cortar el ticket
             public void CortaTicket()
             {
-                linea.AppendLine("\x1B" + "m"); //Caracteres de corte. Estos comando varian segun el tipo de impresora
-                linea.AppendLine("\x1B" + "d" + "\x09"); //Avanza 9 renglones, Tambien varian
-            }
+            linea.AppendLine("\n\n"); //Caracteres de corte.
+            linea.AppendLine("\x1Bm"); //Caracteres de corte.
+
+            
+        }
             //Para abrir el cajon
             public void AbreCajon()
             {
