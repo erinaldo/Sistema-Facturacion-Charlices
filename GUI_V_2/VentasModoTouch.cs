@@ -960,53 +960,112 @@ namespace GUI_V_2
         PanelCobro PaCobro = new PanelCobro();
         //Metodo para crear Factura 
         ReportDataSource rs = new ReportDataSource();
-        
-  public void ImprimirFactura()
-        {
-            try
-            {
-                FormReportesDatos Repor = new FormReportesDatos();
-                List<FacturaClass> lista = new List<FacturaClass>();
-                lista.Clear();
-                for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
-                {
-                    lista.Add(new FacturaClass
-                    {
-                        CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
-                        NomPro = dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
-                        PrePro = dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
-                        CanPro = dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
-                        SubTotal = dataGridViewProducto.Rows[p].Cells[4].Value.ToString(),
-                        CodCli = txt_codigo_cliente.Text.Trim(),
-                        NomCli = txt_nombre_cliente.Text.Trim(),
-                        Comprobante = txt_serie_comprobante.Text.Trim(),
-                        NumOrden = txt_numero_orden.Text.Trim(),
-                        Vendedor = comboBoxVendedores.SelectedItem.ToString(),
-                        Descuento = txt_total_desc.Text.Trim(),
-                        NumFac = txt_codigo_fac.Text.Trim(),
-                        ITBIS = txt_total_itbis.Text.Trim(),
-                        Total = txt_total_neto.Text.Trim(),
-                        Nota = Utilidades.NotaVenta.ToString(),
-                        TipoPago = "Efectivo",
-                    });
-                }
-                
-                rs.Name = "DataSetTicketVenta";
-                rs.Value = lista;
-                Repor.reportViewer1.LocalReport.DataSources.Clear();
-                Repor.reportViewer1.LocalReport.DataSources.Add(rs);
-                Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.TicketVenta.rdlc";
-                Repor.ShowDialog();
-            }
-            catch (Exception aaaa)
-            {
-                //MessageBox.Show("Error al crear factura");
-            }
-        }
-        
 
-        FacturaClass DatosVenta = new FacturaClass();
-        public void ImprimirTicketVenta()
+
+//Impresion de factura con Repoviewer desactivado.
+/* public void ImprimirFactura()
+       {
+           try
+           {
+               FormReportesDatos Repor = new FormReportesDatos();
+               List<FacturaClass> lista = new List<FacturaClass>();
+               lista.Clear();
+               for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+               {
+                   lista.Add(new FacturaClass
+                   {
+                       CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
+                       NomPro = dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                       PrePro = dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                       CanPro = dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                       SubTotal = dataGridViewProducto.Rows[p].Cells[4].Value.ToString(),
+                       CodCli = txt_codigo_cliente.Text.Trim(),
+                       NomCli = txt_nombre_cliente.Text.Trim(),
+                       Comprobante = txt_serie_comprobante.Text.Trim(),
+                       NumOrden = txt_numero_orden.Text.Trim(),
+                       Vendedor = comboBoxVendedores.SelectedItem.ToString(),
+                       Descuento = txt_total_desc.Text.Trim(),
+                       NumFac = txt_codigo_fac.Text.Trim(),
+                       ITBIS = txt_total_itbis.Text.Trim(),
+                       Total = txt_total_neto.Text.Trim(),
+                       Nota = Utilidades.NotaVenta.ToString(),
+                       TipoPago = "Efectivo",
+                   });
+               }
+
+               rs.Name = "DataSetTicketVenta";
+               rs.Value = lista;
+               Repor.reportViewer1.LocalReport.DataSources.Clear();
+               Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+               Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.TicketVenta.rdlc";
+               Repor.ShowDialog();
+           }
+           catch (Exception aaaa)
+           {
+               //MessageBox.Show("Error al crear factura");
+           }
+       }
+       */
+
+ public void ImprimirTicketVenta()
+       {
+           FormConGen empresa = new FormConGen();
+
+           //Creamos una instancia d ela clase CrearTicket
+           Factura ticket = new Factura();
+           //Ya podemos usar todos sus metodos
+           ticket.AbreCajon();//Para abrir el cajon de dinero.
+
+           //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
+
+           //Datos de la cabecera del Ticket.
+           ticket.TextoCentro(empresa.NomEmpresa.Text);
+           // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
+           ticket.TextoIzquierda(empresa.DirEmpresa.Text);
+           ticket.TextoIzquierda(empresa.NumEmpresa.Text);
+           // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
+           // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
+           ticket.TextoIzquierda("");
+           ticket.TextoExtremos("# ORDEN: ", txt_numero_orden.Text.Trim());
+           ticket.TextoIzquierda("Factura: " + txt_codigo_fac.Text.Trim());
+           ticket.TextoIzquierda("Comprobante: " + txt_serie_comprobante.Text.Trim());
+           ticket.lineasAsteriscos();
+
+           //Sub cabecera.
+           ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + "-" + txt_nombre_cliente.Text.Trim());
+           ticket.TextoIzquierda("");
+           ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), " " + DateTime.Now.ToShortTimeString());
+           ticket.lineasAsteriscos();
+
+           //Articulos a vender.
+           ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
+           ticket.lineasAsteriscos();
+           //Agregando articulos al data GridView
+           for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+           {
+             ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+           }
+
+           ticket.lineasIgual();
+           //Resumen de la venta. Sólo son ejemplos
+           ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
+           ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
+           ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
+           ticket.TextoIzquierda("");
+
+           //Texto final del Ticket.
+           ticket.TextoIzquierda("NOTA: "+Utilidades.NotaVenta);
+           ticket.TextoIzquierda("");
+           ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+           ticket.CortaTicket();
+           ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
+           MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
+       }
+
+ public void ImprimirTicketReserva()
         {
             FormConGen empresa = new FormConGen();
 
@@ -1026,8 +1085,6 @@ namespace GUI_V_2
             // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
             ticket.TextoIzquierda("");
             ticket.TextoExtremos("# ORDEN: ", txt_numero_orden.Text.Trim());
-            ticket.TextoIzquierda("Factura: " + txt_codigo_fac.Text.Trim());
-            ticket.TextoIzquierda("Comprobante: " + txt_serie_comprobante.Text.Trim());
             ticket.lineasAsteriscos();
 
             //Sub cabecera.
@@ -1042,28 +1099,29 @@ namespace GUI_V_2
             //Agregando articulos al data GridView
             for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
             {
-              ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
-                 dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
-                 dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
-                 dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+                   ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
             }
 
             ticket.lineasIgual();
 
             //Resumen de la venta. Sólo son ejemplos
-            ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
-            ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
-            ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
+
             ticket.TextoIzquierda("");
 
             //Texto final del Ticket.
-            ticket.TextoIzquierda("NOTA: "+Utilidades.NotaVenta);
+            ticket.TextoIzquierda("Condiciones: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
-            ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+            ticket.TextoIzquierda("");
             ticket.CortaTicket();
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
             MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
         }
+
+
+
     }
 }
 
@@ -1071,20 +1129,21 @@ namespace GUI_V_2
 
 public class FacturaClass
 {
-    public string NumFac { get; set; }
-    public string Total { get; set; }
-    public string CodPro { get; set; }
-    public string NomPro { get; set; }
-    public string PrePro { get; set; }
-    public string CanPro { get; set; }
-    public string SubTotal { get; set; }
-    public string CodCli { get; set; }
-    public string NomCli { get; set; }
-    public string Comprobante { get; set; }
-    public string NumOrden { get; set; }
-    public string Vendedor { get; set; }
-    public string Descuento { get; set; }
-    public string ITBIS { get; set; }
-    public string Nota { get; set; }
-    public string TipoPago { get; set; }
+   public string NumFac { get; set; }
+   public string Total { get; set; }
+   public string CodPro { get; set; }
+   public string NomPro { get; set; }
+   public string PrePro { get; set; }
+   public string CanPro { get; set; }
+   public string SubTotal { get; set; }
+   public string CodCli { get; set; }
+   public string NomCli { get; set; }
+   public string Comprobante { get; set; }
+   public string NumOrden { get; set; }
+   public string Vendedor { get; set; }
+   public string Descuento { get; set; }
+   public string ITBIS { get; set; }
+   public string Nota { get; set; }
+   public string TipoPago { get; set; }
 }
+ 
