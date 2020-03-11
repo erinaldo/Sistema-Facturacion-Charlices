@@ -25,7 +25,10 @@ namespace GUI_V_2
             CargarDatosResumen();
         }
       
+
         VentanaLoading Barra = new VentanaLoading();
+        Form1 Principal = new Form1();
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
@@ -81,6 +84,34 @@ namespace GUI_V_2
 
         private void FormInicioResumen_Load(object sender, EventArgs e)
         {
+
+        }
+
+        //boton Cliente
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Principal.btn_man.PerformClick();
+            
+        }
+
+       //Boton Productos
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Principal.btn_man.PerformClick();
+        }
+
+       //boton Suplidores
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+            Principal.btn_man.PerformClick();
+        }
+
+
+        //boton Ventas
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Principal.btn_man.PerformClick();
 
         }
     }

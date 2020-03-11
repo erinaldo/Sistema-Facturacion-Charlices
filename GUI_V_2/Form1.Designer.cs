@@ -393,19 +393,19 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox iconminimizar;
         private System.Windows.Forms.PictureBox iconcerrar;
-        private System.Windows.Forms.Button btn_man;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btncom;
-        private System.Windows.Forms.Button btnsup;
         private System.Windows.Forms.Label lblcorreo;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblusuario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btn_vender;
         private System.Windows.Forms.Button btn_salida;
+        public System.Windows.Forms.Button btn_man;
+        public System.Windows.Forms.Button button6;
+        public System.Windows.Forms.Button btncom;
+        public System.Windows.Forms.Button btnsup;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
     }
 }
 

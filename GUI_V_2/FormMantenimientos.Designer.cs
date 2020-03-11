@@ -58,7 +58,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pic_ventas = new System.Windows.Forms.PictureBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -83,7 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ventas)).BeginInit();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -397,22 +397,23 @@
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.pictureBox7);
+            this.panel13.Controls.Add(this.pic_ventas);
             this.panel13.Controls.Add(this.panel14);
             this.panel13.Location = new System.Drawing.Point(765, 38);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(99, 108);
             this.panel13.TabIndex = 40;
             // 
-            // pictureBox7
+            // pic_ventas
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(16, 36);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
+            this.pic_ventas.Image = ((System.Drawing.Image)(resources.GetObject("pic_ventas.Image")));
+            this.pic_ventas.Location = new System.Drawing.Point(16, 36);
+            this.pic_ventas.Name = "pic_ventas";
+            this.pic_ventas.Size = new System.Drawing.Size(67, 62);
+            this.pic_ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_ventas.TabIndex = 4;
+            this.pic_ventas.TabStop = false;
+            this.pic_ventas.Click += new System.EventHandler(this.pic_ventas_Click);
             // 
             // panel14
             // 
@@ -523,7 +524,7 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ventas)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -536,42 +537,41 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel formHijo2;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel11;
+        public System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Panel panel13;
+        public System.Windows.Forms.Panel panel15;
+        public System.Windows.Forms.PictureBox pictureBox4;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.PictureBox pic_ventas;
+        public System.Windows.Forms.PictureBox pictureBox8;
     }
 }

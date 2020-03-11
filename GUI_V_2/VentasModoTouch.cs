@@ -150,11 +150,12 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    Facturas factura = new Facturas  {
-                      id_cliente = id_cliente,
-                      subtotal   = Double.Parse(txt_total_bruto.Text.Trim()),
-                      itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
-                      descuento = Double.Parse(txt_total_desc.Text.Trim()),
+                    Facturas factura = new Facturas {
+                        id_cliente = id_cliente,
+                        subtotal = Double.Parse(txt_total_bruto.Text.Trim()),
+                        itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
+                        fecha = DateTime.Today,
+                        descuento = Double.Parse(txt_total_desc.Text.Trim()),
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
                       usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                       usuario_cajero_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
@@ -747,6 +748,13 @@ namespace GUI_V_2
                 MessageBox.Show("No hay producto agregado al carrito.");
                 return;
             }
+
+            if (MessageBox.Show("Desea imprimir un ticekt de orden ?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {  
+                ImprimirTicketReserva();
+
+            }
+
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
 
@@ -1107,17 +1115,20 @@ namespace GUI_V_2
 
             ticket.lineasIgual();
 
-            //Resumen de la venta. Sólo son ejemplos
-
+            //Resumen de la venta.
+            ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
+            ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
+            ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
+            ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
 
             //Texto final del Ticket.
-            ticket.TextoIzquierda("Condiciones: " + Utilidades.NotaVenta);
+            ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
             ticket.CortaTicket();
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
-            MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
+            MessageBox.Show("TICKET DE RESERVA IMPRESO");
         }
 
 

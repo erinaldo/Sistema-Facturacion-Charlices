@@ -333,13 +333,12 @@ namespace GUI_V_2
             //Metodos para enviar secuencias de escape a la impresora
             //Para cortar el ticket
             public void CortaTicket()
-            {
-            linea.AppendLine("\n\n"); //Caracteres de corte.
-            linea.AppendLine("\x1Bm"); //Caracteres de corte.
-
-            
+        {
+            linea.AppendLine("\x1B" + "m"); //Caracteres de corte. Estos comando varian segun el tipo de impresora
+            linea.AppendLine("\x1B" + "d" + "\x00");
         }
-            //Para abrir el cajon
+            
+        //Para abrir el cajon
             public void AbreCajon()
             {
                 //Estos tambien varian, tienen que ever el manual de la impresora para poner los correctos.

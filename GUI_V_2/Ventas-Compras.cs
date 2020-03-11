@@ -22,5 +22,10 @@ namespace GUI_V_2
             VentasModoTouch ventas = new VentasModoTouch();
             ventas.ShowDialog();
         }
+
+        private void pic_ventas_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

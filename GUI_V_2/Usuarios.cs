@@ -18,7 +18,6 @@ namespace GUI_V_2
         public Usuarios()
         {
             this.Facturas = new HashSet<Facturas>();
-            this.Facturas1 = new HashSet<Facturas>();
         }
     
         public int id { get; set; }
@@ -35,7 +34,5 @@ namespace GUI_V_2
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Facturas> Facturas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Facturas> Facturas1 { get; set; }
     }
 }

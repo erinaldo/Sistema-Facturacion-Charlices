@@ -21,7 +21,7 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new FormClientes());
         }
-        
+
         private void AbrirFormEnPanel(object Mentenimientos)
         {
             if (this.formHijo2.Controls.Count > 0)
@@ -63,5 +63,14 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new FormUnidadesMedidas());
         }
+
+
+        private void pic_ventas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ENTRO AQIUO");
+              AbrirFormEnPanel(new ConsVentas());        
+        }
+
+      
     }
-}
+    }

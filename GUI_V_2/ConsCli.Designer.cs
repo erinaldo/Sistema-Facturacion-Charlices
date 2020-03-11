@@ -47,50 +47,50 @@
             // 
             // label2
             // 
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Size = new System.Drawing.Size(148, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.Text = "CLIENTES";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(728, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Location = new System.Drawing.Point(546, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
-            this.filtro.Location = new System.Drawing.Point(189, 41);
-            this.filtro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.filtro.Location = new System.Drawing.Point(142, 33);
+            this.filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(17, 53);
-            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Location = new System.Drawing.Point(13, 43);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1221, 11);
-            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btn_cerrar.Location = new System.Drawing.Point(916, 9);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_nuevo.Location = new System.Drawing.Point(585, 34);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_nuevo.Location = new System.Drawing.Point(439, 28);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // nro_registros
             // 
             this.nro_registros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nro_registros.Location = new System.Drawing.Point(1171, 68);
-            this.nro_registros.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.nro_registros.Location = new System.Drawing.Point(878, 55);
+            this.nro_registros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(987, 34);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button2.Location = new System.Drawing.Point(740, 28);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridClientes
@@ -109,9 +109,9 @@
             this.dataGridClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -127,8 +127,8 @@
             this.CorCli,
             this.estatus,
             this.id});
-            this.dataGridClientes.Location = new System.Drawing.Point(16, 92);
-            this.dataGridClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridClientes.EnableHeadersVisualStyles = false;
+            this.dataGridClientes.Location = new System.Drawing.Point(12, 75);
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClientes.Size = new System.Drawing.Size(1245, 564);
+            this.dataGridClientes.Size = new System.Drawing.Size(934, 458);
             this.dataGridClientes.TabIndex = 113;
             this.dataGridClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellDoubleClick);
             // 
@@ -216,11 +216,11 @@
             // 
             // ConsCli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 671);
+            this.ClientSize = new System.Drawing.Size(958, 545);
             this.Controls.Add(this.dataGridClientes);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConsCli";
             this.Text = "W";
             this.Load += new System.EventHandler(this.ConsCli_Load);

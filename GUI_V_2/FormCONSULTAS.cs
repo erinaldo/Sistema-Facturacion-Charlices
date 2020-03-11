@@ -64,5 +64,10 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new ConsUniMed());
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+         AbrirFormEnPanel(new ConsVentas());        
+        }
     }
 }

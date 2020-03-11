@@ -34,13 +34,10 @@ namespace GUI_V_2
         public int usuario_cajero_id { get; set; }
     
         public virtual Clientes Clientes { get; set; }
-        public virtual Facturas Facturas1 { get; set; }
-        public virtual Facturas Facturas2 { get; set; }
         public virtual Combrobantes Combrobantes { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual Metodos_Pagos Metodos_Pagos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Facturas> Detalles_Facturas { get; set; }
-        public virtual Usuarios Usuarios1 { get; set; }
     }
 }
