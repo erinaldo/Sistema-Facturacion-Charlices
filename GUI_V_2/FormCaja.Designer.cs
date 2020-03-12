@@ -54,7 +54,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(169, 51);
+            this.panel7.Location = new System.Drawing.Point(168, 51);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(104, 109);
             this.panel7.TabIndex = 54;
@@ -154,7 +154,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(308, 51);
+            this.panel1.Location = new System.Drawing.Point(307, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(104, 109);
             this.panel1.TabIndex = 60;

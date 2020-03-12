@@ -308,6 +308,12 @@
     <Compile Include="Entrada_SalidaCaja.Designer.cs">
       <DependentUpon>Entrada_SalidaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResumenCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResumenCaja.Designer.cs">
+      <DependentUpon>ResumenCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Suplidores.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
@@ -440,6 +446,9 @@
     <EmbeddedResource Include="Reportes\TicketVenta.rdlc" />
     <EmbeddedResource Include="Entrada_SalidaCaja.resx">
       <DependentUpon>Entrada_SalidaCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResumenCaja.resx">
+      <DependentUpon>ResumenCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaLoading.resx">
       <DependentUpon>VentanaLoading.cs</DependentUpon>
