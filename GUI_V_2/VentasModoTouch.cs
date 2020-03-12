@@ -15,11 +15,18 @@ namespace GUI_V_2
 {
     public partial class VentasModoTouch : Form
     {
+        public class ProductosOrden
+        {
+            public int Id_producto { get; set; }
+            public int Cantidad { get; set; }
+            public string Nombre_producto { get; set; }
+        }
 
-        
+        List<ProductosOrden> ProOrdenList = new List<ProductosOrden>();
+
         double itbisPro =  0;
         int id_cliente  =  0;
-        int tipo_cliente = 0;
+        int tipo_cliente = -1;
         int id_comprobante = 0;
         int id_producto = 0;
 
@@ -228,6 +235,9 @@ namespace GUI_V_2
             txt_total_itbis.Text = "0.00";
             txt_total_desc.Text = "0.00";
             txt_total_neto.Text = "0.00";
+            Reservar.Text = "Reservar Orden";
+            ProOrdenList.Clear();
+
         }
 
         //Funciones rapidas con teclas
@@ -775,20 +785,29 @@ namespace GUI_V_2
 
         private void Reservar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewProducto.Rows.Count == 0)
+
+            if (txt_numero_orden.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Ingrese un número de orden.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+
+            }
+            else if (dataGridViewProducto.Rows.Count == 0)
             {
                 MessageBox.Show("No hay producto agregado al carrito.");
                 return;
             }
 
-            if (MessageBox.Show("Desea imprimir un ticekt de orden ?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {  
+            if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
+            else ModificarReservaOrden();
+
+            if (MessageBox.Show("¿Desea imprimir un ticekt de orden ?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
                 ImprimirTicketReserva();
 
             }
 
-            if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
-            else ModificarReservaOrden();
+            if (Reservar.Text.Equals("Reservar Orden"))  LimpiarCampo();
 
         }
 
@@ -824,6 +843,8 @@ namespace GUI_V_2
                             detalle_orden.precio_producto = precioProVenta;
                             detalle_orden.itbis = itbisProVenta;
 
+                            int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
+                            ProOrdenList[indexPro].Cantidad = cantidaProVendida - ProOrdenList[indexPro].Cantidad;
                         }
                         else
                         {
@@ -835,6 +856,15 @@ namespace GUI_V_2
                                 precio_producto = precioProVenta,
                                 itbis = itbisProVenta
                             };
+
+                            string nombreProducto = registsros.Cells[1].Value.ToString();
+
+                            ProOrdenList.Add(new ProductosOrden()
+                            {
+                                Id_producto = idPro,
+                                Cantidad = cantidaProVendida,
+                                Nombre_producto = nombreProducto
+                            });
 
                             DB.Detalles_Ordenes.Add(detalles_orden);
                         }
@@ -881,13 +911,20 @@ namespace GUI_V_2
                                 precio_producto = precioProVenta,
                                 itbis = itbisProVenta
                             };
+                            string nombrePro = registsros.Cells[1].Value.ToString();
+
+                            ProOrdenList.Add(new ProductosOrden()
+                            {
+                                Id_producto = producto.id,
+                                Cantidad = cantidaProVendida,
+                                Nombre_producto = nombrePro
+                            });
                             orden.Detalles_Ordenes.Add(detalles_orden);
                         }
 
                     }
                     DB.Ordenes_Reservadas.Add(orden);
                     DB.SaveChanges();
-                    LimpiarCampo();
                     MessageBox.Show("La orden se creo correctamente.");
                 }
 
@@ -968,6 +1005,13 @@ namespace GUI_V_2
                             total_Sub += sub_total;
                             total_itbis += totalItbis;
                             dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(),registro_orden.id);
+
+                            ProOrdenList.Add(new ProductosOrden()
+                            {
+                                Id_producto = registro_orden.id,
+                                Cantidad = registro_orden.cantidad_producto,
+                                Nombre_producto = registro_orden.nombre
+                            });
                         }
                         if (total_Sub > 0)
                         {
@@ -986,6 +1030,7 @@ namespace GUI_V_2
                         disponible_pro.Text = "";
                         itbisPro = 0;
                         Reservar.Text = "Reservar Orden";
+                        ProOrdenList.Clear();
                         MessageBox.Show("No existe una orden con ese código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
@@ -1108,6 +1153,9 @@ namespace GUI_V_2
 
  public void ImprimirTicketReserva()
         {
+
+            //Usar Lista ProOrdenList para imprimir el tickets
+
             FormConGen empresa = new FormConGen();
 
             //Creamos una instancia d ela clase CrearTicket
@@ -1163,9 +1211,6 @@ namespace GUI_V_2
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
             MessageBox.Show("TICKET DE RESERVA IMPRESO");
         }
-
-
-
     }
 }
 
