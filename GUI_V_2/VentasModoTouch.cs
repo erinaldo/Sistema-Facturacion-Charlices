@@ -19,6 +19,7 @@ namespace GUI_V_2
         
         double itbisPro =  0;
         int id_cliente  =  0;
+        int tipo_cliente = 0;
         int id_comprobante = 0;
         int id_producto = 0;
 
@@ -258,10 +259,22 @@ namespace GUI_V_2
                 {
                     string codigo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
                     string nombre_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[1].Value.ToString();
-                    decimal precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                    decimal precio_pro = 0;
                     int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
                     int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
                     string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
+
+                    if (tipo_cliente == 1)
+                    {
+                        precio_pro =  Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                    }else if (tipo_cliente == 2)
+                    {
+                        precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[5].Value.ToString());
+                    }
+                    else
+                    {
+                        precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[4].Value.ToString());
+                    }
 
                     SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro, tipo_pro == "Inventario" ? 1 : 2);
                 }
@@ -281,7 +294,10 @@ namespace GUI_V_2
                     string codigo = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
                     string nombre = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
                     int id = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
-                    SetCampoByCliente(nombre, codigo, id);
+                    string tipoCliente = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[5].Value.ToString();
+                    int tipoCl = tipoCliente == "NORMAL" ? 1 : tipoCliente == "EMPRESA" ? 2 : 3;
+
+                    SetCampoByCliente(nombre, codigo, id, tipoCl);
                 }
             }catch(Exception a)
             {
@@ -290,11 +306,12 @@ namespace GUI_V_2
         }
 
 
-        public void SetCampoByCliente(string nombre, string codigo, int id)
+        public void SetCampoByCliente(string nombre, string codigo, int id,int tipoCliente)
         {
             txt_codigo_cliente.Text = codigo;
             txt_nombre_cliente.Text = nombre;
             id_cliente = id;
+            tipo_cliente = tipoCliente;
             codigo_pro.Focus();
 
         }
@@ -331,7 +348,8 @@ namespace GUI_V_2
                     if (respProducto != null)
                     {
                         id_producto = respProducto.id;
-                        SetCampoByProducto(respProducto.nombre,respProducto.precio_normal, codigoPro, respProducto.cantidad,respProducto.itbis, respProducto.tipo_producto);
+                        decimal precioProducto = tipo_cliente == 1 ? respProducto.precio_normal : tipo_cliente == 2 ? respProducto.precio_empresa : respProducto.precio_empleado;
+                        SetCampoByProducto(respProducto.nombre, precioProducto, codigoPro, respProducto.cantidad,respProducto.itbis, respProducto.tipo_producto);
                     }
                     else
                     {
@@ -384,11 +402,12 @@ namespace GUI_V_2
 
                     if (respcliente != null)
                     {
-                        SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id);
+                        SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id,respcliente.tipo_cliente);
                     }
                     else
                     {
                         id_cliente = 0;
+                        tipo_cliente = 0;
                         txt_nombre_cliente.Text = "Nombre cliente";
                         MessageBox.Show("No existe un cliente con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
@@ -913,6 +932,7 @@ namespace GUI_V_2
                                 {
                                     ord.estado,
                                     ord.id_cliente,
+                                    cli.tipo_cliente,
                                     cliente_codigo = cli.codigo,
                                     cli.nombre_completo,
                                     pro.id,
@@ -923,7 +943,6 @@ namespace GUI_V_2
                                     Deta_orden.itbis,
                                 };
                     
-
 
                     if (orden != null)
                     {
@@ -940,6 +959,7 @@ namespace GUI_V_2
                             txt_codigo_cliente.Text = registro_orden.cliente_codigo;
                             txt_nombre_cliente.Text = registro_orden.nombre_completo;
                             id_cliente = registro_orden.id_cliente;
+                            tipo_cliente = registro_orden.tipo_cliente;
                             int cantidad_pro = registro_orden.cantidad_producto;
                             double precio_pro = registro_orden.precio_producto;
                             double sub_total = cantidad_pro * precio_pro;
