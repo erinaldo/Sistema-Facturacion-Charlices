@@ -187,6 +187,19 @@ namespace GUI_V_2
                         }
                     }
                     DB.Facturas.Add(factura);
+
+                    if (Reservar.Text.Equals("Modificar Orden"))
+                    {
+                        int codigo_orden = int.Parse(txt_numero_orden.Text.Trim());
+                        IQueryable<Ordenes_Reservadas> ORDEN = DB.Ordenes_Reservadas.Where(o => o.id == codigo_orden);
+                        var resORDEN = ORDEN.FirstOrDefault();
+                        if (resORDEN!=null)
+                        {
+                            resORDEN.estado = true;
+                        }
+
+                    }
+
                     DB.SaveChanges();
                     
                     if (Utilidades.ConFact==1)
@@ -313,7 +326,7 @@ namespace GUI_V_2
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     IQueryable<Productos> producto = DB.Productos.Where(p => p.codigo == codigoPro && p.estado == true);
-                    var respProducto = producto.SingleOrDefault();
+                    var respProducto = producto.FirstOrDefault();
 
                     if (respProducto != null)
                     {
