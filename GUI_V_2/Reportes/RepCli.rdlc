@@ -45,7 +45,9 @@
                             <TextRun>
                               <Value>Codigo</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -57,6 +59,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -76,7 +79,9 @@
                             <TextRun>
                               <Value>Nombre</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -88,6 +93,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -107,7 +113,9 @@
                             <TextRun>
                               <Value>CDL/RCN</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -119,6 +127,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -138,7 +147,9 @@
                             <TextRun>
                               <Value>Contacto</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -150,6 +161,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -169,7 +181,9 @@
                             <TextRun>
                               <Value>Direccion</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -181,6 +195,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -200,7 +215,9 @@
                             <TextRun>
                               <Value>Tipo</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -212,6 +229,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -231,7 +249,9 @@
                             <TextRun>
                               <Value>Correo</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -243,6 +263,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -262,7 +283,9 @@
                             <TextRun>
                               <Value>Estado</Value>
                               <Style>
+                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -274,6 +297,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BackgroundColor>#404040</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -549,8 +573,8 @@
         <DataSetName>DataSetCli</DataSetName>
         <Top>0.19667in</Top>
         <Left>0.11221in</Left>
-        <Height>0.40625in</Height>
-        <Width>9.18973in</Width>
+        <Height>0.40624in</Height>
+        <Width>9.18974in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -807,6 +831,7 @@
                     <FontFamily>Segoe UI Light</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>DodgerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -839,6 +864,7 @@
                     <FontFamily>Segoe UI Light</FontFamily>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>DodgerBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
