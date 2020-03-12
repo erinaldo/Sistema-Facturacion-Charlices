@@ -903,7 +903,7 @@ namespace GUI_V_2
                             int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
                             if (producto.tipo_producto == 1) producto.cantidad -= cantidaProVendida;
-
+                            
                             Detalles_Ordenes detalles_orden = new Detalles_Ordenes
                             {
                                 id_producto = producto.id,
@@ -1045,6 +1045,9 @@ namespace GUI_V_2
 
         PanelCobro PaCobro = new PanelCobro();
         //Metodo para crear Factura 
+
+
+
         ReportDataSource rs = new ReportDataSource();
 
 
@@ -1154,7 +1157,7 @@ namespace GUI_V_2
  public void ImprimirTicketReserva()
         {
 
-            //Usar Lista ProOrdenList para imprimir el tickets
+        //    Usar Lista ProOrdenList para imprimir el tickets
 
             FormConGen empresa = new FormConGen();
 
@@ -1162,45 +1165,38 @@ namespace GUI_V_2
             Factura ticket = new Factura();
             //Ya podemos usar todos sus metodos
             ticket.AbreCajon();//Para abrir el cajon de dinero.
-
-            //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
-
+            
             //Datos de la cabecera del Ticket.
-            ticket.TextoCentro(empresa.NomEmpresa.Text);
-            // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
-            ticket.TextoIzquierda(empresa.DirEmpresa.Text);
-            ticket.TextoIzquierda(empresa.NumEmpresa.Text);
+            ticket.TextoCentro("TICKET PARA COCINA");
+            ticket.lineasAsteriscos();
+            ticket.TextoCentro("# ORDEN: "+txt_numero_orden.Text.Trim());
             // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
             // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
             ticket.TextoIzquierda("");
-            ticket.TextoExtremos("# ORDEN: ", txt_numero_orden.Text.Trim());
-            ticket.lineasAsteriscos();
-
+            
             //Sub cabecera.
-            ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + "-" + txt_nombre_cliente.Text.Trim());
             ticket.TextoIzquierda("");
-            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), " " + DateTime.Now.ToShortTimeString());
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), "HORA: " + DateTime.Now.ToShortTimeString());
             ticket.lineasAsteriscos();
 
-            //Articulos a vender.
-            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
+            //Productos para cocina
+            ticket.EncabezadoCocina();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
             ticket.lineasAsteriscos();
-            //Agregando articulos al data GridView
-            for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+            
+            //Agregando productos
+            for (int p = 0; p < ProOrdenList.Count; p++)
             {
-                   ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
-                   dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
-                   dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
-                   dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+                    ticket.AgregaArticulo(
+                    ProOrdenList[p].Nombre_producto.ToString(), //Nombre articulo
+                    ProOrdenList[p].Cantidad.ToString(), //Cantidad
+                    "", //Precio no requerido
+                    ""); //Importe no requerido
             }
 
             ticket.lineasIgual();
 
             //Resumen de la venta.
-            ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
-            ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
-            ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
-            ticket.TextoIzquierda("");
+           ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
 
             //Texto final del Ticket.
@@ -1209,8 +1205,10 @@ namespace GUI_V_2
             ticket.TextoIzquierda("");
             ticket.CortaTicket();
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
-            MessageBox.Show("TICKET DE RESERVA IMPRESO");
+
         }
+
+
     }
 }
 

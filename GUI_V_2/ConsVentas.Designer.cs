@@ -28,24 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridVentas = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NFC_comprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comprobamte_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario_cajero_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Met_Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario_vendedor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itbis_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ActivarRango = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.fecha_fin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,10 +49,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_totalGrid = new System.Windows.Forms.Label();
-            this.ActivarRango = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.p_resumen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -114,159 +102,6 @@
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.Location = new System.Drawing.Point(765, 141);
             // 
-            // dataGridVentas
-            // 
-            this.dataGridVentas.AllowUserToAddRows = false;
-            this.dataGridVentas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridVentas.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.id_cliente,
-            this.fecha,
-            this.NFC_comprobante,
-            this.comprobamte_id,
-            this.usuario_cajero_id,
-            this.Met_Pago,
-            this.usuario_vendedor_id,
-            this.itbis_total,
-            this.descuento,
-            this.subtotal,
-            this.total});
-            this.dataGridVentas.EnableHeadersVisualStyles = false;
-            this.dataGridVentas.Location = new System.Drawing.Point(17, 191);
-            this.dataGridVentas.Name = "dataGridVentas";
-            this.dataGridVentas.ReadOnly = true;
-            this.dataGridVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
-            this.dataGridVentas.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVentas.Size = new System.Drawing.Size(1123, 322);
-            this.dataGridVentas.TabIndex = 115;
-            // 
-            // id
-            // 
-            this.id.FillWeight = 78.95237F;
-            this.id.HeaderText = "FACTURA #";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // id_cliente
-            // 
-            this.id_cliente.FillWeight = 109.8024F;
-            this.id_cliente.HeaderText = "CLIENTE";
-            this.id_cliente.Name = "id_cliente";
-            this.id_cliente.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.FillWeight = 81.61572F;
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // NFC_comprobante
-            // 
-            this.NFC_comprobante.FillWeight = 108.2109F;
-            this.NFC_comprobante.HeaderText = "NFC";
-            this.NFC_comprobante.Name = "NFC_comprobante";
-            this.NFC_comprobante.ReadOnly = true;
-            // 
-            // comprobamte_id
-            // 
-            this.comprobamte_id.HeaderText = "COMPROBANTE ID";
-            this.comprobamte_id.Name = "comprobamte_id";
-            this.comprobamte_id.ReadOnly = true;
-            this.comprobamte_id.Visible = false;
-            // 
-            // usuario_cajero_id
-            // 
-            this.usuario_cajero_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.usuario_cajero_id.FillWeight = 109.8396F;
-            this.usuario_cajero_id.HeaderText = "USUARIO";
-            this.usuario_cajero_id.Name = "usuario_cajero_id";
-            this.usuario_cajero_id.ReadOnly = true;
-            // 
-            // Met_Pago
-            // 
-            this.Met_Pago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Met_Pago.FillWeight = 111.6175F;
-            this.Met_Pago.HeaderText = "FORMA PAGO";
-            this.Met_Pago.Name = "Met_Pago";
-            this.Met_Pago.ReadOnly = true;
-            // 
-            // usuario_vendedor_id
-            // 
-            this.usuario_vendedor_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.usuario_vendedor_id.FillWeight = 114.9565F;
-            this.usuario_vendedor_id.HeaderText = "VENDEDOR";
-            this.usuario_vendedor_id.Name = "usuario_vendedor_id";
-            this.usuario_vendedor_id.ReadOnly = true;
-            // 
-            // itbis_total
-            // 
-            this.itbis_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itbis_total.FillWeight = 51.40212F;
-            this.itbis_total.HeaderText = "ITBIS";
-            this.itbis_total.Name = "itbis_total";
-            this.itbis_total.ReadOnly = true;
-            // 
-            // descuento
-            // 
-            this.descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descuento.FillWeight = 111.675F;
-            this.descuento.HeaderText = "DESCUENTO";
-            this.descuento.Name = "descuento";
-            this.descuento.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.subtotal.FillWeight = 110.2319F;
-            this.subtotal.HeaderText = "SUB-TOTAL";
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            // 
-            // total
-            // 
-            this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.total.FillWeight = 111.6951F;
-            this.total.HeaderText = "TOTAL";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -281,6 +116,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(227, 136);
             this.panel1.TabIndex = 116;
+            // 
+            // ActivarRango
+            // 
+            this.ActivarRango.AutoSize = true;
+            this.ActivarRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivarRango.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ActivarRango.Location = new System.Drawing.Point(139, 18);
+            this.ActivarRango.Name = "ActivarRango";
+            this.ActivarRango.Size = new System.Drawing.Size(79, 17);
+            this.ActivarRango.TabIndex = 118;
+            this.ActivarRango.Text = "ACTIVAR";
+            this.ActivarRango.UseVisualStyleBackColor = true;
+            this.ActivarRango.CheckStateChanged += new System.EventHandler(this.ActivarRango_CheckStateChanged);
             // 
             // label3
             // 
@@ -474,37 +322,80 @@
             this.txt_totalGrid.TabIndex = 9;
             this.txt_totalGrid.Text = "0.00";
             // 
-            // ActivarRango
+            // dataGridView1
             // 
-            this.ActivarRango.AutoSize = true;
-            this.ActivarRango.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivarRango.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ActivarRango.Location = new System.Drawing.Point(139, 18);
-            this.ActivarRango.Name = "ActivarRango";
-            this.ActivarRango.Size = new System.Drawing.Size(79, 17);
-            this.ActivarRango.TabIndex = 118;
-            this.ActivarRango.Text = "ACTIVAR";
-            this.ActivarRango.UseVisualStyleBackColor = true;
-            this.ActivarRango.CheckStateChanged += new System.EventHandler(this.ActivarRango_CheckStateChanged);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.fecha,
+            this.total});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 187);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1123, 326);
+            this.dataGridView1.TabIndex = 118;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.id.HeaderText = "Nro. Factura";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 89;
+            // 
+            // fecha
+            // 
+            this.fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.total.HeaderText = "Total Venta";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
             // ConsVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1152, 549);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt_totalGrid);
             this.Controls.Add(this.p_resumen);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_anular);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridVentas);
             this.Name = "ConsVentas";
-            this.Controls.SetChildIndex(this.dataGridVentas, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.btn_anular, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.p_resumen, 0);
+            this.Controls.SetChildIndex(this.txt_totalGrid, 0);
+            this.Controls.SetChildIndex(this.label10, 0);
+            this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);
@@ -513,39 +404,23 @@
             this.Controls.SetChildIndex(this.btn_nuevo, 0);
             this.Controls.SetChildIndex(this.nro_registros, 0);
             this.Controls.SetChildIndex(this.button2, 0);
-            this.Controls.SetChildIndex(this.txt_totalGrid, 0);
-            this.Controls.SetChildIndex(this.label10, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.p_resumen.ResumeLayout(false);
             this.p_resumen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.DataGridView dataGridVentas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker fecha_inicio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker fecha_fin;
         private System.Windows.Forms.Button btn_anular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NFC_comprobante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comprobamte_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario_cajero_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Met_Pago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario_vendedor_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itbis_total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel p_resumen;
         private System.Windows.Forms.Label label4;
@@ -560,5 +435,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label txt_itbis;
         private System.Windows.Forms.CheckBox ActivarRango;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

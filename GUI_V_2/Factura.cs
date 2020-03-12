@@ -58,8 +58,15 @@ namespace GUI_V_2
                 linea.AppendLine("ARTÍCULO            |CANT|PRECIO|IMPORTE");
             }
 
-            //Creamos un metodo para poner el texto a la izquierda
-            public void TextoIzquierda(string texto)
+        public void EncabezadoCocina()
+        {
+            //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
+            linea.AppendLine("ARTÍCULO            |CANTIDAD");
+        }
+
+
+        //Creamos un metodo para poner el texto a la izquierda
+        public void TextoIzquierda(string texto)
             {
                 //Si la longitud del texto es mayor al numero maximo de caracteres permitidos, realizar el siguiente procedimiento.
                 if (texto.Length > maxCar)

@@ -174,18 +174,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Detalles_Facturas_Facturas">
-          <End Role="Facturas" Type="Self.Facturas" Multiplicity="1" />
-          <End Role="Detalles_Facturas" Type="Self.Detalles_Facturas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Facturas">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Detalles_Facturas">
-              <PropertyRef Name="id_factura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Detalles_Facturas_PRODUCTO">
           <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
           <End Role="Detalles_Facturas" Type="Self.Detalles_Facturas" Multiplicity="*" />
@@ -317,10 +305,6 @@
           <AssociationSet Name="FK_CLIENTES" Association="Self.FK_CLIENTES">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Detalles_Facturas_Facturas" Association="Self.FK_Detalles_Facturas_Facturas">
-            <End Role="Facturas" EntitySet="Facturas" />
-            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
           </AssociationSet>
           <AssociationSet Name="FK_Detalles_Facturas_PRODUCTO" Association="Self.FK_Detalles_Facturas_PRODUCTO">
             <End Role="Productos" EntitySet="Productos" />
