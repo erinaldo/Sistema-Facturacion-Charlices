@@ -52,7 +52,7 @@
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bnt_eliminar.Location = new System.Drawing.Point(816, 474);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
@@ -60,7 +60,7 @@
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btn_guardar.Location = new System.Drawing.Point(816, 539);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(5);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
@@ -76,32 +76,30 @@
             // estado
             // 
             this.estado.Location = new System.Drawing.Point(216, 447);
-            this.estado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.estado.Margin = new System.Windows.Forms.Padding(5);
             this.estado.Size = new System.Drawing.Size(181, 33);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
             this.Nom.Location = new System.Drawing.Point(216, 126);
-            this.Nom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Nom.Margin = new System.Windows.Forms.Padding(5);
             this.Nom.Size = new System.Drawing.Size(299, 30);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
             this.Codigo.Location = new System.Drawing.Point(216, 71);
-            this.Codigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(5);
             this.Codigo.Size = new System.Drawing.Size(299, 30);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
-            // 
-            // btn_consultar
             // 
             // TelCli
             // 
             this.TelCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelCli.Limpiar = false;
             this.TelCli.Location = new System.Drawing.Point(216, 230);
-            this.TelCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TelCli.Margin = new System.Windows.Forms.Padding(4);
             this.TelCli.MaxLength = 15;
             this.TelCli.Name = "TelCli";
             this.TelCli.Size = new System.Drawing.Size(181, 30);
@@ -113,7 +111,7 @@
             this.DirCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirCli.Limpiar = true;
             this.DirCli.Location = new System.Drawing.Point(216, 283);
-            this.DirCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DirCli.Margin = new System.Windows.Forms.Padding(4);
             this.DirCli.MaxLength = 40;
             this.DirCli.Name = "DirCli";
             this.DirCli.Size = new System.Drawing.Size(369, 30);
@@ -159,10 +157,10 @@
             this.TipCli.FormattingEnabled = true;
             this.TipCli.Items.AddRange(new object[] {
             "NORMAL",
-            "FAMILIA",
+            "EMPRESA",
             "Empleado"});
             this.TipCli.Location = new System.Drawing.Point(216, 341);
-            this.TipCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TipCli.Margin = new System.Windows.Forms.Padding(4);
             this.TipCli.Name = "TipCli";
             this.TipCli.Size = new System.Drawing.Size(181, 33);
             this.TipCli.TabIndex = 113;
@@ -172,7 +170,7 @@
             this.CorCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorCli.Limpiar = true;
             this.CorCli.Location = new System.Drawing.Point(216, 395);
-            this.CorCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CorCli.Margin = new System.Windows.Forms.Padding(4);
             this.CorCli.MaxLength = 60;
             this.CorCli.Name = "CorCli";
             this.CorCli.Size = new System.Drawing.Size(299, 30);
@@ -206,7 +204,7 @@
             this.CedCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CedCli.Limpiar = true;
             this.CedCli.Location = new System.Drawing.Point(216, 177);
-            this.CedCli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CedCli.Margin = new System.Windows.Forms.Padding(4);
             this.CedCli.Name = "CedCli";
             this.CedCli.Size = new System.Drawing.Size(225, 30);
             this.CedCli.TabIndex = 117;
@@ -228,7 +226,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DirCli);
             this.Controls.Add(this.TelCli);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FormClientes_Load);

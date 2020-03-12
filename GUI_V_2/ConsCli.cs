@@ -34,7 +34,19 @@ namespace GUI_V_2.Consultas
         {
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
-                IQueryable<Clientes> clientes = from c in DB.Clientes select c;
+                var  clientes = from c in DB.Clientes
+                                select new
+                                {
+                                   c.codigo,
+                                   c.nombre_completo,
+                                   c.cla_rnc,
+                                   c.telefono,
+                                   c.direccion,
+                                   tipo_cliente  = c.tipo_cliente == 1 ? "NORMAL" : c.tipo_cliente == 2 ? "EMPRESA" : "EMPLEADO",
+                                   c.correo,
+                                   c.estado
+
+                                };
                 if (condicion.Equals(""))
                 {
                     clientes = clientes.
@@ -46,6 +58,7 @@ namespace GUI_V_2.Consultas
                     Where(c => (c.codigo.Contains(condicion) || c.nombre_completo.Contains(condicion) && c.estado == true));
                 }
 
+                
                 dataGridClientes.DataSource = clientes.ToList();
             }
             nro_registros.Text = dataGridClientes.Rows.Count.ToString() + " REGISTROS.";
