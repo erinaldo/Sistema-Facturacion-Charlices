@@ -162,7 +162,7 @@ namespace GUI_V_2
             }
             if (e.KeyCode == Keys.F7)
             {
-                Salidas obj = new Salidas();
+                Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
                 obj.ShowDialog();
             }
         }
@@ -175,7 +175,7 @@ namespace GUI_V_2
 
         private void btn_salida_Click(object sender, EventArgs e)
         {
-            Salidas obj = new Salidas();
+            Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
             obj.ShowDialog();
         }
 

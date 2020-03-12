@@ -19,14 +19,13 @@ namespace GUI_V_2
 
         private void label3_Click(object sender, EventArgs e)
         {
-            Entradas obj = new Entradas();
-            obj.ShowDialog();
+           
 
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Salidas obj = new Salidas();
+            Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
             obj.ShowDialog();
         }
     }

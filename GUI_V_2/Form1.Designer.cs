@@ -265,11 +265,11 @@
             this.btn_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salida.ForeColor = System.Drawing.Color.White;
             this.btn_salida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_salida.Location = new System.Drawing.Point(715, 2);
+            this.btn_salida.Location = new System.Drawing.Point(660, 2);
             this.btn_salida.Name = "btn_salida";
-            this.btn_salida.Size = new System.Drawing.Size(148, 37);
+            this.btn_salida.Size = new System.Drawing.Size(203, 37);
             this.btn_salida.TabIndex = 128;
-            this.btn_salida.Text = "SALIDA [F7]";
+            this.btn_salida.Text = "ENTRADA / SALIDA [F7]";
             this.btn_salida.UseVisualStyleBackColor = false;
             this.btn_salida.Click += new System.EventHandler(this.btn_salida_Click);
             // 
@@ -283,7 +283,7 @@
             this.btn_vender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_vender.ForeColor = System.Drawing.Color.White;
             this.btn_vender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_vender.Location = new System.Drawing.Point(561, 3);
+            this.btn_vender.Location = new System.Drawing.Point(506, 2);
             this.btn_vender.Name = "btn_vender";
             this.btn_vender.Size = new System.Drawing.Size(148, 37);
             this.btn_vender.TabIndex = 127;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_V_2
 {
-    public partial class Salidas : Form
+    public partial class Entrada_SalidaCaja : Form
     {
-        public Salidas()
+        public Entrada_SalidaCaja()
         {
             InitializeComponent();
         }

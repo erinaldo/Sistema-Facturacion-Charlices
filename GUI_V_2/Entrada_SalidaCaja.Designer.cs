@@ -1,6 +1,6 @@
 ﻿namespace GUI_V_2
 {
-    partial class Salidas
+    partial class Entrada_SalidaCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salidas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entrada_SalidaCaja));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
-            this.txt_motivo = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_monto = new GUI_V_2.ErrorTxtBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +43,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_motivo = new GUI_V_2.ErrorTxtBox();
+            this.txt_monto = new GUI_V_2.ErrorTxtBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,17 +87,6 @@
             this.btn_limpiar.UseVisualStyleBackColor = false;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
-            // txt_motivo
-            // 
-            this.txt_motivo.BackColor = System.Drawing.Color.White;
-            this.txt_motivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_motivo.Limpiar = false;
-            this.txt_motivo.Location = new System.Drawing.Point(12, 166);
-            this.txt_motivo.Name = "txt_motivo";
-            this.txt_motivo.Size = new System.Drawing.Size(314, 29);
-            this.txt_motivo.TabIndex = 125;
-            this.txt_motivo.Validar = true;
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -104,22 +94,11 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(12, 139);
+            this.label3.Location = new System.Drawing.Point(12, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 24);
             this.label3.TabIndex = 124;
             this.label3.Text = "MOTIVO";
-            // 
-            // txt_monto
-            // 
-            this.txt_monto.BackColor = System.Drawing.Color.White;
-            this.txt_monto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_monto.Limpiar = false;
-            this.txt_monto.Location = new System.Drawing.Point(12, 84);
-            this.txt_monto.Name = "txt_monto";
-            this.txt_monto.Size = new System.Drawing.Size(174, 29);
-            this.txt_monto.TabIndex = 123;
-            this.txt_monto.Validar = true;
             // 
             // label1
             // 
@@ -128,23 +107,25 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(12, 57);
+            this.label1.Location = new System.Drawing.Point(12, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 24);
+            this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.TabIndex = 121;
-            this.label1.Text = "MONTO SALIDA";
+            this.label1.Text = "MONTO $";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -154,8 +135,10 @@
             this.CodPro,
             this.NomPro,
             this.CedCli});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(12, 201);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -181,6 +164,7 @@
             this.CodPro.FillWeight = 51.84586F;
             this.CodPro.HeaderText = "FECHA";
             this.CodPro.Name = "CodPro";
+            this.CodPro.ReadOnly = true;
             this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // NomPro
@@ -188,12 +172,14 @@
             this.NomPro.FillWeight = 162.959F;
             this.NomPro.HeaderText = "MOTIVO EGRESO";
             this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
             // 
             // CedCli
             // 
             this.CedCli.FillWeight = 101.5227F;
             this.CedCli.HeaderText = "MONTO";
             this.CedCli.Name = "CedCli";
+            this.CedCli.ReadOnly = true;
             // 
             // panel1
             // 
@@ -212,11 +198,11 @@
             this.label2.BackColor = System.Drawing.Color.DodgerBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(213, 9);
+            this.label2.Location = new System.Drawing.Point(150, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 29);
+            this.label2.Size = new System.Drawing.Size(356, 29);
             this.label2.TabIndex = 95;
-            this.label2.Text = "SALIDA DE CAJA";
+            this.label2.Text = "ENTRADA / SALIDA DE CAJA";
             // 
             // btn_guardar
             // 
@@ -235,12 +221,48 @@
             this.btn_guardar.Text = "GUARDAR";
             this.btn_guardar.UseVisualStyleBackColor = false;
             // 
-            // Salidas
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox1.Items.AddRange(new object[] {
+            "ENTRADA",
+            "SALIDA"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(267, 32);
+            this.comboBox1.TabIndex = 130;
+            this.comboBox1.Text = "SELECCIONE UNA ACCION";
+            // 
+            // txt_motivo
+            // 
+            this.txt_motivo.BackColor = System.Drawing.Color.White;
+            this.txt_motivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_motivo.Limpiar = false;
+            this.txt_motivo.Location = new System.Drawing.Point(12, 166);
+            this.txt_motivo.Name = "txt_motivo";
+            this.txt_motivo.Size = new System.Drawing.Size(314, 29);
+            this.txt_motivo.TabIndex = 125;
+            this.txt_motivo.Validar = true;
+            // 
+            // txt_monto
+            // 
+            this.txt_monto.BackColor = System.Drawing.Color.White;
+            this.txt_monto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_monto.Limpiar = false;
+            this.txt_monto.Location = new System.Drawing.Point(12, 111);
+            this.txt_monto.Name = "txt_monto";
+            this.txt_monto.Size = new System.Drawing.Size(174, 29);
+            this.txt_monto.TabIndex = 123;
+            this.txt_monto.Validar = true;
+            // 
+            // Entrada_SalidaCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(689, 536);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_limpiar);
@@ -251,7 +273,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Salidas";
+            this.Name = "Entrada_SalidaCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salidas";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Salidas_Paint);
@@ -277,5 +299,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CedCli;
         public System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

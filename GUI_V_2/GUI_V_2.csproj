@@ -302,11 +302,11 @@
     <Compile Include="Reportes\FormReportesDatos.Designer.cs">
       <DependentUpon>FormReportesDatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Salidas.cs">
+    <Compile Include="Entrada_SalidaCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Salidas.Designer.cs">
-      <DependentUpon>Salidas.cs</DependentUpon>
+    <Compile Include="Entrada_SalidaCaja.Designer.cs">
+      <DependentUpon>Entrada_SalidaCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Suplidores.cs">
@@ -438,8 +438,8 @@
     <EmbeddedResource Include="Reportes\RepSup.rdlc" />
     <EmbeddedResource Include="Reportes\RepUniMed.rdlc" />
     <EmbeddedResource Include="Reportes\TicketVenta.rdlc" />
-    <EmbeddedResource Include="Salidas.resx">
-      <DependentUpon>Salidas.cs</DependentUpon>
+    <EmbeddedResource Include="Entrada_SalidaCaja.resx">
+      <DependentUpon>Entrada_SalidaCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaLoading.resx">
       <DependentUpon>VentanaLoading.cs</DependentUpon>
