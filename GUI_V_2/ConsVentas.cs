@@ -15,9 +15,17 @@ namespace GUI_V_2
         public ConsVentas()
         {
             InitializeComponent();
-            id.DataPropertyName = "id";
+            dataGridView1.AutoGenerateColumns = false;
+            codigo.DataPropertyName = "codigo";
             fecha.DataPropertyName = "fecha";
+            nombre_cliente.DataPropertyName = "nombre_cliente";
+            vendedor.DataPropertyName = "vendedor";
+            Cajero.DataPropertyName = "cajero";
+            subtotal.DataPropertyName = "subtotal";
+            itbis.DataPropertyName = "itbis_total";
             total.DataPropertyName = "total";
+            estado.DataPropertyName = "estado";
+
             /*       id_cliente.DataPropertyName = "id_cliente";
                    descuento.DataPropertyName = "descuento";
                  
@@ -31,26 +39,44 @@ namespace GUI_V_2
                    MessageBox.Show(DateTime.Today.ToShortDateString()); */
             fecha_inicio.Value = DateTime.Today;
             LlenarDataGrid();
-
         }
 
         public void LlenarDataGrid(string condicion = "")
         {
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
-                IQueryable<Facturas> Unidades = from s in DB.Facturas select s;
-                if (condicion.Equals(""))
+                var facturas = from fac in DB.Facturas  join cli in DB.Clientes on fac.id_cliente
+                                                   equals cli.id join usu in DB.Usuarios on fac.usuario_cajero_id
+                                                   equals usu.id
+                                                join user in DB.Usuarios on fac.usuario_vendedor_id
+                                                  equals user.id
+                                                select new
+                                                    {
+                                                      codigo = fac.id,
+                                                      fac.fecha,
+                                                      nombre_cliente = cli.nombre_completo,
+                                                      vendedor = user.nombre_completo,
+                                                      cajero = usu.nombre_completo,
+                                                      fac.subtotal,
+                                                      fac.itbis_total,
+                                                      fac.total,
+                                                      estado = fac.estado == true ? "Activa" : "Anulada"
+                                                    };
+               /* if (condicion.Equals("")==false)
                 {
-                    Unidades = Unidades.
-                    Where(s => s.id>0);
-                }
-                else
-                {
-                    Unidades = Unidades.
+                    facturas = facturas.
                     Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
-                }
+                }*/
 
-                dataGridView1.DataSource = Unidades.ToList();
+                dataGridView1.DataSource = facturas.ToList();
+                dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
+                dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
+
+                dataGridView1.Columns["itbis"].ValueType = typeof(System.Decimal);
+                dataGridView1.Columns["itbis"].DefaultCellStyle.Format = "N";
+
+                dataGridView1.Columns["total"].ValueType = typeof(System.Decimal);
+                dataGridView1.Columns["total"].DefaultCellStyle.Format = "N";
             }
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
@@ -84,6 +110,11 @@ namespace GUI_V_2
 
                 Console.Write("inactivo");
             }
+
+        }
+
+        private void ConsVentas_Load(object sender, EventArgs e)
+        {
 
         }
     }
