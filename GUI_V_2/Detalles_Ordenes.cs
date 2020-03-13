@@ -21,7 +21,7 @@ namespace GUI_V_2
         public double precio_producto { get; set; }
         public double itbis { get; set; }
     
-        public virtual Ordenes_Reservadas Ordenes_Reservadas { get; set; }
         public virtual Productos Productos { get; set; }
+        public virtual Ordenes_Reservadas Ordenes_Reservadas { get; set; }
     }
 }

@@ -14,14 +14,14 @@ namespace GUI_V_2
     
     public partial class Detalles_Facturas
     {
+        public int id { get; set; }
         public int id_factura { get; set; }
         public int id_producto { get; set; }
         public int cantidad_producto { get; set; }
         public double precio_producto { get; set; }
         public double itbis { get; set; }
-        public int id { get; set; }
     
-        public virtual Facturas Facturas { get; set; }
         public virtual Productos Productos { get; set; }
+        public virtual Facturas Facturas { get; set; }
     }
 }

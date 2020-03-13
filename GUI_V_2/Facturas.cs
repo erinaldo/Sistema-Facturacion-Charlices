@@ -38,6 +38,7 @@ namespace GUI_V_2
         public virtual Combrobantes Combrobantes { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual Metodos_Pagos Metodos_Pagos { get; set; }
+        public virtual Usuarios Usuarios1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Facturas> Detalles_Facturas { get; set; }
     }

@@ -99,18 +99,19 @@ namespace GUI_V_2
             
         }
 
+        //Activar o desactivar por rango
         private void ActivarRango_CheckStateChanged(object sender, EventArgs e)
         {
             if (ActivarRango.Checked == true)
             {
-                Console.Write("Activo");
+                fecha_inicio.Enabled = true;
+                fecha_fin.Enabled = true;
             }
             else
             {
-
-                Console.Write("inactivo");
+                fecha_inicio.Enabled = false;
+                fecha_fin.Enabled = false;
             }
-
         }
 
         private void ConsVentas_Load(object sender, EventArgs e)

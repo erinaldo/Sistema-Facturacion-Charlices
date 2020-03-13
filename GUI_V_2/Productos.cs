@@ -36,10 +36,10 @@ namespace GUI_V_2
         public bool estado { get; set; }
     
         public virtual Categorias Categorias { get; set; }
-        public virtual Unidades_medidas Unidades_medidas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Facturas> Detalles_Facturas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Ordenes> Detalles_Ordenes { get; set; }
+        public virtual Unidades_medidas Unidades_medidas { get; set; }
     }
 }

@@ -29,16 +29,16 @@ namespace GUI_V_2
     
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Clientes> Clientes { get; set; }
-        public virtual DbSet<Suplidores> Suplidores { get; set; }
-        public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<Unidades_medidas> Unidades_medidas { get; set; }
-        public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Facturas> Facturas { get; set; }
         public virtual DbSet<Combrobantes> Combrobantes { get; set; }
-        public virtual DbSet<Metodos_Pagos> Metodos_Pagos { get; set; }
         public virtual DbSet<Detalles_Facturas> Detalles_Facturas { get; set; }
         public virtual DbSet<Detalles_Ordenes> Detalles_Ordenes { get; set; }
+        public virtual DbSet<Facturas> Facturas { get; set; }
+        public virtual DbSet<Metodos_Pagos> Metodos_Pagos { get; set; }
         public virtual DbSet<Ordenes_Reservadas> Ordenes_Reservadas { get; set; }
+        public virtual DbSet<Productos> Productos { get; set; }
+        public virtual DbSet<Suplidores> Suplidores { get; set; }
+        public virtual DbSet<Unidades_medidas> Unidades_medidas { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     
         public virtual ObjectResult<FACT_Result> FACT(Nullable<int> cODIGOFACT)
         {
