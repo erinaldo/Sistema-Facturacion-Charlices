@@ -116,9 +116,9 @@
             this.DirEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirEmpresa.Location = new System.Drawing.Point(142, 93);
             this.DirEmpresa.Name = "DirEmpresa";
-            this.DirEmpresa.Size = new System.Drawing.Size(519, 24);
+            this.DirEmpresa.Size = new System.Drawing.Size(566, 24);
             this.DirEmpresa.TabIndex = 94;
-            this.DirEmpresa.Text = "Carretera P. Canabacoa, detrás de la bomba Esso, al lado de Odalis Sonido.";
+            this.DirEmpresa.Text = "C/ Principal Canabacoa, detrás de la bomba Esso, al lado de Odalis Sonido.";
             // 
             // btnCerrar
             // 
@@ -166,9 +166,9 @@
             this.NumEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumEmpresa.Location = new System.Drawing.Point(142, 136);
             this.NumEmpresa.Name = "NumEmpresa";
-            this.NumEmpresa.Size = new System.Drawing.Size(106, 24);
+            this.NumEmpresa.Size = new System.Drawing.Size(116, 24);
             this.NumEmpresa.TabIndex = 120;
-            this.NumEmpresa.Text = "809-734-6223";
+            this.NumEmpresa.Text = "(809) 734-6223";
             // 
             // MonedaEmpresa
             // 

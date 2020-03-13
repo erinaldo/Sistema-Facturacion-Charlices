@@ -171,10 +171,9 @@ namespace GUI_V_2
                       metodo_pago_id = metodo_pago,
                       comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
                   };
-
-
-                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
-                    {
+                    
+                foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                {
                         string codigoPro = registsros.Cells[0].Value.ToString();
                         var producto = DB.Productos.FirstOrDefault(a => a.codigo == codigoPro);
                         if (producto != null)
@@ -1097,9 +1096,8 @@ namespace GUI_V_2
        */
 
  public void ImprimirTicketVenta()
-       {
+  {
            FormConGen empresa = new FormConGen();
-
            //Creamos una instancia d ela clase CrearTicket
            Factura ticket = new Factura();
            //Ya podemos usar todos sus metodos
@@ -1115,15 +1113,15 @@ namespace GUI_V_2
            // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
            // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
            ticket.TextoIzquierda("");
-           ticket.TextoExtremos("# ORDEN: ", txt_numero_orden.Text.Trim());
+           ticket.TextoIzquierda("# ORDEN: FAC000"+ txt_codigo_fac.Text.Trim());
            ticket.TextoIzquierda("Factura: " + txt_codigo_fac.Text.Trim());
            ticket.TextoIzquierda("Comprobante: " + txt_serie_comprobante.Text.Trim());
            ticket.lineasAsteriscos();
 
            //Sub cabecera.
-           ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + "-" + txt_nombre_cliente.Text.Trim());
+           ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + " - " + txt_nombre_cliente.Text.Trim());
            ticket.TextoIzquierda("");
-           ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), " " + DateTime.Now.ToShortTimeString());
+           ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("yyyy-mm-dd"), " " + DateTime.Now.ToShortTimeString());
            ticket.lineasAsteriscos();
 
            //Articulos a vender.
@@ -1148,18 +1146,17 @@ namespace GUI_V_2
            //Texto final del Ticket.
            ticket.TextoIzquierda("NOTA: "+Utilidades.NotaVenta);
            ticket.TextoIzquierda("");
-           ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+           ticket.TextoIzquierda("");
+           ticket.TextoCentro("¡GRACIAS POR VISITA!");
            ticket.CortaTicket();
-           ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
+           ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera
            MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
        }
 
  public void ImprimirTicketReserva()
-        {
-
-        //    Usar Lista ProOrdenList para imprimir el tickets
-
-            FormConGen empresa = new FormConGen();
+ {
+           //Usar Lista ProOrdenList para imprimir el tickets
+           FormConGen empresa = new FormConGen();
 
             //Creamos una instancia d ela clase CrearTicket
             Factura ticket = new Factura();
@@ -1169,7 +1166,7 @@ namespace GUI_V_2
             //Datos de la cabecera del Ticket.
             ticket.TextoCentro("TICKET PARA COCINA");
             ticket.lineasAsteriscos();
-            ticket.TextoCentro("# ORDEN: "+txt_numero_orden.Text.Trim());
+            ticket.TextoIzquierda("# ORDEN: "+txt_numero_orden.Text.Trim());
             // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
             // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
             ticket.TextoIzquierda("");
@@ -1186,7 +1183,7 @@ namespace GUI_V_2
             //Agregando productos
             for (int p = 0; p < ProOrdenList.Count; p++)
             {
-                    ticket.AgregaArticulo(
+            ticket.AgregaArticulo(
                     ProOrdenList[p].Nombre_producto.ToString(), //Nombre articulo
                     ProOrdenList[p].Cantidad.ToString(), //Cantidad
                     "", //Precio no requerido
@@ -1194,17 +1191,13 @@ namespace GUI_V_2
             }
 
             ticket.lineasIgual();
-
-            //Resumen de la venta.
-           ticket.TextoIzquierda("");
-            ticket.TextoIzquierda("");
-
+            
             //Texto final del Ticket.
             ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
             ticket.CortaTicket();
-            ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera
+            ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera
 
         }
 

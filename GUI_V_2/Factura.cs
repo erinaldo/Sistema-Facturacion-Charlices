@@ -341,6 +341,8 @@ namespace GUI_V_2
             //Para cortar el ticket
             public void CortaTicket()
         {
+            linea.AppendLine("\n\n");
+            linea.AppendLine("\n\n");
             linea.AppendLine("\x1B" + "m"); //Caracteres de corte. Estos comando varian segun el tipo de impresora
             linea.AppendLine("\x1B" + "d" + "\x00");
         }
