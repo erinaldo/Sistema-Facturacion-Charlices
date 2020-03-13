@@ -785,7 +785,7 @@ namespace GUI_V_2
         private void Reservar_Click(object sender, EventArgs e)
         {
 
-            if (txt_numero_orden.Text.Trim().Equals(""))
+            if (txt_numero_orden.Text.Trim().Equals("") && Reservar.Text.Equals("Modificar Orden"))
             {
                 MessageBox.Show("Ingrese un número de orden.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -796,6 +796,8 @@ namespace GUI_V_2
                 MessageBox.Show("No hay producto agregado al carrito.");
                 return;
             }
+
+          
 
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
