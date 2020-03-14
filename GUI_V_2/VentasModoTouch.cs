@@ -1112,19 +1112,20 @@ namespace GUI_V_2
            // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
            ticket.TextoIzquierda(empresa.DirEmpresa.Text);
            ticket.TextoIzquierda(empresa.NumEmpresa.Text);
-           // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
-           // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
-           ticket.TextoIzquierda("");
+           ticket.TextoIzquierda("RNC: " + empresa.RncEmpresa.Text.Trim());
+            // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
+            // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
+            ticket.TextoIzquierda("");
            ticket.TextoIzquierda("# ORDEN: FAC000"+ txt_codigo_fac.Text.Trim());
-           ticket.TextoIzquierda("Factura: " + txt_codigo_fac.Text.Trim());
-           ticket.TextoIzquierda("Comprobante: " + txt_serie_comprobante.Text.Trim());
+           ticket.TextoIzquierda("FACTURA: " + txt_codigo_fac.Text.Trim());
+           ticket.TextoIzquierda("NFC: " + txt_serie_comprobante.Text.Trim());
            ticket.lineasAsteriscos();
 
-           //Sub cabecera.
+            //Sub cabecera.
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
+            ticket.TextoIzquierda("");
            ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + " - " + txt_nombre_cliente.Text.Trim());
-           ticket.TextoIzquierda("");
-           ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("yyyy-mm-dd"), " " + DateTime.Now.ToShortTimeString());
-           ticket.lineasAsteriscos();
+            ticket.lineasAsteriscos();
 
            //Articulos a vender.
            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
@@ -1162,20 +1163,16 @@ namespace GUI_V_2
 
             //Creamos una instancia d ela clase CrearTicket
             Factura ticket = new Factura();
-            //Ya podemos usar todos sus metodos
-            ticket.AbreCajon();//Para abrir el cajon de dinero.
             
             //Datos de la cabecera del Ticket.
             ticket.TextoCentro("TICKET PARA COCINA");
             ticket.lineasAsteriscos();
             ticket.TextoIzquierda("# ORDEN: "+txt_numero_orden.Text.Trim());
-            // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
-            // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
             ticket.TextoIzquierda("");
             
             //Sub cabecera.
             ticket.TextoIzquierda("");
-            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToShortDateString(), "HORA: " + DateTime.Now.ToShortTimeString());
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
             ticket.lineasAsteriscos();
 
             //Productos para cocina

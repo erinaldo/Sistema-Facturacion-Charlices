@@ -48,7 +48,7 @@
             this.Correo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.RncEmpresa = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.RNC = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(32, 138);
+            this.label17.Location = new System.Drawing.Point(32, 133);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 20);
             this.label17.TabIndex = 119;
@@ -164,7 +164,7 @@
             // NumEmpresa
             // 
             this.NumEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumEmpresa.Location = new System.Drawing.Point(142, 136);
+            this.NumEmpresa.Location = new System.Drawing.Point(142, 131);
             this.NumEmpresa.Name = "NumEmpresa";
             this.NumEmpresa.Size = new System.Drawing.Size(116, 24);
             this.NumEmpresa.TabIndex = 120;
@@ -189,7 +189,7 @@
             this.LogoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("LogoEmpresa.Image")));
             this.LogoEmpresa.Location = new System.Drawing.Point(425, 140);
             this.LogoEmpresa.Name = "LogoEmpresa";
-            this.LogoEmpresa.Size = new System.Drawing.Size(283, 255);
+            this.LogoEmpresa.Size = new System.Drawing.Size(283, 277);
             this.LogoEmpresa.TabIndex = 122;
             this.LogoEmpresa.TabStop = false;
             // 
@@ -230,7 +230,7 @@
             // Correo
             // 
             this.Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Correo.Location = new System.Drawing.Point(141, 208);
+            this.Correo.Location = new System.Drawing.Point(141, 209);
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(162, 24);
             this.Correo.TabIndex = 127;
@@ -240,7 +240,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 210);
+            this.label7.Location = new System.Drawing.Point(37, 211);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 126;
@@ -249,21 +249,21 @@
             // RncEmpresa
             // 
             this.RncEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RncEmpresa.Location = new System.Drawing.Point(141, 241);
+            this.RncEmpresa.Location = new System.Drawing.Point(141, 244);
             this.RncEmpresa.Name = "RncEmpresa";
             this.RncEmpresa.Size = new System.Drawing.Size(162, 24);
             this.RncEmpresa.TabIndex = 129;
-            this.RncEmpresa.Text = " XXXXXXXXX-XX";
+            this.RncEmpresa.Text = "0-00-00000-0";
             // 
-            // label8
+            // RNC
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(37, 243);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 20);
-            this.label8.TabIndex = 128;
-            this.label8.Text = "CORREO:";
+            this.RNC.AutoSize = true;
+            this.RNC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RNC.Location = new System.Drawing.Point(37, 246);
+            this.RNC.Name = "RNC";
+            this.RNC.Size = new System.Drawing.Size(47, 20);
+            this.RNC.TabIndex = 128;
+            this.RNC.Text = "RNC:";
             // 
             // FormConGen
             // 
@@ -272,7 +272,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(727, 494);
             this.Controls.Add(this.RncEmpresa);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.RNC);
             this.Controls.Add(this.Correo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TerminosEmpresa);
@@ -320,6 +320,6 @@
         public System.Windows.Forms.TextBox Correo;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox RncEmpresa;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label RNC;
     }
 }

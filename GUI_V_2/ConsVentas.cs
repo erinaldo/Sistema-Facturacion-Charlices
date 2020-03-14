@@ -118,5 +118,23 @@ namespace GUI_V_2
         {
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                txt_total_neto.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
+                txt_itbis.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                txt_subtotal.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+                txt_NumFac.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            else
+            {
+                txt_total_neto.Text = "0.00";
+                txt_itbis.Text = "0.00";
+                txt_subtotal.Text = "0.00";
+                txt_NumFac.Text = "0.";
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.p_resumen = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_descuentos = new System.Windows.Forms.Label();
+            this.txt_subtotal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_itbis = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_NumFac = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.p_resumen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -208,8 +210,10 @@
             // 
             this.p_resumen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.p_resumen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.p_resumen.Controls.Add(this.txt_NumFac);
+            this.p_resumen.Controls.Add(this.label6);
             this.p_resumen.Controls.Add(this.label14);
-            this.p_resumen.Controls.Add(this.txt_descuentos);
+            this.p_resumen.Controls.Add(this.txt_subtotal);
             this.p_resumen.Controls.Add(this.label12);
             this.p_resumen.Controls.Add(this.txt_itbis);
             this.p_resumen.Controls.Add(this.label7);
@@ -224,27 +228,27 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(29, 83);
+            this.label14.Location = new System.Drawing.Point(3, 71);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 20);
+            this.label14.Size = new System.Drawing.Size(102, 20);
             this.label14.TabIndex = 12;
-            this.label14.Text = "-DESCUENTOS:";
+            this.label14.Text = "-SUBTOTAL:";
             // 
-            // txt_descuentos
+            // txt_subtotal
             // 
-            this.txt_descuentos.AutoSize = true;
-            this.txt_descuentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descuentos.Location = new System.Drawing.Point(157, 80);
-            this.txt_descuentos.Name = "txt_descuentos";
-            this.txt_descuentos.Size = new System.Drawing.Size(45, 24);
-            this.txt_descuentos.TabIndex = 11;
-            this.txt_descuentos.Text = "0.00";
+            this.txt_subtotal.AutoSize = true;
+            this.txt_subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_subtotal.Location = new System.Drawing.Point(131, 67);
+            this.txt_subtotal.Name = "txt_subtotal";
+            this.txt_subtotal.Size = new System.Drawing.Size(45, 24);
+            this.txt_subtotal.TabIndex = 11;
+            this.txt_subtotal.Text = "0.00";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 59);
+            this.label12.Location = new System.Drawing.Point(3, 50);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 20);
             this.label12.TabIndex = 10;
@@ -254,7 +258,7 @@
             // 
             this.txt_itbis.AutoSize = true;
             this.txt_itbis.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_itbis.Location = new System.Drawing.Point(99, 56);
+            this.txt_itbis.Location = new System.Drawing.Point(131, 45);
             this.txt_itbis.Name = "txt_itbis";
             this.txt_itbis.Size = new System.Drawing.Size(45, 24);
             this.txt_itbis.TabIndex = 9;
@@ -264,7 +268,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 34);
+            this.label7.Location = new System.Drawing.Point(3, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 20);
             this.label7.TabIndex = 6;
@@ -274,7 +278,8 @@
             // 
             this.txt_total_neto.AutoSize = true;
             this.txt_total_neto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total_neto.Location = new System.Drawing.Point(98, 30);
+            this.txt_total_neto.ForeColor = System.Drawing.Color.CadetBlue;
+            this.txt_total_neto.Location = new System.Drawing.Point(131, 89);
             this.txt_total_neto.Name = "txt_total_neto";
             this.txt_total_neto.Size = new System.Drawing.Size(45, 24);
             this.txt_total_neto.TabIndex = 5;
@@ -350,6 +355,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1011, 326);
             this.dataGridView1.TabIndex = 118;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // codigo
             // 
@@ -409,6 +415,27 @@
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "-FACTURA #:";
+            // 
+            // txt_NumFac
+            // 
+            this.txt_NumFac.AutoSize = true;
+            this.txt_NumFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NumFac.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.txt_NumFac.Location = new System.Drawing.Point(131, 26);
+            this.txt_NumFac.Name = "txt_NumFac";
+            this.txt_NumFac.Size = new System.Drawing.Size(20, 24);
+            this.txt_NumFac.TabIndex = 14;
+            this.txt_NumFac.Text = "0";
+            // 
             // ConsVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +491,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label txt_totalGrid;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label txt_descuentos;
+        private System.Windows.Forms.Label txt_subtotal;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label txt_itbis;
         private System.Windows.Forms.CheckBox ActivarRango;
@@ -478,5 +505,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txt_NumFac;
     }
 }
