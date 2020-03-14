@@ -28,5 +28,12 @@ namespace GUI_V_2
             Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
             obj.ShowDialog();
         }
+
+        //Panel Abrir Caja
+        private void label5_Click(object sender, EventArgs e)
+        {
+            AbrirCaja obj = new AbrirCaja();
+            obj.ShowDialog();
+        }
     }
 }

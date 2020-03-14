@@ -40,6 +40,9 @@
     <StartupObject>GUI_V_2.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Proyectos C#\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="DGV Printer, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Materiales_Iconos\Libreria reportes\DGV Printer.dll</HintPath>
@@ -80,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbrirCaja.Designer.cs">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Combrobantes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
@@ -343,6 +352,9 @@
     <Compile Include="VentasModoTouch.Designer.cs">
       <DependentUpon>VentasModoTouch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AbrirCaja.resx">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsUniMed.resx">
       <DependentUpon>ConsUniMed.cs</DependentUpon>
     </EmbeddedResource>

@@ -70,6 +70,7 @@
             this.label5.Size = new System.Drawing.Size(41, 39);
             this.label5.TabIndex = 59;
             this.label5.Text = "A";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel8
             // 
@@ -89,9 +90,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 18);
+            this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Abrir";
+            this.label2.Text = "ABRIR";
             // 
             // label15
             // 
@@ -189,9 +190,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 18);
+            this.label3.Size = new System.Drawing.Size(71, 18);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Cierre";
+            this.label3.Text = "CERRAR";
             // 
             // panel3
             // 

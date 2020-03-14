@@ -103,7 +103,7 @@ namespace GUI_V_2
         private void ActivarRango_CheckStateChanged(object sender, EventArgs e)
         {
             if (ActivarRango.Checked == true)
-            {
+            {   
                 fecha_inicio.Enabled = true;
                 fecha_fin.Enabled = true;
             }
