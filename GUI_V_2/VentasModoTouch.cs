@@ -562,9 +562,9 @@ namespace GUI_V_2
                     itbisFac += totalItbis;
                 }
 
-                txt_total_bruto.Text = subtotalFac.ToString();
-                txt_total_itbis.Text = itbisFac.ToString();
-                txt_total_neto.Text = (subtotalFac + itbisFac).ToString();
+                txt_total_bruto.Text = subtotalFac.ToString("N2");
+                txt_total_itbis.Text = itbisFac.ToString("N2");
+                txt_total_neto.Text = (subtotalFac + itbisFac).ToString("N2");
                 calcularDesc();
 
                 codigo_pro.Text = "";
@@ -629,9 +629,11 @@ namespace GUI_V_2
                                 int id_productoOrden = int.Parse(dataGridViewProducto.Rows[dataGridViewProducto.CurrentRow.Index].Cells[7].Value.ToString());
 
                                 var detalles_orden = DB.Detalles_Ordenes.FirstOrDefault(a => a.orden_id == id_orden && a.id_producto == id_productoOrden);
-                             
-                               if (detalles_orden != null)
+
+
+                                if (detalles_orden != null)
                                 {
+                                    ProOrdenList.Remove(ProOrdenList.Find(p => p.Id_producto == id_productoOrden));
                                     DB.Detalles_Ordenes.Remove(detalles_orden);
                                     DB.SaveChanges();
                                 }
@@ -666,9 +668,9 @@ namespace GUI_V_2
 
                     rTotal = rItbis + rSubTotal;
 
-                    txt_total_neto.Text = rTotal.ToString();
-                    txt_total_bruto.Text = rSubTotal.ToString();
-                    txt_total_itbis.Text = rItbis.ToString();
+                    txt_total_neto.Text = rTotal.ToString("N2");
+                    txt_total_bruto.Text = rSubTotal.ToString("N2");
+                    txt_total_itbis.Text = rItbis.ToString("N2");
                     calcularDesc();
                 }
                 else
@@ -802,14 +804,14 @@ namespace GUI_V_2
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
 
-            if (MessageBox.Show("¿Desea imprimir un ticekt de orden ?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea imprimir un tickets de orden?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ImprimirTicketReserva();
 
             }
 
             if (Reservar.Text.Equals("Reservar Orden"))  LimpiarCampo();
-
+            ProOrdenList.Clear();
         }
 
         public void ModificarReservaOrden()
@@ -839,13 +841,28 @@ namespace GUI_V_2
 
                         if (detalle_orden != null)
                         {
-                            
+                            int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
+                            if (indexPro == -1)
+                            { 
+                                string nombreProducto = registsros.Cells[1].Value.ToString();
+
+                                ProOrdenList.Add(new ProductosOrden()
+                                {
+                                    Id_producto = idPro,
+                                    Cantidad = Math.Abs(detalle_orden.cantidad_producto - cantidaProVendida),
+                                    Nombre_producto = nombreProducto
+                                });
+                            }
+                            else
+                            {
+                                ProOrdenList[indexPro].Cantidad = Math.Abs(cantidaProVendida - ProOrdenList[indexPro].Cantidad);
+                            }
+
                             detalle_orden.cantidad_producto = cantidaProVendida;
                             detalle_orden.precio_producto = precioProVenta;
                             detalle_orden.itbis = itbisProVenta;
 
-                            int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
-                            ProOrdenList[indexPro].Cantidad = cantidaProVendida - ProOrdenList[indexPro].Cantidad;
+                            
                         }
                         else
                         {
@@ -981,8 +998,7 @@ namespace GUI_V_2
                                     Deta_orden.itbis,
                                 };
                     
-
-                    if (orden != null)
+                    if (orden.ToList().LongCount()>0)
                     {
                         dataGridViewProducto.Rows.Clear();
                         double total_Sub = 0;
@@ -1019,9 +1035,9 @@ namespace GUI_V_2
                             Reservar.Text = "Modificar Orden";
                             codigo_pro.Focus();
                         }
-                        txt_total_bruto.Text = total_Sub.ToString();
-                        txt_total_itbis.Text = total_itbis.ToString();
-                        txt_total_neto.Text = (total_itbis + total_Sub).ToString();
+                        txt_total_bruto.Text = total_Sub.ToString("N2");
+                        txt_total_itbis.Text = total_itbis.ToString("N2");
+                        txt_total_neto.Text = (total_itbis + total_Sub).ToString("N2");
                         txt_total_desc.Text = "0.0";
                     }
                     else
@@ -1031,8 +1047,8 @@ namespace GUI_V_2
                         disponible_pro.Text = "";
                         itbisPro = 0;
                         Reservar.Text = "Reservar Orden";
-                        ProOrdenList.Clear();
                         MessageBox.Show("No existe una orden con ese código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        ProOrdenList.Clear();
                     }
                 }
             }
@@ -1182,6 +1198,8 @@ namespace GUI_V_2
             //Agregando productos
             for (int p = 0; p < ProOrdenList.Count; p++)
             {
+                if (ProOrdenList[p].Cantidad == 0) continue;
+
             ticket.AgregaArticulo(
                     ProOrdenList[p].Nombre_producto.ToString(), //Nombre articulo
                     ProOrdenList[p].Cantidad.ToString(), //Cantidad
