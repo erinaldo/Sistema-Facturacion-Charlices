@@ -42,7 +42,8 @@ namespace GUI_V_2
                         {
                             codigo = Codigo.Text.Trim(),
                             nombre = Nom.Text.Trim(),
-                            estado = true
+                            estado = true,
+                            cocina = cocina.Checked
                         };
 
                         tabla.Categorias.Add(categoria);
@@ -55,6 +56,7 @@ namespace GUI_V_2
                         {
                             categoria.estado = estado.SelectedIndex == 0 ? true : false;
                             categoria.nombre = Nom.Text;
+                            categoria.cocina = cocina.Checked;
                         }
                     }
 
@@ -86,6 +88,7 @@ namespace GUI_V_2
                     if (categoria!=null)
                     {
                         Nom.Text = categoria.nombre;
+                        cocina.Checked = categoria.cocina;
                         estado.SelectedIndex = 0;
                         bnt_eliminar.Enabled = true;
                         id = categoria.id;
@@ -95,6 +98,7 @@ namespace GUI_V_2
                         id = 0;
                         bnt_eliminar.Enabled = false;
                         Codigo.Limpiar = false;
+                        cocina.Checked = false;
                         Utilidades.LimpiarControles(this);
                         Codigo.Limpiar = true;
                     }
