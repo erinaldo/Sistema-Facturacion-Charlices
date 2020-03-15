@@ -83,6 +83,7 @@
             // 
             this.Codigo.Limpiar = true;
             this.Codigo.Margin = new System.Windows.Forms.Padding(5);
+            this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // btn_cerrar
             // 
@@ -271,6 +272,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             this.Controls.SetChildIndex(this.TelUsu, 0);
             this.Controls.SetChildIndex(this.DirUsu, 0);
             this.Controls.SetChildIndex(this.label3, 0);

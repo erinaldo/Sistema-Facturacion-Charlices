@@ -24,7 +24,7 @@ namespace GUI_V_2
             ConsUser obj = new ConsUser();
             if (obj.ShowDialog() == DialogResult.OK)
             {
-                Codigo.Text = obj.dataGridView1.Rows[obj.dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                Codigo.Text = obj.dataGridViewUser.Rows[obj.dataGridViewUser.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
@@ -51,7 +51,7 @@ namespace GUI_V_2
                             telefono = TelUsu.Text.Trim(),
                             direccion = DirUsu.Text.Trim(),
                             correo = CorUsu.Text.Trim(),
-                            tipo_usuario = int.Parse(TipUsu.SelectedIndex.ToString()),
+                            tipo_usuario = int.Parse(TipUsu.SelectedIndex.ToString()) + 1,
                             estado = true
                         };
 
@@ -72,7 +72,7 @@ namespace GUI_V_2
                             usuario.telefono = TelUsu.Text.Trim();
                             usuario.direccion = DirUsu.Text.Trim();
                             usuario.correo = CorUsu.Text.Trim();
-                            usuario.tipo_usuario = int.Parse(TipUsu.SelectedIndex.ToString());
+                            usuario.tipo_usuario = int.Parse(TipUsu.SelectedIndex.ToString()) + 1;
                             usuario.estado = estado.SelectedIndex == 0 ? true : false;
                         }
                     }
@@ -121,6 +121,46 @@ namespace GUI_V_2
 
                 //Guardar Error
             }
+        }
+
+        private void Codigo_Leave(object sender, EventArgs e)
+        {
+            if (Codigo.Text.Trim().Equals("") == false)
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    var usuario = DB.Usuarios.Where(a => a.codigo == Codigo.Text && a.estado == true).SingleOrDefault();
+                    if (usuario != null)
+                    {
+                        Codigo.Text = usuario.codigo;
+                        Nom.Text= usuario.nombre_completo;
+                        UsuNom.Text=usuario.usuario;
+                        UsuPass.Text = usuario.password;
+                        CedUsu.Text= usuario.ced_rnc;
+                        TelUsu.Text=usuario.telefono;
+                        DirUsu.Text=usuario.direccion;
+                        CorUsu.Text=usuario.correo;
+                        TipUsu.SelectedIndex = usuario.tipo_usuario - 1;
+                        estado.SelectedIndex = 0;
+                        id = usuario.id;
+                        bnt_eliminar.Enabled = true;
+                    }
+                    else
+                    {
+                        id = 0;
+                        bnt_eliminar.Enabled = false;
+                        Codigo.Limpiar = false;
+                        Utilidades.LimpiarControles(this);
+                        Codigo.Limpiar = true;
+                    }
+
+                }
+            }
+        }
+
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
