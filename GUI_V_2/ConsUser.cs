@@ -15,7 +15,17 @@ namespace GUI_V_2
         public ConsUser()
         {
             InitializeComponent();
-            nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
+            dataGridViewUser.AutoGenerateColumns = false;
+            CodUser.DataPropertyName = "codigo";
+            NomUser.DataPropertyName = "nombre_completo";
+            usuario.DataPropertyName = "usuario";
+            TipoUser.DataPropertyName = "tipo_usuario";
+            CedUser.DataPropertyName = "ced_rnc";
+            TelUser.DataPropertyName = "telefono";
+            DirUser.DataPropertyName = "direccion";
+            CorreoUser.DataPropertyName = "correo";
+            estatus.DataPropertyName = "estado";
+            LlenarDataGrid();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,17 +49,58 @@ namespace GUI_V_2
             Editar();
         }
 
+        public void LlenarDataGrid(string condicion = "")
+        {
+            using (CRUD_MODEL DB = new CRUD_MODEL())
+            {
+                var usuarios = from u in DB.Usuarios select new {
+                   u.codigo,
+                   u.nombre_completo,
+                   u.usuario,
+                   tipo_usuario = u.tipo_usuario==1 ? "CAJERO" : "ADMINISTRADOR",
+                   u.ced_rnc,
+                   u.telefono,
+                   u.direccion,
+                   u.correo,
+                   u.estado
+                };
+                if (condicion.Equals(""))
+                {
+                    usuarios = usuarios.
+                    Where(s => s.estado == true);
+                }
+                else
+                {
+                    usuarios = usuarios.
+                    Where(s => (s.codigo.Contains(condicion) || s.nombre_completo.Contains(condicion) && s.estado == true));
+                }
+
+                dataGridViewUser.DataSource = usuarios.ToList();
+            }
+            nro_registros.Text = dataGridViewUser.Rows.Count.ToString() + " REGISTROS.";
+        }
+
 
         private void Editar()
         {
-            if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
+            if (this.dataGridViewUser.Rows.Count > 0 && dataGridViewUser.SelectedRows.Count > 0)
             {
                 FormUsuarios obj = new FormUsuarios();
                 obj.Show();
-                obj.Codigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                obj.Codigo.Text = dataGridViewUser.CurrentRow.Cells[0].Value.ToString();
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void ConsUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filtro_KeyUp(object sender, KeyEventArgs e)
+        {
+            LlenarDataGrid(filtro.Text);
         }
     }
 }
