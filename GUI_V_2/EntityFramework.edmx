@@ -13,6 +13,7 @@
           <Property Name="codigo" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="cocina" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Clientes">
           <Key>
@@ -458,6 +459,7 @@
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Productos" Relationship="Model.FK_CATEGORIAS" FromRole="Categorias" ToRole="Productos" />
+          <Property Name="cocina" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Clientes">
           <Key>
@@ -796,6 +798,7 @@
           <EntitySetMapping Name="Categorias">
             <EntityTypeMapping TypeName="Model.Categorias">
               <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="cocina" ColumnName="cocina" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
