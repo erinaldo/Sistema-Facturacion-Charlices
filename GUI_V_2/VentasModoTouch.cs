@@ -27,7 +27,6 @@ namespace GUI_V_2
         double itbisPro =  0;
         int id_cliente  =  0;
         int tipo_cliente = -1;
-        int id_comprobante = 0;
         int id_producto = 0;
 
         public VentasModoTouch()
@@ -59,8 +58,9 @@ namespace GUI_V_2
                     comboBoxCombrobante.DataSource = comprobante.ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
 
             }
 
@@ -167,7 +167,7 @@ namespace GUI_V_2
                       total = Double.Parse(txt_total_bruto.Text.Trim()),
                       usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                       usuario_cajero_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
-                      NFC_comprobante = "prueba",
+                      NFC_comprobante = txt_serie_comprobante.Text,
                       metodo_pago_id = metodo_pago,
                       comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
                   };
@@ -755,6 +755,11 @@ namespace GUI_V_2
             {
                 int indexSeleccionado = comboBoxCombrobante.SelectedIndex;
                 if (indexSeleccionado < 0) return;
+                if(comboBoxCombrobante.SelectedText.Equals("SIN COMPROBANTE"))
+                {
+                    txt_serie_comprobante.Text = "SIN COMPROBANTE";
+                    return;
+                }
                 using(CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     int idCombrobante = int.Parse(comboBoxCombrobante.SelectedValue.ToString());
@@ -766,7 +771,6 @@ namespace GUI_V_2
                         String usadost = Convert.ToString(usados).PadLeft(8, '0');
 
                         txt_serie_comprobante.Text = resComprobante.serie + "" + usadost;
-                        id_comprobante = resComprobante.id;
                     }
 
                     
