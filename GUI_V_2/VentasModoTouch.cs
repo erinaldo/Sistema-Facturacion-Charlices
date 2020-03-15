@@ -24,8 +24,8 @@ namespace GUI_V_2
 
         List<ProductosOrden> ProOrdenList = new List<ProductosOrden>();
 
-        double itbisPro =  0;
-        int id_cliente  =  0;
+        double itbisPro = 0;
+        int id_cliente = 0;
         int tipo_cliente = -1;
         int id_producto = 0;
 
@@ -33,10 +33,11 @@ namespace GUI_V_2
         {
             InitializeComponent();
 
-            try { 
-            GenerarCodigoFac();
-            LlenarComboxCombrobantes();
-            LlenarComboxVendedores();
+            try
+            {
+                GenerarCodigoFac();
+                LlenarComboxCombrobantes();
+                LlenarComboxVendedores();
             }
             catch (Exception a)
             {
@@ -54,7 +55,7 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL db = new CRUD_MODEL())
                 {
-                    IQueryable<Combrobantes> comprobante = db.Combrobantes.Where(c => c.estado == true && c.usados<=c.cantidad_limite).OrderBy(c => c.tipo);
+                    IQueryable<Combrobantes> comprobante = db.Combrobantes.Where(c => c.estado == true && c.usados <= c.cantidad_limite).OrderBy(c => c.tipo);
                     comboBoxCombrobante.DataSource = comprobante.ToList();
                 }
             }
@@ -87,32 +88,34 @@ namespace GUI_V_2
 
         public void GenerarCodigoFac()
         {
-          try { 
-            using (CRUD_MODEL DB = new CRUD_MODEL())
+            try
             {
-                IQueryable<Facturas> factura = DB.Facturas.OrderByDescending(f => f.id);
-                var resp = factura.FirstOrDefault();
-                if (resp == null)
+                using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    txt_codigo_fac.Text = "1";
+                    IQueryable<Facturas> factura = DB.Facturas.OrderByDescending(f => f.id);
+                    var resp = factura.FirstOrDefault();
+                    if (resp == null)
+                    {
+                        txt_codigo_fac.Text = "1";
+                    }
+                    else
+                    {
+                        txt_codigo_fac.Text = (resp.id + 1).ToString();
+                    }
+
                 }
-                else
-                {
-                    txt_codigo_fac.Text = (resp.id + 1).ToString();
-                }
-                
-             }
-          }catch(Exception a)
-          {
+            }
+            catch (Exception a)
+            {
                 //error
-          }
+            }
         }
 
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
             DialogResult pregunta = MessageBox.Show("Salir de ventas ?", "Confirme", MessageBoxButtons.YesNo);
-            if(pregunta == DialogResult.Yes)
+            if (pregunta == DialogResult.Yes)
             {
                 this.Dispose();
             }
@@ -121,7 +124,7 @@ namespace GUI_V_2
 
         }
 
-  
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -131,25 +134,26 @@ namespace GUI_V_2
 
         private void button10_Click(object sender, EventArgs e)
         {
-            try { 
-            if (dataGridViewProducto.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Debe agregar productos agregado al carrito.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            if(txt_nombre_cliente.Text.Equals("Nombre cliente"))
+                if (dataGridViewProducto.Rows.Count == 0)
+                {
+                    MessageBox.Show("Debe agregar productos agregado al carrito.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                if (txt_nombre_cliente.Text.Equals("Nombre cliente"))
                 {
                     MessageBox.Show("Debe seleccionar un cliente valido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
                 PanelCobro obj = new PanelCobro();
-            obj.txt_monto.Text = txt_total_neto.Text;
-            if (obj.ShowDialog() == DialogResult.OK)
-            {
-                int id_metodo_pago = int.Parse(obj.c_metodopago.SelectedValue.ToString());
-                CrearFactura(id_metodo_pago);
-            }
+                obj.txt_monto.Text = txt_total_neto.Text;
+                if (obj.ShowDialog() == DialogResult.OK)
+                {
+                    int id_metodo_pago = int.Parse(obj.c_metodopago.SelectedValue.ToString());
+                    CrearFactura(id_metodo_pago);
+                }
             }
             catch (Exception a)
             {
@@ -163,22 +167,23 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    Facturas factura = new Facturas {
+                    Facturas factura = new Facturas
+                    {
                         id_cliente = id_cliente,
                         subtotal = Double.Parse(txt_total_bruto.Text.Trim()),
                         itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
                         fecha = DateTime.Today,
                         descuento = Double.Parse(txt_total_desc.Text.Trim()),
-                      total = Double.Parse(txt_total_bruto.Text.Trim()),
-                      usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
-                      usuario_cajero_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
-                      NFC_comprobante = txt_serie_comprobante.Text,
-                      metodo_pago_id = metodo_pago,
-                      comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
-                  };
-                    
-                foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
-                {
+                        total = Double.Parse(txt_total_bruto.Text.Trim()),
+                        usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
+                        usuario_cajero_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
+                        NFC_comprobante = txt_serie_comprobante.Text,
+                        metodo_pago_id = metodo_pago,
+                        comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
+                    };
+
+                    foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
+                    {
                         string codigoPro = registsros.Cells[0].Value.ToString();
                         var producto = DB.Productos.FirstOrDefault(a => a.codigo == codigoPro);
                         if (producto != null)
@@ -186,14 +191,14 @@ namespace GUI_V_2
                             double precioProVenta = Double.Parse(registsros.Cells[2].Value.ToString());
                             int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
-                            if(producto.tipo_producto==1) producto.cantidad -= cantidaProVendida;
+                            if (producto.tipo_producto == 1) producto.cantidad -= cantidaProVendida;
 
                             Detalles_Facturas detalles_fac = new Detalles_Facturas
                             {
                                 id_producto = producto.id,
                                 cantidad_producto = cantidaProVendida,
                                 precio_producto = precioProVenta,
-                                itbis = itbisProVenta 
+                                itbis = itbisProVenta
                             };
                             factura.Detalles_Facturas.Add(detalles_fac);
                         }
@@ -205,13 +210,13 @@ namespace GUI_V_2
                         int codigo_orden = int.Parse(txt_numero_orden.Text.Trim());
                         IQueryable<Ordenes_Reservadas> ORDEN = DB.Ordenes_Reservadas.Where(o => o.id == codigo_orden);
                         var resORDEN = ORDEN.FirstOrDefault();
-                        if (resORDEN!=null)
+                        if (resORDEN != null)
                         {
                             resORDEN.estado = true;
                         }
 
                     }
-                    if (txt_serie_comprobante.Text.Equals("SIN COMPROBANTE")==false)
+                    if (txt_serie_comprobante.Text.Equals("SIN COMPROBANTE") == false)
                     {
                         IQueryable<Combrobantes> combrobante = DB.Combrobantes.Where(c => c.id == factura.comprobante_id);
                         var resp = combrobante.FirstOrDefault();
@@ -224,9 +229,9 @@ namespace GUI_V_2
 
                     DB.SaveChanges();
                     GetComprobanteSeleccionado();
-                    if (Utilidades.ConFact==1)
+                    if (Utilidades.ConFact == 1)
                     {
-                       ImprimirTicketVenta();
+                        ImprimirTicketVenta();
                     }
                     LimpiarCampo();
                     MessageBox.Show("La factura se creo correctamente.");
@@ -234,7 +239,7 @@ namespace GUI_V_2
                 }
 
             }
-            catch(Exception err)
+            catch (Exception err)
             {
 
                 MessageBox.Show(err.ToString());
@@ -258,17 +263,17 @@ namespace GUI_V_2
         {
             if (e.KeyCode == Keys.Escape)
             {
-            btn_volver.PerformClick();
+                btn_volver.PerformClick();
             }
 
             if (e.KeyCode == Keys.F12)
             {
-            btn_cobrar.PerformClick();
+                btn_cobrar.PerformClick();
             }
 
             if (e.KeyCode == Keys.F5)
             {
-            btn_verProductos.PerformClick();
+                btn_verProductos.PerformClick();
             }
 
         }
@@ -289,8 +294,9 @@ namespace GUI_V_2
 
                     if (tipo_cliente == 1)
                     {
-                        precio_pro =  Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
-                    }else if (tipo_cliente == 2)
+                        precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                    }
+                    else if (tipo_cliente == 2)
                     {
                         precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[5].Value.ToString());
                     }
@@ -301,7 +307,8 @@ namespace GUI_V_2
 
                     SetCampoByProducto(nombre_pro, precio_pro, codigo_pro, cantidad_pro, itbis_pro, tipo_pro == "Inventario" ? 1 : 2);
                 }
-            }catch(Exception a)
+            }
+            catch (Exception a)
             {
                 //error
             }
@@ -322,14 +329,15 @@ namespace GUI_V_2
 
                     SetCampoByCliente(nombre, codigo, id, tipoCl);
                 }
-            }catch(Exception a)
+            }
+            catch (Exception a)
             {
                 //error
             }
         }
 
 
-        public void SetCampoByCliente(string nombre, string codigo, int id,int tipoCliente)
+        public void SetCampoByCliente(string nombre, string codigo, int id, int tipoCliente)
         {
             txt_codigo_cliente.Text = codigo;
             txt_nombre_cliente.Text = nombre;
@@ -353,7 +361,8 @@ namespace GUI_V_2
                     }
 
                 }
-            }catch(Exception s)
+            }
+            catch (Exception s)
             {
                 //error
             }
@@ -372,7 +381,7 @@ namespace GUI_V_2
                     {
                         id_producto = respProducto.id;
                         decimal precioProducto = tipo_cliente == 1 ? respProducto.precio_normal : tipo_cliente == 2 ? respProducto.precio_empresa : respProducto.precio_empleado;
-                        SetCampoByProducto(respProducto.nombre, precioProducto, codigoPro, respProducto.cantidad,respProducto.itbis, respProducto.tipo_producto);
+                        SetCampoByProducto(respProducto.nombre, precioProducto, codigoPro, respProducto.cantidad, respProducto.itbis, respProducto.tipo_producto);
                     }
                     else
                     {
@@ -387,12 +396,13 @@ namespace GUI_V_2
                 }
             }
 
-            catch (Exception ex) {
-            //    MessageBox.Show(ex.ToString());
+            catch (Exception ex)
+            {
+                //    MessageBox.Show(ex.ToString());
             }
         }
 
-        public void SetCampoByProducto(string nombre,decimal precio,string codigo,int cantidad,int itbis,int tipo_producto)
+        public void SetCampoByProducto(string nombre, decimal precio, string codigo, int cantidad, int itbis, int tipo_producto)
         {
             try
             {
@@ -408,11 +418,12 @@ namespace GUI_V_2
 
                 itbisPro = itbis;
                 cantidad_pro.Focus();
-            }catch(Exception ccv)
+            }
+            catch (Exception ccv)
             {
                 //error
             }
-            }
+        }
 
         public void ClienteByCodigo(string codigo_cliente)
         {
@@ -425,7 +436,7 @@ namespace GUI_V_2
 
                     if (respcliente != null)
                     {
-                        SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id,respcliente.tipo_cliente);
+                        SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id, respcliente.tipo_cliente);
                     }
                     else
                     {
@@ -445,30 +456,30 @@ namespace GUI_V_2
         }
 
 
-        public void CantidadDisponiblePro(string codigo,int cantidad)
+        public void CantidadDisponiblePro(string codigo, int cantidad)
         {
             try
             {
-                total_producto.Text ="TOTAL :" + cantidad.ToString();
+                total_producto.Text = "TOTAL :" + cantidad.ToString();
 
                 int id_orden = 0;
                 if (txt_numero_orden.Text.Trim().Equals("") == false)
                 {
-                   id_orden = int.Parse(txt_numero_orden.Text.Trim());
+                    id_orden = int.Parse(txt_numero_orden.Text.Trim());
                 }
 
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var ordenes = from detalles in DB.Detalles_Ordenes
-                                    join orden in DB.Ordenes_Reservadas on detalles.orden_id
-                         equals orden.id
-                                    where (orden.estado == false && detalles.id_producto == id_producto && ( id_orden==0 || detalles.orden_id!= id_orden))
-                                    group detalles by detalles.cantidad_producto into total 
-                                    let totalOrdenProducto = total.Sum(t=>t.cantidad_producto)
-                                    select new
-                                    {
-                                       totalOrdenProducto
-                                    };
+                                  join orden in DB.Ordenes_Reservadas on detalles.orden_id
+                       equals orden.id
+                                  where (orden.estado == false && detalles.id_producto == id_producto && (id_orden == 0 || detalles.orden_id != id_orden))
+                                  group detalles by detalles.cantidad_producto into total
+                                  let totalOrdenProducto = total.Sum(t => t.cantidad_producto)
+                                  select new
+                                  {
+                                      totalOrdenProducto
+                                  };
 
                     var resultado = ordenes.FirstOrDefault();
                     int cantidad_ordenada = 0;
@@ -476,23 +487,24 @@ namespace GUI_V_2
 
                     int cantidad_addCarrito = 0;
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
-                {
-                    if (registsros.Cells[0].Value.ToString() == codigo)
                     {
+                        if (registsros.Cells[0].Value.ToString() == codigo)
+                        {
                             cantidad_addCarrito += int.Parse(registsros.Cells[3].Value.ToString());
+                        }
+
                     }
 
-                }
-
                     int sub_cantidadDisponible = cantidad - cantidad_addCarrito;
-                    cantidad_ordenada+= (cantidad - sub_cantidadDisponible);
+                    cantidad_ordenada += (cantidad - sub_cantidadDisponible);
                     int totan_disponible = cantidad - cantidad_ordenada;
                     cantidad_orden_producto.Text = "RESERVADAS : " + cantidad_ordenada;
                     disponible_pro.Text = "DISPONIBLE: " + totan_disponible.ToString();
                 }
 
-              
-            }catch(Exception cc)
+
+            }
+            catch (Exception cc)
             {
                 //error
             }
@@ -570,7 +582,7 @@ namespace GUI_V_2
                     double totalItbis = (itbisPro / 100) * subtotal;
                     double total = totalItbis + subtotal;
                     dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
-                                                  subtotal, totalItbis, total,id_producto);
+                                                  subtotal, totalItbis, total, id_producto);
 
                     subtotalFac += subtotal;
                     itbisFac += totalItbis;
@@ -621,7 +633,7 @@ namespace GUI_V_2
         private void button7_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
 
                 if (dataGridViewProducto.Rows.Count > 0)
                 {
@@ -633,7 +645,7 @@ namespace GUI_V_2
 
                     }
 
-                    if(Reservar.Text.Equals("Modificar Orden"))
+                    if (Reservar.Text.Equals("Modificar Orden"))
                     {
                         try
                         {
@@ -711,7 +723,8 @@ namespace GUI_V_2
                     }
 
                 }
-            }catch(Exception cc)
+            }
+            catch (Exception cc)
             {
                 //error
             }
@@ -730,7 +743,7 @@ namespace GUI_V_2
                 calcularDesc();
             }
 
-             
+
         }
 
         public void calcularDesc()
@@ -747,7 +760,8 @@ namespace GUI_V_2
                     txt_total_neto.Text = totalConDesc.ToString("N2");
                     txt_total_desc.Text = descAplicado.ToString("N2");
                 }
-            }catch(Exception axx)
+            }
+            catch (Exception axx)
             {
                 //error
             }
@@ -823,7 +837,7 @@ namespace GUI_V_2
                 return;
             }
 
-          
+
 
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
@@ -834,7 +848,7 @@ namespace GUI_V_2
 
             }
 
-            if (Reservar.Text.Equals("Reservar Orden"))  LimpiarCampo();
+            if (Reservar.Text.Equals("Reservar Orden")) LimpiarCampo();
             ProOrdenList.Clear();
         }
 
@@ -867,7 +881,7 @@ namespace GUI_V_2
                         {
                             int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
                             if (indexPro == -1)
-                            { 
+                            {
                                 string nombreProducto = registsros.Cells[1].Value.ToString();
 
                                 ProOrdenList.Add(new ProductosOrden()
@@ -886,7 +900,7 @@ namespace GUI_V_2
                             detalle_orden.precio_producto = precioProVenta;
                             detalle_orden.itbis = itbisProVenta;
 
-                            
+
                         }
                         else
                         {
@@ -945,7 +959,7 @@ namespace GUI_V_2
                             int cantidaProVendida = int.Parse(registsros.Cells[3].Value.ToString());
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
                             if (producto.tipo_producto == 1) producto.cantidad -= cantidaProVendida;
-                            
+
                             Detalles_Ordenes detalles_orden = new Detalles_Ordenes
                             {
                                 id_producto = producto.id,
@@ -990,7 +1004,8 @@ namespace GUI_V_2
                         OrdenByCodigo(codigo);
                     }
                 }
-            }catch(Exception aee)
+            }
+            catch (Exception aee)
             {
                 //error
             }
@@ -1005,7 +1020,8 @@ namespace GUI_V_2
                     var orden = from ord in DB.Ordenes_Reservadas
                                 join Deta_orden in DB.Detalles_Ordenes on ord.id
                      equals Deta_orden.orden_id
-                                join pro in DB.Productos on Deta_orden.id_producto equals pro.id join cli in DB.Clientes on ord.id_cliente equals cli.id
+                                join pro in DB.Productos on Deta_orden.id_producto equals pro.id
+                                join cli in DB.Clientes on ord.id_cliente equals cli.id
                                 where ord.id == codigo_orden
                                 select new
                                 {
@@ -1021,8 +1037,8 @@ namespace GUI_V_2
                                     Deta_orden.precio_producto,
                                     Deta_orden.itbis,
                                 };
-                    
-                    if (orden.ToList().LongCount()>0)
+
+                    if (orden.ToList().LongCount() > 0)
                     {
                         dataGridViewProducto.Rows.Clear();
                         double total_Sub = 0;
@@ -1045,7 +1061,7 @@ namespace GUI_V_2
                             double total = sub_total + totalItbis;
                             total_Sub += sub_total;
                             total_itbis += totalItbis;
-                            dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(),registro_orden.id);
+                            dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(), registro_orden.id);
 
                             ProOrdenList.Add(new ProductosOrden()
                             {
@@ -1092,124 +1108,124 @@ namespace GUI_V_2
         ReportDataSource rs = new ReportDataSource();
 
 
-//Impresion de factura con Repoviewer desactivado.
-/* public void ImprimirFactura()
-       {
-           try
-           {
-               FormReportesDatos Repor = new FormReportesDatos();
-               List<FacturaClass> lista = new List<FacturaClass>();
-               lista.Clear();
-               for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+        //Impresion de factura con Repoviewer desactivado.
+        /* public void ImprimirFactura()
                {
-                   lista.Add(new FacturaClass
+                   try
                    {
-                       CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
-                       NomPro = dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
-                       PrePro = dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
-                       CanPro = dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
-                       SubTotal = dataGridViewProducto.Rows[p].Cells[4].Value.ToString(),
-                       CodCli = txt_codigo_cliente.Text.Trim(),
-                       NomCli = txt_nombre_cliente.Text.Trim(),
-                       Comprobante = txt_serie_comprobante.Text.Trim(),
-                       NumOrden = txt_numero_orden.Text.Trim(),
-                       Vendedor = comboBoxVendedores.SelectedItem.ToString(),
-                       Descuento = txt_total_desc.Text.Trim(),
-                       NumFac = txt_codigo_fac.Text.Trim(),
-                       ITBIS = txt_total_itbis.Text.Trim(),
-                       Total = txt_total_neto.Text.Trim(),
-                       Nota = Utilidades.NotaVenta.ToString(),
-                       TipoPago = "Efectivo",
-                   });
+                       FormReportesDatos Repor = new FormReportesDatos();
+                       List<FacturaClass> lista = new List<FacturaClass>();
+                       lista.Clear();
+                       for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+                       {
+                           lista.Add(new FacturaClass
+                           {
+                               CodPro = dataGridViewProducto.Rows[p].Cells[0].Value.ToString(),
+                               NomPro = dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                               PrePro = dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                               CanPro = dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                               SubTotal = dataGridViewProducto.Rows[p].Cells[4].Value.ToString(),
+                               CodCli = txt_codigo_cliente.Text.Trim(),
+                               NomCli = txt_nombre_cliente.Text.Trim(),
+                               Comprobante = txt_serie_comprobante.Text.Trim(),
+                               NumOrden = txt_numero_orden.Text.Trim(),
+                               Vendedor = comboBoxVendedores.SelectedItem.ToString(),
+                               Descuento = txt_total_desc.Text.Trim(),
+                               NumFac = txt_codigo_fac.Text.Trim(),
+                               ITBIS = txt_total_itbis.Text.Trim(),
+                               Total = txt_total_neto.Text.Trim(),
+                               Nota = Utilidades.NotaVenta.ToString(),
+                               TipoPago = "Efectivo",
+                           });
+                       }
+
+                       rs.Name = "DataSetTicketVenta";
+                       rs.Value = lista;
+                       Repor.reportViewer1.LocalReport.DataSources.Clear();
+                       Repor.reportViewer1.LocalReport.DataSources.Add(rs);
+                       Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.TicketVenta.rdlc";
+                       Repor.ShowDialog();
+                   }
+                   catch (Exception aaaa)
+                   {
+                       //MessageBox.Show("Error al crear factura");
+                   }
                }
+               */
 
-               rs.Name = "DataSetTicketVenta";
-               rs.Value = lista;
-               Repor.reportViewer1.LocalReport.DataSources.Clear();
-               Repor.reportViewer1.LocalReport.DataSources.Add(rs);
-               Repor.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI_V_2.Reportes.TicketVenta.rdlc";
-               Repor.ShowDialog();
-           }
-           catch (Exception aaaa)
-           {
-               //MessageBox.Show("Error al crear factura");
-           }
-       }
-       */
+        public void ImprimirTicketVenta()
+        {
+            FormConGen empresa = new FormConGen();
+            //Creamos una instancia d ela clase CrearTicket
+            Factura ticket = new Factura();
+            //Ya podemos usar todos sus metodos
+            ticket.AbreCajon();//Para abrir el cajon de dinero.
 
- public void ImprimirTicketVenta()
-  {
-           FormConGen empresa = new FormConGen();
-           //Creamos una instancia d ela clase CrearTicket
-           Factura ticket = new Factura();
-           //Ya podemos usar todos sus metodos
-           ticket.AbreCajon();//Para abrir el cajon de dinero.
+            //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
 
-           //De aqui en adelante pueden formar su ticket a su gusto... Les muestro un ejemplo
-
-           //Datos de la cabecera del Ticket.
-           ticket.TextoCentro(empresa.NomEmpresa.Text);
-           // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
-           ticket.TextoIzquierda(empresa.DirEmpresa.Text);
-           ticket.TextoIzquierda(empresa.NumEmpresa.Text);
-           ticket.TextoIzquierda("RNC: " + empresa.RncEmpresa.Text.Trim());
+            //Datos de la cabecera del Ticket.
+            ticket.TextoCentro(empresa.NomEmpresa.Text);
+            // ticket.TextoIzquierda("EXPEDIDO EN: LOCAL PRINCIPAL");
+            ticket.TextoIzquierda(empresa.DirEmpresa.Text);
+            ticket.TextoIzquierda(empresa.NumEmpresa.Text);
+            ticket.TextoIzquierda("RNC: " + empresa.RncEmpresa.Text.Trim());
             // ticket.TextoIzquierda("R.N.C: " + empresa.RncEmpresa.Text); //RNC EMPRESA
             // ticket.TextoIzquierda("EMAIL: cmcmarce14@gmail.com");//Es el mio por si me quieren contactar ...
             ticket.TextoIzquierda("");
-           ticket.TextoIzquierda("# ORDEN: FAC000"+ txt_codigo_fac.Text.Trim());
-           ticket.TextoIzquierda("FACTURA: " + txt_codigo_fac.Text.Trim());
-           ticket.TextoIzquierda("NFC: " + txt_serie_comprobante.Text.Trim());
-           ticket.lineasAsteriscos();
+            ticket.TextoIzquierda("# ORDEN: FAC000" + txt_codigo_fac.Text.Trim());
+            ticket.TextoIzquierda("FACTURA: " + txt_codigo_fac.Text.Trim());
+            ticket.TextoIzquierda("NFC: " + txt_serie_comprobante.Text.Trim());
+            ticket.lineasAsteriscos();
 
             //Sub cabecera.
             ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
             ticket.TextoIzquierda("");
-           ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + " - " + txt_nombre_cliente.Text.Trim());
+            ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + " - " + txt_nombre_cliente.Text.Trim());
             ticket.lineasAsteriscos();
 
-           //Articulos a vender.
-           ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
-           ticket.lineasAsteriscos();
-           //Agregando articulos al data GridView
-           for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
-           {
-             ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
-                dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
-                dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
-                dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
-           }
+            //Articulos a vender.
+            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
+            ticket.lineasAsteriscos();
+            //Agregando articulos al data GridView
+            for (int p = 0; p < dataGridViewProducto.Rows.Count; p++)
+            {
+                ticket.AgregaArticulo(dataGridViewProducto.Rows[p].Cells[1].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[3].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[2].Value.ToString(),
+                   dataGridViewProducto.Rows[p].Cells[4].Value.ToString());
+            }
 
-           ticket.lineasIgual();
-           //Resumen de la venta. Sólo son ejemplos
-           ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
-           ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
-           ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
-           ticket.TextoIzquierda("");
+            ticket.lineasIgual();
+            //Resumen de la venta. Sólo son ejemplos
+            ticket.AgregarTotales("         TOTAL........RD$", txt_total_neto.Text.Trim());
+            ticket.AgregarTotales("         ITBIS........RD$", txt_total_itbis.Text.Trim());//La M indica que es un decimal en C#
+            ticket.AgregarTotales("         DESCUENTOS...RD$", txt_total_desc.Text.Trim());
+            ticket.TextoIzquierda("");
 
-           //Texto final del Ticket.
-           ticket.TextoIzquierda("NOTA: "+Utilidades.NotaVenta);
-           ticket.TextoIzquierda("");
-           ticket.TextoIzquierda("");
-           ticket.TextoCentro("¡GRACIAS POR VISITA!");
-           ticket.CortaTicket();
-           ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera
-           MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
-       }
+            //Texto final del Ticket.
+            ticket.TextoIzquierda("NOTA: " + Utilidades.NotaVenta);
+            ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("");
+            ticket.TextoCentro("¡GRACIAS POR VISITA!");
+            ticket.CortaTicket();
+            ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera
+            MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
+        }
 
- public void ImprimirTicketReserva()
- {
-           //Usar Lista ProOrdenList para imprimir el tickets
-           FormConGen empresa = new FormConGen();
+        public void ImprimirTicketReserva()
+        {
+            //Usar Lista ProOrdenList para imprimir el tickets
+            FormConGen empresa = new FormConGen();
 
             //Creamos una instancia d ela clase CrearTicket
             Factura ticket = new Factura();
-            
+
             //Datos de la cabecera del Ticket.
             ticket.TextoCentro("TICKET PARA COCINA");
             ticket.lineasAsteriscos();
-            ticket.TextoIzquierda("# ORDEN: "+txt_numero_orden.Text.Trim());
+            ticket.TextoIzquierda("# ORDEN: " + txt_numero_orden.Text.Trim());
             ticket.TextoIzquierda("");
-            
+
             //Sub cabecera.
             ticket.TextoIzquierda("");
             ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
@@ -1218,21 +1234,21 @@ namespace GUI_V_2
             //Productos para cocina
             ticket.EncabezadoCocina();//NOMBRE DEL ARTICULO 1, CANT 3, PRECIO 2, IMPORTE 4
             ticket.lineasAsteriscos();
-            
+
             //Agregando productos
             for (int p = 0; p < ProOrdenList.Count; p++)
             {
                 if (ProOrdenList[p].Cantidad == 0) continue;
 
-            ticket.AgregaArticulo(
-                    ProOrdenList[p].Nombre_producto.ToString(), //Nombre articulo
-                    ProOrdenList[p].Cantidad.ToString(), //Cantidad
-                    "", //Precio no requerido
-                    ""); //Importe no requerido
+                ticket.AgregaArticulo(
+                        ProOrdenList[p].Nombre_producto.ToString(), //Nombre articulo
+                        ProOrdenList[p].Cantidad.ToString(), //Cantidad
+                        "", //Precio no requerido
+                        ""); //Importe no requerido
             }
 
             ticket.lineasIgual();
-            
+
             //Texto final del Ticket.
             ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
@@ -1242,12 +1258,23 @@ namespace GUI_V_2
 
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewProducto.Rows.Count > 0)
+            {
+                DialogResult pregunta = MessageBox.Show($"¿Esta seguro que desea borrar todos los productos del carrito?", "Confirme", MessageBoxButtons.YesNo);
+                if (pregunta != DialogResult.Yes)
+                {
+                    return;
 
+                }
+
+            }
+        }
     }
+
+
 }
-
-
-
 public class FacturaClass
 {
    public string NumFac { get; set; }
