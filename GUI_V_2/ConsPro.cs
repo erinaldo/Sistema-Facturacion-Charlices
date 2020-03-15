@@ -22,6 +22,7 @@ namespace GUI_V_2
             CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre_producto";
             CatPro.DataPropertyName = "nombre_categoria";
+            cocina.DataPropertyName = "cocina";
             PreNor.DataPropertyName = "precio_normal";
             PreEmp.DataPropertyName = "precio_empleado";
             PreEmpresa.DataPropertyName = "precio_empresa";
@@ -62,6 +63,7 @@ namespace GUI_V_2
                                                        pro.id,
                                                        nombre_producto = pro.nombre,
                                                        nombre_categoria = cat.nombre,
+                                                       cat.cocina,
                                                        pro.precio_normal,
                                                        pro.precio_empleado,
                                                        pro.precio_empresa,
