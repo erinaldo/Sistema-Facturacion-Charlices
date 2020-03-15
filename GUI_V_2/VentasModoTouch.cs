@@ -134,9 +134,14 @@ namespace GUI_V_2
             try { 
             if (dataGridViewProducto.Rows.Count == 0)
             {
-                MessageBox.Show("No hay producto agregado al carrito");
+                MessageBox.Show("Debe agregar productos agregado al carrito.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            if(txt_nombre_cliente.Text.Equals("Nombre cliente"))
+                {
+                    MessageBox.Show("Debe seleccionar un cliente valido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
 
                 PanelCobro obj = new PanelCobro();
             obj.txt_monto.Text = txt_total_neto.Text;
@@ -206,9 +211,19 @@ namespace GUI_V_2
                         }
 
                     }
+                    if (txt_serie_comprobante.Text.Equals("SIN COMPROBANTE")==false)
+                    {
+                        IQueryable<Combrobantes> combrobante = DB.Combrobantes.Where(c => c.id == factura.comprobante_id);
+                        var resp = combrobante.FirstOrDefault();
+                        if (resp != null)
+                        {
+                            resp.usados = resp.usados + 1;
+                        }
+
+                    }
 
                     DB.SaveChanges();
-                    
+                    GetComprobanteSeleccionado();
                     if (Utilidades.ConFact==1)
                     {
                        ImprimirTicketVenta();
@@ -236,7 +251,6 @@ namespace GUI_V_2
             txt_total_neto.Text = "0.00";
             Reservar.Text = "Reservar Orden";
             ProOrdenList.Clear();
-
         }
 
         //Funciones rapidas con teclas
@@ -751,29 +765,35 @@ namespace GUI_V_2
 
         private void comboBoxCombrobante_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GetComprobanteSeleccionado();
+        }
+
+        public void GetComprobanteSeleccionado()
+        {
             try
             {
                 int indexSeleccionado = comboBoxCombrobante.SelectedIndex;
                 if (indexSeleccionado < 0) return;
-                if(comboBoxCombrobante.SelectedText.Equals("SIN COMPROBANTE"))
+                if (comboBoxCombrobante.SelectedText.Equals("SIN COMPROBANTE"))
                 {
                     txt_serie_comprobante.Text = "SIN COMPROBANTE";
                     return;
                 }
-                using(CRUD_MODEL DB = new CRUD_MODEL())
+                using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
+
                     int idCombrobante = int.Parse(comboBoxCombrobante.SelectedValue.ToString());
                     IQueryable<Combrobantes> combrobante = DB.Combrobantes.Where(c => c.id == idCombrobante);
                     var resComprobante = combrobante.FirstOrDefault();
                     if (resComprobante != null)
                     {
-                        int usados = int.Parse(resComprobante.usados.ToString() + 1);
+                        int usados = int.Parse(resComprobante.usados.ToString()) + 1;
                         String usadost = Convert.ToString(usados).PadLeft(8, '0');
 
                         txt_serie_comprobante.Text = resComprobante.serie + "" + usadost;
                     }
 
-                    
+
                 }
 
             }
