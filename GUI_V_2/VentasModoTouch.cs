@@ -25,6 +25,7 @@ namespace GUI_V_2
         List<ProductosOrden> ProOrdenList = new List<ProductosOrden>();
 
         double itbisPro = 0;
+        bool cocinaPro = false;
         int id_cliente = 0;
         int tipo_cliente = -1;
         int id_producto = 0;
@@ -292,6 +293,9 @@ namespace GUI_V_2
                     int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
                     string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
 
+                     id_producto = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[12].Value.ToString());
+                    cocinaPro = bool.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[13].Value.ToString());
+
                     if (tipo_cliente == 1)
                     {
                         precio_pro = Decimal.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[3].Value.ToString());
@@ -374,13 +378,22 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    IQueryable<Productos> producto = DB.Productos.Where(p => p.codigo == codigoPro && p.estado == true);
+                    var producto = DB.Productos.Where(p => p.codigo == codigoPro && p.estado == true).Join(DB.Categorias,p=>p.id_categoria,cat=>cat.id,(p,cat)=>new {
+                        p.id,
+                        p.nombre,
+                        precioProducto = tipo_cliente == 1 ? p.precio_normal : tipo_cliente == 2 ? p.precio_empresa : p.precio_empleado,
+                        p.cantidad,
+                        p.itbis,
+                        p.tipo_producto,
+                        cat.cocina
+                    });
                     var respProducto = producto.FirstOrDefault();
 
                     if (respProducto != null)
                     {
                         id_producto = respProducto.id;
-                        decimal precioProducto = tipo_cliente == 1 ? respProducto.precio_normal : tipo_cliente == 2 ? respProducto.precio_empresa : respProducto.precio_empleado;
+                        cocinaPro = respProducto.cocina;
+                        decimal precioProducto = respProducto.precioProducto;
                         SetCampoByProducto(respProducto.nombre, precioProducto, codigoPro, respProducto.cantidad, respProducto.itbis, respProducto.tipo_producto);
                     }
                     else
@@ -389,6 +402,7 @@ namespace GUI_V_2
                         precio_pro.Text = "";
                         disponible_pro.Text = "";
                         itbisPro = 0;
+                        cocinaPro = false;
                         id_producto = 0;
                         MessageBox.Show("No existe un producto con dicho código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -434,6 +448,7 @@ namespace GUI_V_2
                     IQueryable<Clientes> cliente = DB.Clientes.Where(p => p.codigo == codigo_cliente && p.estado == true);
                     var respcliente = cliente.SingleOrDefault();
 
+                    if (respcliente != null)
                     if (respcliente != null)
                     {
                         SetCampoByCliente(respcliente.nombre_completo, codigo_cliente, respcliente.id, respcliente.tipo_cliente);
@@ -582,7 +597,7 @@ namespace GUI_V_2
                     double totalItbis = (itbisPro / 100) * subtotal;
                     double total = totalItbis + subtotal;
                     dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
-                                                  subtotal, totalItbis, total, id_producto);
+                                                  subtotal, totalItbis, total, id_producto,cocina);
 
                     subtotalFac += subtotal;
                     itbisFac += totalItbis;
@@ -879,22 +894,27 @@ namespace GUI_V_2
 
                         if (detalle_orden != null)
                         {
-                            int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
-                            if (indexPro == -1)
+                            bool cocina = bool.Parse(registsros.Cells[8].Value.ToString());
+                            if (cocina)
                             {
-                                string nombreProducto = registsros.Cells[1].Value.ToString();
-
-                                ProOrdenList.Add(new ProductosOrden()
+                                int indexPro = ProOrdenList.FindIndex(p => p.Id_producto == idPro);
+                                if (indexPro == -1)
                                 {
-                                    Id_producto = idPro,
-                                    Cantidad = Math.Abs(detalle_orden.cantidad_producto - cantidaProVendida),
-                                    Nombre_producto = nombreProducto
-                                });
+                                    string nombreProducto = registsros.Cells[1].Value.ToString();
+
+                                    ProOrdenList.Add(new ProductosOrden()
+                                    {
+                                        Id_producto = idPro,
+                                        Cantidad = Math.Abs(detalle_orden.cantidad_producto - cantidaProVendida),
+                                        Nombre_producto = nombreProducto
+                                    });
+                                }
+                                else
+                                {
+                                    ProOrdenList[indexPro].Cantidad = Math.Abs(cantidaProVendida - ProOrdenList[indexPro].Cantidad);
+                                }
                             }
-                            else
-                            {
-                                ProOrdenList[indexPro].Cantidad = Math.Abs(cantidaProVendida - ProOrdenList[indexPro].Cantidad);
-                            }
+                            
 
                             detalle_orden.cantidad_producto = cantidaProVendida;
                             detalle_orden.precio_producto = precioProVenta;
@@ -913,14 +933,19 @@ namespace GUI_V_2
                                 itbis = itbisProVenta
                             };
 
-                            string nombreProducto = registsros.Cells[1].Value.ToString();
-
-                            ProOrdenList.Add(new ProductosOrden()
+                            bool cocina = bool.Parse(registsros.Cells[8].Value.ToString());
+                            if (cocina)
                             {
-                                Id_producto = idPro,
-                                Cantidad = cantidaProVendida,
-                                Nombre_producto = nombreProducto
-                            });
+                                string nombreProducto = registsros.Cells[1].Value.ToString();
+
+                                ProOrdenList.Add(new ProductosOrden()
+                                {
+                                    Id_producto = idPro,
+                                    Cantidad = cantidaProVendida,
+                                    Nombre_producto = nombreProducto
+                                });
+                            }
+                               
 
                             DB.Detalles_Ordenes.Add(detalles_orden);
                         }
@@ -967,14 +992,20 @@ namespace GUI_V_2
                                 precio_producto = precioProVenta,
                                 itbis = itbisProVenta
                             };
-                            string nombrePro = registsros.Cells[1].Value.ToString();
 
-                            ProOrdenList.Add(new ProductosOrden()
+                            bool cocina = bool.Parse(registsros.Cells[8].Value.ToString());
+                            if (cocina)
                             {
-                                Id_producto = producto.id,
-                                Cantidad = cantidaProVendida,
-                                Nombre_producto = nombrePro
-                            });
+                                string nombrePro = registsros.Cells[1].Value.ToString();
+
+                                ProOrdenList.Add(new ProductosOrden()
+                                {
+                                    Id_producto = producto.id,
+                                    Cantidad = cantidaProVendida,
+                                    Nombre_producto = nombrePro
+                                });
+                            }
+                                
                             orden.Detalles_Ordenes.Add(detalles_orden);
                         }
 
@@ -1022,6 +1053,7 @@ namespace GUI_V_2
                      equals Deta_orden.orden_id
                                 join pro in DB.Productos on Deta_orden.id_producto equals pro.id
                                 join cli in DB.Clientes on ord.id_cliente equals cli.id
+                                join cat in DB.Categorias on pro.id_categoria equals cat.id
                                 where ord.id == codigo_orden
                                 select new
                                 {
@@ -1032,6 +1064,7 @@ namespace GUI_V_2
                                     cli.nombre_completo,
                                     pro.id,
                                     pro.nombre,
+                                    cat.cocina,
                                     pro.codigo,
                                     Deta_orden.cantidad_producto,
                                     Deta_orden.precio_producto,
@@ -1061,14 +1094,17 @@ namespace GUI_V_2
                             double total = sub_total + totalItbis;
                             total_Sub += sub_total;
                             total_itbis += totalItbis;
-                            dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(), registro_orden.id);
+                            dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total.ToString(), totalItbis.ToString(), total.ToString(), registro_orden.id,registro_orden.cocina);
 
-                            ProOrdenList.Add(new ProductosOrden()
+                            if (registro_orden.cocina)
                             {
-                                Id_producto = registro_orden.id,
-                                Cantidad = registro_orden.cantidad_producto,
-                                Nombre_producto = registro_orden.nombre
-                            });
+                                ProOrdenList.Add(new ProductosOrden()
+                                {
+                                    Id_producto = registro_orden.id,
+                                    Cantidad = registro_orden.cantidad_producto,
+                                    Nombre_producto = registro_orden.nombre
+                                });
+                            }
                         }
                         if (total_Sub > 0)
                         {
