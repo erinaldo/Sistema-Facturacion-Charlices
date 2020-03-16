@@ -55,13 +55,13 @@ namespace GUI_V_2
             public void EncabezadoVenta()
             {
                 //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
-                linea.AppendLine("ARTÍCULO            |CANT|PRECIO|IMPORTE");
+                linea.AppendLine("ARTICULO            |CANT|PRECIO|IMPORTE");
             }
 
         public void EncabezadoCocina()
         {
             //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
-            linea.AppendLine("ARTÍCULO            |CANTIDAD");
+            linea.AppendLine("ARTICULO            |CANTIDAD");
         }
 
 

@@ -397,6 +397,10 @@
             <End Role="Combrobantes" EntitySet="Combrobantes" />
             <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Facturas_Facturas" Association="Model.FK_Detalles_Facturas_Facturas">
+            <End Role="Facturas" EntitySet="Facturas" />
+            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
+          </AssociationSet>
           <AssociationSet Name="FK_Detalles_Facturas_PRODUCTO" Association="Model.FK_Detalles_Facturas_PRODUCTO">
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
@@ -424,10 +428,6 @@
           <AssociationSet Name="FK_UNIDADES_MEDIDAS" Association="Model.FK_UNIDADES_MEDIDAS">
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
             <End Role="Productos" EntitySet="Productos" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Detalles_Facturas_Facturas" Association="Model.FK_Detalles_Facturas_Facturas">
-            <End Role="Facturas" EntitySet="Facturas" />
-            <End Role="Detalles_Facturas" EntitySet="Detalles_Facturas" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="FACT_Result">
@@ -458,8 +458,8 @@
           <Property Name="codigo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Productos" Relationship="Model.FK_CATEGORIAS" FromRole="Categorias" ToRole="Productos" />
           <Property Name="cocina" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="Model.FK_CATEGORIAS" FromRole="Categorias" ToRole="Productos" />
         </EntityType>
         <EntityType Name="Clientes">
           <Key>
@@ -499,8 +499,8 @@
           <Property Name="cantidad_producto" Type="Int32" Nullable="false" />
           <Property Name="precio_producto" Type="Double" Nullable="false" />
           <Property Name="itbis" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Productos" Relationship="Model.FK_Detalles_Facturas_PRODUCTO" FromRole="Detalles_Facturas" ToRole="Productos" />
           <NavigationProperty Name="Facturas" Relationship="Model.FK_Detalles_Facturas_Facturas" FromRole="Detalles_Facturas" ToRole="Facturas" />
+          <NavigationProperty Name="Productos" Relationship="Model.FK_Detalles_Facturas_PRODUCTO" FromRole="Detalles_Facturas" ToRole="Productos" />
         </EntityType>
         <EntityType Name="Detalles_Ordenes">
           <Key>
@@ -534,10 +534,10 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Model.FK_Facturas_CLIENTE" FromRole="Facturas" ToRole="Clientes" />
           <NavigationProperty Name="Combrobantes" Relationship="Model.FK_Facturas_COMBROBANTE" FromRole="Facturas" ToRole="Combrobantes" />
+          <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_Detalles_Facturas_Facturas" FromRole="Facturas" ToRole="Detalles_Facturas" />
           <NavigationProperty Name="Usuarios" Relationship="Model.FK_Facturas_CAJERO" FromRole="Facturas" ToRole="Usuarios" />
           <NavigationProperty Name="Metodos_Pagos" Relationship="Model.FK_Facturas_METOGO_PAGO" FromRole="Facturas" ToRole="Metodos_Pagos" />
           <NavigationProperty Name="Usuarios1" Relationship="Model.FK_Facturas_VENDEDOR" FromRole="Facturas" ToRole="Usuarios" />
-          <NavigationProperty Name="Detalles_Facturas" Relationship="Model.FK_Detalles_Facturas_Facturas" FromRole="Facturas" ToRole="Detalles_Facturas" />
         </EntityType>
         <EntityType Name="Metodos_Pagos">
           <Key>
@@ -669,6 +669,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Detalles_Facturas_Facturas">
+          <End Type="Model.Facturas" Role="Facturas" Multiplicity="1" />
+          <End Type="Model.Detalles_Facturas" Role="Detalles_Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facturas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Detalles_Facturas">
+              <PropertyRef Name="id_factura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Detalles_Facturas_PRODUCTO">
           <End Type="Model.Productos" Role="Productos" Multiplicity="1" />
           <End Type="Model.Detalles_Facturas" Role="Detalles_Facturas" Multiplicity="*" />
@@ -750,18 +762,6 @@
             </Principal>
             <Dependent Role="Productos">
               <PropertyRef Name="id_unidad_medida" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Detalles_Facturas_Facturas">
-          <End Type="Model.Facturas" Role="Facturas" Multiplicity="1" />
-          <End Type="Model.Detalles_Facturas" Role="Detalles_Facturas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Facturas">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Detalles_Facturas">
-              <PropertyRef Name="id_factura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

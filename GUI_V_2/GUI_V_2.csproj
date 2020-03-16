@@ -89,6 +89,12 @@
     <Compile Include="AbrirCaja.Designer.cs">
       <DependentUpon>AbrirCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categorias.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Combrobantes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
@@ -122,12 +128,6 @@
     </Compile>
     <Compile Include="FormCaja.Designer.cs">
       <DependentUpon>FormCaja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Categorias.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Clientes.cs">
-      <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
     <Compile Include="ConsCatProd.cs">
       <SubType>Form</SubType>
@@ -275,6 +275,12 @@
     </Compile>
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes\NotaReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\NotaReserva.Designer.cs">
+      <DependentUpon>NotaReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="Metodos_Pagos.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
@@ -426,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\NotaReserva.resx">
+      <DependentUpon>NotaReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelCobro.resx">
       <DependentUpon>PanelCobro.cs</DependentUpon>

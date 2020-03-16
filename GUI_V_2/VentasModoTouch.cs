@@ -1,4 +1,5 @@
 ﻿using GUI_V_2.Consultas;
+using GUI_V_2.Mensajes;
 using GUI_V_2.Reportes;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -840,7 +841,7 @@ namespace GUI_V_2
         {
 
         }
-
+        String mesero = "";
         private void Reservar_Click(object sender, EventArgs e)
         {
 
@@ -852,21 +853,27 @@ namespace GUI_V_2
             }
             else if (dataGridViewProducto.Rows.Count == 0)
             {
-                MessageBox.Show("No hay producto agregado al carrito.");
+                MessageBox.Show("Agregue productos para procesar la orden.");
                 return;
             }
 
-
+            mesero = comboBoxVendedores.SelectedItem.ToString();
+            NotaReserva notaReserva = new NotaReserva();
+            if (notaReserva.ShowDialog() == DialogResult.OK)
+            {
+                Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
+            }
+            else
+            {
+                Utilidades.NotaVenta = "";
+            }
 
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
+            
 
-            if (MessageBox.Show("¿Desea imprimir un tickets de orden?", "Pregunta ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                ImprimirTicketReserva();
-
-            }
-
+            ImprimirTicketReserva();
+            
             if (Reservar.Text.Equals("Reservar Orden")) LimpiarCampo();
             ProOrdenList.Clear();
         }
@@ -1218,7 +1225,7 @@ namespace GUI_V_2
             ticket.lineasAsteriscos();
 
             //Sub cabecera.
-            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy"), " " + DateTime.Now.ToShortTimeString());
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Cliente: " + txt_codigo_cliente.Text.Trim() + " - " + txt_nombre_cliente.Text.Trim());
             ticket.lineasAsteriscos();
@@ -1268,7 +1275,7 @@ namespace GUI_V_2
 
             //Sub cabecera.
             ticket.TextoIzquierda("");
-            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-mm-yyyy"), " " + DateTime.Now.ToShortTimeString());
+            ticket.TextoExtremos("Fecha: " + DateTime.Now.ToString("dd-MM-yyyy"), " " + DateTime.Now.ToShortTimeString());
             ticket.lineasAsteriscos();
 
             //Productos para cocina
@@ -1290,6 +1297,8 @@ namespace GUI_V_2
             ticket.lineasIgual();
 
             //Texto final del Ticket.
+
+            ticket.TextoIzquierda("Mesera/o: " + mesero);
             ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");

@@ -5,22 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e8ddb22970c04fd5b4d6dec311af1432" Name="Diagram1" ZoomLevel="62">
-        <EntityTypeShape EntityType="Model.Categorias" Width="1.5" PointX="0.75" PointY="22.625" />
-        <EntityTypeShape EntityType="Model.Clientes" Width="1.5" PointX="0.75" PointY="3.5" />
-        <EntityTypeShape EntityType="Model.Combrobantes" Width="1.5" PointX="0.75" PointY="8.25" />
-        <EntityTypeShape EntityType="Model.Detalles_Facturas" Width="1.5" PointX="5.25" PointY="21.125" />
-        <EntityTypeShape EntityType="Model.Detalles_Ordenes" Width="1.5" PointX="5.25" PointY="9" />
-        <EntityTypeShape EntityType="Model.Facturas" Width="1.5" PointX="3" PointY="2.875" />
-        <EntityTypeShape EntityType="Model.Metodos_Pagos" Width="1.5" PointX="0.75" PointY="15.625" />
-        <EntityTypeShape EntityType="Model.Ordenes_Reservadas" Width="1.5" PointX="3" PointY="9.25" />
-        <EntityTypeShape EntityType="Model.Productos" Width="1.5" PointX="3" PointY="20.25" />
-        <EntityTypeShape EntityType="Model.Suplidores" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Model.Unidades_medidas" Width="1.5" PointX="0.75" PointY="20.125" />
-        <EntityTypeShape EntityType="Model.Usuarios" Width="1.5" PointX="0.75" PointY="11.375" />
+        <EntityTypeShape EntityType="Model.Categorias" Width="1.5" PointX="0.75" PointY="17" />
+        <EntityTypeShape EntityType="Model.Clientes" Width="1.5" PointX="0.75" PointY="9.625" />
+        <EntityTypeShape EntityType="Model.Combrobantes" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Model.Detalles_Facturas" Width="1.5" PointX="5.25" PointY="2.125" />
+        <EntityTypeShape EntityType="Model.Detalles_Ordenes" Width="1.5" PointX="5.25" PointY="14.5" />
+        <EntityTypeShape EntityType="Model.Facturas" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Model.Metodos_Pagos" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="Model.Ordenes_Reservadas" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="Model.Productos" Width="1.5" PointX="3" PointY="17.25" />
+        <EntityTypeShape EntityType="Model.Suplidores" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model.Unidades_medidas" Width="1.5" PointX="0.75" PointY="20" />
+        <EntityTypeShape EntityType="Model.Usuarios" Width="1.5" PointX="0.75" PointY="1.625" />
         <AssociationConnector Association="Model.FK_CATEGORIAS" />
         <AssociationConnector Association="Model.FK_CLIENTES" />
         <AssociationConnector Association="Model.FK_Facturas_CLIENTE" />
         <AssociationConnector Association="Model.FK_Facturas_COMBROBANTE" />
+        <AssociationConnector Association="Model.FK_Detalles_Facturas_Facturas" />
         <AssociationConnector Association="Model.FK_Detalles_Facturas_PRODUCTO" />
         <AssociationConnector Association="Model.FK_Detalles_ORDEN_PRODUCTO" />
         <AssociationConnector Association="Model.FK_ORDEN" />
@@ -28,7 +29,6 @@
         <AssociationConnector Association="Model.FK_Facturas_METOGO_PAGO" />
         <AssociationConnector Association="Model.FK_Facturas_VENDEDOR" />
         <AssociationConnector Association="Model.FK_UNIDADES_MEDIDAS" />
-        <AssociationConnector Association="Model.FK_Detalles_Facturas_Facturas" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
