@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConGen));
             this.label17 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.NomEmpresa = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NumEmpresa = new System.Windows.Forms.TextBox();
             this.MonedaEmpresa = new System.Windows.Forms.ComboBox();
-            this.LogoEmpresa = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.TerminosEmpresa = new System.Windows.Forms.RichTextBox();
@@ -49,6 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.RncEmpresa = new System.Windows.Forms.TextBox();
             this.RNC = new System.Windows.Forms.Label();
+            this.LogoEmpresa = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LogoEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +117,7 @@
             this.DirEmpresa.Name = "DirEmpresa";
             this.DirEmpresa.Size = new System.Drawing.Size(566, 24);
             this.DirEmpresa.TabIndex = 94;
-            this.DirEmpresa.Text = "C/ Principal Canabacoa, detrás de la bomba Esso, al lado de Odalis Sonido.";
+            this.DirEmpresa.Text = "C/ Principal Canabacoa, detras de la bomba Esso, al lado de Odalis Sonido.";
             // 
             // btnCerrar
             // 
@@ -175,23 +174,11 @@
             this.MonedaEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MonedaEmpresa.FormattingEnabled = true;
             this.MonedaEmpresa.Items.AddRange(new object[] {
-            "Pesos Dominicanos",
-            "Dolar Americano",
-            "Euro"});
+            "Pesos Dominicanos"});
             this.MonedaEmpresa.Location = new System.Drawing.Point(142, 172);
             this.MonedaEmpresa.Name = "MonedaEmpresa";
             this.MonedaEmpresa.Size = new System.Drawing.Size(161, 28);
             this.MonedaEmpresa.TabIndex = 121;
-            // 
-            // LogoEmpresa
-            // 
-            this.LogoEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("LogoEmpresa.Image")));
-            this.LogoEmpresa.Location = new System.Drawing.Point(425, 140);
-            this.LogoEmpresa.Name = "LogoEmpresa";
-            this.LogoEmpresa.Size = new System.Drawing.Size(283, 277);
-            this.LogoEmpresa.TabIndex = 122;
-            this.LogoEmpresa.TabStop = false;
             // 
             // button3
             // 
@@ -253,7 +240,6 @@
             this.RncEmpresa.Name = "RncEmpresa";
             this.RncEmpresa.Size = new System.Drawing.Size(162, 24);
             this.RncEmpresa.TabIndex = 129;
-            this.RncEmpresa.Text = "0-00-00000-0";
             // 
             // RNC
             // 
@@ -264,6 +250,15 @@
             this.RNC.Size = new System.Drawing.Size(47, 20);
             this.RNC.TabIndex = 128;
             this.RNC.Text = "RNC:";
+            // 
+            // LogoEmpresa
+            // 
+            this.LogoEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LogoEmpresa.Location = new System.Drawing.Point(425, 140);
+            this.LogoEmpresa.Name = "LogoEmpresa";
+            this.LogoEmpresa.Size = new System.Drawing.Size(283, 277);
+            this.LogoEmpresa.TabIndex = 122;
+            this.LogoEmpresa.TabStop = false;
             // 
             // FormConGen
             // 
@@ -316,10 +311,10 @@
         public System.Windows.Forms.TextBox NumEmpresa;
         public System.Windows.Forms.ComboBox MonedaEmpresa;
         public System.Windows.Forms.RichTextBox TerminosEmpresa;
-        public System.Windows.Forms.PictureBox LogoEmpresa;
         public System.Windows.Forms.TextBox Correo;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox RncEmpresa;
         private System.Windows.Forms.Label RNC;
+        public System.Windows.Forms.PictureBox LogoEmpresa;
     }
 }
