@@ -18,7 +18,7 @@ namespace GUI_V_2
         {
             InitializeComponent();
             dataGridVProducto.AutoGenerateColumns = false;
-            CodPro.DataPropertyName = "id";
+            id.DataPropertyName = "id";
             CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre_producto";
             CatPro.DataPropertyName = "nombre_categoria";

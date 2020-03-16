@@ -59,13 +59,13 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(735, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
             this.filtro.Location = new System.Drawing.Point(196, 44);
-            this.filtro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.filtro.Margin = new System.Windows.Forms.Padding(5);
             this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             this.filtro.Leave += new System.EventHandler(this.filtro_Leave);
             // 
@@ -84,7 +84,7 @@
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_nuevo.Location = new System.Drawing.Point(592, 38);
-            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // nro_registros
@@ -96,7 +96,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(995, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridVProducto
@@ -140,7 +140,7 @@
             this.cocina});
             this.dataGridVProducto.EnableHeadersVisualStyles = false;
             this.dataGridVProducto.Location = new System.Drawing.Point(16, 96);
-            this.dataGridVProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridVProducto.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridVProducto.Name = "dataGridVProducto";
             this.dataGridVProducto.ReadOnly = true;
             this.dataGridVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1561, 661);
             this.Controls.Add(this.dataGridVProducto);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ConsPro";
             this.Text = "ConsPro";
             this.Load += new System.EventHandler(this.ConsPro_Load);

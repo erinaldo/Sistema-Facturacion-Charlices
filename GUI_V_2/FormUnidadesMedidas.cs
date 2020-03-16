@@ -24,6 +24,7 @@ namespace GUI_V_2
 
                 using (CRUD_MODEL tabla = new CRUD_MODEL())
                 {
+                    MessageBox.Show(id.ToString());
                     if (id == 0)
                     {
                         Unidades_medidas unidades = new Unidades_medidas

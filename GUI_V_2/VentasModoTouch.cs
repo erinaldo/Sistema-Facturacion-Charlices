@@ -289,11 +289,14 @@ namespace GUI_V_2
                     string codigo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[0].Value.ToString();
                     string nombre_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[1].Value.ToString();
                     decimal precio_pro = 0;
+
                     int itbis_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[7].Value.ToString());
+
                     int cantidad_pro = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[8].Value.ToString());
+
                     string tipo_pro = obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[10].Value.ToString();
 
-                     id_producto = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[12].Value.ToString());
+                    id_producto = int.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[12].Value.ToString());
                     cocinaPro = bool.Parse(obj.dataGridVProducto.Rows[obj.dataGridVProducto.CurrentCell.RowIndex].Cells[13].Value.ToString());
 
                     if (tipo_cliente == 1)
@@ -314,6 +317,7 @@ namespace GUI_V_2
             }
             catch (Exception a)
             {
+                MessageBox.Show(e.ToString());
                 //error
             }
         }
@@ -597,7 +601,7 @@ namespace GUI_V_2
                     double totalItbis = (itbisPro / 100) * subtotal;
                     double total = totalItbis + subtotal;
                     dataGridViewProducto.Rows.Add(codigo_pro.Text.Trim(), nombre_pro.Text, precio_pro.Text.Trim(), cantidad_pro.Text.Trim(),
-                                                  subtotal, totalItbis, total, id_producto,cocina);
+                                                  subtotal, totalItbis, total, id_producto, cocinaPro);
 
                     subtotalFac += subtotal;
                     itbisFac += totalItbis;
