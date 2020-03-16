@@ -140,12 +140,12 @@ namespace GUI_V_2
             {
                 if (dataGridViewProducto.Rows.Count == 0)
                 {
-                    MessageBox.Show("Debe agregar productos agregado al carrito.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debe agregar los productos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
                 if (txt_nombre_cliente.Text.Equals("Nombre cliente"))
                 {
-                    MessageBox.Show("Debe seleccionar un cliente valido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debe seleccionar un cliente disponible.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -847,7 +847,7 @@ namespace GUI_V_2
 
             if (txt_numero_orden.Text.Trim().Equals("") && Reservar.Text.Equals("Modificar Orden"))
             {
-                MessageBox.Show("Ingrese un número de orden.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ingrese un número de orden o consulte.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
 
             }
@@ -858,7 +858,9 @@ namespace GUI_V_2
             }
 
             mesero = comboBoxVendedores.SelectedItem.ToString();
+
             NotaReserva notaReserva = new NotaReserva();
+
             if (notaReserva.ShowDialog() == DialogResult.OK)
             {
                 Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
@@ -1091,7 +1093,7 @@ namespace GUI_V_2
                         {
                             if (registro_orden.estado)
                             {
-                                MessageBox.Show("La orden ya había sido facturada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("La orden ya había sido facturada, consulte en ventas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 break;
                             }
                             txt_codigo_cliente.Text = registro_orden.cliente_codigo;
@@ -1200,6 +1202,9 @@ namespace GUI_V_2
                }
                */
 
+
+
+            //Ticket de venta
         public void ImprimirTicketVenta()
         {
             FormConGen empresa = new FormConGen();
@@ -1255,15 +1260,15 @@ namespace GUI_V_2
             ticket.TextoIzquierda("");
             ticket.TextoCentro("¡GRACIAS POR VISITA!");
             ticket.CortaTicket();
-            ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera
-            MessageBox.Show("TICEKT IMPRESO CORRECTAMENTE");
+            ticket.ImprimirTicket("EPSON TM-T88IV ReStick");//Nombre de la impresora ticketera           
         }
 
+
+        //Ticket de Orden - Para cocina
         public void ImprimirTicketReserva()
         {
             //Usar Lista ProOrdenList para imprimir el tickets
             FormConGen empresa = new FormConGen();
-
             //Creamos una instancia d ela clase CrearTicket
             Factura ticket = new Factura();
 
@@ -1320,10 +1325,32 @@ namespace GUI_V_2
 
             }
         }
+
+
+        //Boton Consultar Ordenes 
+        private void label9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConsResOrden obj = new ConsResOrden();
+                if (obj.ShowDialog() == DialogResult.OK)
+                {
+                    txt_numero_orden.Text = obj.dataGridOrdenes.Rows[obj.dataGridOrdenes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    txt_numero_orden.Focus();
+                    SendKeys.Send("{ENTER}");
+                }
+            }catch(Exception aaaa)
+            {
+
+            }
+
+        }
+
+        
     }
-
-
 }
+
+
 public class FacturaClass
 {
    public string NumFac { get; set; }

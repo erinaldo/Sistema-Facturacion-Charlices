@@ -37,30 +37,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.total_producto = new System.Windows.Forms.Label();
             this.cantidad_orden_producto = new System.Windows.Forms.Label();
-            this.txt_numero_orden = new GUI_V_2.ErrorTxtBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txt_OrdenesCons = new System.Windows.Forms.Label();
             this.Reservar = new System.Windows.Forms.Button();
             this.disponible_pro = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_descuento = new GUI_V_2.ErrorTxtBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.precio_pro = new GUI_V_2.ErrorTxtBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cantidad_pro = new GUI_V_2.ErrorTxtBox();
-            this.nombre_pro = new GUI_V_2.ErrorTxtBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_verProductos = new System.Windows.Forms.Button();
-            this.codigo_pro = new GUI_V_2.ErrorTxtBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxCombrobante = new System.Windows.Forms.ComboBox();
             this.fecha_hora = new System.Windows.Forms.Label();
             this.comboBoxVendedores = new System.Windows.Forms.ComboBox();
-            this.txt_codigo_fac = new GUI_V_2.ErrorTxtBox();
-            this.txt_serie_comprobante = new GUI_V_2.ErrorTxtBox();
-            this.txt_nombre_cliente = new GUI_V_2.ErrorTxtBox();
             this.btn_clientes = new System.Windows.Forms.Button();
-            this.txt_codigo_cliente = new GUI_V_2.ErrorTxtBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -81,15 +71,25 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cocina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_total_desc = new GUI_V_2.ErrorTxtBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_total_neto = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_itbis = new GUI_V_2.ErrorTxtBox();
-            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txt_total_desc = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_neto = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_itbis = new GUI_V_2.ErrorTxtBox();
+            this.txt_total_bruto = new GUI_V_2.ErrorTxtBox();
+            this.txt_numero_orden = new GUI_V_2.ErrorTxtBox();
+            this.txt_descuento = new GUI_V_2.ErrorTxtBox();
+            this.precio_pro = new GUI_V_2.ErrorTxtBox();
+            this.cantidad_pro = new GUI_V_2.ErrorTxtBox();
+            this.nombre_pro = new GUI_V_2.ErrorTxtBox();
+            this.codigo_pro = new GUI_V_2.ErrorTxtBox();
+            this.txt_codigo_fac = new GUI_V_2.ErrorTxtBox();
+            this.txt_serie_comprobante = new GUI_V_2.ErrorTxtBox();
+            this.txt_nombre_cliente = new GUI_V_2.ErrorTxtBox();
+            this.txt_codigo_cliente = new GUI_V_2.ErrorTxtBox();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -116,7 +116,7 @@
             this.panel5.Controls.Add(this.total_producto);
             this.panel5.Controls.Add(this.cantidad_orden_producto);
             this.panel5.Controls.Add(this.txt_numero_orden);
-            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.txt_OrdenesCons);
             this.panel5.Controls.Add(this.Reservar);
             this.panel5.Controls.Add(this.disponible_pro);
             this.panel5.Controls.Add(this.label8);
@@ -161,31 +161,19 @@
             this.cantidad_orden_producto.TabIndex = 88;
             this.cantidad_orden_producto.Text = "RESERVADAS";
             // 
-            // txt_numero_orden
+            // txt_OrdenesCons
             // 
-            this.txt_numero_orden.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_OrdenesCons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_numero_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_numero_orden.Limpiar = true;
-            this.txt_numero_orden.Location = new System.Drawing.Point(272, 3);
-            this.txt_numero_orden.Name = "txt_numero_orden";
-            this.txt_numero_orden.Size = new System.Drawing.Size(126, 26);
-            this.txt_numero_orden.TabIndex = 87;
-            this.txt_numero_orden.Validar = true;
-            this.txt_numero_orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_orden_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(161, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 18);
-            this.label9.TabIndex = 86;
-            this.label9.Text = "NRO. ORDEN";
+            this.txt_OrdenesCons.AutoSize = true;
+            this.txt_OrdenesCons.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_OrdenesCons.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txt_OrdenesCons.Location = new System.Drawing.Point(161, 7);
+            this.txt_OrdenesCons.Name = "txt_OrdenesCons";
+            this.txt_OrdenesCons.Size = new System.Drawing.Size(105, 18);
+            this.txt_OrdenesCons.TabIndex = 86;
+            this.txt_OrdenesCons.Text = "NRO. ORDEN";
+            this.txt_OrdenesCons.Click += new System.EventHandler(this.label9_Click);
             // 
             // Reservar
             // 
@@ -231,20 +219,6 @@
             this.label8.TabIndex = 83;
             this.label8.Text = "DESCUENTO";
             // 
-            // txt_descuento
-            // 
-            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descuento.Limpiar = false;
-            this.txt_descuento.Location = new System.Drawing.Point(811, 40);
-            this.txt_descuento.Name = "txt_descuento";
-            this.txt_descuento.Size = new System.Drawing.Size(100, 26);
-            this.txt_descuento.TabIndex = 82;
-            this.txt_descuento.Text = "0";
-            this.txt_descuento.Validar = true;
-            this.txt_descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox12_KeyPress);
-            // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -285,20 +259,6 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // precio_pro
-            // 
-            this.precio_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.precio_pro.Enabled = false;
-            this.precio_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precio_pro.Limpiar = true;
-            this.precio_pro.Location = new System.Drawing.Point(698, 40);
-            this.precio_pro.Name = "precio_pro";
-            this.precio_pro.Size = new System.Drawing.Size(101, 26);
-            this.precio_pro.TabIndex = 79;
-            this.precio_pro.TabStop = false;
-            this.precio_pro.Validar = true;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -310,36 +270,6 @@
             this.label2.Size = new System.Drawing.Size(65, 18);
             this.label2.TabIndex = 78;
             this.label2.Text = "PRECIO";
-            // 
-            // cantidad_pro
-            // 
-            this.cantidad_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cantidad_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad_pro.Limpiar = false;
-            this.cantidad_pro.Location = new System.Drawing.Point(538, 40);
-            this.cantidad_pro.Name = "cantidad_pro";
-            this.cantidad_pro.Size = new System.Drawing.Size(81, 26);
-            this.cantidad_pro.TabIndex = 77;
-            this.cantidad_pro.Text = "1";
-            this.cantidad_pro.Validar = true;
-            this.cantidad_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_pro_KeyPress);
-            // 
-            // nombre_pro
-            // 
-            this.nombre_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.nombre_pro.Enabled = false;
-            this.nombre_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nombre_pro.Limpiar = false;
-            this.nombre_pro.Location = new System.Drawing.Point(181, 40);
-            this.nombre_pro.Name = "nombre_pro";
-            this.nombre_pro.Size = new System.Drawing.Size(266, 26);
-            this.nombre_pro.TabIndex = 76;
-            this.nombre_pro.TabStop = false;
-            this.nombre_pro.Text = "Descripción de producto";
-            this.nombre_pro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nombre_pro.Validar = true;
             // 
             // label3
             // 
@@ -372,19 +302,6 @@
             this.btn_verProductos.Text = "Ver [F5]";
             this.btn_verProductos.UseVisualStyleBackColor = false;
             this.btn_verProductos.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // codigo_pro
-            // 
-            this.codigo_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.codigo_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigo_pro.Limpiar = true;
-            this.codigo_pro.Location = new System.Drawing.Point(92, 40);
-            this.codigo_pro.Name = "codigo_pro";
-            this.codigo_pro.Size = new System.Drawing.Size(83, 26);
-            this.codigo_pro.TabIndex = 1;
-            this.codigo_pro.Validar = true;
-            this.codigo_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigo_pro_KeyPress);
             // 
             // panel4
             // 
@@ -439,50 +356,6 @@
             this.comboBoxVendedores.TabIndex = 72;
             this.comboBoxVendedores.Text = "VENDEDOR";
             // 
-            // txt_codigo_fac
-            // 
-            this.txt_codigo_fac.Enabled = false;
-            this.txt_codigo_fac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_fac.Limpiar = false;
-            this.txt_codigo_fac.Location = new System.Drawing.Point(784, 5);
-            this.txt_codigo_fac.Name = "txt_codigo_fac";
-            this.txt_codigo_fac.Size = new System.Drawing.Size(167, 26);
-            this.txt_codigo_fac.TabIndex = 71;
-            this.txt_codigo_fac.TabStop = false;
-            this.txt_codigo_fac.Text = "FAC000000";
-            this.txt_codigo_fac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_codigo_fac.Validar = true;
-            // 
-            // txt_serie_comprobante
-            // 
-            this.txt_serie_comprobante.Enabled = false;
-            this.txt_serie_comprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_serie_comprobante.Limpiar = false;
-            this.txt_serie_comprobante.Location = new System.Drawing.Point(957, 5);
-            this.txt_serie_comprobante.Name = "txt_serie_comprobante";
-            this.txt_serie_comprobante.Size = new System.Drawing.Size(156, 26);
-            this.txt_serie_comprobante.TabIndex = 70;
-            this.txt_serie_comprobante.TabStop = false;
-            this.txt_serie_comprobante.Text = "COMPROBANTE";
-            this.txt_serie_comprobante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_serie_comprobante.Validar = true;
-            // 
-            // txt_nombre_cliente
-            // 
-            this.txt_nombre_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_nombre_cliente.Enabled = false;
-            this.txt_nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre_cliente.Limpiar = false;
-            this.txt_nombre_cliente.Location = new System.Drawing.Point(156, 6);
-            this.txt_nombre_cliente.Name = "txt_nombre_cliente";
-            this.txt_nombre_cliente.Size = new System.Drawing.Size(220, 26);
-            this.txt_nombre_cliente.TabIndex = 69;
-            this.txt_nombre_cliente.TabStop = false;
-            this.txt_nombre_cliente.Text = "Nombre cliente";
-            this.txt_nombre_cliente.Validar = true;
-            this.txt_nombre_cliente.TextChanged += new System.EventHandler(this.txt_nombre_cliente_TextChanged);
-            // 
             // btn_clientes
             // 
             this.btn_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -501,19 +374,6 @@
             this.btn_clientes.Text = "CLIENTES";
             this.btn_clientes.UseVisualStyleBackColor = false;
             this.btn_clientes.Click += new System.EventHandler(this.btn_clientes_Click);
-            // 
-            // txt_codigo_cliente
-            // 
-            this.txt_codigo_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_codigo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_cliente.Limpiar = true;
-            this.txt_codigo_cliente.Location = new System.Drawing.Point(83, 6);
-            this.txt_codigo_cliente.Name = "txt_codigo_cliente";
-            this.txt_codigo_cliente.Size = new System.Drawing.Size(67, 26);
-            this.txt_codigo_cliente.TabIndex = 1;
-            this.txt_codigo_cliente.Validar = true;
-            this.txt_codigo_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox1_KeyPress);
             // 
             // label1
             // 
@@ -821,6 +681,55 @@
             this.panel6.Size = new System.Drawing.Size(1210, 90);
             this.panel6.TabIndex = 4;
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(543, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 18);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "- DESCUENTO:";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(798, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 18);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "TOTAL NETO:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(310, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 18);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "+ ITBIS:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 18);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "TOTAL BRUTO:";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // txt_total_desc
             // 
             this.txt_total_desc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -833,17 +742,6 @@
             this.txt_total_desc.TabStop = false;
             this.txt_total_desc.Text = "0.00";
             this.txt_total_desc.Validar = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(543, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 18);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "- DESCUENTO:";
             // 
             // txt_total_neto
             // 
@@ -890,43 +788,146 @@
             this.txt_total_bruto.Validar = true;
             this.txt_total_bruto.TextChanged += new System.EventHandler(this.txt_total_bruto_TextChanged);
             // 
-            // label6
+            // txt_numero_orden
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(798, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 18);
-            this.label6.TabIndex = 72;
-            this.label6.Text = "TOTAL NETO:";
+            this.txt_numero_orden.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_numero_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_numero_orden.Limpiar = true;
+            this.txt_numero_orden.Location = new System.Drawing.Point(272, 3);
+            this.txt_numero_orden.Name = "txt_numero_orden";
+            this.txt_numero_orden.Size = new System.Drawing.Size(126, 26);
+            this.txt_numero_orden.TabIndex = 87;
+            this.txt_numero_orden.Validar = true;
+            this.txt_numero_orden.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_orden_KeyPress);
             // 
-            // label5
+            // txt_descuento
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(310, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 18);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "+ ITBIS:";
+            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_descuento.Limpiar = false;
+            this.txt_descuento.Location = new System.Drawing.Point(811, 40);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(100, 26);
+            this.txt_descuento.TabIndex = 82;
+            this.txt_descuento.Text = "0";
+            this.txt_descuento.Validar = true;
+            this.txt_descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox12_KeyPress);
             // 
-            // label4
+            // precio_pro
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 18);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "TOTAL BRUTO:";
+            this.precio_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.precio_pro.Enabled = false;
+            this.precio_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precio_pro.Limpiar = true;
+            this.precio_pro.Location = new System.Drawing.Point(698, 40);
+            this.precio_pro.Name = "precio_pro";
+            this.precio_pro.Size = new System.Drawing.Size(101, 26);
+            this.precio_pro.TabIndex = 79;
+            this.precio_pro.TabStop = false;
+            this.precio_pro.Validar = true;
             // 
-            // timer1
+            // cantidad_pro
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.cantidad_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cantidad_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantidad_pro.Limpiar = false;
+            this.cantidad_pro.Location = new System.Drawing.Point(538, 40);
+            this.cantidad_pro.Name = "cantidad_pro";
+            this.cantidad_pro.Size = new System.Drawing.Size(81, 26);
+            this.cantidad_pro.TabIndex = 77;
+            this.cantidad_pro.Text = "1";
+            this.cantidad_pro.Validar = true;
+            this.cantidad_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_pro_KeyPress);
+            // 
+            // nombre_pro
+            // 
+            this.nombre_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.nombre_pro.Enabled = false;
+            this.nombre_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.nombre_pro.Limpiar = false;
+            this.nombre_pro.Location = new System.Drawing.Point(181, 40);
+            this.nombre_pro.Name = "nombre_pro";
+            this.nombre_pro.Size = new System.Drawing.Size(266, 26);
+            this.nombre_pro.TabIndex = 76;
+            this.nombre_pro.TabStop = false;
+            this.nombre_pro.Text = "Descripción de producto";
+            this.nombre_pro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nombre_pro.Validar = true;
+            // 
+            // codigo_pro
+            // 
+            this.codigo_pro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.codigo_pro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codigo_pro.Limpiar = true;
+            this.codigo_pro.Location = new System.Drawing.Point(92, 40);
+            this.codigo_pro.Name = "codigo_pro";
+            this.codigo_pro.Size = new System.Drawing.Size(83, 26);
+            this.codigo_pro.TabIndex = 1;
+            this.codigo_pro.Validar = true;
+            this.codigo_pro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigo_pro_KeyPress);
+            // 
+            // txt_codigo_fac
+            // 
+            this.txt_codigo_fac.Enabled = false;
+            this.txt_codigo_fac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo_fac.Limpiar = false;
+            this.txt_codigo_fac.Location = new System.Drawing.Point(784, 5);
+            this.txt_codigo_fac.Name = "txt_codigo_fac";
+            this.txt_codigo_fac.Size = new System.Drawing.Size(167, 26);
+            this.txt_codigo_fac.TabIndex = 71;
+            this.txt_codigo_fac.TabStop = false;
+            this.txt_codigo_fac.Text = "FAC000000";
+            this.txt_codigo_fac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_codigo_fac.Validar = true;
+            // 
+            // txt_serie_comprobante
+            // 
+            this.txt_serie_comprobante.Enabled = false;
+            this.txt_serie_comprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_serie_comprobante.Limpiar = false;
+            this.txt_serie_comprobante.Location = new System.Drawing.Point(957, 5);
+            this.txt_serie_comprobante.Name = "txt_serie_comprobante";
+            this.txt_serie_comprobante.Size = new System.Drawing.Size(156, 26);
+            this.txt_serie_comprobante.TabIndex = 70;
+            this.txt_serie_comprobante.TabStop = false;
+            this.txt_serie_comprobante.Text = "COMPROBANTE";
+            this.txt_serie_comprobante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_serie_comprobante.Validar = true;
+            // 
+            // txt_nombre_cliente
+            // 
+            this.txt_nombre_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_nombre_cliente.Enabled = false;
+            this.txt_nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre_cliente.Limpiar = false;
+            this.txt_nombre_cliente.Location = new System.Drawing.Point(156, 6);
+            this.txt_nombre_cliente.Name = "txt_nombre_cliente";
+            this.txt_nombre_cliente.Size = new System.Drawing.Size(220, 26);
+            this.txt_nombre_cliente.TabIndex = 69;
+            this.txt_nombre_cliente.TabStop = false;
+            this.txt_nombre_cliente.Text = "Nombre cliente";
+            this.txt_nombre_cliente.Validar = true;
+            this.txt_nombre_cliente.TextChanged += new System.EventHandler(this.txt_nombre_cliente_TextChanged);
+            // 
+            // txt_codigo_cliente
+            // 
+            this.txt_codigo_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_codigo_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo_cliente.Limpiar = true;
+            this.txt_codigo_cliente.Location = new System.Drawing.Point(83, 6);
+            this.txt_codigo_cliente.Name = "txt_codigo_cliente";
+            this.txt_codigo_cliente.Size = new System.Drawing.Size(67, 26);
+            this.txt_codigo_cliente.TabIndex = 1;
+            this.txt_codigo_cliente.Validar = true;
+            this.txt_codigo_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.errorTxtBox1_KeyPress);
             // 
             // VentasModoTouch
             // 
@@ -991,7 +992,7 @@
         private System.Windows.Forms.Label disponible_pro;
         private System.Windows.Forms.ComboBox comboBoxCombrobante;
         private System.Windows.Forms.Button Reservar;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label txt_OrdenesCons;
         public System.Windows.Forms.DataGridView dataGridViewProducto;
         public ErrorTxtBox txt_codigo_cliente;
         public ErrorTxtBox codigo_pro;

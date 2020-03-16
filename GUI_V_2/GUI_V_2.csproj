@@ -98,6 +98,12 @@
     <Compile Include="Combrobantes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="ConsResOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsResOrden.Designer.cs">
+      <DependentUpon>ConsResOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsUniMed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,12 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensajes\MuestraNumOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\MuestraNumOrden.Designer.cs">
+      <DependentUpon>MuestraNumOrden.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensajes\NotaReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +373,9 @@
     <EmbeddedResource Include="AbrirCaja.resx">
       <DependentUpon>AbrirCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsResOrden.resx">
+      <DependentUpon>ConsResOrden.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsUniMed.resx">
       <DependentUpon>ConsUniMed.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\MuestraNumOrden.resx">
+      <DependentUpon>MuestraNumOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensajes\NotaReserva.resx">
       <DependentUpon>NotaReserva.cs</DependentUpon>
