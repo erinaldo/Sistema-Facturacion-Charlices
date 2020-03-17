@@ -42,39 +42,48 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Size = new System.Drawing.Size(125, 31);
             this.label2.Text = "Ordenes ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(441, 46);
+            this.button1.Location = new System.Drawing.Point(588, 57);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
-            this.filtro.Location = new System.Drawing.Point(146, 49);
+            this.filtro.Location = new System.Drawing.Point(195, 60);
+            this.filtro.Margin = new System.Windows.Forms.Padding(5);
+            this.filtro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.filtro_KeyUp);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(12, 56);
+            this.label16.Location = new System.Drawing.Point(16, 69);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(865, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1153, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(760, 49);
+            this.btn_nuevo.Location = new System.Drawing.Point(1013, 60);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
             this.btn_nuevo.Visible = false;
             // 
             // nro_registros
             // 
-            this.nro_registros.Location = new System.Drawing.Point(635, 71);
+            this.nro_registros.Location = new System.Drawing.Point(847, 87);
+            this.nro_registros.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(727, 12);
+            this.button2.Location = new System.Drawing.Point(969, 15);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Visible = false;
             // 
             // dataGridOrdenes
@@ -107,7 +116,8 @@
             this.id_cliente,
             this.estado});
             this.dataGridOrdenes.EnableHeadersVisualStyles = false;
-            this.dataGridOrdenes.Location = new System.Drawing.Point(16, 95);
+            this.dataGridOrdenes.Location = new System.Drawing.Point(21, 117);
+            this.dataGridOrdenes.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridOrdenes.Name = "dataGridOrdenes";
             this.dataGridOrdenes.ReadOnly = true;
             this.dataGridOrdenes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -127,7 +137,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridOrdenes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridOrdenes.Size = new System.Drawing.Size(879, 368);
+            this.dataGridOrdenes.Size = new System.Drawing.Size(1172, 453);
             this.dataGridOrdenes.TabIndex = 115;
             // 
             // id
@@ -164,12 +174,14 @@
             // 
             // ConsResOrden
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 475);
+            this.ClientSize = new System.Drawing.Size(1209, 585);
             this.Controls.Add(this.dataGridOrdenes);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ConsResOrden";
             this.Text = "ConsResOrden";
+            this.Load += new System.EventHandler(this.ConsResOrden_Load);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);

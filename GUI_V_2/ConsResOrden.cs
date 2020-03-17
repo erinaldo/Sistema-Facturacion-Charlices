@@ -16,7 +16,7 @@ namespace GUI_V_2
         {
             InitializeComponent();
             id.DataPropertyName = "id";
-            id_cliente.DataPropertyName = "id_cliente";
+            id_cliente.DataPropertyName = "nombre_completo";
             fecha.DataPropertyName = "fecha";
             estado.DataPropertyName = "estado";
             LlenarDataGrid();
@@ -30,12 +30,12 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    var Ordenes = from c in DB.Ordenes_Reservadas
+                    var Ordenes = from o in DB.Ordenes_Reservadas join c in DB.Clientes on o.id_cliente equals c.id
                                   select new
                                   {
-                                      c.id,
-                                      c.id_cliente,
-                                      c.fecha,
+                                      o.id,
+                                      c.nombre_completo,
+                                      o.fecha,
                                       estado = c.estado==true ? "PAGA" : "SIN PAGAR",
 
                                   };
@@ -47,7 +47,7 @@ namespace GUI_V_2
                     else
                     {
                         Ordenes = Ordenes.
-                        Where(c => (c.id == Convert.ToInt16(condicion) || c.id_cliente == Convert.ToInt16(condicion)));
+                        Where(c => (c.id == int.Parse(condicion) || c.nombre_completo == condicion));
                     }
 
 
@@ -58,6 +58,7 @@ namespace GUI_V_2
             }
             catch (Exception aa)
             {
+                MessageBox.Show(aa.ToString());
                 //error charly
             }
         }
@@ -71,6 +72,14 @@ namespace GUI_V_2
             Close();
         }
 
+        private void ConsResOrden_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void filtro_KeyUp(object sender, KeyEventArgs e)
+        {
+            //LlenarDataGrid(filtro.Text.Trim());
+        }
     }
 }
