@@ -96,6 +96,7 @@
           <Property Name="id_cliente" Type="int" Nullable="false" />
           <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="fecha" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="id_mesera" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -272,6 +273,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MESERA">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Ordenes_Reservadas" Type="Self.Ordenes_Reservadas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ordenes_Reservadas">
+              <PropertyRef Name="id_mesera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ORDEN">
           <End Role="Ordenes_Reservadas" Type="Self.Ordenes_Reservadas" Multiplicity="1" />
           <End Role="Detalles_Ordenes" Type="Self.Detalles_Ordenes" Multiplicity="*" />
@@ -352,6 +365,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Facturas" EntitySet="Facturas" />
           </AssociationSet>
+          <AssociationSet Name="FK_MESERA" Association="Self.FK_MESERA">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+          </AssociationSet>
           <AssociationSet Name="FK_ORDEN" Association="Self.FK_ORDEN">
             <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
             <End Role="Detalles_Ordenes" EntitySet="Detalles_Ordenes" />
@@ -428,6 +445,10 @@
           <AssociationSet Name="FK_UNIDADES_MEDIDAS" Association="Model.FK_UNIDADES_MEDIDAS">
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
             <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MESERA" Association="Model.FK_MESERA">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="FACT_Result">
@@ -558,6 +579,8 @@
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="Clientes" Relationship="Model.FK_CLIENTES" FromRole="Ordenes_Reservadas" ToRole="Clientes" />
           <NavigationProperty Name="Detalles_Ordenes" Relationship="Model.FK_ORDEN" FromRole="Ordenes_Reservadas" ToRole="Detalles_Ordenes" />
+          <Property Name="id_mesera" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_MESERA" FromRole="Ordenes_Reservadas" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -620,6 +643,7 @@
           <Property Name="estado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_CAJERO" FromRole="Usuarios" ToRole="Facturas" />
           <NavigationProperty Name="Facturas1" Relationship="Model.FK_Facturas_VENDEDOR" FromRole="Usuarios" ToRole="Facturas" />
+          <NavigationProperty Name="Ordenes_Reservadas" Relationship="Model.FK_MESERA" FromRole="Usuarios" ToRole="Ordenes_Reservadas" />
         </EntityType>
         <Association Name="FK_CATEGORIAS">
           <End Type="Model.Categorias" Role="Categorias" Multiplicity="1" />
@@ -765,6 +789,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MESERA">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Ordenes_Reservadas" Role="Ordenes_Reservadas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Ordenes_Reservadas">
+              <PropertyRef Name="id_mesera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -888,6 +924,7 @@
           <EntitySetMapping Name="Ordenes_Reservadas">
             <EntityTypeMapping TypeName="Model.Ordenes_Reservadas">
               <MappingFragment StoreEntitySet="Ordenes_Reservadas">
+                <ScalarProperty Name="id_mesera" ColumnName="id_mesera" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />

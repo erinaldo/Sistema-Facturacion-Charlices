@@ -29,6 +29,7 @@
         <AssociationConnector Association="Model.FK_Facturas_METOGO_PAGO" />
         <AssociationConnector Association="Model.FK_Facturas_VENDEDOR" />
         <AssociationConnector Association="Model.FK_UNIDADES_MEDIDAS" />
+        <AssociationConnector Association="Model.FK_MESERA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
