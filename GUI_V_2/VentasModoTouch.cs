@@ -195,6 +195,23 @@ namespace GUI_V_2
                             double itbisProVenta = Double.Parse(registsros.Cells[5].Value.ToString());
                             if (producto.tipo_producto == 1) producto.cantidad -= cantidaProVendida;
 
+
+                            if(Reservar.Text.Equals("Reservar Orden")){
+                                bool cocinarPro = bool.Parse(registsros.Cells[8].Value.ToString());
+                                if (cocinarPro)
+                                {
+                                    string nombreProducto = registsros.Cells[1].Value.ToString();
+
+                                    ProOrdenList.Add(new ProductosOrden()
+                                    {
+                                        Id_producto = producto.id,
+                                        Cantidad = cantidaProVendida,
+                                        Nombre_producto = nombreProducto
+                                    });
+                                }
+                            }
+
+
                             Detalles_Facturas detalles_fac = new Detalles_Facturas
                             {
                                 id_producto = producto.id,
@@ -235,6 +252,14 @@ namespace GUI_V_2
                     {
                         ImprimirTicketVenta();
                     }
+
+
+                    if (Reservar.Text.Equals("Reservar Orden"))
+                    {
+                        ImprimirTicketReserva();
+                        ProOrdenList.Clear();
+                    }
+
                     LimpiarCampo();
                     MessageBox.Show("La factura se creo correctamente.");
                     GenerarCodigoFac();
