@@ -18,7 +18,9 @@ namespace GUI_V_2
             id.DataPropertyName = "id";
             id_cliente.DataPropertyName = "nombre_completo";
             fecha.DataPropertyName = "fecha";
+            id_mesera.DataPropertyName = "id_mesera";
             estado.DataPropertyName = "estado";
+
             LlenarDataGrid();
         }
 
@@ -30,12 +32,13 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    var Ordenes = from o in DB.Ordenes_Reservadas join c in DB.Clientes on o.id_cliente equals c.id
+                    var Ordenes = from o in DB.Ordenes_Reservadas join c in DB.Clientes on o.id_cliente equals c.id join m in DB.Usuarios on o.id_mesera equals m.id
                                   select new
                                   {
                                       o.id,
                                       c.nombre_completo,
                                       o.fecha,
+                                      id_mesera= m.nombre_completo,
                                       estado = c.estado==true ? "PAGA" : "SIN PAGAR",
 
                                   };

@@ -43,55 +43,72 @@ namespace GUI_V_2
 
         public void LlenarDataGrid(string condicion = "")
         {
-            using (CRUD_MODEL DB = new CRUD_MODEL())
+            try
             {
-                var facturas = from fac in DB.Facturas  join cli in DB.Clientes on fac.id_cliente
-                                                   equals cli.id join usu in DB.Usuarios on fac.usuario_cajero_id
-                                                   equals usu.id
-                                                join user in DB.Usuarios on fac.usuario_vendedor_id
-                                                  equals user.id
-                                                select new
-                                                    {
-                                                      codigo = fac.id,
-                                                      fac.fecha,
-                                                      nombre_cliente = cli.nombre_completo,
-                                                      vendedor = user.nombre_completo,
-                                                      cajero = usu.nombre_completo,
-                                                      fac.subtotal,
-                                                      fac.itbis_total,
-                                                      fac.total,
-                                                      estado = fac.estado == true ? "Activa" : "Anulada"
-                                                    };
-               /* if (condicion.Equals("")==false)
+                using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    facturas = facturas.
-                    Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
-                }*/
+                    var facturas = from fac in DB.Facturas
+                                   join cli in DB.Clientes on fac.id_cliente
+                              equals cli.id
+                                   join usu in DB.Usuarios on fac.usuario_cajero_id
+                     equals usu.id
+                                   join user in DB.Usuarios on fac.usuario_vendedor_id
+                                     equals user.id
+                                   select new
+                                   {
+                                       codigo = fac.id,
+                                       fac.fecha,
+                                       nombre_cliente = cli.nombre_completo,
+                                       vendedor = user.nombre_completo,
+                                       cajero = usu.nombre_completo,
+                                       fac.subtotal,
+                                       fac.itbis_total,
+                                       fac.total,
+                                       estado = fac.estado == true ? "Anulada" : "Facturada"
+                                   };
+                    /* if (condicion.Equals("")==false)
+                     {
+                         facturas = facturas.
+                         Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
+                     }*/
 
-                dataGridView1.DataSource = facturas.ToList();
-                dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
-                dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
+                    dataGridView1.DataSource = facturas.ToList();
+                    dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
 
-                dataGridView1.Columns["itbis"].ValueType = typeof(System.Decimal);
-                dataGridView1.Columns["itbis"].DefaultCellStyle.Format = "N";
+                    dataGridView1.Columns["itbis"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["itbis"].DefaultCellStyle.Format = "N";
 
-                dataGridView1.Columns["total"].ValueType = typeof(System.Decimal);
-                dataGridView1.Columns["total"].DefaultCellStyle.Format = "N";
+                    dataGridView1.Columns["total"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["total"].DefaultCellStyle.Format = "N";
+                }
+                nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
+
+                double total_ventas = 0;
+
+                for (int a = 0; a <=dataGridView1.Rows.Count; a++)
+                {
+                    total_ventas +=Convert.ToDouble(dataGridView1.Rows[0].Cells[7].Value.ToString());
+                }
+                txt_totalGrid.Text = total_ventas.ToString();
+
+            } catch(Exception aa)
+            {
+               //Error Charly
             }
-            nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
         
 
         //Botono anular venta
         private void btn_anular_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count>0)
+            if (dataGridView1.SelectedRows.Count<1)
             {
-                MessageBox.Show("Debe seleccionar la venta que desea borrar.", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar la venta que desea borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (MessageBox.Show("Seguro que desea cancelar esta venta ?","Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes )
+            if (MessageBox.Show("Seguro que desea cancelar esta venta ?","Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
             {
 
 

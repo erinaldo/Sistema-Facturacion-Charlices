@@ -38,6 +38,8 @@
             this.btn_anular = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.p_resumen = new System.Windows.Forms.Panel();
+            this.txt_NumFac = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_subtotal = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_NumFac = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.p_resumen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -224,6 +224,27 @@
             this.p_resumen.Size = new System.Drawing.Size(308, 118);
             this.p_resumen.TabIndex = 117;
             // 
+            // txt_NumFac
+            // 
+            this.txt_NumFac.AutoSize = true;
+            this.txt_NumFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NumFac.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.txt_NumFac.Location = new System.Drawing.Point(131, 26);
+            this.txt_NumFac.Name = "txt_NumFac";
+            this.txt_NumFac.Size = new System.Drawing.Size(20, 24);
+            this.txt_NumFac.TabIndex = 14;
+            this.txt_NumFac.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "-FACTURA #:";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -380,7 +401,7 @@
             // 
             // vendedor
             // 
-            this.vendedor.HeaderText = "VENDEDOR";
+            this.vendedor.HeaderText = "MESERA/O";
             this.vendedor.Name = "vendedor";
             this.vendedor.ReadOnly = true;
             // 
@@ -414,27 +435,6 @@
             this.estado.HeaderText = "ESTADO";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "-FACTURA #:";
-            // 
-            // txt_NumFac
-            // 
-            this.txt_NumFac.AutoSize = true;
-            this.txt_NumFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NumFac.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txt_NumFac.Location = new System.Drawing.Point(131, 26);
-            this.txt_NumFac.Name = "txt_NumFac";
-            this.txt_NumFac.Size = new System.Drawing.Size(20, 24);
-            this.txt_NumFac.TabIndex = 14;
-            this.txt_NumFac.Text = "0";
             // 
             // ConsVentas
             // 
@@ -496,6 +496,8 @@
         private System.Windows.Forms.Label txt_itbis;
         private System.Windows.Forms.CheckBox ActivarRango;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txt_NumFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_cliente;
@@ -505,7 +507,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label txt_NumFac;
     }
 }

@@ -355,13 +355,14 @@ namespace GUI_V_2
                 ConsCli obj = new ConsCli();
                 if (obj.ShowDialog() == DialogResult.OK)
                 {
+                    txt_codigo_cliente.Text = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    txt_codigo_cliente.Focus();
+                    SendKeys.Send("{ENTER}");
                     string codigo = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[0].Value.ToString();
                     string nombre = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[1].Value.ToString();
                     int id = int.Parse(obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[8].Value.ToString());
                     string tipoCliente = obj.dataGridClientes.Rows[obj.dataGridClientes.CurrentCell.RowIndex].Cells[5].Value.ToString();
                     int tipoCl = tipoCliente == "NORMAL" ? 1 : tipoCliente == "EMPRESA" ? 2 : 3;
-
-                    SetCampoByCliente(nombre, codigo, id, tipoCl);
                 }
             }
             catch (Exception a)
@@ -1354,11 +1355,14 @@ namespace GUI_V_2
         {
             if (dataGridViewProducto.Rows.Count > 0)
             {
-                DialogResult pregunta = MessageBox.Show($"¿Esta seguro que desea borrar todos los productos del carrito?", "Confirme", MessageBoxButtons.YesNo);
+                DialogResult pregunta = MessageBox.Show($"¿Esta seguro que desea borrar todos los productos ?", "Confirme", MessageBoxButtons.YesNo);
                 if (pregunta != DialogResult.Yes)
                 {
                     return;
-
+                }
+                else
+                {
+                    LimpiarCampo();
                 }
 
             }
@@ -1383,8 +1387,6 @@ namespace GUI_V_2
             }
 
         }
-
-        
     }
 }
 

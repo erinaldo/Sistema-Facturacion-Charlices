@@ -37,15 +37,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CedCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txt_motivo = new GUI_V_2.ErrorTxtBox();
             this.txt_monto = new GUI_V_2.ErrorTxtBox();
+            this.CodPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CedCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(497, 153);
+            this.button1.Location = new System.Drawing.Point(497, 154);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 42);
             this.button1.TabIndex = 127;
@@ -79,9 +79,9 @@
             this.btn_limpiar.ForeColor = System.Drawing.Color.White;
             this.btn_limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpiar.Image")));
             this.btn_limpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_limpiar.Location = new System.Drawing.Point(508, 495);
+            this.btn_limpiar.Location = new System.Drawing.Point(508, 483);
             this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(169, 37);
+            this.btn_limpiar.Size = new System.Drawing.Size(169, 50);
             this.btn_limpiar.TabIndex = 126;
             this.btn_limpiar.Text = "ELIMINAR";
             this.btn_limpiar.UseVisualStyleBackColor = false;
@@ -136,7 +136,7 @@
             this.NomPro,
             this.CedCli});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 201);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 202);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -156,30 +156,8 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(665, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 275);
             this.dataGridView1.TabIndex = 122;
-            // 
-            // CodPro
-            // 
-            this.CodPro.FillWeight = 51.84586F;
-            this.CodPro.HeaderText = "FECHA";
-            this.CodPro.Name = "CodPro";
-            this.CodPro.ReadOnly = true;
-            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // NomPro
-            // 
-            this.NomPro.FillWeight = 162.959F;
-            this.NomPro.HeaderText = "MOTIVO EGRESO";
-            this.NomPro.Name = "NomPro";
-            this.NomPro.ReadOnly = true;
-            // 
-            // CedCli
-            // 
-            this.CedCli.FillWeight = 101.5227F;
-            this.CedCli.HeaderText = "MONTO";
-            this.CedCli.Name = "CedCli";
-            this.CedCli.ReadOnly = true;
             // 
             // panel1
             // 
@@ -256,12 +234,34 @@
             this.txt_monto.TabIndex = 123;
             this.txt_monto.Validar = true;
             // 
+            // CodPro
+            // 
+            this.CodPro.FillWeight = 51.84586F;
+            this.CodPro.HeaderText = "FECHA";
+            this.CodPro.Name = "CodPro";
+            this.CodPro.ReadOnly = true;
+            this.CodPro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // NomPro
+            // 
+            this.NomPro.FillWeight = 162.959F;
+            this.NomPro.HeaderText = "MOTIVO";
+            this.NomPro.Name = "NomPro";
+            this.NomPro.ReadOnly = true;
+            // 
+            // CedCli
+            // 
+            this.CedCli.FillWeight = 101.5227F;
+            this.CedCli.HeaderText = "MONTO $";
+            this.CedCli.Name = "CedCli";
+            this.CedCli.ReadOnly = true;
+            // 
             // Entrada_SalidaCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(689, 536);
+            this.ClientSize = new System.Drawing.Size(689, 537);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.button1);
@@ -295,10 +295,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomPro;
         private System.Windows.Forms.DataGridViewTextBoxColumn CedCli;
-        public System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
