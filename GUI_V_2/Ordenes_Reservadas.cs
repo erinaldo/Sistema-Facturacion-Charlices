@@ -24,9 +24,11 @@ namespace GUI_V_2
         public int id_cliente { get; set; }
         public bool estado { get; set; }
         public System.DateTime fecha { get; set; }
+        public int id_mesera { get; set; }
     
         public virtual Clientes Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalles_Ordenes> Detalles_Ordenes { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

@@ -916,6 +916,8 @@ namespace GUI_V_2
                     if (orden != null)
                     {
                         orden.id_cliente = id_cliente;
+                        orden.fecha = DateTime.Today;
+                        orden.id_mesera = int.Parse(comboBoxVendedores.SelectedValue.ToString());
                     }
 
 
@@ -1009,6 +1011,8 @@ namespace GUI_V_2
                     Ordenes_Reservadas orden = new Ordenes_Reservadas
                     {
                         id_cliente = id_cliente,
+                        fecha = DateTime.Today,
+                        id_mesera = int.Parse(comboBoxVendedores.SelectedValue.ToString())
                     };
 
 
@@ -1095,6 +1099,7 @@ namespace GUI_V_2
                                 where ord.id == codigo_orden
                                 select new
                                 {
+                                    ord.id_mesera,
                                     ord.estado,
                                     ord.id_cliente,
                                     cli.tipo_cliente,
@@ -1125,6 +1130,7 @@ namespace GUI_V_2
                             txt_nombre_cliente.Text = registro_orden.nombre_completo;
                             id_cliente = registro_orden.id_cliente;
                             tipo_cliente = registro_orden.tipo_cliente;
+                            comboBoxVendedores.SelectedValue = registro_orden.id_mesera;
                             int cantidad_pro = registro_orden.cantidad_producto;
                             double precio_pro = registro_orden.precio_producto;
                             double sub_total = cantidad_pro * precio_pro;
