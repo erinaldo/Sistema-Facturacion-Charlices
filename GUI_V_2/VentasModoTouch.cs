@@ -256,7 +256,7 @@ namespace GUI_V_2
 
                     if (Reservar.Text.Equals("Reservar Orden"))
                     {
-                        ImprimirTicketReserva();
+                        ImprimirTicketReserva(true);
                         ProOrdenList.Clear();
                     }
 
@@ -1290,7 +1290,7 @@ namespace GUI_V_2
 
 
         //Ticket de Orden - Para cocina
-        public void ImprimirTicketReserva()
+        public void ImprimirTicketReserva(bool venta_Reservada = false)
         {
             //Usar Lista ProOrdenList para imprimir el tickets
             FormConGen empresa = new FormConGen();
@@ -1300,7 +1300,14 @@ namespace GUI_V_2
             //Datos de la cabecera del Ticket.
             ticket.TextoCentro("TICKET PARA COCINA");
             ticket.lineasAsteriscos();
-            ticket.TextoIzquierda("# ORDEN: " + txt_numero_orden.Text.Trim());
+            if (venta_Reservada)
+            {
+                ticket.TextoIzquierda("# ORDEN: FAC000" + txt_codigo_fac.Text.Trim());
+            }
+            else
+            {
+                ticket.TextoIzquierda("# ORDEN: " + txt_numero_orden.Text.Trim());
+            }
             ticket.TextoIzquierda("");
 
             //Sub cabecera.
