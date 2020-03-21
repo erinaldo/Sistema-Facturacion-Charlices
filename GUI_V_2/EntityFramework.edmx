@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aperturas_Cajas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="monto_inicial" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="id" />
@@ -309,10 +318,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_USUARIO">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Aperturas_Cajas" Type="Self.Aperturas_Cajas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aperturas_Cajas">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="FACT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGOFACT" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Aperturas_Cajas" EntityType="Self.Aperturas_Cajas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
@@ -376,6 +398,10 @@
           <AssociationSet Name="FK_UNIDADES_MEDIDAS" Association="Self.FK_UNIDADES_MEDIDAS">
             <End Role="Unidades_medidas" EntitySet="Unidades_medidas" />
             <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO" Association="Self.FK_USUARIO">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Aperturas_Cajas" EntitySet="Aperturas_Cajas" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -449,6 +475,11 @@
           <AssociationSet Name="FK_MESERA" Association="Model.FK_MESERA">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ordenes_Reservadas" EntitySet="Ordenes_Reservadas" />
+          </AssociationSet>
+          <EntitySet Name="Aperturas_Cajas" EntityType="Model.Aperturas_Cajas" />
+          <AssociationSet Name="FK_USUARIO" Association="Model.FK_USUARIO">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Aperturas_Cajas" EntitySet="Aperturas_Cajas" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="FACT_Result">
@@ -644,6 +675,7 @@
           <NavigationProperty Name="Facturas" Relationship="Model.FK_Facturas_CAJERO" FromRole="Usuarios" ToRole="Facturas" />
           <NavigationProperty Name="Facturas1" Relationship="Model.FK_Facturas_VENDEDOR" FromRole="Usuarios" ToRole="Facturas" />
           <NavigationProperty Name="Ordenes_Reservadas" Relationship="Model.FK_MESERA" FromRole="Usuarios" ToRole="Ordenes_Reservadas" />
+          <NavigationProperty Name="Aperturas_Cajas" Relationship="Model.FK_USUARIO" FromRole="Usuarios" ToRole="Aperturas_Cajas" />
         </EntityType>
         <Association Name="FK_CATEGORIAS">
           <End Type="Model.Categorias" Role="Categorias" Multiplicity="1" />
@@ -798,6 +830,28 @@
             </Principal>
             <Dependent Role="Ordenes_Reservadas">
               <PropertyRef Name="id_mesera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Aperturas_Cajas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="monto_inicial" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_USUARIO" FromRole="Aperturas_Cajas" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_USUARIO">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Aperturas_Cajas" Role="Aperturas_Cajas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aperturas_Cajas">
+              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -987,6 +1041,16 @@
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aperturas_Cajas">
+            <EntityTypeMapping TypeName="Model.Aperturas_Cajas">
+              <MappingFragment StoreEntitySet="Aperturas_Cajas">
+                <ScalarProperty Name="monto_inicial" ColumnName="monto_inicial" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

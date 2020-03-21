@@ -20,6 +20,7 @@ namespace GUI_V_2
             this.Facturas = new HashSet<Facturas>();
             this.Facturas1 = new HashSet<Facturas>();
             this.Ordenes_Reservadas = new HashSet<Ordenes_Reservadas>();
+            this.Aperturas_Cajas = new HashSet<Aperturas_Cajas>();
         }
     
         public int id { get; set; }
@@ -40,5 +41,7 @@ namespace GUI_V_2
         public virtual ICollection<Facturas> Facturas1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ordenes_Reservadas> Ordenes_Reservadas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Aperturas_Cajas> Aperturas_Cajas { get; set; }
     }
 }

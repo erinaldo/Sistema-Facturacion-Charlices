@@ -30,6 +30,8 @@
         <AssociationConnector Association="Model.FK_Facturas_VENDEDOR" />
         <AssociationConnector Association="Model.FK_UNIDADES_MEDIDAS" />
         <AssociationConnector Association="Model.FK_MESERA" />
+        <EntityTypeShape EntityType="Model.Aperturas_Cajas" Width="1.5" PointX="3" PointY="6.625" />
+        <AssociationConnector Association="Model.FK_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
