@@ -8,8 +8,12 @@ namespace GUI_V_2
 {
     class Utilidades
     {
+        
         public static int ConFact = 1;
         public static String NotaVenta = "";
+
+        public static int id_usuario = 0;
+        public static int tipo_usuario = 0;
 
         public static Boolean ValidarFormulario(Control objeto, ErrorProvider ErrorProvider)
         {
@@ -38,6 +42,27 @@ namespace GUI_V_2
             }
 
             return HayError;
+        }
+
+
+        public static bool ValidarAperturaCaja(bool mostrarMensaje = true)
+        {
+            bool estado = true;
+            using (CRUD_MODEL DB = new CRUD_MODEL())
+            {
+                DateTime fechaInicio = DateTime.Today;
+                DateTime fechaFinal= DateTime.Now;
+
+                IQueryable<Aperturas_Cajas> caja = DB.Aperturas_Cajas.Where(c => c.fecha>=fechaInicio  && c.fecha <= fechaFinal);
+                var resp = caja.SingleOrDefault();
+                if (resp == null)
+                {
+                    
+                    if(mostrarMensaje) MessageBox.Show("No se le ha dado la apertura del día a la caja.");
+                    estado  = false; 
+                }
+                return estado;
+            }
         }
 
 

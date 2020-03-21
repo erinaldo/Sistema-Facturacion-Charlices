@@ -25,15 +25,26 @@ namespace GUI_V_2
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
-            obj.ShowDialog();
+            if (Utilidades.ValidarAperturaCaja())
+            {
+                Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
+                obj.ShowDialog();
+            }
         }
 
         //Panel Abrir Caja
         private void label5_Click(object sender, EventArgs e)
         {
-            AbrirCaja obj = new AbrirCaja();
-            obj.ShowDialog();
+            if (!Utilidades.ValidarAperturaCaja(false))
+            {
+                AbrirCaja obj = new AbrirCaja();
+                obj.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Ya se ha abierto la apertura de la caja del día.");
+            }
+           
         }
     }
 }

@@ -89,6 +89,9 @@
     <Compile Include="AbrirCaja.Designer.cs">
       <DependentUpon>AbrirCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aperturas_Cajas.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>

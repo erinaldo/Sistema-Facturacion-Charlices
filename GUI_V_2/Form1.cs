@@ -157,26 +157,43 @@ namespace GUI_V_2
         {
             if (e.KeyCode == Keys.F5)
             {
-                VentasModoTouch obj = new VentasModoTouch();
-                obj.ShowDialog();
+                AbrirFormVenta();
             }
             if (e.KeyCode == Keys.F7)
             {
-                Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
-                obj.ShowDialog();
+                AbrirFormEntradaSalidaCajaVenta();
             }
         }
 
         private void btn_vender_Click(object sender, EventArgs e)
         {
-            VentasModoTouch obj = new VentasModoTouch();
-            obj.ShowDialog();
+            AbrirFormVenta();
+
+        }
+
+        public void AbrirFormVenta()
+        {
+            if (Utilidades.ValidarAperturaCaja())
+            {
+                VentasModoTouch obj = new VentasModoTouch();
+                obj.ShowDialog();
+            }
+                
+        }
+
+        public void AbrirFormEntradaSalidaCajaVenta()
+        {
+            if (Utilidades.ValidarAperturaCaja())
+            {
+                Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
+                obj.ShowDialog();
+            }
+
         }
 
         private void btn_salida_Click(object sender, EventArgs e)
         {
-            Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
-            obj.ShowDialog();
+            AbrirFormEntradaSalidaCajaVenta();
         }
 
     }

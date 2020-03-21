@@ -30,9 +30,25 @@ namespace GUI_V_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-         Form1 ventana = new Form1();
-            this.Hide();
-            ventana.Show();
+            if (Utilidades.ValidarFormulario(this,errorProvider1)) return;
+            using (CRUD_MODEL DB = new CRUD_MODEL())
+            {
+                IQueryable<Usuarios> usuario = DB.Usuarios.Where(u => u.usuario == txt_user.Text.Trim() && u.password == txt_pass.Text.Trim());
+
+                var resp = usuario.SingleOrDefault();
+                if (resp == null)
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrecto.");
+                    return;
+                }
+
+                Utilidades.id_usuario = resp.id;
+                Utilidades.tipo_usuario = resp.tipo_usuario;
+                Form1 ventana = new Form1();
+                this.Hide();
+                ventana.Show();
+            }
+           
    
         }
 
