@@ -15,6 +15,7 @@ namespace GUI_V_2
         public AbrirCaja()
         {
             InitializeComponent();
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -26,6 +27,32 @@ namespace GUI_V_2
         {
             e.Graphics.DrawRectangle(new Pen(Color.Blue, 3),
                           this.DisplayRectangle);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!Utilidades.ValidarFormulario(this, errorProvider1))
+            {
+                using( CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    Aperturas_Cajas caja = new Aperturas_Cajas
+                    {
+                        fecha = DateTime.Now,
+                        id_usuario = Utilidades.id_usuario,
+                        monto_inicial = float.Parse(txt_monto.Text.Trim())
+                    };
+
+                    DB.Aperturas_Cajas.Add(caja);
+                    DB.SaveChanges();
+                    MessageBox.Show("El monto se ha guardado correctamente.");
+                    this.Close();
+                }
+            }
+        }
+
+        private void AbrirCaja_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
