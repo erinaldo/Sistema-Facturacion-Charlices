@@ -178,7 +178,7 @@ namespace GUI_V_2
                         descuento = Double.Parse(txt_total_desc.Text.Trim()),
                         total = Double.Parse(txt_total_bruto.Text.Trim()),
                         usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
-                        usuario_cajero_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
+                        usuario_cajero_id = Utilidades.id_usuario,
                         NFC_comprobante = txt_serie_comprobante.Text,
                         metodo_pago_id = metodo_pago,
                         comprobante_id = int.Parse(comboBoxCombrobante.SelectedValue.ToString())
