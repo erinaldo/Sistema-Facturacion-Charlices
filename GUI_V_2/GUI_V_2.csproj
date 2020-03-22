@@ -125,6 +125,9 @@
     <Compile Include="Detalles_Ordenes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entrada_Salida_Caja.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Factura.cs" />
     <Compile Include="Facturas.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
