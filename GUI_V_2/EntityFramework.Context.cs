@@ -40,6 +40,7 @@ namespace GUI_V_2
         public virtual DbSet<Unidades_medidas> Unidades_medidas { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Aperturas_Cajas> Aperturas_Cajas { get; set; }
+        public virtual DbSet<Entrada_Salida_Caja> Entrada_Salida_Caja { get; set; }
     
         public virtual ObjectResult<FACT_Result> FACT(Nullable<int> cODIGOFACT)
         {

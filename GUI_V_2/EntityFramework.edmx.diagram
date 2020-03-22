@@ -32,6 +32,8 @@
         <AssociationConnector Association="Model.FK_MESERA" />
         <EntityTypeShape EntityType="Model.Aperturas_Cajas" Width="1.5" PointX="3" PointY="6.625" />
         <AssociationConnector Association="Model.FK_USUARIO" />
+        <EntityTypeShape EntityType="Model.Entrada_Salida_Caja" Width="1.5" PointX="3" PointY="21.375" />
+        <AssociationConnector Association="Model.FK_USUARIO_SALIDAD_ENTRADA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
