@@ -1419,8 +1419,8 @@ namespace GUI_V_2
 
             //Texto final del Ticket.
 
-            ticket.TextoIzquierda("Mesera/o: " + Utilidades.mesero);
-            ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
+            ticket.TextoIzquierda("Mesera/o: " + Utilidades.mesero.ToString());
+            ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta.ToString());
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
             ticket.CortaTicket();
