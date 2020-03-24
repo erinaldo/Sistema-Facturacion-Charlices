@@ -39,7 +39,7 @@ namespace GUI_V_2
                                       c.nombre_completo,
                                       o.fecha,
                                       id_mesera= m.nombre_completo,
-                                      estado = c.estado==true ? "PAGA" : "SIN PAGAR",
+                                      estado = c.estado==true ? "SIN FACTURAR" : "FACTURADA",
 
                                   };
                     if (condicion.Equals(""))

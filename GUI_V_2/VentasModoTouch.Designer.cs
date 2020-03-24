@@ -436,9 +436,11 @@
             "Miguel Paulino"});
             this.comboBoxVendedores.Location = new System.Drawing.Point(512, 10);
             this.comboBoxVendedores.Name = "comboBoxVendedores";
-            this.comboBoxVendedores.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxVendedores.Size = new System.Drawing.Size(126, 21);
             this.comboBoxVendedores.TabIndex = 72;
             this.comboBoxVendedores.Text = "VENDEDOR";
+            this.comboBoxVendedores.SelectedIndexChanged += new System.EventHandler(this.comboBoxVendedores_SelectedIndexChanged);
+            this.comboBoxVendedores.SelectedValueChanged += new System.EventHandler(this.comboBoxVendedores_SelectedValueChanged);
             // 
             // txt_codigo_fac
             // 

@@ -932,10 +932,12 @@ namespace GUI_V_2
         {
 
         }
-        String mesero = "";
+
+
+
         private void Reservar_Click(object sender, EventArgs e)
         {
-
+          
             if (txt_numero_orden.Text.Trim().Equals("") && Reservar.Text.Equals("Modificar Orden"))
             {
                 MessageBox.Show("Ingrese un número de orden o consulte.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -948,9 +950,7 @@ namespace GUI_V_2
                 return;
             }
 
-            mesero = comboBoxVendedores.SelectedItem.ToString();
-
-            NotaReserva notaReserva = new NotaReserva();
+              NotaReserva notaReserva = new NotaReserva();
 
             if (notaReserva.ShowDialog() == DialogResult.OK)
             {
@@ -963,10 +963,10 @@ namespace GUI_V_2
 
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
-            
 
-            ImprimirTicketReserva();
-            
+            if (ProOrdenList.Count>0) {
+                ImprimirTicketReserva();
+            }
             if (Reservar.Text.Equals("Reservar Orden")) LimpiarCampo();
             ProOrdenList.Clear();
         }
@@ -1419,7 +1419,7 @@ namespace GUI_V_2
 
             //Texto final del Ticket.
 
-            ticket.TextoIzquierda("Mesera/o: " + mesero);
+            ticket.TextoIzquierda("Mesera/o: " + Utilidades.mesero);
             ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta);
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
@@ -1462,6 +1462,16 @@ namespace GUI_V_2
             {
 
             }
+
+        }
+
+        private void comboBoxVendedores_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
+        }
+
+        private void comboBoxVendedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

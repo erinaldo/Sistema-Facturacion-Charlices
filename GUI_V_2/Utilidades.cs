@@ -10,8 +10,9 @@ namespace GUI_V_2
     {
         
         public static int ConFact = 1;
-        public static String NotaVenta = "";
+        public static string NotaVenta = "";
 
+        public static string mesero = "";
         public static int id_usuario = 0;
         public static int tipo_usuario = 0;
 

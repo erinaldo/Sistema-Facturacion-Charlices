@@ -179,6 +179,7 @@
             this.estado.HeaderText = "ESTADO";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            this.estado.Visible = false;
             // 
             // ConsResOrden
             // 
