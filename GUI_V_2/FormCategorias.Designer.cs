@@ -35,86 +35,89 @@
             // 
             // label1
             // 
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Size = new System.Drawing.Size(420, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Size = new System.Drawing.Size(322, 25);
             this.label1.Text = "CATEGORÍAS DE PRODUCTOS";
             // 
             // bnt_eliminar
             // 
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.bnt_eliminar.Location = new System.Drawing.Point(816, 459);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bnt_eliminar.Location = new System.Drawing.Point(612, 373);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
             // 
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btn_guardar.Location = new System.Drawing.Point(816, 524);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_guardar.Location = new System.Drawing.Point(612, 426);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(59, 196);
-            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label19.Location = new System.Drawing.Point(44, 159);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label5
             // 
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Text = "CÓDIGO";
             // 
             // estado
             // 
-            this.estado.Location = new System.Drawing.Point(167, 190);
-            this.estado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.estado.Location = new System.Drawing.Point(125, 154);
+            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.estado.SelectedIndexChanged += new System.EventHandler(this.estado_SelectedIndexChanged);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
-            this.Nom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Nom.MaxLength = 25;
-            this.Nom.Size = new System.Drawing.Size(277, 30);
+            this.Nom.Size = new System.Drawing.Size(209, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(98, 21);
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 107;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             // 
             // cocina
             // 
             this.cocina.AutoSize = true;
             this.cocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cocina.Location = new System.Drawing.Point(64, 240);
+            this.cocina.Location = new System.Drawing.Point(48, 195);
+            this.cocina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cocina.Name = "cocina";
-            this.cocina.Size = new System.Drawing.Size(113, 29);
+            this.cocina.Size = new System.Drawing.Size(89, 24);
             this.cocina.TabIndex = 108;
             this.cocina.Text = "COCINA";
             this.cocina.UseVisualStyleBackColor = true;
             // 
             // FormCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1144, 693);
+            this.ClientSize = new System.Drawing.Size(858, 563);
             this.Controls.Add(this.cocina);
             this.Controls.Add(this.checkBox1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCategorias";
             this.Text = "Categorias";
             this.Controls.SetChildIndex(this.btn_guardar, 0);

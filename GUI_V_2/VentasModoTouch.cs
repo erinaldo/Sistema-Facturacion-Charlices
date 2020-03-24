@@ -385,6 +385,18 @@ namespace GUI_V_2
 
         private void codigo_pro_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
             try
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -665,9 +677,30 @@ namespace GUI_V_2
 
         private void cantidad_pro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (Char.IsDigit(e.KeyChar))
             {
-                AgregarProductoCarrito();
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            try
+            {
+
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+
+                    AgregarProductoCarrito();
+                }
+            }
+            catch (Exception aa)
+            {
+                //eeror
             }
         }
 
@@ -747,17 +780,30 @@ namespace GUI_V_2
                 }
                 else
                 {
-                    MessageBox.Show("Debe de tener por lo menos un producto para poder borrar.");
+                    MessageBox.Show("Debe de tener por lo menos un producto para poder borrar.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch (Exception vv)
             {
                 //Error
+
             }
         }
 
         private void errorTxtBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
             try
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -783,11 +829,30 @@ namespace GUI_V_2
 
         private void errorTxtBox12_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (Char.IsDigit(e.KeyChar))
             {
-                calcularDesc();
+                e.Handled = false;
             }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    calcularDesc();
+                }
+            }
+            catch (Exception aa)
+            {
+                //error
+            }
+            
 
 
         }
@@ -1068,6 +1133,18 @@ namespace GUI_V_2
 
         private void txt_numero_orden_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
             try
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))

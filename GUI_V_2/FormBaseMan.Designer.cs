@@ -176,6 +176,7 @@
             this.Codigo.Size = new System.Drawing.Size(137, 26);
             this.Codigo.TabIndex = 101;
             this.Codigo.Validar = true;
+            this.Codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Codigo_KeyPress);
             // 
             // FormBaseMan
             // 

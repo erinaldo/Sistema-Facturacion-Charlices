@@ -156,6 +156,7 @@
             this.txt_monto.Size = new System.Drawing.Size(174, 29);
             this.txt_monto.TabIndex = 114;
             this.txt_monto.Validar = true;
+            this.txt_monto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_monto_KeyPress);
             // 
             // txt_motivo
             // 

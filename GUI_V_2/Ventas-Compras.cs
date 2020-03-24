@@ -19,8 +19,11 @@ namespace GUI_V_2
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            VentasModoTouch ventas = new VentasModoTouch();
-            ventas.ShowDialog();
+            if (Utilidades.ValidarAperturaCaja())
+            {
+                VentasModoTouch ventas = new VentasModoTouch();
+                ventas.ShowDialog();
+            }
         }
 
         private void pic_ventas_Click(object sender, EventArgs e)

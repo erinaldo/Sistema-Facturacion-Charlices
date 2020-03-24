@@ -83,15 +83,15 @@ namespace GUI_V_2
                     dataGridView1.Columns["total"].DefaultCellStyle.Format = "N";
                 }
                 nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
-
-                double total_ventas = 0;
-
-                for (int a = 0; a <=dataGridView1.Rows.Count; a++)
+                
+                //total vendido al txt
+                double total_ventas = 0;             
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    total_ventas +=Convert.ToDouble(dataGridView1.Rows[0].Cells[7].Value.ToString());
+                    total_ventas += Convert.ToDouble(row.Cells["total"].Value);
                 }
                 txt_totalGrid.Text = total_ventas.ToString();
-
+                
             } catch(Exception aa)
             {
                //Error Charly
@@ -104,11 +104,11 @@ namespace GUI_V_2
         {
             if (dataGridView1.SelectedRows.Count<1)
             {
-                MessageBox.Show("Debe seleccionar la venta que desea borrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar la venta que desea anular.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (MessageBox.Show("Seguro que desea cancelar esta venta ?","Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
+            if (MessageBox.Show("Seguro que desea anular esta venta ?", "Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
             {
 
 
@@ -136,6 +136,7 @@ namespace GUI_V_2
 
         }
 
+        //llenar resumen de venta
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)
@@ -153,5 +154,7 @@ namespace GUI_V_2
                 txt_NumFac.Text = "0.";
             }
         }
+
+      
     }
 }

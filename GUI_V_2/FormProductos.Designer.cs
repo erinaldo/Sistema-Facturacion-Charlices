@@ -74,7 +74,7 @@
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bnt_eliminar.Location = new System.Drawing.Point(612, 380);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
@@ -83,7 +83,7 @@
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btn_guardar.Location = new System.Drawing.Point(612, 429);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
@@ -100,19 +100,20 @@
             // estado
             // 
             this.estado.Location = new System.Drawing.Point(123, 385);
-            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estado.Margin = new System.Windows.Forms.Padding(4);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
             this.Nom.Location = new System.Drawing.Point(125, 96);
-            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4);
             this.Nom.Size = new System.Drawing.Size(232, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4);
+            this.Codigo.Size = new System.Drawing.Size(119, 26);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // btn_cerrar
@@ -398,7 +399,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.FormProductos_Load_1);

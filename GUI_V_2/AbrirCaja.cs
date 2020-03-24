@@ -31,28 +31,56 @@ namespace GUI_V_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!Utilidades.ValidarFormulario(this, errorProvider1))
+            try
             {
-                using( CRUD_MODEL DB = new CRUD_MODEL())
-                {
-                    Aperturas_Cajas caja = new Aperturas_Cajas
-                    {
-                        fecha = DateTime.Now,
-                        id_usuario = Utilidades.id_usuario,
-                        monto_inicial = float.Parse(txt_monto.Text.Trim())
-                    };
 
-                    DB.Aperturas_Cajas.Add(caja);
-                    DB.SaveChanges();
-                    MessageBox.Show("El monto se ha guardado correctamente.");
-                    this.Close();
+                if (!Utilidades.ValidarFormulario(this, errorProvider1))
+                {
+                    using (CRUD_MODEL DB = new CRUD_MODEL())
+                    {
+                        Aperturas_Cajas caja = new Aperturas_Cajas
+                        {
+                            fecha = DateTime.Now,
+                            id_usuario = Utilidades.id_usuario,
+                            monto_inicial = float.Parse(txt_monto.Text.Trim())
+                        };
+
+                        DB.Aperturas_Cajas.Add(caja);
+                        DB.SaveChanges();
+                        MessageBox.Show("El monto se ha guardado correctamente.");
+                        this.Close();
+                    }
                 }
+
+            }
+            catch (Exception)
+            {
+                //ERROR CHARLY
             }
         }
 
-        private void AbrirCaja_Load(object sender, EventArgs e)
+    private void AbrirCaja_Load(object sender, EventArgs e)
         {
 
         }
+
+        //solo numeros
+        private void txt_monto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }
