@@ -977,21 +977,24 @@ namespace GUI_V_2
                 return;
             }
 
-            NotaReserva notaReserva = new NotaReserva();
-
-            if (notaReserva.ShowDialog() == DialogResult.OK)
-            {
-                Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
-            }
-            else
-            {
-                Utilidades.NotaVenta = "";
-            }
+            
 
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
 
-            if (ProOrdenList.Count>0) {
+            int index = ProOrdenList.FindIndex(c => c.Cantidad > 0);
+            if (index!=-1) {
+                NotaReserva notaReserva = new NotaReserva();
+
+                if (notaReserva.ShowDialog() == DialogResult.OK)
+                {
+                    Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
+                }
+                else
+                {
+                    Utilidades.NotaVenta = "";
+                }
+
                 ImprimirTicketReserva();
             }
             if (Reservar.Text.Equals("Reservar Orden")) LimpiarCampo();
@@ -1206,6 +1209,7 @@ namespace GUI_V_2
                                 where ord.id == codigo_orden
                                 select new
                                 {
+                                   numero_orden  = ord.id,
                                     ord.id_mesera,
                                     ord.estado,
                                     ord.id_cliente,
@@ -1238,7 +1242,8 @@ namespace GUI_V_2
                             id_cliente = registro_orden.id_cliente;
                             tipo_cliente = registro_orden.tipo_cliente;
                             comboBoxVendedores.SelectedValue = registro_orden.id_mesera;
-                            id_orden = registro_orden.id;
+                            Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
+                            id_orden = registro_orden.numero_orden;
                             int cantidad_pro = registro_orden.cantidad_producto;
                             double precio_pro = registro_orden.precio_producto;
                             double sub_total = cantidad_pro * precio_pro;
