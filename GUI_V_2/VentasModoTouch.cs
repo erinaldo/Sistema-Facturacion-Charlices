@@ -30,6 +30,7 @@ namespace GUI_V_2
         int id_cliente = 0;
         int tipo_cliente = -1;
         int id_producto = 0;
+        int id_orden = 0;
 
         public VentasModoTouch()
         {
@@ -282,6 +283,7 @@ namespace GUI_V_2
             txt_total_desc.Text = "0.00";
             txt_total_neto.Text = "0.00";
             Reservar.Text = "Reservar Orden";
+            id_orden = 0;
             ProOrdenList.Clear();
         }
 
@@ -309,6 +311,13 @@ namespace GUI_V_2
         {
             try
             {
+                if (txt_nombre_cliente.Text.Equals("Nombre cliente"))
+                {
+                    MessageBox.Show("Debe seleccionar un cliente disponible.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+
                 ConsPro obj = new ConsPro();
                 if (obj.ShowDialog() == DialogResult.OK)
                 {
@@ -401,6 +410,12 @@ namespace GUI_V_2
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
+                    if (txt_nombre_cliente.Text.Equals("Nombre cliente"))
+                    {
+                        MessageBox.Show("Debe seleccionar un cliente disponible.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+
                     string codigo = codigo_pro.Text.Trim();
                     if (!codigo.Equals(""))
                     {
@@ -950,7 +965,19 @@ namespace GUI_V_2
                 return;
             }
 
-              NotaReserva notaReserva = new NotaReserva();
+            if (txt_nombre_cliente.Text.Equals("Nombre cliente"))
+            {
+                MessageBox.Show("Debe seleccionar un cliente disponible.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (comboBoxVendedores.SelectedIndex==-1)
+            {
+                MessageBox.Show("Debe seleccionar un vendedor/mesera.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            NotaReserva notaReserva = new NotaReserva();
 
             if (notaReserva.ShowDialog() == DialogResult.OK)
             {
@@ -1074,13 +1101,12 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
-                    Ordenes_Reservadas orden = new Ordenes_Reservadas
+                    Ordenes_Reservadas ordenCliente = new Ordenes_Reservadas
                     {
                         id_cliente = id_cliente,
                         fecha = DateTime.Today,
                         id_mesera = int.Parse(comboBoxVendedores.SelectedValue.ToString())
                     };
-
 
                     foreach (DataGridViewRow registsros in dataGridViewProducto.Rows)
                     {
@@ -1113,14 +1139,17 @@ namespace GUI_V_2
                                     Nombre_producto = nombrePro
                                 });
                             }
-                                
-                            orden.Detalles_Ordenes.Add(detalles_orden);
+
+                            ordenCliente.Detalles_Ordenes.Add(detalles_orden);
                         }
 
                     }
-                    DB.Ordenes_Reservadas.Add(orden);
+                    DB.Ordenes_Reservadas.Add(ordenCliente);
                     DB.SaveChanges();
-                    MessageBox.Show("La orden se creo correctamente.");
+                    id_orden = ordenCliente.id;
+                    MuestraNumOrden ordenVentana = new MuestraNumOrden();
+                    ordenVentana.txt_numOrden.Text = id_orden.ToString();
+                    ordenVentana.ShowDialog();
                 }
 
             }
@@ -1209,6 +1238,7 @@ namespace GUI_V_2
                             id_cliente = registro_orden.id_cliente;
                             tipo_cliente = registro_orden.tipo_cliente;
                             comboBoxVendedores.SelectedValue = registro_orden.id_mesera;
+                            id_orden = registro_orden.id;
                             int cantidad_pro = registro_orden.cantidad_producto;
                             double precio_pro = registro_orden.precio_producto;
                             double sub_total = cantidad_pro * precio_pro;
@@ -1245,6 +1275,7 @@ namespace GUI_V_2
                         disponible_pro.Text = "";
                         itbisPro = 0;
                         Reservar.Text = "Reservar Orden";
+                        id_orden = 0;
                         MessageBox.Show("No existe una orden con ese código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         ProOrdenList.Clear();
                     }
@@ -1390,7 +1421,7 @@ namespace GUI_V_2
             }
             else
             {
-                ticket.TextoIzquierda("# ORDEN: " + txt_numero_orden.Text.Trim());
+                ticket.TextoIzquierda("# ORDEN: " + id_orden);
             }
             ticket.TextoIzquierda("");
 
@@ -1467,6 +1498,7 @@ namespace GUI_V_2
 
         private void comboBoxVendedores_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (comboBoxVendedores.SelectedIndex == -1) return;
             Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
         }
 
