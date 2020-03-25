@@ -1224,9 +1224,9 @@ namespace GUI_V_2
                                     Deta_orden.precio_producto,
                                     Deta_orden.itbis,
                                 };
-
                     if (orden.ToList().LongCount() > 0)
                     {
+                        ProOrdenList.Clear();
                         dataGridViewProducto.Rows.Clear();
                         double total_Sub = 0;
                         double total_itbis = 0;
@@ -1242,7 +1242,6 @@ namespace GUI_V_2
                             id_cliente = registro_orden.id_cliente;
                             tipo_cliente = registro_orden.tipo_cliente;
                             comboBoxVendedores.SelectedValue = registro_orden.id_mesera;
-                            Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
                             id_orden = registro_orden.numero_orden;
                             int cantidad_pro = registro_orden.cantidad_producto;
                             double precio_pro = registro_orden.precio_producto;
@@ -1282,7 +1281,6 @@ namespace GUI_V_2
                         Reservar.Text = "Reservar Orden";
                         id_orden = 0;
                         MessageBox.Show("No existe una orden con ese código.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        ProOrdenList.Clear();
                     }
                 }
             }
@@ -1452,10 +1450,8 @@ namespace GUI_V_2
             }
 
             ticket.lineasIgual();
-
             //Texto final del Ticket.
-
-            ticket.TextoIzquierda("Mesera/o: " + Utilidades.mesero.ToString());
+            ticket.TextoIzquierda("Mesera/o: " + comboBoxVendedores.Text);
             ticket.TextoIzquierda("Nota: " + Utilidades.NotaVenta.ToString());
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
@@ -1503,8 +1499,7 @@ namespace GUI_V_2
 
         private void comboBoxVendedores_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (comboBoxVendedores.SelectedIndex == -1) return;
-            Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
+           
         }
 
         private void comboBoxVendedores_SelectedIndexChanged(object sender, EventArgs e)
