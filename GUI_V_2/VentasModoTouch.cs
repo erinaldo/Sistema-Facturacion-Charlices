@@ -177,7 +177,7 @@ namespace GUI_V_2
                         itbis_total = Double.Parse(txt_total_itbis.Text.Trim()),
                         fecha = DateTime.Today,
                         descuento = Double.Parse(txt_total_desc.Text.Trim()),
-                        total = Double.Parse(txt_total_bruto.Text.Trim()),
+                        total = Double.Parse(txt_total_neto.Text.Trim()),
                         usuario_vendedor_id = int.Parse(comboBoxVendedores.SelectedValue.ToString()),
                         usuario_cajero_id = Utilidades.id_usuario,
                         NFC_comprobante = txt_serie_comprobante.Text,
