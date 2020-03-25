@@ -102,7 +102,7 @@ namespace GUI_V_2
                 {
                     total_ventas += Convert.ToDouble(row.Cells["total"].Value);
                 }
-                txt_totalGrid.Text = total_ventas.ToString();
+                txt_totalGrid.Text = string.Format("{0:0,0.0}", total_ventas);
                 
             } catch(Exception aa)
             {
@@ -151,9 +151,9 @@ namespace GUI_V_2
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
-                txt_total_neto.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-                txt_itbis.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-                txt_subtotal.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+                txt_total_neto.Text = string.Format("{0:0,0.0}", dataGridView1.SelectedRows[0].Cells[7].Value);
+                txt_itbis.Text = string.Format("{0:0,0.0}", dataGridView1.SelectedRows[0].Cells[5].Value);
+                txt_subtotal.Text = string.Format("{0:0,0.0}", dataGridView1.SelectedRows[0].Cells[6].Value);
                 txt_NumFac.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             }
             else
@@ -242,7 +242,6 @@ namespace GUI_V_2
                        Where(s => ((s.fecha >= d1) && (s.fecha <= d2)));
                     }
 
-
                     dataGridView1.DataSource = facturas.ToList();
                     dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
                     dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
@@ -261,7 +260,7 @@ namespace GUI_V_2
                 {
                     total_ventas += Convert.ToDouble(row.Cells["total"].Value);
                 }
-                txt_totalGrid.Text = total_ventas.ToString();
+                txt_totalGrid.Text = string.Format("{0:0,0.0}", total_ventas);
 
             }
             catch (Exception aa)
