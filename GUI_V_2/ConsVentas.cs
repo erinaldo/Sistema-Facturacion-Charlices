@@ -38,6 +38,7 @@ namespace GUI_V_2
                    usuario_cajero_id.DataPropertyName = "usuario_cajero_id";
                    MessageBox.Show(DateTime.Today.ToShortDateString()); */
             fecha_inicio.Value = DateTime.Today;
+            fecha_fin.Value = DateTime.Today;
             LlenarDataGrid();
         }
 
@@ -45,6 +46,12 @@ namespace GUI_V_2
         {
             try
             {
+                DateTime d1, d2;
+                d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
+                d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
+                string f1 = d1.Year + "/" + d1.Month + "/" + d1.Day, f2 = d2.Year + "/" + d2.Month + "/" + d2.Day;
+                
+
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var facturas = from fac in DB.Facturas
@@ -66,12 +73,17 @@ namespace GUI_V_2
                                        fac.total,
                                        estado = fac.estado == true ? "Anulada" : "Facturada"
                                    };
-                    /* if (condicion.Equals("")==false)
+                     if (filtro.Text.Trim().Equals("")==false)
                      {
                          facturas = facturas.
-                         Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
-                     }*/
-
+                         Where(s => (s.fecha >= d1 && (s.codigo.ToString().Contains(filtro.Text.Trim()) || s.vendedor.ToString().Contains(filtro.Text.Trim()) || s.nombre_cliente.ToString().Contains(filtro.Text.Trim()))));
+                    }
+                    else
+                    {
+                       facturas = facturas.
+                       Where(s => (s.fecha >= d1));
+                    }
+                    
                     dataGridView1.DataSource = facturas.ToList();
                     dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
                     dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
@@ -121,12 +133,10 @@ namespace GUI_V_2
         {
             if (ActivarRango.Checked == true)
             {   
-                fecha_inicio.Enabled = true;
                 fecha_fin.Enabled = true;
             }
             else
             {
-                fecha_inicio.Enabled = false;
                 fecha_fin.Enabled = false;
             }
         }
@@ -161,7 +171,6 @@ namespace GUI_V_2
         //Boton filtrar
         private void button1_Click(object sender, EventArgs e)
         {
-
             //Busqueda por rango fecha
             if (ActivarRango.Checked)
             {
@@ -182,19 +191,25 @@ namespace GUI_V_2
                     return;
                 }
 
-                LlenarGridRangoFechas(DateTime.Parse(f1), DateTime.Parse(f2));
+                LlenarGridRangoFechas();
             }
-            
-            
+            else
+            {
+                LlenarDataGrid(filtro.Text.Trim());
+            }
         }
 
 
 
         //metodo para llenar por rango de fechas
-        private void LlenarGridRangoFechas(DateTime f_inicial, DateTime f_final)
+        private void LlenarGridRangoFechas()
         {
             try
             {
+                DateTime d1, d2;
+                d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
+                d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
+
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var facturas = from fac in DB.Facturas
@@ -216,10 +231,18 @@ namespace GUI_V_2
                                        fac.total,
                                        estado = fac.estado == true ? "Anulada" : "Facturada"
                                    };
-                     
-                         facturas = facturas.
-                         Where(s => ((s.fecha >= f_inicial) && (s.fecha <= f_final)));
-                
+                    if (filtro.Text.Trim().Equals("") == false)
+                    {
+                        facturas = facturas.
+                        Where(s => (((s.fecha >= d1) && (s.fecha <= d2)) && (s.codigo.ToString().Contains(filtro.Text.Trim()) || s.vendedor.ToString().Contains(filtro.Text.Trim()) || s.nombre_cliente.ToString().Contains(filtro.Text.Trim()))));
+                    }
+                    else
+                    {
+                       facturas = facturas.
+                       Where(s => ((s.fecha >= d1) && (s.fecha <= d2)));
+                    }
+
+
                     dataGridView1.DataSource = facturas.ToList();
                     dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
                     dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
