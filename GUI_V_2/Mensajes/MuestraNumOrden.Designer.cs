@@ -96,6 +96,7 @@
             this.Name = "MuestraNumOrden";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MuestraNumOrden";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MuestraNumOrden_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

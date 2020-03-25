@@ -76,6 +76,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Size = new System.Drawing.Size(154, 40);
             this.button1.Text = "FILTRAR";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
@@ -110,8 +111,9 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(896, 143);
+            this.button2.Location = new System.Drawing.Point(896, 148);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Size = new System.Drawing.Size(132, 35);
             // 
             // panel1
             // 
@@ -318,6 +320,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(13, 518);
@@ -328,6 +331,7 @@
             // 
             // txt_totalGrid
             // 
+            this.txt_totalGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_totalGrid.AutoSize = true;
             this.txt_totalGrid.BackColor = System.Drawing.Color.White;
             this.txt_totalGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -374,9 +378,10 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1011, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(1011, 328);
             this.dataGridView1.TabIndex = 118;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dataGridView1_RowStateChanged);
             // 
             // codigo
             // 

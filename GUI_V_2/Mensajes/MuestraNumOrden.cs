@@ -21,5 +21,11 @@ namespace GUI_V_2.Mensajes
         {
             Close();
         }
+
+        private void MuestraNumOrden_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.Blue, 3),
+                           this.DisplayRectangle);
+        }
     }
 }
