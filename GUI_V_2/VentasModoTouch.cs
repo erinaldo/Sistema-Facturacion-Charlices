@@ -982,21 +982,8 @@ namespace GUI_V_2
             if (Reservar.Text.Equals("Reservar Orden")) CrearReservaOrden();
             else ModificarReservaOrden();
 
-            int index = ProOrdenList.FindIndex(c => c.Cantidad > 0);
-            if (index!=-1) {
-                NotaReserva notaReserva = new NotaReserva();
+            ImprimirTicketReserva();
 
-                if (notaReserva.ShowDialog() == DialogResult.OK)
-                {
-                    Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
-                }
-                else
-                {
-                    Utilidades.NotaVenta = "";
-                }
-
-                ImprimirTicketReserva();
-            }
             if (Reservar.Text.Equals("Reservar Orden")) LimpiarCampo();
             ProOrdenList.Clear();
         }
@@ -1410,6 +1397,21 @@ namespace GUI_V_2
         //Ticket de Orden - Para cocina
         public void ImprimirTicketReserva(bool venta_Reservada = false)
         {
+
+
+            int index = ProOrdenList.FindIndex(c => c.Cantidad > 0);
+            if (index == -1) return;
+
+            NotaReserva notaReserva = new NotaReserva();
+
+            if (notaReserva.ShowDialog() == DialogResult.OK)
+            {
+                Utilidades.NotaVenta = notaReserva.txt_nota.Text.ToString();
+            }
+            else
+            {
+                Utilidades.NotaVenta = "";
+            }
             //Usar Lista ProOrdenList para imprimir el tickets
             FormConGen empresa = new FormConGen();
             //Creamos una instancia d ela clase CrearTicket
