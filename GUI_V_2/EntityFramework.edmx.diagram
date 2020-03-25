@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="Model.Detalles_Ordenes" Width="1.5" PointX="5.25" PointY="15" />
         <EntityTypeShape EntityType="Model.Facturas" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="Model.Metodos_Pagos" Width="1.5" PointX="0.75" PointY="5.875" />
-        <EntityTypeShape EntityType="Model.Ordenes_Reservadas" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="Model.Ordenes_Reservadas" Width="3.125" PointX="3" PointY="12.125" />
         <EntityTypeShape EntityType="Model.Productos" Width="1.5" PointX="3" PointY="16.25" />
         <EntityTypeShape EntityType="Model.Suplidores" Width="1.5" PointX="5.75" PointY="5.75" />
         <EntityTypeShape EntityType="Model.Unidades_medidas" Width="1.5" PointX="0.75" PointY="16" />
