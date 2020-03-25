@@ -1499,7 +1499,7 @@ namespace GUI_V_2
         private void comboBoxVendedores_SelectedValueChanged(object sender, EventArgs e)
         {
             if (comboBoxVendedores.SelectedIndex == -1) return;
-            Utilidades.mesero = comboBoxVendedores.SelectedValue.ToString();
+            Utilidades.mesero = comboBoxVendedores.SelectedItem.ToString();
         }
 
         private void comboBoxVendedores_SelectedIndexChanged(object sender, EventArgs e)
