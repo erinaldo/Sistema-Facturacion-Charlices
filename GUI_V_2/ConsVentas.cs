@@ -155,6 +155,121 @@ namespace GUI_V_2
             }
         }
 
-      
+
+        public string fecha_hoy = DateTime.Now.Month + "/" + DateTime.Now.Day + "/" + DateTime.Now.Year;
+
+        //Boton filtrar
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //Busqueda por rango fecha
+            if (ActivarRango.Checked)
+            {
+                DateTime d1, d2;
+                d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
+                d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
+                string f1 = d1.Month+"/"+d1.Day + "/" + d1.Year, f2 = d2.Month + "/" + d2.Day + "/" + d2.Year;
+                
+                if (DateTime.Parse(f1) > DateTime.Parse(f2)) 
+                {
+                    MessageBox.Show("La 'FECHA INICIO' no puede ser mayor a la de 'FECHA FIN'.", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+
+                if ((DateTime.Parse(f2) > DateTime.Parse(fecha_hoy)) || (DateTime.Parse(f1) > DateTime.Parse(fecha_hoy)))
+                {
+                    MessageBox.Show("No puede usar fechas mayores a hoy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                LlenarGridRangoFechas(DateTime.Parse(f1), DateTime.Parse(f2));
+            }
+            
+            
+        }
+
+
+
+        //metodo para llenar por rango de fechas
+        private void LlenarGridRangoFechas(DateTime f_inicial, DateTime f_final)
+        {
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    var facturas = from fac in DB.Facturas
+                                   join cli in DB.Clientes on fac.id_cliente
+                              equals cli.id
+                                   join usu in DB.Usuarios on fac.usuario_cajero_id
+                     equals usu.id
+                                   join user in DB.Usuarios on fac.usuario_vendedor_id
+                                     equals user.id
+                                   select new
+                                   {
+                                       codigo = fac.id,
+                                       fac.fecha,
+                                       nombre_cliente = cli.nombre_completo,
+                                       vendedor = user.nombre_completo,
+                                       cajero = usu.nombre_completo,
+                                       fac.subtotal,
+                                       fac.itbis_total,
+                                       fac.total,
+                                       estado = fac.estado == true ? "Anulada" : "Facturada"
+                                   };
+                    /* if (condicion.Equals("")==false)
+                     {
+                         facturas = facturas.
+                         Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
+                     }*/
+
+                    dataGridView1.DataSource = facturas.ToList();
+                    dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
+
+                    dataGridView1.Columns["itbis"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["itbis"].DefaultCellStyle.Format = "N";
+
+                    dataGridView1.Columns["total"].ValueType = typeof(System.Decimal);
+                    dataGridView1.Columns["total"].DefaultCellStyle.Format = "N";
+                }
+                nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
+
+                //total vendido al txt
+                double total_ventas = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    total_ventas += Convert.ToDouble(row.Cells["total"].Value);
+                }
+                txt_totalGrid.Text = total_ventas.ToString();
+
+            }
+            catch (Exception aa)
+            {
+                //Error Charly
+            }
+        }
+
+
+        //Poner fila en rojo si esta anulada
+        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {  
+                if (row.Cells["estado"].Value.ToString() == "Anulada")
+                {
+
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                }
+
+            }
+
+        }
+
+
+
     }
 }
