@@ -168,7 +168,7 @@ namespace GUI_V_2
                 DateTime d1, d2;
                 d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
                 d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
-                string f1 = d1.Month+"/"+d1.Day + "/" + d1.Year, f2 = d2.Month + "/" + d2.Day + "/" + d2.Year;
+                string f1 = d1.Year+"/"+d1.Month + "/" + d1.Day, f2 = d2.Year + "/" + d2.Month + "/" + d2.Day;
                 
                 if (DateTime.Parse(f1) > DateTime.Parse(f2)) 
                 {
@@ -216,12 +216,10 @@ namespace GUI_V_2
                                        fac.total,
                                        estado = fac.estado == true ? "Anulada" : "Facturada"
                                    };
-                    /* if (condicion.Equals("")==false)
-                     {
+                     
                          facturas = facturas.
-                         Where(s => (s.id.ToString().Contains(condicion) || s.id_cliente.ToString().Contains(condicion) || s.usuario_vendedor_id.ToString().Contains(condicion)));
-                     }*/
-
+                         Where(s => ((s.fecha >= f_inicial) && (s.fecha <= f_final)));
+                
                     dataGridView1.DataSource = facturas.ToList();
                     dataGridView1.Columns["subtotal"].ValueType = typeof(System.Decimal);
                     dataGridView1.Columns["subtotal"].DefaultCellStyle.Format = "N";
