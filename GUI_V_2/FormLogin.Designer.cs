@@ -202,10 +202,11 @@
             this.txt_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.txt_user.Limpiar = false;
             this.txt_user.Location = new System.Drawing.Point(458, 150);
-            this.txt_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_user.Margin = new System.Windows.Forms.Padding(2);
             this.txt_user.Name = "txt_user";
             this.txt_user.Size = new System.Drawing.Size(257, 35);
             this.txt_user.TabIndex = 81;
+            this.txt_user.Text = "admin";
             this.txt_user.Validar = true;
             // 
             // txt_pass
@@ -214,10 +215,11 @@
             this.txt_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.txt_pass.Limpiar = false;
             this.txt_pass.Location = new System.Drawing.Point(459, 225);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(2);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(257, 35);
             this.txt_pass.TabIndex = 82;
+            this.txt_pass.Text = "admin";
             this.txt_pass.UseSystemPasswordChar = true;
             this.txt_pass.Validar = true;
             // 

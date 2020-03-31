@@ -46,12 +46,10 @@ namespace GUI_V_2
         {
             try
             {
-                DateTime d1, d2;
-                d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
-                d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
-                string f1 = d1.Year + "/" + d1.Month + "/" + d1.Day, f2 = d2.Year + "/" + d2.Month + "/" + d2.Day;
-                
+                DateTime d1,
+                fecHoy = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
 
+                MessageBox.Show("Fecha hoy: " + fecha_hoy+" Fecha DatePicker: "+fecha_inicio.Value.ToShortDateString());
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var facturas = from fac in DB.Facturas
@@ -76,12 +74,12 @@ namespace GUI_V_2
                      if (filtro.Text.Trim().Equals("")==false)
                      {
                          facturas = facturas.
-                         Where(s => (s.fecha >= d1 && (s.codigo.ToString().Contains(filtro.Text.Trim()) || s.vendedor.ToString().Contains(filtro.Text.Trim()) || s.nombre_cliente.ToString().Contains(filtro.Text.Trim()))));
+                         Where(s => (s.fecha == fecHoy && (s.codigo.ToString().Contains(filtro.Text.Trim()) || s.vendedor.ToString().Contains(filtro.Text.Trim()) || s.nombre_cliente.ToString().Contains(filtro.Text.Trim()))));
                     }
                     else
                     {
                        facturas = facturas.
-                       Where(s => (s.fecha >= d1));
+                       Where(s => (s.fecha >= fecHoy));
                     }
                     
                     dataGridView1.DataSource = facturas.ToList();
@@ -213,12 +211,9 @@ namespace GUI_V_2
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var facturas = from fac in DB.Facturas
-                                   join cli in DB.Clientes on fac.id_cliente
-                              equals cli.id
-                                   join usu in DB.Usuarios on fac.usuario_cajero_id
-                     equals usu.id
-                                   join user in DB.Usuarios on fac.usuario_vendedor_id
-                                     equals user.id
+                                   join cli in DB.Clientes on fac.id_cliente equals cli.id
+                                   join usu in DB.Usuarios on fac.usuario_cajero_id equals usu.id
+                                   join user in DB.Usuarios on fac.usuario_vendedor_id equals user.id
                                    select new
                                    {
                                        codigo = fac.id,
@@ -289,6 +284,56 @@ namespace GUI_V_2
 
         }
 
+        //Detalle de Venta
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Debe selecionar la factura que desea detallar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            try
+            {
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    int venco = int.Parse(dataGridView1.SelectedCells[0].Value.ToString());
+                    var detalle = from Fact in DB.Facturas
+                                  join Deta_fact in DB.Detalles_Facturas on Fact.id equals Deta_fact.id_factura
+                                  join pro in DB.Productos on Deta_fact.id_producto equals pro.id
+                                  where Deta_fact.id_factura == venco
+                                select new
+                                {
+                                    pro.codigo,
+                                    pro.nombre,
+                                    Deta_fact.cantidad_producto,
+                                    Deta_fact.precio_producto,
+                                    Deta_fact.itbis,
+                                };
+                  
+                      DetalleVenta DV = new DetalleVenta();
+                      foreach (var registro_orden in detalle.ToList())
+                      {
+                          int cantidad_pro = registro_orden.cantidad_producto;
+                          double precio_pro = registro_orden.precio_producto;
+                          double sub_total = cantidad_pro * precio_pro;
+                          double totalItbis = registro_orden.itbis;
+                          double total = sub_total + totalItbis;
+                         DV.dataGridViewProducto.Rows.Add(registro_orden.codigo, registro_orden.nombre, registro_orden.precio_producto, registro_orden.cantidad_producto, sub_total, totalItbis, total);
+                    }
+                    DV.txt_numfact.Text = venco.ToString();
+                    DV.txt_totalPro.Text = "TOTAL PRODUCTOS: " + detalle.ToList().Count.ToString();
+                     DV.ShowDialog();
+
+              }
+            }
+            catch (Exception s)
+            {
+             //  ERROR CHARLY
+            }
+        }
+
+
+            
 
 
     }

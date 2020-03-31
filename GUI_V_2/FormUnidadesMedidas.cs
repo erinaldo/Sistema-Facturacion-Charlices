@@ -43,6 +43,7 @@ namespace GUI_V_2
                         {
                             unidade.estado = estado.SelectedIndex == 0 ? true : false;
                             unidade.nombre = Nom.Text;
+                            
                         }
                     }
 
