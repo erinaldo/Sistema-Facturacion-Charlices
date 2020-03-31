@@ -18,7 +18,7 @@ namespace GUI_V_2
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            CodPro.DataPropertyName = "id";
+            CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
@@ -37,7 +37,7 @@ namespace GUI_V_2
                 else
                 {
                     Unidades = Unidades.
-                    Where(s => (s.id.ToString().Contains(condicion) || s.nombre.Contains(condicion) && s.estado == true));
+                    Where(s => (s.codigo.ToString().Contains(condicion) || s.nombre.Contains(condicion) && s.estado == true));
                 }
 
                 dataGridView1.DataSource = Unidades.ToList();
@@ -90,6 +90,7 @@ namespace GUI_V_2
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Editar();
+            LlenarDataGrid();
         }
 
         private void Editar()
@@ -97,11 +98,27 @@ namespace GUI_V_2
             if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
             {
                 FormUnidadesMedidas obj = new FormUnidadesMedidas();
-                obj.Show();
                 obj.Codigo.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
+                obj.ShowDialog();
+
             }
+        }
+
+        private void ConsUniMed_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

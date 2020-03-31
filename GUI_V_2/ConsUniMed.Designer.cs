@@ -44,40 +44,49 @@
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(240, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Size = new System.Drawing.Size(312, 31);
             this.label2.Text = "UNIADES DE MEDIDAS";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(546, 52);
+            this.button1.Location = new System.Drawing.Point(728, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // filtro
             // 
-            this.filtro.Location = new System.Drawing.Point(146, 57);
+            this.filtro.Location = new System.Drawing.Point(195, 70);
+            this.filtro.Margin = new System.Windows.Forms.Padding(5);
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.Location = new System.Drawing.Point(12, 67);
+            this.label16.Location = new System.Drawing.Point(16, 82);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(939, 9);
+            this.btn_cerrar.Location = new System.Drawing.Point(1252, 11);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // btn_nuevo
             // 
             this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_nuevo.Location = new System.Drawing.Point(441, 52);
+            this.btn_nuevo.Location = new System.Drawing.Point(588, 64);
+            this.btn_nuevo.Margin = new System.Windows.Forms.Padding(5);
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // nro_registros
             // 
             this.nro_registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nro_registros.Location = new System.Drawing.Point(890, 79);
+            this.nro_registros.Location = new System.Drawing.Point(1187, 97);
+            this.nro_registros.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(740, 52);
+            this.button2.Location = new System.Drawing.Point(987, 64);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
@@ -109,7 +118,8 @@
             this.NomPro,
             this.estatus});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 98);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 121);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -129,8 +139,9 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Tomato;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(957, 376);
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 463);
             this.dataGridView1.TabIndex = 115;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // CodPro
@@ -163,12 +174,14 @@
             // 
             // ConsUniMed
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 486);
+            this.ClientSize = new System.Drawing.Size(1308, 598);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ConsUniMed";
             this.Text = "ConsUniMed";
+            this.Load += new System.EventHandler(this.ConsUniMed_Load);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.filtro, 0);
             this.Controls.SetChildIndex(this.button1, 0);

@@ -24,12 +24,11 @@ namespace GUI_V_2
 
                 using (CRUD_MODEL tabla = new CRUD_MODEL())
                 {
-                    MessageBox.Show(id.ToString());
                     if (id == 0)
                     {
                         Unidades_medidas unidades = new Unidades_medidas
                         {
-                            id = Int32.Parse(Codigo.Text.Trim()),
+                            codigo = Codigo.Text.Trim(),
                             nombre = Nom.Text.Trim(),
                             estado = true
                         };
@@ -41,6 +40,7 @@ namespace GUI_V_2
                         var unidade = tabla.Unidades_medidas.FirstOrDefault(a => a.id == id);
                         if (unidade != null)
                         {
+                            Codigo.Text = unidade.codigo;
                             unidade.estado = estado.SelectedIndex == 0 ? true : false;
                             unidade.nombre = Nom.Text;
                             
@@ -51,11 +51,10 @@ namespace GUI_V_2
                     if (id == 0)
                     {
                         MessageBox.Show("La categoría se ha registrado correctamente.");
-                    
+                        Utilidades.LimpiarControles(this);
                     }
                     else MessageBox.Show("La categoría se ha modificado correctamente.");
                 }
-                Utilidades.LimpiarControles(this);
 
             }
             catch (Exception ex)
@@ -70,8 +69,8 @@ namespace GUI_V_2
             {
                 using (CRUD_MODEL tabla = new CRUD_MODEL())
                 {
-                    int id = Int32.Parse(Codigo.Text);
-                    var unidade = tabla.Unidades_medidas.Where(a => a.id == id && a.estado == true).SingleOrDefault();
+                    string idMedida = Codigo.Text.Trim();
+                    var unidade = tabla.Unidades_medidas.Where(a => a.codigo == idMedida && a.estado == true).SingleOrDefault();
                     if (unidade != null)
                     {
                         Nom.Text = unidade.nombre;

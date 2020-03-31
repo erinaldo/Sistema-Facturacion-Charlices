@@ -79,7 +79,7 @@ namespace GUI_V_2
                     else
                     {
                        facturas = facturas.
-                       Where(s => (s.fecha >= fecHoy));
+                       Where(s => (s.fecha == fecHoy));
                     }
                     
                     dataGridView1.DataSource = facturas.ToList();
@@ -99,7 +99,7 @@ namespace GUI_V_2
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     total_ventas += Convert.ToDouble(row.Cells["total"].Value);
-                }
+                }   
                 txt_totalGrid.Text = string.Format("{0:0,0.0}", total_ventas);
                 
             } catch(Exception aa)
