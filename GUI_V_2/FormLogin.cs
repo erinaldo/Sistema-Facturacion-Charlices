@@ -25,7 +25,7 @@ namespace GUI_V_2
 
         private void label15_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace GUI_V_2
                 }
 
                 Utilidades.id_usuario = resp.id;
+                Utilidades.NombreUsuario = resp.nombre_completo;
                 Utilidades.tipo_usuario = resp.tipo_usuario;
                 Form1 ventana = new Form1();
                 this.Hide();

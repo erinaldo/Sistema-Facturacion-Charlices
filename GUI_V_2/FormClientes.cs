@@ -18,6 +18,14 @@ namespace GUI_V_2
         {
             InitializeComponent();
             TipCli.SelectedIndex = 0;
+            //Validando que sea administrador para modificar
+            if (Utilidades.tipo_usuario != 1)
+            {
+                MessageBox.Show("Solo un administrador puede gestionar los mantenimientos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btn_guardar.Visible = false;
+                bnt_eliminar.Visible = false;
+            }
+
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)

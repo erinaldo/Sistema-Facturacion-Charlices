@@ -49,7 +49,6 @@ namespace GUI_V_2
                 DateTime d1,
                 fecHoy = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
 
-                MessageBox.Show("Fecha hoy: " + fecha_hoy+" Fecha DatePicker: "+fecha_inicio.Value.ToShortDateString());
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     var facturas = from fac in DB.Facturas

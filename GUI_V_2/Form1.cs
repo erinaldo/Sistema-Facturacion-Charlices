@@ -17,6 +17,20 @@ namespace GUI_V_2
         {
             InitializeComponent();
             Loading.Show();
+            //Asignando datos del usuario registrado
+            lbluser.Text = Utilidades.NombreUsuario;
+            if (Utilidades.tipo_usuario == 1)
+            {
+                lblusuario.Text = "ADMINISTRADOR";
+                
+            }
+            else if (Utilidades.tipo_usuario == 2)
+            { 
+                lblusuario.Text = "CAJERO";
+                MenuVertical.Enabled = false;
+            }
+
+
         }
 
 
@@ -30,7 +44,11 @@ namespace GUI_V_2
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(DialogResult.Yes==MessageBox.Show("Cerrar la sesion ?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question)){
+                FormLogin login = new FormLogin();
+                login.Show();
+                this.Close();
+            }
         }
      
         private void iconminimizar_Click(object sender, EventArgs e)

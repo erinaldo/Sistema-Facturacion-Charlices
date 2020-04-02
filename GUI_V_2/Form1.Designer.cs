@@ -32,7 +32,6 @@
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblcorreo = new System.Windows.Forms.Label();
             this.lbluser = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblusuario = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.MenuVertical.Controls.Add(this.button2);
             this.MenuVertical.Controls.Add(this.button1);
-            this.MenuVertical.Controls.Add(this.lblcorreo);
             this.MenuVertical.Controls.Add(this.lbluser);
             this.MenuVertical.Controls.Add(this.pictureBox2);
             this.MenuVertical.Controls.Add(this.lblusuario);
@@ -112,27 +110,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblcorreo
-            // 
-            this.lblcorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblcorreo.AutoSize = true;
-            this.lblcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcorreo.ForeColor = System.Drawing.Color.White;
-            this.lblcorreo.Location = new System.Drawing.Point(72, 631);
-            this.lblcorreo.Name = "lblcorreo";
-            this.lblcorreo.Size = new System.Drawing.Size(49, 16);
-            this.lblcorreo.TabIndex = 17;
-            this.lblcorreo.Text = "Correo";
-            // 
             // lbluser
             // 
             this.lbluser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbluser.AutoSize = true;
-            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbluser.ForeColor = System.Drawing.Color.White;
-            this.lbluser.Location = new System.Drawing.Point(72, 613);
+            this.lbluser.Location = new System.Drawing.Point(77, 601);
             this.lbluser.Name = "lbluser";
-            this.lbluser.Size = new System.Drawing.Size(55, 16);
+            this.lbluser.Size = new System.Drawing.Size(64, 20);
             this.lbluser.TabIndex = 16;
             this.lbluser.Text = "Usuario";
             // 
@@ -151,11 +137,11 @@
             // 
             this.lblusuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblusuario.AutoSize = true;
-            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(72, 596);
+            this.lblusuario.Location = new System.Drawing.Point(77, 621);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(45, 16);
+            this.lblusuario.Size = new System.Drawing.Size(52, 20);
             this.lblusuario.TabIndex = 14;
             this.lblusuario.Text = "Cargo";
             // 
@@ -393,7 +379,6 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox iconminimizar;
         private System.Windows.Forms.PictureBox iconcerrar;
-        private System.Windows.Forms.Label lblcorreo;
         private System.Windows.Forms.Label lbluser;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblusuario;

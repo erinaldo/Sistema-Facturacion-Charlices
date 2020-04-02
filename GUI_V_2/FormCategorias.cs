@@ -16,6 +16,14 @@ namespace GUI_V_2
         public FormCategorias()
         {
             InitializeComponent();
+            //Validando que sea administrador para modificar
+            if (Utilidades.tipo_usuario != 1)
+            {
+                MessageBox.Show("Solo un administrador puede gestionar los mantenimientos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btn_guardar.Visible = false;
+                bnt_eliminar.Visible = false;
+            }
+
         }
 
         private void label19_Click(object sender, EventArgs e)
