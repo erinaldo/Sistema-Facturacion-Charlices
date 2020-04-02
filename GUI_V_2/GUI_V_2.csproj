@@ -95,6 +95,12 @@
     <Compile Include="Categorias.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="CerrarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CerrarCaja.Designer.cs">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
@@ -384,6 +390,9 @@
     </Compile>
     <EmbeddedResource Include="AbrirCaja.resx">
       <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CerrarCaja.resx">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsResOrden.resx">
       <DependentUpon>ConsResOrden.cs</DependentUpon>

@@ -18,6 +18,7 @@ namespace GUI_V_2
             dataGridView1.AutoGenerateColumns = false;
             id.DataPropertyName = "id";
             fecha.DataPropertyName = "fecha";
+            id_usuario.DataPropertyName = "id_usuario";
             motivo.DataPropertyName = "motivo";
             monto.DataPropertyName = "monto";
         }
