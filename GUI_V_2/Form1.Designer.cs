@@ -48,6 +48,7 @@
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnlogoInicio)).BeginInit();
@@ -228,6 +229,7 @@
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.White;
+            this.BarraTitulo.Controls.Add(this.button3);
             this.BarraTitulo.Controls.Add(this.btn_salida);
             this.BarraTitulo.Controls.Add(this.btn_vender);
             this.BarraTitulo.Controls.Add(this.linkLabel1);
@@ -339,6 +341,20 @@
             this.panelContenedor.Size = new System.Drawing.Size(1050, 605);
             this.panelContenedor.TabIndex = 2;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(355, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(145, 37);
+            this.button3.TabIndex = 129;
+            this.button3.Text = "ABRIR CAJA";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,6 +407,7 @@
         public System.Windows.Forms.Button btnsup;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

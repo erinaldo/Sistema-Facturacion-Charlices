@@ -214,5 +214,17 @@ namespace GUI_V_2
             AbrirFormEntradaSalidaCajaVenta();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!Utilidades.ValidarAperturaCaja(false))
+            {
+                AbrirCaja obj = new AbrirCaja();
+                obj.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("La se hizo la apertura de caja, puede vender.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
     }
 }
