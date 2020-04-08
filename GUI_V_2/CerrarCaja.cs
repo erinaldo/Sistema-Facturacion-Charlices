@@ -53,7 +53,7 @@ namespace GUI_V_2
                         else
                         {
                             var res = DB.Procedimiento_total_caja("cierre_caja", Utilidades.id_usuario);
-                            var totales_caja = res.SingleOrDefault();
+                            var totales_caja = res.FirstOrDefault();
                             ResumenCaja caja = new ResumenCaja();
                             caja.total_efectivo.Text = totales_caja.total_ventas_efectivo.ToString();
                             caja.anuladas.Text = totales_caja.apertura_caja.ToString();
@@ -66,7 +66,7 @@ namespace GUI_V_2
                             caja.total_movimiento_caja.Text = ((totales_caja.apertura_caja + totales_caja.entrada_caja) - totales_caja.salida_caja).ToString();
 
                             caja.total_efectivo_caja.Text = totales_caja.total_efectivo_caja.ToString();
-                            caja.Show();
+                            caja.ShowDialog();
                             this.Close();
                         }
                     }

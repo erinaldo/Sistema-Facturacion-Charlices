@@ -88,6 +88,16 @@ namespace GUI_V_2
                 {
                     using (CRUD_MODEL DB = new CRUD_MODEL())
                     {
+                        if (comboBox1.SelectedIndex == 1)
+                        {
+                            var res = DB.Procedimiento_total_caja("salida_Caja", Utilidades.id_usuario);
+                            var totales_caja = res.FirstOrDefault();
+                            if (float.Parse(txt_monto.Text.Trim()) > totales_caja.total_efectivo_caja)
+                            {
+                                MessageBox.Show($"No hay suficiente dinero en caja para sacar ese monto. La caja solo dispone de {totales_caja.total_efectivo_caja.ToString()}");
+                                return;
+                            }
+                        }
                         Entrada_Salida_Caja caja = new Entrada_Salida_Caja
                         {
                             estado = true,
@@ -103,12 +113,13 @@ namespace GUI_V_2
                         string accion = comboBox1.SelectedIndex == 0 ? "entrada" : "salida";
                         MessageBox.Show($"EL monto de {accion} a la caja se ha registrado correctamente.");
                         TraerAccionCaja();
-                        Utilidades.LimpiarControles(this);
+                        txt_monto.Text = "";
+                        txt_motivo.Text = "";
                     }
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }
