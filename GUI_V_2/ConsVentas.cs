@@ -117,8 +117,37 @@ namespace GUI_V_2
                 return;
             }
 
-            if (MessageBox.Show("Seguro que desea anular esta venta ?", "Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
+            if (MessageBox.Show("¿Seguro que desea anular esta venta?", "Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
             {
+                try
+                {
+
+                    using (CRUD_MODEL DB = new CRUD_MODEL())
+                    {
+                        int id_Factura = int.Parse(dataGridView1.SelectedCells[0].Value.ToString());
+                        IQueryable<Detalles_Facturas> detalles = DB.Detalles_Facturas.Where(d => d.id_factura == id_Factura);
+
+
+                        foreach (var resp_Detalles in detalles.ToList())
+                        {
+                            var producto = DB.Productos.FirstOrDefault(a => a.id == resp_Detalles.id_producto);
+                            if (producto != null && producto.tipo_producto==1)
+                            {
+                                producto.cantidad = producto.cantidad + resp_Detalles.cantidad_producto;
+                            }
+                        }
+                        IQueryable<Facturas> factura = DB.Facturas.Where(f => f.id == id_Factura);
+                        var resp = factura.FirstOrDefault();
+                        if (resp != null) resp.estado = true;
+                        DB.SaveChanges();
+                        LlenarDataGrid(filtro.Text.Trim());
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al anular la factura, por favor intente de nuevo.");
+
+                }
 
 
             }  
