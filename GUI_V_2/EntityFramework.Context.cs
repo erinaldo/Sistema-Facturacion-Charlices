@@ -65,7 +65,7 @@ namespace GUI_V_2
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Total_Caja", accion_procesoParameter, id_usuarioParameter);
         }
     
-        public virtual ObjectResult<Total_Caja_Result> Procedimiento_Total_Caja(string accion_proceso, Nullable<int> id_usuario)
+        public virtual ObjectResult<Total_Caja_Result> Procedimiento_total_caja(string accion_proceso, Nullable<int> id_usuario)
         {
             var accion_procesoParameter = accion_proceso != null ?
                 new ObjectParameter("accion_proceso", accion_proceso) :
@@ -75,7 +75,7 @@ namespace GUI_V_2
                 new ObjectParameter("id_usuario", id_usuario) :
                 new ObjectParameter("id_usuario", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Total_Caja_Result>("Procedimiento_Total_Caja", accion_procesoParameter, id_usuarioParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Total_Caja_Result>("Procedimiento_total_caja", accion_procesoParameter, id_usuarioParameter);
         }
     }
 }

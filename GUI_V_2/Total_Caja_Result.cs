@@ -13,10 +13,11 @@ namespace GUI_V_2
     
     public partial class Total_Caja_Result
     {
-        public Nullable<double> total_efectivo { get; set; }
         public Nullable<double> anulada { get; set; }
         public Nullable<double> apertura_caja { get; set; }
         public Nullable<double> entrada_caja { get; set; }
         public Nullable<double> salida_caja { get; set; }
+        public Nullable<double> total_efectivo_caja { get; set; }
+        public Nullable<double> total_ventas_efectivo { get; set; }
     }
 }

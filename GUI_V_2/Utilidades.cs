@@ -57,7 +57,7 @@ namespace GUI_V_2
                 DateTime fechaFinal= DateTime.Now;
 
                 IQueryable<Aperturas_Cajas> caja = DB.Aperturas_Cajas.Where(c => c.fecha>=fechaInicio  && c.fecha <= fechaFinal);
-                var resp = caja.SingleOrDefault();
+                var resp = caja.FirstOrDefault();
                 if (resp == null)
                 {
                     
@@ -69,7 +69,7 @@ namespace GUI_V_2
         }
 
 
-        public static bool ValidarCierreCaja(string mensaje)
+        public static bool Caja_Cerrada(string mensaje)
         {
             bool estado = true;
             using (CRUD_MODEL DB = new CRUD_MODEL())
@@ -78,7 +78,7 @@ namespace GUI_V_2
                 DateTime fechaFinal = DateTime.Now;
 
                 IQueryable<Cierre_Caja> caja = DB.Cierre_Caja.Where(c => c.fecha >= fechaInicio && c.fecha <= fechaFinal);
-                var resp = caja.SingleOrDefault();
+                var resp = caja.FirstOrDefault();
                 if (resp == null) estado = false;
                 else MessageBox.Show(mensaje);
                 return estado;

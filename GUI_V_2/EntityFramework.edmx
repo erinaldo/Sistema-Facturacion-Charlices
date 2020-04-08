@@ -559,7 +559,7 @@
             <Parameter Name="accion_proceso" Mode="In" Type="String" />
             <Parameter Name="id_usuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Procedimiento_Total_Caja" ReturnType="Collection(Model.Total_Caja_Result)">
+          <FunctionImport Name="Procedimiento_total_caja" ReturnType="Collection(Model.Total_Caja_Result)">
             <Parameter Name="accion_proceso" Mode="In" Type="String" />
             <Parameter Name="id_usuario" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -992,11 +992,12 @@
           </ReferentialConstraint>
         </Association>
         <ComplexType Name="Total_Caja_Result">
-          <Property Type="Double" Name="total_efectivo" Nullable="true" />
           <Property Type="Double" Name="anulada" Nullable="true" />
           <Property Type="Double" Name="apertura_caja" Nullable="true" />
           <Property Type="Double" Name="entrada_caja" Nullable="true" />
           <Property Type="Double" Name="salida_caja" Nullable="true" />
+          <Property Type="Double" Name="total_efectivo_caja" Nullable="true" />
+          <Property Type="Double" Name="total_ventas_efectivo" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1227,14 +1228,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Total_Caja" FunctionName="Model.Store.Total_Caja" />
-          <FunctionImportMapping FunctionImportName="Procedimiento_Total_Caja" FunctionName="Model.Store.Total_Caja">
+          <FunctionImportMapping FunctionImportName="Procedimiento_total_caja" FunctionName="Model.Store.Total_Caja">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Model.Total_Caja_Result">
-                <ScalarProperty Name="total_efectivo" ColumnName="total_efectivo" />
                 <ScalarProperty Name="anulada" ColumnName="anulada" />
                 <ScalarProperty Name="apertura_caja" ColumnName="apertura_caja" />
                 <ScalarProperty Name="entrada_caja" ColumnName="entrada_caja" />
                 <ScalarProperty Name="salida_caja" ColumnName="salida_caja" />
+                <ScalarProperty Name="total_efectivo_caja" ColumnName="total_efectivo_caja" />
+                <ScalarProperty Name="total_ventas_efectivo" ColumnName="total_ventas_efectivo" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

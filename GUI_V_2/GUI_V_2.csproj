@@ -366,6 +366,9 @@
     <Compile Include="Suplidores.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>
+    <Compile Include="Total_Caja_Result.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Unidades_medidas.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>

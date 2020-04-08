@@ -52,11 +52,21 @@ namespace GUI_V_2
                         }
                         else
                         {
-                            var res = DB.Procedimiento_Total_Caja("cierre_caja", Utilidades.id_usuario);
+                            var res = DB.Procedimiento_total_caja("cierre_caja", Utilidades.id_usuario);
                             var totales_caja = res.SingleOrDefault();
                             ResumenCaja caja = new ResumenCaja();
-                            //caja.totales_ventas.Text = resp
+                            caja.total_efectivo.Text = totales_caja.total_ventas_efectivo.ToString();
+                            caja.anuladas.Text = totales_caja.apertura_caja.ToString();
+                            caja.totales_ventas.Text = (totales_caja.total_ventas_efectivo + totales_caja.apertura_caja).ToString();
 
+                            //movimiento caja
+                            caja.apertura.Text = totales_caja.apertura_caja.ToString();
+                            caja.entradas.Text = totales_caja.entrada_caja.ToString();
+                            caja.salidas.Text = totales_caja.salida_caja.ToString();
+                            caja.total_movimiento_caja.Text = ((totales_caja.apertura_caja + totales_caja.entrada_caja) - totales_caja.salida_caja).ToString();
+
+                            caja.total_efectivo_caja.Text = totales_caja.total_efectivo_caja.ToString();
+                            caja.Show();
                             this.Close();
                         }
                     }

@@ -27,8 +27,13 @@ namespace GUI_V_2
         {
             if (Utilidades.ValidarAperturaCaja())
             {
-                Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
-                obj.ShowDialog();
+                string mensaje = "No se puede dar entrada/salida a caja, ya que hoy se realizó el cierre de caja.";
+                if (!Utilidades.Caja_Cerrada(mensaje))
+                {
+                    Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
+                    obj.ShowDialog();
+                }
+
             }
         }
 
@@ -37,6 +42,7 @@ namespace GUI_V_2
         {
             if (!Utilidades.ValidarAperturaCaja(false))
             {
+
                 AbrirCaja obj = new AbrirCaja();
                 obj.ShowDialog();
             }
@@ -50,8 +56,13 @@ namespace GUI_V_2
         {
             if (Utilidades.ValidarAperturaCaja())
             {
-               CerrarCaja obj = new CerrarCaja();
-                obj.ShowDialog();
+                string mensaje = "Ya hoy se había realizado el cierre de caja.";
+                if (!Utilidades.Caja_Cerrada(mensaje))
+                {
+                    CerrarCaja obj = new CerrarCaja();
+                    obj.ShowDialog();
+                }
+                   
             }
         }
     }
