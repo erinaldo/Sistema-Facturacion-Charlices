@@ -10,18 +10,13 @@
 namespace GUI_V_2
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Detalles_Facturas
+    public partial class Total_Caja_Result
     {
-        public int id { get; set; }
-        public int id_factura { get; set; }
-        public int id_producto { get; set; }
-        public int cantidad_producto { get; set; }
-        public double precio_producto { get; set; }
-        public double itbis { get; set; }
-    
-        public virtual Facturas Facturas { get; set; }
-        public virtual Productos Productos { get; set; }
+        public Nullable<double> total_efectivo { get; set; }
+        public Nullable<double> anulada { get; set; }
+        public Nullable<double> apertura_caja { get; set; }
+        public Nullable<double> entrada_caja { get; set; }
+        public Nullable<double> salida_caja { get; set; }
     }
 }

@@ -24,6 +24,19 @@
           <Property Name="estado" Type="bit" Nullable="false" />
           <Property Name="cocina" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Cierre_Caja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="total_vendido" Type="float" Nullable="false" />
+          <Property Name="total_anulado" Type="float" Nullable="false" />
+          <Property Name="entrada_caja" Type="float" Nullable="false" />
+          <Property Name="salida_caja" Type="float" Nullable="false" />
+          <Property Name="total_caja" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="id" />
@@ -343,6 +356,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_USUARIO_CIERRE">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Cierre_Caja" Type="Self.Cierre_Caja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cierre_Caja">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_USUARIO_SALIDAD_ENTRADA">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Entrada_Salida_Caja" Type="Self.Entrada_Salida_Caja" Multiplicity="*" />
@@ -358,9 +383,14 @@
         <Function Name="FACT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGOFACT" Type="int" Mode="In" />
         </Function>
+        <Function Name="Total_Caja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="accion_proceso" Type="nchar" Mode="In" />
+          <Parameter Name="id_usuario" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Aperturas_Cajas" EntityType="Self.Aperturas_Cajas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cierre_Caja" EntityType="Self.Cierre_Caja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Combrobantes" EntityType="Self.Combrobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Detalles_Facturas" EntityType="Self.Detalles_Facturas" Schema="dbo" store:Type="Tables" />
@@ -428,6 +458,10 @@
           <AssociationSet Name="FK_USUARIO" Association="Self.FK_USUARIO">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Aperturas_Cajas" EntitySet="Aperturas_Cajas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIO_CIERRE" Association="Self.FK_USUARIO_CIERRE">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cierre_Caja" EntitySet="Cierre_Caja" />
           </AssociationSet>
           <AssociationSet Name="FK_USUARIO_SALIDAD_ENTRADA" Association="Self.FK_USUARIO_SALIDAD_ENTRADA">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -516,6 +550,19 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Entrada_Salida_Caja" EntitySet="Entrada_Salida_Caja" />
           </AssociationSet>
+          <EntitySet Name="Cierre_Caja" EntityType="Model.Cierre_Caja" />
+          <AssociationSet Name="FK_USUARIO_CIERRE" Association="Model.FK_USUARIO_CIERRE">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Cierre_Caja" EntitySet="Cierre_Caja" />
+          </AssociationSet>
+          <FunctionImport Name="Total_Caja">
+            <Parameter Name="accion_proceso" Mode="In" Type="String" />
+            <Parameter Name="id_usuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Procedimiento_Total_Caja" ReturnType="Collection(Model.Total_Caja_Result)">
+            <Parameter Name="accion_proceso" Mode="In" Type="String" />
+            <Parameter Name="id_usuario" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="FACT_Result">
           <Property Type="String" Name="nombre_completo" Nullable="false" MaxLength="35" />
@@ -713,6 +760,7 @@
           <NavigationProperty Name="Ordenes_Reservadas" Relationship="Model.FK_MESERA" FromRole="Usuarios" ToRole="Ordenes_Reservadas" />
           <NavigationProperty Name="Aperturas_Cajas" Relationship="Model.FK_USUARIO" FromRole="Usuarios" ToRole="Aperturas_Cajas" />
           <NavigationProperty Name="Entrada_Salida_Caja" Relationship="Model.FK_USUARIO_SALIDAD_ENTRADA" FromRole="Usuarios" ToRole="Entrada_Salida_Caja" />
+          <NavigationProperty Name="Cierre_Caja" Relationship="Model.FK_USUARIO_CIERRE" FromRole="Usuarios" ToRole="Cierre_Caja" />
         </EntityType>
         <Association Name="FK_CATEGORIAS">
           <End Type="Model.Categorias" Role="Categorias" Multiplicity="1" />
@@ -917,6 +965,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Cierre_Caja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="total_vendido" Type="Double" Nullable="false" />
+          <Property Name="total_anulado" Type="Double" Nullable="false" />
+          <Property Name="entrada_caja" Type="Double" Nullable="false" />
+          <Property Name="salida_caja" Type="Double" Nullable="false" />
+          <Property Name="total_caja" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Model.FK_USUARIO_CIERRE" FromRole="Cierre_Caja" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_USUARIO_CIERRE">
+          <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
+          <End Type="Model.Cierre_Caja" Role="Cierre_Caja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cierre_Caja">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="Total_Caja_Result">
+          <Property Type="Double" Name="total_efectivo" Nullable="true" />
+          <Property Type="Double" Name="anulada" Nullable="true" />
+          <Property Type="Double" Name="apertura_caja" Nullable="true" />
+          <Property Type="Double" Name="entrada_caja" Nullable="true" />
+          <Property Type="Double" Name="salida_caja" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1131,6 +1212,32 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Cierre_Caja">
+            <EntityTypeMapping TypeName="Model.Cierre_Caja">
+              <MappingFragment StoreEntitySet="Cierre_Caja">
+                <ScalarProperty Name="total_caja" ColumnName="total_caja" />
+                <ScalarProperty Name="salida_caja" ColumnName="salida_caja" />
+                <ScalarProperty Name="entrada_caja" ColumnName="entrada_caja" />
+                <ScalarProperty Name="total_anulado" ColumnName="total_anulado" />
+                <ScalarProperty Name="total_vendido" ColumnName="total_vendido" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Total_Caja" FunctionName="Model.Store.Total_Caja" />
+          <FunctionImportMapping FunctionImportName="Procedimiento_Total_Caja" FunctionName="Model.Store.Total_Caja">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.Total_Caja_Result">
+                <ScalarProperty Name="total_efectivo" ColumnName="total_efectivo" />
+                <ScalarProperty Name="anulada" ColumnName="anulada" />
+                <ScalarProperty Name="apertura_caja" ColumnName="apertura_caja" />
+                <ScalarProperty Name="entrada_caja" ColumnName="entrada_caja" />
+                <ScalarProperty Name="salida_caja" ColumnName="salida_caja" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -45,5 +45,14 @@ namespace GUI_V_2
                 MessageBox.Show("Ya se ha abierto la apertura de la caja del día.");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (Utilidades.ValidarAperturaCaja())
+            {
+               CerrarCaja obj = new CerrarCaja();
+                obj.ShowDialog();
+            }
+        }
     }
 }

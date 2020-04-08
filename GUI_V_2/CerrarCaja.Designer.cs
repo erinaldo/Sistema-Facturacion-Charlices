@@ -50,9 +50,10 @@
             this.btn_cerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrarCaja.ForeColor = System.Drawing.Color.White;
-            this.btn_cerrarCaja.Location = new System.Drawing.Point(163, 313);
+            this.btn_cerrarCaja.Location = new System.Drawing.Point(217, 385);
+            this.btn_cerrarCaja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_cerrarCaja.Name = "btn_cerrarCaja";
-            this.btn_cerrarCaja.Size = new System.Drawing.Size(154, 42);
+            this.btn_cerrarCaja.Size = new System.Drawing.Size(205, 52);
             this.btn_cerrarCaja.TabIndex = 133;
             this.btn_cerrarCaja.Text = "CERRAR CAJA";
             this.btn_cerrarCaja.UseVisualStyleBackColor = false;
@@ -62,10 +63,11 @@
             // 
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 119);
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 146);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.MaxDate = new System.DateTime(2040, 3, 13, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(296, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(393, 34);
             this.dateTimePicker1.TabIndex = 132;
             this.dateTimePicker1.Value = new System.DateTime(2019, 3, 13, 0, 0, 0, 0);
             // 
@@ -73,9 +75,10 @@
             // 
             this.txt_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_user.Limpiar = false;
-            this.txt_user.Location = new System.Drawing.Point(109, 201);
+            this.txt_user.Location = new System.Drawing.Point(145, 247);
+            this.txt_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(254, 38);
+            this.txt_user.Size = new System.Drawing.Size(337, 46);
             this.txt_user.TabIndex = 131;
             this.txt_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_user.Validar = true;
@@ -87,9 +90,10 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(86, 174);
+            this.label3.Location = new System.Drawing.Point(115, 214);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 24);
+            this.label3.Size = new System.Drawing.Size(387, 29);
             this.label3.TabIndex = 130;
             this.label3.Text = "INGRESE SUS DATOS DE INICIO:";
             // 
@@ -100,9 +104,10 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(196, 92);
+            this.label1.Location = new System.Drawing.Point(261, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 24);
+            this.label1.Size = new System.Drawing.Size(93, 29);
             this.label1.TabIndex = 129;
             this.label1.Text = "FECHA";
             // 
@@ -113,8 +118,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 43);
+            this.panel1.Size = new System.Drawing.Size(647, 53);
             this.panel1.TabIndex = 128;
             // 
             // label4
@@ -125,9 +131,10 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(447, 9);
+            this.label4.Location = new System.Drawing.Point(596, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 25);
+            this.label4.Size = new System.Drawing.Size(32, 31);
             this.label4.TabIndex = 128;
             this.label4.Text = "X";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -139,9 +146,10 @@
             this.label2.BackColor = System.Drawing.Color.DodgerBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(120, 9);
+            this.label2.Location = new System.Drawing.Point(160, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 29);
+            this.label2.Size = new System.Drawing.Size(286, 36);
             this.label2.TabIndex = 95;
             this.label2.Text = "CIERRE  DE CAJA";
             // 
@@ -149,9 +157,10 @@
             // 
             this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pass.Limpiar = false;
-            this.txt_pass.Location = new System.Drawing.Point(109, 257);
+            this.txt_pass.Location = new System.Drawing.Point(145, 316);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(254, 38);
+            this.txt_pass.Size = new System.Drawing.Size(337, 46);
             this.txt_pass.TabIndex = 134;
             this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_pass.UseSystemPasswordChar = true;
@@ -163,10 +172,10 @@
             // 
             // CerrarCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(485, 450);
+            this.ClientSize = new System.Drawing.Size(647, 554);
             this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.btn_cerrarCaja);
             this.Controls.Add(this.dateTimePicker1);
@@ -175,8 +184,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CerrarCaja";
             this.Text = "CerrarCaja";
+            this.Load += new System.EventHandler(this.CerrarCaja_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

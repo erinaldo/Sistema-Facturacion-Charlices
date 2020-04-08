@@ -101,6 +101,9 @@
     <Compile Include="CerrarCaja.Designer.cs">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cierre_Caja.cs">
+      <DependentUpon>EntityFramework.tt</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <DependentUpon>EntityFramework.tt</DependentUpon>
     </Compile>

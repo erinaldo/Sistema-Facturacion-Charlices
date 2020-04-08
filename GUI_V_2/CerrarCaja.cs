@@ -15,6 +15,7 @@ namespace GUI_V_2
         public CerrarCaja()
         {
             InitializeComponent();
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         //Boton Cerrar Caja
@@ -30,19 +31,47 @@ namespace GUI_V_2
             if (Utilidades.ValidarFormulario(this, errorProvider1))
                 return;
 
-            //Consultar que el usuario y la contrasena entren y coincian con el usuario loggeado.
-            /*
-               //Codigo para valdar el usuario
-            
-            */
-            //Luego de validado preguntaremos si esta seguro de hacer el cierre de caja:
-           if(DialogResult.Yes == MessageBox.Show("No se puede vender por hoy, luego del cierre de caja. Esta seguro que desea continiar ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                //Metodo cerrar caja
-            }
-           
-        }
         
+           if(DialogResult.Yes == MessageBox.Show("No se puede vender por hoy, luego del cierre de caja. ¿Esta seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+
+                using (CRUD_MODEL DB = new CRUD_MODEL())
+                {
+                    IQueryable<Usuarios> usuario = DB.Usuarios.Where(u => u.usuario == txt_user.Text.Trim() && u.password == txt_pass.Text.Trim());
+
+                    var resp = usuario.SingleOrDefault();
+                    if (resp == null)
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecto.");
+                    }
+                    else
+                    {
+                        if (resp.id != Utilidades.id_usuario)
+                        {
+                            MessageBox.Show("Los credenciales no coinciden con el usuario logeado, cierre la sesión e inicie sesión con su usuario correspondiente.");
+                        }
+                        else
+                        {
+                            var res = DB.Procedimiento_Total_Caja("cierre_caja", Utilidades.id_usuario);
+                            var totales_caja = res.SingleOrDefault();
+                            ResumenCaja caja = new ResumenCaja();
+                            //caja.totales_ventas.Text = resp
+
+                            this.Close();
+                        }
+                    }
+
+                }
+
+                }
+
+            }
+
+        private void CerrarCaja_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         //Metodo cerrar caja
 

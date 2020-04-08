@@ -12,16 +12,17 @@ namespace GUI_V_2
     using System;
     using System.Collections.Generic;
     
-    public partial class Detalles_Facturas
+    public partial class Cierre_Caja
     {
         public int id { get; set; }
-        public int id_factura { get; set; }
-        public int id_producto { get; set; }
-        public int cantidad_producto { get; set; }
-        public double precio_producto { get; set; }
-        public double itbis { get; set; }
+        public System.DateTime fecha { get; set; }
+        public int id_usuario { get; set; }
+        public double total_vendido { get; set; }
+        public double total_anulado { get; set; }
+        public double entrada_caja { get; set; }
+        public double salida_caja { get; set; }
+        public double total_caja { get; set; }
     
-        public virtual Facturas Facturas { get; set; }
-        public virtual Productos Productos { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

@@ -69,6 +69,23 @@ namespace GUI_V_2
         }
 
 
+        public static bool ValidarCierreCaja(string mensaje)
+        {
+            bool estado = true;
+            using (CRUD_MODEL DB = new CRUD_MODEL())
+            {
+                DateTime fechaInicio = DateTime.Today;
+                DateTime fechaFinal = DateTime.Now;
+
+                IQueryable<Cierre_Caja> caja = DB.Cierre_Caja.Where(c => c.fecha >= fechaInicio && c.fecha <= fechaFinal);
+                var resp = caja.SingleOrDefault();
+                if (resp == null) estado = false;
+                else MessageBox.Show(mensaje);
+                return estado;
+            }
+        }
+
+
         public static void LimpiarControles(Control forms)
         {
 
