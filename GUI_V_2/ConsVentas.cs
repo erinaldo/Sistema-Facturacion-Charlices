@@ -116,6 +116,12 @@ namespace GUI_V_2
                 MessageBox.Show("Debe seleccionar la venta que desea anular.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            string estado = dataGridView1.SelectedCells[8].Value.ToString();
+            if (estado.Equals("Anulada"))
+            {
+                MessageBox.Show("La factura anteriormente ya se había anulado.");
+                return;
+            }
 
             if (MessageBox.Show("¿Seguro que desea anular esta venta?", "Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes )
             {
