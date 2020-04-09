@@ -21,5 +21,42 @@ namespace GUI_V_2
         {
 
         }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void ResumirCaja()
+        {
+
+
+
+
+        }
+
+
+        //Valor monto apertura
+        private double MontoApertura()
+        {
+
+            
+            return 0.00;
+        }
+
+        //Valor monto apertura
+        private void ResumenVentas()
+        {
+
+
+
+
+        }
+
+
+
+
     }
 }
