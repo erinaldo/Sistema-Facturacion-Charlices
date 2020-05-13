@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
             this.CedUsu = new GUI_V_2.ErrorTxtBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.UsuPass = new GUI_V_2.ErrorTxtBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pass_confirm = new GUI_V_2.ErrorTxtBox();
+            this.btn_verPass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +54,10 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.Text = "USUARIO";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(40, 101);
             // 
             // bnt_eliminar
             // 
@@ -71,18 +79,19 @@
             // estado
             // 
             this.estado.Location = new System.Drawing.Point(125, 438);
-            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estado.Margin = new System.Windows.Forms.Padding(4);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
-            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Nom.Size = new System.Drawing.Size(262, 26);
+            this.Nom.Location = new System.Drawing.Point(125, 95);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4);
+            this.Nom.Size = new System.Drawing.Size(290, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
             // 
             // btn_cerrar
@@ -94,7 +103,7 @@
             // 
             this.CedUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CedUsu.Limpiar = true;
-            this.CedUsu.Location = new System.Drawing.Point(162, 233);
+            this.CedUsu.Location = new System.Drawing.Point(162, 243);
             this.CedUsu.Name = "CedUsu";
             this.CedUsu.Size = new System.Drawing.Size(170, 26);
             this.CedUsu.TabIndex = 126;
@@ -104,7 +113,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(40, 236);
+            this.label8.Location = new System.Drawing.Point(40, 246);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 125;
@@ -127,7 +136,7 @@
             this.CorUsu.Location = new System.Drawing.Point(125, 399);
             this.CorUsu.MaxLength = 60;
             this.CorUsu.Name = "CorUsu";
-            this.CorUsu.Size = new System.Drawing.Size(233, 26);
+            this.CorUsu.Size = new System.Drawing.Size(275, 26);
             this.CorUsu.TabIndex = 123;
             this.CorUsu.Validar = true;
             // 
@@ -145,7 +154,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(40, 320);
+            this.label4.Location = new System.Drawing.Point(40, 322);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 20);
             this.label4.TabIndex = 121;
@@ -155,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(40, 282);
+            this.label3.Location = new System.Drawing.Point(40, 287);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 20);
             this.label3.TabIndex = 120;
@@ -165,10 +174,10 @@
             // 
             this.DirUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirUsu.Limpiar = true;
-            this.DirUsu.Location = new System.Drawing.Point(162, 317);
+            this.DirUsu.Location = new System.Drawing.Point(162, 319);
             this.DirUsu.MaxLength = 40;
             this.DirUsu.Name = "DirUsu";
-            this.DirUsu.Size = new System.Drawing.Size(334, 26);
+            this.DirUsu.Size = new System.Drawing.Size(403, 26);
             this.DirUsu.TabIndex = 119;
             this.DirUsu.Validar = true;
             // 
@@ -176,7 +185,7 @@
             // 
             this.TelUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TelUsu.Limpiar = true;
-            this.TelUsu.Location = new System.Drawing.Point(162, 276);
+            this.TelUsu.Location = new System.Drawing.Point(162, 281);
             this.TelUsu.MaxLength = 15;
             this.TelUsu.Name = "TelUsu";
             this.TelUsu.Size = new System.Drawing.Size(170, 26);
@@ -199,9 +208,9 @@
             // 
             this.UsuNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.UsuNom.Limpiar = true;
-            this.UsuNom.Location = new System.Drawing.Point(132, 145);
+            this.UsuNom.Location = new System.Drawing.Point(125, 132);
             this.UsuNom.Name = "UsuNom";
-            this.UsuNom.Size = new System.Drawing.Size(183, 26);
+            this.UsuNom.Size = new System.Drawing.Size(190, 26);
             this.UsuNom.TabIndex = 129;
             this.UsuNom.Validar = true;
             // 
@@ -209,7 +218,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.Location = new System.Drawing.Point(40, 148);
+            this.label9.Location = new System.Drawing.Point(40, 135);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 20);
             this.label9.TabIndex = 128;
@@ -219,28 +228,67 @@
             // 
             this.UsuPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.UsuPass.Limpiar = true;
-            this.UsuPass.Location = new System.Drawing.Point(162, 187);
+            this.UsuPass.Location = new System.Drawing.Point(162, 169);
             this.UsuPass.Name = "UsuPass";
             this.UsuPass.Size = new System.Drawing.Size(183, 26);
             this.UsuPass.TabIndex = 131;
             this.UsuPass.UseSystemPasswordChar = true;
             this.UsuPass.Validar = true;
+            this.UsuPass.TextChanged += new System.EventHandler(this.UsuPass_TextChanged);
+            this.UsuPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_confirm_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label10.Location = new System.Drawing.Point(40, 190);
+            this.label10.Location = new System.Drawing.Point(40, 210);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 20);
             this.label10.TabIndex = 130;
             this.label10.Text = "CONTRASEÑA";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(40, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 20);
+            this.label11.TabIndex = 132;
+            this.label11.Text = "CONTRASEÑA";
+            // 
+            // pass_confirm
+            // 
+            this.pass_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.pass_confirm.Limpiar = true;
+            this.pass_confirm.Location = new System.Drawing.Point(162, 207);
+            this.pass_confirm.Name = "pass_confirm";
+            this.pass_confirm.Size = new System.Drawing.Size(183, 26);
+            this.pass_confirm.TabIndex = 133;
+            this.pass_confirm.UseSystemPasswordChar = true;
+            this.pass_confirm.Validar = true;
+            this.pass_confirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_confirm_KeyPress);
+            // 
+            // btn_verPass
+            // 
+            this.btn_verPass.FlatAppearance.BorderSize = 0;
+            this.btn_verPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verPass.Image = ((System.Drawing.Image)(resources.GetObject("btn_verPass.Image")));
+            this.btn_verPass.Location = new System.Drawing.Point(351, 169);
+            this.btn_verPass.Name = "btn_verPass";
+            this.btn_verPass.Size = new System.Drawing.Size(39, 26);
+            this.btn_verPass.TabIndex = 134;
+            this.btn_verPass.UseVisualStyleBackColor = true;
+            this.btn_verPass.Click += new System.EventHandler(this.btn_verPass_Click);
             // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 483);
+            this.Controls.Add(this.btn_verPass);
+            this.Controls.Add(this.pass_confirm);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.UsuPass);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.UsuNom);
@@ -255,7 +303,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.DirUsu);
             this.Controls.Add(this.TelUsu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
@@ -283,6 +331,9 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.Nom, 0);
             this.Controls.SetChildIndex(this.estado, 0);
+            this.Controls.SetChildIndex(this.label11, 0);
+            this.Controls.SetChildIndex(this.pass_confirm, 0);
+            this.Controls.SetChildIndex(this.btn_verPass, 0);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,5 +356,8 @@
         private System.Windows.Forms.Label label9;
         private ErrorTxtBox UsuPass;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private ErrorTxtBox pass_confirm;
+        private System.Windows.Forms.Button btn_verPass;
     }
 }

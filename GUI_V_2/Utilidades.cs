@@ -39,13 +39,14 @@ namespace GUI_V_2
                     {
                         ErrorProvider.SetError(obj,"");
                     }
-
+          
                 }
 
             }
 
             return HayError;
         }
+
 
 
         public static bool ValidarAperturaCaja(bool mostrarMensaje = true)

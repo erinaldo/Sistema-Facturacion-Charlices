@@ -221,9 +221,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Location = new System.Drawing.Point(22, 204);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 24);
+            this.label14.Size = new System.Drawing.Size(166, 24);
             this.label14.TabIndex = 77;
-            this.label14.Text = "Total RD$:";
+            this.label14.Text = "Total efectivo RD$:";
             // 
             // label16
             // 
@@ -241,7 +241,7 @@
             this.total_movimiento_caja.AutoSize = true;
             this.total_movimiento_caja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total_movimiento_caja.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.total_movimiento_caja.Location = new System.Drawing.Point(650, 203);
+            this.total_movimiento_caja.Location = new System.Drawing.Point(650, 207);
             this.total_movimiento_caja.Name = "total_movimiento_caja";
             this.total_movimiento_caja.Size = new System.Drawing.Size(65, 24);
             this.total_movimiento_caja.TabIndex = 78;
