@@ -18,6 +18,7 @@ namespace GUI_V_2
         public System.DateTime fecha { get; set; }
         public int id_usuario { get; set; }
         public double monto_inicial { get; set; }
+        public bool cerrada { get; set; }
     
         public virtual Usuarios Usuarios { get; set; }
     }

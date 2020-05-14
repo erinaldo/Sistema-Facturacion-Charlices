@@ -13,6 +13,7 @@
           <Property Name="fecha" Type="datetime" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="monto_inicial" Type="float" Nullable="false" />
+          <Property Name="cerrada" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
@@ -356,18 +357,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_USUARIO_CIERRE">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
-          <End Role="Cierre_Caja" Type="Self.Cierre_Caja" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuarios">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Cierre_Caja">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_USUARIO_SALIDAD_ENTRADA">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Entrada_Salida_Caja" Type="Self.Entrada_Salida_Caja" Multiplicity="*" />
@@ -458,10 +447,6 @@
           <AssociationSet Name="FK_USUARIO" Association="Self.FK_USUARIO">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Aperturas_Cajas" EntitySet="Aperturas_Cajas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_CIERRE" Association="Self.FK_USUARIO_CIERRE">
-            <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Cierre_Caja" EntitySet="Cierre_Caja" />
           </AssociationSet>
           <AssociationSet Name="FK_USUARIO_SALIDAD_ENTRADA" Association="Self.FK_USUARIO_SALIDAD_ENTRADA">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -927,6 +912,7 @@
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="monto_inicial" Type="Double" Nullable="false" />
           <NavigationProperty Name="Usuarios" Relationship="Model.FK_USUARIO" FromRole="Aperturas_Cajas" ToRole="Usuarios" />
+          <Property Name="cerrada" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_USUARIO">
           <End Type="Model.Usuarios" Role="Usuarios" Multiplicity="1" />
@@ -1193,6 +1179,7 @@
           <EntitySetMapping Name="Aperturas_Cajas">
             <EntityTypeMapping TypeName="Model.Aperturas_Cajas">
               <MappingFragment StoreEntitySet="Aperturas_Cajas">
+                <ScalarProperty Name="cerrada" ColumnName="cerrada" />
                 <ScalarProperty Name="monto_inicial" ColumnName="monto_inicial" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />

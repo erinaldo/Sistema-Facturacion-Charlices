@@ -193,13 +193,8 @@ namespace GUI_V_2
         {
             if (Utilidades.ValidarAperturaCaja())
             {
-                string mensaje = "No podra realizar ventas el día de hoy, ya que se realizó el cierre de caja.";
-                if (!Utilidades.Caja_Cerrada(mensaje))
-                {
                     VentasModoTouch obj = new VentasModoTouch();
                     obj.ShowDialog();
-                }
-                  
             }
                 
         }
@@ -208,13 +203,8 @@ namespace GUI_V_2
         {
             if (Utilidades.ValidarAperturaCaja())
             {
-                string mensaje = "No se puede dar entrada/salida a caja, ya que hoy se realizó el cierre de caja.";
-                if (!Utilidades.Caja_Cerrada(mensaje))
-                {
                     Entrada_SalidaCaja obj = new Entrada_SalidaCaja();
                     obj.ShowDialog();
-                }
-                    
             }
 
         }

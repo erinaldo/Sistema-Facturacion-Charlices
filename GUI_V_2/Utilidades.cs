@@ -53,15 +53,13 @@ namespace GUI_V_2
             bool estado = true;
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
-                DateTime fechaInicio = DateTime.Today;
-                DateTime fechaFinal= DateTime.Now;
 
-                IQueryable<Aperturas_Cajas> caja = DB.Aperturas_Cajas.Where(c => c.fecha>=fechaInicio  && c.fecha <= fechaFinal);
+                IQueryable<Aperturas_Cajas> caja = DB.Aperturas_Cajas.Where(c => c.cerrada==false);
                 var resp = caja.FirstOrDefault();
                 if (resp == null)
                 {
                     
-                    if(mostrarMensaje) MessageBox.Show("No se le ha dado la apertura del día a la caja.");
+                    if(mostrarMensaje) MessageBox.Show("Debe realiar la apertura de caja.");
                     estado  = false; 
                 }
                 return estado;
@@ -69,21 +67,6 @@ namespace GUI_V_2
         }
 
 
-        public static bool Caja_Cerrada(string mensaje)
-        {
-            bool estado = true;
-            using (CRUD_MODEL DB = new CRUD_MODEL())
-            {
-                DateTime fechaInicio = DateTime.Today;
-                DateTime fechaFinal = DateTime.Now;
-
-                IQueryable<Cierre_Caja> caja = DB.Cierre_Caja.Where(c => c.fecha >= fechaInicio && c.fecha <= fechaFinal);
-                var resp = caja.FirstOrDefault();
-                if (resp == null) estado = false;
-                else MessageBox.Show(mensaje);
-                return estado;
-            }
-        }
 
 
         public static void LimpiarControles(Control forms)
