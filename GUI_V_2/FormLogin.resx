@@ -256,4 +256,18 @@
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btn_verPass.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAcJJREFUWEftVktOwlAUBSWxu3BgInEFOmqhjEiIszrCBKMj2UR15FxXwAp0EwXZ
+        hVuAkcSg57T3Nc9L7SeYdNKTnPRx77nn8W5f+9pq0KBBFfR6PQe8AKf9fv8R1xdSxlPJOSL/HwyHwyNM
+        cOV53hvMN+B3ATfUsoa1YlMdMOrA6Ab8UBOUJmvpgXFHbMvB9/0TFC1sM8UtjN+xyhnJMWNKY3NOT7HP
+        BwwvUbBWBjYj13XPRJ6CMeaU1uaa3iLPBlZyDeGXKrT5FATBoch3wBw1qsYmvcci/w0kRmBeGyM1eRsr
+        6pIcJ6H0T8xVrU3OMRJ5AmnfyhJpbu22434eI2a3O2JM0sYvbzGr1C8MwwPZRFnCmMzH4gRtxLLudcRc
+        Iok7ulR5zQXnpvBOJXbInS6+3KTdLA05GAxORUbdLEujeFv/H6j9FhC1bkIDBCs/hmy5tH2/x9AAiTFY
+        z4vIAJun6FU832kfIG3PW3nxq9iABwcKcg8jcMmdLrudGy7v9pU/jAxQ1AEneAL2Oo5xnYDVjmMb/KiA
+        UQCTV1w/jflfFA21wV4fJFmAsYOWn4P3mOABv59JjhljjhqRN2jQoARarR9tao0PM7LCtgAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
 </root>

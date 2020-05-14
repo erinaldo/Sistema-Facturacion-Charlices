@@ -44,7 +44,7 @@
             this.bnt_eliminar.FlatAppearance.BorderSize = 0;
             this.bnt_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bnt_eliminar.Location = new System.Drawing.Point(612, 373);
-            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_eliminar.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_eliminar.Click += new System.EventHandler(this.bnt_eliminar_Click);
             // 
             // btn_guardar
@@ -52,7 +52,7 @@
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btn_guardar.Location = new System.Drawing.Point(612, 426);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // label19
@@ -69,27 +69,31 @@
             // estado
             // 
             this.estado.Location = new System.Drawing.Point(125, 154);
-            this.estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.estado.Margin = new System.Windows.Forms.Padding(4);
             this.estado.SelectedIndexChanged += new System.EventHandler(this.estado_SelectedIndexChanged);
             // 
             // Nom
             // 
             this.Nom.Limpiar = true;
-            this.Nom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nom.Margin = new System.Windows.Forms.Padding(4);
             this.Nom.MaxLength = 25;
             this.Nom.Size = new System.Drawing.Size(209, 26);
             // 
             // Codigo
             // 
             this.Codigo.Limpiar = true;
-            this.Codigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(4);
             this.Codigo.Leave += new System.EventHandler(this.Codigo_Leave);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Location = new System.Drawing.Point(816, 6);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 107;
@@ -102,7 +106,7 @@
             this.cocina.AutoSize = true;
             this.cocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cocina.Location = new System.Drawing.Point(48, 195);
-            this.cocina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cocina.Margin = new System.Windows.Forms.Padding(2);
             this.cocina.Name = "cocina";
             this.cocina.Size = new System.Drawing.Size(89, 24);
             this.cocina.TabIndex = 108;
@@ -117,7 +121,7 @@
             this.ClientSize = new System.Drawing.Size(858, 563);
             this.Controls.Add(this.cocina);
             this.Controls.Add(this.checkBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCategorias";
             this.Text = "Categorias";
             this.Controls.SetChildIndex(this.btn_guardar, 0);

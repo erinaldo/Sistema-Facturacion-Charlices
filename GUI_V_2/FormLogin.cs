@@ -61,5 +61,49 @@ namespace GUI_V_2
             }
         }
 
+        //validacion num * letras
+        private void txt_user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_verPass_Click(object sender, EventArgs e)
+        {
+            if (txt_pass.UseSystemPasswordChar==true)
+            {
+                txt_pass.UseSystemPasswordChar = false;
+                btn_verPass.BackColor = Color.Black;
+
+            }
+            else
+            {
+                txt_pass.UseSystemPasswordChar = true;
+                btn_verPass.BackColor = Color.White;
+            }
+
+        }
+
+        //validacion num * letras
+        private void txt_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
     }
     }

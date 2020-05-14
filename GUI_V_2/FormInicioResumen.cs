@@ -42,6 +42,8 @@ namespace GUI_V_2
 
         int a = 0;
 
+
+        //Datos para el resumen en el inicio
         public void CargarDatosResumen()
         {
             try
@@ -50,7 +52,9 @@ namespace GUI_V_2
                     IQueryable<Clientes> Cli = datos.Clientes.Where(u => u.estado == true);
                     IQueryable<Productos> Pro = datos.Productos.Where(u => u.estado == true);
                     IQueryable<Suplidores> Sup = datos.Suplidores.Where(u => u.estado == true);
-                  
+                    IQueryable<Usuarios> Emp = datos.Usuarios.Where(u => u.estado == true);
+
+                    txtEmpleadosCount.Text = Emp.AsQueryable().Count().ToString();
                     txtClientesCount.Text = Cli.AsQueryable().Count().ToString();
                     txtProductosCount.Text = Pro.AsQueryable().Count().ToString();
                     txtSuplidoresCount.Text = Sup.AsQueryable().Count().ToString();

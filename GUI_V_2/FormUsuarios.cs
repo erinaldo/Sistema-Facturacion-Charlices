@@ -44,6 +44,12 @@ namespace GUI_V_2
                 if (Utilidades.ValidarFormulario(this, errorProvider1) == true)
                     return;
 
+                if (UsuPass.Text.Trim().Equals(pass_confirm.Text.Trim())==false)
+                {
+                    MessageBox.Show("LAS CONTRASEÑAS NO COINCIDEN.","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
                     if (id == 0)
@@ -151,6 +157,7 @@ namespace GUI_V_2
                         estado.SelectedIndex = 0;
                         id = usuario.id;
                         bnt_eliminar.Enabled = true;
+                        pass_confirm.Text = UsuPass.Text;
                     }
                     else
                     {
@@ -168,6 +175,39 @@ namespace GUI_V_2
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pass_confirm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_verPass_Click(object sender, EventArgs e)
+        {
+            if (pass_confirm.UseSystemPasswordChar == true)
+            {
+                UsuPass.UseSystemPasswordChar = false;
+                pass_confirm.UseSystemPasswordChar = false;
+                btn_verPass.BackColor = Color.Black;
+
+            }
+            else
+            {
+                pass_confirm.UseSystemPasswordChar = true;
+                UsuPass.UseSystemPasswordChar = true;
+                btn_verPass.BackColor = Color.White;
+            }
+        }
+
+        private void UsuPass_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

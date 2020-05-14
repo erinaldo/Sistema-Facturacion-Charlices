@@ -42,8 +42,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txt_user = new GUI_V_2.ErrorTxtBox();
+            this.btn_verPass = new System.Windows.Forms.Button();
             this.txt_pass = new GUI_V_2.ErrorTxtBox();
+            this.txt_user = new GUI_V_2.ErrorTxtBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,18 +197,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txt_user
+            // btn_verPass
             // 
-            this.txt_user.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.txt_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txt_user.Limpiar = false;
-            this.txt_user.Location = new System.Drawing.Point(458, 150);
-            this.txt_user.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(257, 35);
-            this.txt_user.TabIndex = 81;
-            this.txt_user.Text = "admin";
-            this.txt_user.Validar = true;
+            this.btn_verPass.FlatAppearance.BorderSize = 0;
+            this.btn_verPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_verPass.Image = ((System.Drawing.Image)(resources.GetObject("btn_verPass.Image")));
+            this.btn_verPass.Location = new System.Drawing.Point(722, 225);
+            this.btn_verPass.Name = "btn_verPass";
+            this.btn_verPass.Size = new System.Drawing.Size(39, 35);
+            this.btn_verPass.TabIndex = 83;
+            this.btn_verPass.UseVisualStyleBackColor = true;
+            this.btn_verPass.Click += new System.EventHandler(this.btn_verPass_Click);
             // 
             // txt_pass
             // 
@@ -222,6 +222,21 @@
             this.txt_pass.Text = "admin";
             this.txt_pass.UseSystemPasswordChar = true;
             this.txt_pass.Validar = true;
+            this.txt_pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pass_KeyPress);
+            // 
+            // txt_user
+            // 
+            this.txt_user.Font = new System.Drawing.Font("Segoe UI", 15.75F);
+            this.txt_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txt_user.Limpiar = false;
+            this.txt_user.Location = new System.Drawing.Point(458, 150);
+            this.txt_user.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_user.Name = "txt_user";
+            this.txt_user.Size = new System.Drawing.Size(257, 35);
+            this.txt_user.TabIndex = 81;
+            this.txt_user.Text = "admin";
+            this.txt_user.Validar = true;
+            this.txt_user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_user_KeyPress);
             // 
             // FormLogin
             // 
@@ -229,6 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(835, 538);
+            this.Controls.Add(this.btn_verPass);
             this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.txt_user);
             this.Controls.Add(this.label15);
@@ -271,5 +287,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private ErrorTxtBox txt_user;
         private ErrorTxtBox txt_pass;
+        private System.Windows.Forms.Button btn_verPass;
     }
 }
