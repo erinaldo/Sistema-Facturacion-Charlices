@@ -32,7 +32,7 @@ namespace GUI_V_2
                 return;
 
         
-           if(DialogResult.Yes == MessageBox.Show("No se puede vender por hoy, luego del cierre de caja. ¿Esta seguro que desea continuar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+           if(DialogResult.Yes == MessageBox.Show("¿Esta seguro que desea realizar el cierre de caja?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
 
                 using (CRUD_MODEL DB = new CRUD_MODEL())
@@ -52,20 +52,8 @@ namespace GUI_V_2
                         }
                         else
                         {
-                            var res = DB.Procedimiento_total_caja("cierre_caja", Utilidades.id_usuario);
-                            var totales_caja = res.FirstOrDefault();
-                            ResumenCaja caja = new ResumenCaja();
-                            caja.total_efectivo.Text = totales_caja.total_ventas_efectivo.ToString();
-                            caja.anuladas.Text = totales_caja.apertura_caja.ToString();
-                            caja.totales_ventas.Text = (totales_caja.total_ventas_efectivo + totales_caja.apertura_caja).ToString();
-
-                            //movimiento caja
-                            caja.apertura.Text = totales_caja.apertura_caja.ToString();
-                            caja.entradas.Text = totales_caja.entrada_caja.ToString();
-                            caja.salidas.Text = totales_caja.salida_caja.ToString();
-                            caja.total_movimiento_caja.Text = ((totales_caja.apertura_caja + totales_caja.entrada_caja) - totales_caja.salida_caja).ToString();
-
-                            caja.total_efectivo_caja.Text = totales_caja.total_efectivo_caja.ToString();
+                           
+                            ResumenCaja caja = new ResumenCaja("cierre_caja");
                             caja.ShowDialog();
                             this.Close();
                         }
