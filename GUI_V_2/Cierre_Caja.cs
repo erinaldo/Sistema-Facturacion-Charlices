@@ -22,7 +22,9 @@ namespace GUI_V_2
         public double entrada_caja { get; set; }
         public double salida_caja { get; set; }
         public double total_caja { get; set; }
+        public int id_apertura_caja { get; set; }
     
         public virtual Usuarios Usuarios { get; set; }
+        public virtual Aperturas_Cajas Aperturas_Cajas { get; set; }
     }
 }
