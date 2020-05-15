@@ -36,6 +36,7 @@
         <AssociationConnector Association="Model.FK_USUARIO_SALIDAD_ENTRADA" />
         <EntityTypeShape EntityType="Model.Cierre_Caja" Width="1.5" PointX="3" PointY="25.375" />
         <AssociationConnector Association="Model.FK_USUARIO_CIERRE" />
+        <AssociationConnector Association="Model.FK_id_apertura_caja" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -77,5 +77,10 @@ namespace GUI_V_2
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Total_Caja_Result>("Procedimiento_total_caja", accion_procesoParameter, id_usuarioParameter);
         }
+    
+        public virtual ObjectResult<Resumen_caja_Result> Resumen_caja()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Resumen_caja_Result>("Resumen_caja");
+        }
     }
 }
