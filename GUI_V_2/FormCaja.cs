@@ -72,7 +72,7 @@ namespace GUI_V_2
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-            AbrirFormEnPanel(new ResumenCaja());
+            //AbrirFormEnPanel(new ResumenCaja());
 
         }
 
@@ -84,7 +84,12 @@ namespace GUI_V_2
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
-            AbrirFormEnPanel(new ResumenCaja());
+           // AbrirFormEnPanel(new ResumenCaja());
+
+        }
+
+        private void FormCaja_Load(object sender, EventArgs e)
+        {
 
         }
     }
