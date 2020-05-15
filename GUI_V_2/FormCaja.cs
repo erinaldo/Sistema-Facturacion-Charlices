@@ -69,5 +69,23 @@ namespace GUI_V_2
         {
             AbrirFormEnPanel(new ResumenCaja());
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            AbrirFormEnPanel(new ResumenCaja());
+
+        }
+
+        private void Resumen_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ResumenCaja());
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+            AbrirFormEnPanel(new ResumenCaja());
+
+        }
     }
 }
