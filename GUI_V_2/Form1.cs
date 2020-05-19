@@ -16,7 +16,6 @@ namespace GUI_V_2
         public Form1()
         {
             InitializeComponent();
-            Loading.Show();
             //Asignando datos del usuario registrado
             lbluser.Text = Utilidades.NombreUsuario;
             if (Utilidades.tipo_usuario == 1)
@@ -33,8 +32,6 @@ namespace GUI_V_2
 
         }
 
-
-        VentanaLoading Loading = new VentanaLoading();
 
 
         private void btnMenu_Click(object sender, EventArgs e)

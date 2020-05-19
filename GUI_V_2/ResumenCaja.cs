@@ -40,13 +40,15 @@ namespace GUI_V_2
                 using (CRUD_MODEL DB = new CRUD_MODEL())
                 {
 
-                    MessageBox.Show(tipo_resumen);
                     if (tipo_resumen == "cierre_caja") {
                         var res = DB.Procedimiento_total_caja(tipo_resumen, Utilidades.id_usuario);
                         Total_Caja_Result totales_caja = res.FirstOrDefault();
                         this.Cierre_Caja(totales_caja);
                         //Ticket de cierre 
-                        TicketCierreCaja();
+                        if (DialogResult.Yes == MessageBox.Show("¿Desea imprimir ticket de cierre?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                        {
+                            TicketCierreCaja();
+                        }
                     }
                     else
                     {
@@ -184,7 +186,7 @@ namespace GUI_V_2
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
             //Texto final del Ticket.
-            ticket.TextoIzquierda("_____________________________");
+            ticket.TextoCentro("________________________________");
             ticket.TextoCentro("FIRMA");
             ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
