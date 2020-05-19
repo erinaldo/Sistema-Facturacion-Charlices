@@ -164,7 +164,7 @@
             this.fecha_fin.Name = "fecha_fin";
             this.fecha_fin.Size = new System.Drawing.Size(197, 26);
             this.fecha_fin.TabIndex = 2;
-            this.fecha_fin.Value = new System.DateTime(2020, 3, 11, 14, 33, 34, 0);
+            this.fecha_fin.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
             // 
             // label1
             // 

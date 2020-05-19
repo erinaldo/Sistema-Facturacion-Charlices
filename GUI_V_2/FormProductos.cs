@@ -174,7 +174,7 @@ namespace GUI_V_2
                             precio_normal.Value = producto.precio_normal;
                             precio_empleado.Value = producto.precio_empleado;
                             precio_empresa.Value = producto.precio_empresa;
-                            itbis.SelectedIndex = producto.itbis == 18 ? 0 : 1;
+                            itbis.SelectedIndex = producto.itbis == 18 ? 0 : 0;
                             cantidadPro.Value = producto.cantidad;
                             reorden.Value = producto.re_orden;
                             categoriasCombox.SelectedValue = producto.id_categoria;

@@ -138,8 +138,15 @@ namespace GUI_V_2
             }
             catch (Exception)
             {
-
                 //Guardar Error
+
+
+
+
+
+
+
+
             }
         }
         

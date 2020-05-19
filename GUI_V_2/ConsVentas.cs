@@ -15,6 +15,8 @@ namespace GUI_V_2
         public ConsVentas()
         {
             InitializeComponent();
+            fecha_inicio.Value = DateTime.Today;
+            fecha_fin.Value = DateTime.Today;
             dataGridView1.AutoGenerateColumns = false;
             codigo.DataPropertyName = "codigo";
             fecha.DataPropertyName = "fecha";
@@ -37,8 +39,6 @@ namespace GUI_V_2
                    Met_Pago.DataPropertyName = "Met_Pago";
                    usuario_cajero_id.DataPropertyName = "usuario_cajero_id";
                    MessageBox.Show(DateTime.Today.ToShortDateString()); */
-            fecha_inicio.Value = DateTime.Today;
-            fecha_fin.Value = DateTime.Today;
             LlenarDataGrid();
         }
 
@@ -163,6 +163,7 @@ namespace GUI_V_2
         //Activar o desactivar por rango
         private void ActivarRango_CheckStateChanged(object sender, EventArgs e)
         {
+            try { 
             if (ActivarRango.Checked == true)
             {   
                 fecha_fin.Enabled = true;
@@ -171,7 +172,11 @@ namespace GUI_V_2
             {
                 fecha_fin.Enabled = false;
             }
-        }
+        }catch(Exception we)
+            {
+                //error
+            }
+}
 
         private void ConsVentas_Load(object sender, EventArgs e)
         {
@@ -181,6 +186,7 @@ namespace GUI_V_2
         //llenar resumen de venta
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try { 
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 txt_total_neto.Text = string.Format("{0:0,0.0}", dataGridView1.SelectedRows[0].Cells[7].Value);
@@ -195,7 +201,11 @@ namespace GUI_V_2
                 txt_subtotal.Text = "0.00";
                 txt_NumFac.Text = "0.";
             }
-        }
+        }catch(Exception we)
+            {
+                //error
+            }
+}
 
 
         public string fecha_hoy = DateTime.Now.Month + "/" + DateTime.Now.Day + "/" + DateTime.Now.Year;
@@ -203,32 +213,42 @@ namespace GUI_V_2
         //Boton filtrar
         private void button1_Click(object sender, EventArgs e)
         {
-            //Busqueda por rango fecha
-            if (ActivarRango.Checked)
+            try
             {
-                DateTime d1, d2;
-                d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
-                d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
-                string f1 = d1.Year+"/"+d1.Month + "/" + d1.Day, f2 = d2.Year + "/" + d2.Month + "/" + d2.Day;
-                
-                if (DateTime.Parse(f1) > DateTime.Parse(f2)) 
+                //Busqueda por rango fecha
+                if (ActivarRango.Checked)
                 {
-                    MessageBox.Show("La 'FECHA INICIO' no puede ser mayor a la de 'FECHA FIN'.", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    return;
+                    DateTime d1, d2;
+                    d1 = DateTime.Parse(fecha_inicio.Value.ToString("yyyy-MM-dd"));
+                    d2 = DateTime.Parse(fecha_fin.Value.ToString("yyyy-MM-dd"));
+                    string f1 = d1.Year + "/" + d1.Month + "/" + d1.Day, f2 = d2.Year + "/" + d2.Month + "/" + d2.Day;
+
+                    if (DateTime.Parse(f1) > DateTime.Parse(f2))
+                    {
+                        MessageBox.Show("La 'FECHA INICIO' no puede ser mayor a la de 'FECHA FIN'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if ((DateTime.Parse(f2) > DateTime.Parse(fecha_hoy)) || (DateTime.Parse(f1) > DateTime.Parse(fecha_hoy)))
+                    {
+                        MessageBox.Show("No puede usar fechas mayores a hoy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    LlenarGridRangoFechas();
+                }
+                else
+                {
+                    LlenarDataGrid(filtro.Text.Trim());
                 }
 
-                if ((DateTime.Parse(f2) > DateTime.Parse(fecha_hoy)) || (DateTime.Parse(f1) > DateTime.Parse(fecha_hoy)))
-                {
-                    MessageBox.Show("No puede usar fechas mayores a hoy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
-                LlenarGridRangoFechas();
-            }
-            else
+
+            }catch(Exception we)
             {
-                LlenarDataGrid(filtro.Text.Trim());
+                //error
             }
+
         }
 
 
@@ -302,6 +322,8 @@ namespace GUI_V_2
         //Poner fila en rojo si esta anulada
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
+
+            try { 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {  
                 if (row.Cells["estado"].Value.ToString() == "Anulada")
@@ -315,8 +337,13 @@ namespace GUI_V_2
                 }
 
             }
+            
+        }catch(Exception we)
+            {
+                //error
+            }
 
-        }
+}
 
         //Detalle de Venta
         private void btn_nuevo_Click(object sender, EventArgs e)

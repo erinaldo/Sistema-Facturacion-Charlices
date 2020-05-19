@@ -15,7 +15,7 @@ namespace GUI_V_2
         public FormInicioResumen()
         {
             InitializeComponent();
-            Barra.Show();
+     
             Codigo.DataPropertyName = "codigo";
             Nombre.DataPropertyName = "nombre";
             Cantidad.DataPropertyName = "cantidad";
@@ -26,7 +26,6 @@ namespace GUI_V_2
         }
       
 
-        VentanaLoading Barra = new VentanaLoading();
         Form1 Principal = new Form1();
 
         private void timer1_Tick(object sender, EventArgs e)
