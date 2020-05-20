@@ -15,18 +15,24 @@ namespace GUI_V_2
         public ConsResOrden()
         {
             InitializeComponent();
+            try { 
             id.DataPropertyName = "id";
             id_cliente.DataPropertyName = "nombre_completo";
             fecha.DataPropertyName = "fecha";
             id_mesera.DataPropertyName = "id_mesera";
             estado.DataPropertyName = "estado";
-
             LlenarDataGrid();
-        }
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+
+}
 
 
 
-        public void LlenarDataGrid(string condicion = "")
+       public void LlenarDataGrid(string condicion = "")
         {
             try
             {
@@ -50,7 +56,7 @@ namespace GUI_V_2
                     else
                     {
                         Ordenes = Ordenes.
-                        Where(c => (c.id == int.Parse(condicion) || c.nombre_completo == condicion));
+                        Where(c => (c.id == int.Parse(condicion) || c.nombre_completo == condicion || c.id_mesera == condicion));
                     }
 
 
@@ -61,7 +67,6 @@ namespace GUI_V_2
             }
             catch (Exception aa)
             {
-                MessageBox.Show(aa.ToString());
                 //error charly
             }
         }
@@ -69,11 +74,16 @@ namespace GUI_V_2
         //boton seleccionar
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try { 
             if (dataGridOrdenes.Rows.Count == 0) return;
             DialogResult = DialogResult.OK;
             Close();
         }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void ConsResOrden_Load(object sender, EventArgs e)
         {
@@ -82,7 +92,14 @@ namespace GUI_V_2
 
         private void filtro_KeyUp(object sender, KeyEventArgs e)
         {
-            //LlenarDataGrid(filtro.Text.Trim());
-        }
+            try { 
+            LlenarDataGrid(filtro.Text.Trim());
+            }
+            catch (Exception aa)
+            {
+                //posible error
+            }
+}
+
     }
 }

@@ -239,9 +239,9 @@
             this.txt_numfact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_numfact.Location = new System.Drawing.Point(175, 78);
             this.txt_numfact.Name = "txt_numfact";
-            this.txt_numfact.Size = new System.Drawing.Size(27, 20);
+            this.txt_numfact.Size = new System.Drawing.Size(18, 20);
             this.txt_numfact.TabIndex = 68;
-            this.txt_numfact.Text = "11";
+            this.txt_numfact.Text = "0";
             // 
             // DetalleVenta
             // 

@@ -17,6 +17,7 @@ namespace GUI_V_2
         public ConsPro()
         {
             InitializeComponent();
+            try { 
             dataGridVProducto.AutoGenerateColumns = false;
             id.DataPropertyName = "id";
             CodPro.DataPropertyName = "codigo";
@@ -33,15 +34,25 @@ namespace GUI_V_2
             TipPro.DataPropertyName = "tipo_producto";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
-
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormProductos obj = new FormProductos();
             obj.ShowDialog();
             LlenarDataGrid();
-        }
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void ConsPro_Load(object sender, EventArgs e)
         {
@@ -51,10 +62,9 @@ namespace GUI_V_2
 
         public void LlenarDataGrid(string condicion = "")
         {
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
-               
-        
                 var productos =  from pro in DB.Productos join cat in DB.Categorias on pro.id_categoria
                                                    equals cat.id join unidad in DB.Unidades_medidas on pro.id_unidad_medida
                                                    equals unidad.id
@@ -88,7 +98,12 @@ namespace GUI_V_2
                     dataGridVProducto.DataSource = productos.ToList();
             }
             nro_registros.Text = dataGridVProducto.Rows.Count.ToString() + " REGISTROS.";
-        }
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void filtro_Leave(object sender, EventArgs e)
         {
@@ -96,30 +111,43 @@ namespace GUI_V_2
 
         private void filtro_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             LlenarDataGrid(filtro.Text.Trim());
-        }
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try { 
             if (dataGridVProducto.Rows.Count == 0)  return;
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void dataGridVProducto_DoubleClick(object sender, EventArgs e)
-        {
-            button1.PerformClick();
-        }
-
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
+        
         private void dataGridVProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try { 
             Editar();
             LlenarDataGrid();
-          }
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
+}
         
         private void Editar()
         {
-            
+            try { 
             if (this.dataGridVProducto.Rows.Count > 0 && dataGridVProducto.SelectedRows.Count > 0)
             {
                 FormProductos obj = new FormProductos();
@@ -130,8 +158,13 @@ namespace GUI_V_2
                
 
             }
+           }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
 
-        }
+}
 
 
         ReportDataSource rs = new ReportDataSource();

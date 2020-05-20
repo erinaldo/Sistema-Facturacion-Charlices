@@ -28,40 +28,46 @@ namespace GUI_V_2
         //Accion cerrar Caja
         private void btn_cerrarCaja_Click(object sender, EventArgs e)
         {
-            if (Utilidades.ValidarFormulario(this, errorProvider1))
-                return;
-
-        
-           if(DialogResult.Yes == MessageBox.Show("¿Esta seguro que desea realizar el cierre de caja?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            try
             {
+                if (Utilidades.ValidarFormulario(this, errorProvider1))
+                    return;
 
-                using (CRUD_MODEL DB = new CRUD_MODEL())
+
+                if (DialogResult.Yes == MessageBox.Show("¿Esta seguro que desea realizar el cierre de caja?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    IQueryable<Usuarios> usuario = DB.Usuarios.Where(u => u.usuario == txt_user.Text.Trim() && u.password == txt_pass.Text.Trim());
 
-                    var resp = usuario.SingleOrDefault();
-                    if (resp == null)
+                    using (CRUD_MODEL DB = new CRUD_MODEL())
                     {
-                        MessageBox.Show("Usuario y/o contraseña incorrecto.");
-                    }
-                    else
-                    {
-                        if (resp.id != Utilidades.id_usuario)
+                        IQueryable<Usuarios> usuario = DB.Usuarios.Where(u => u.usuario == txt_user.Text.Trim() && u.password == txt_pass.Text.Trim());
+
+                        var resp = usuario.SingleOrDefault();
+                        if (resp == null)
                         {
-                            MessageBox.Show("Los credenciales no coinciden con el usuario logeado, cierre la sesión e inicie sesión con su usuario correspondiente.");
+                            MessageBox.Show("Usuario y/o contraseña incorrecto.");
                         }
                         else
                         {
-                           
-                            ResumenCaja caja = new ResumenCaja("cierre_caja");
-                            caja.ShowDialog();
-                            this.Close();
+                            if (resp.id != Utilidades.id_usuario)
+                            {
+                                MessageBox.Show("Los credenciales no coinciden con el usuario logeado, cierre la sesión e inicie sesión con su usuario correspondiente.");
+                            }
+                            else
+                            {
+
+                                ResumenCaja caja = new ResumenCaja("cierre_caja");
+                                caja.ShowDialog();
+                                this.Close();
+                            }
                         }
+
                     }
 
                 }
-
-                }
+            }catch(Exception aas)
+            {
+                //Posible error
+            }
 
             }
 

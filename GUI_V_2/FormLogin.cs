@@ -103,7 +103,5 @@ namespace GUI_V_2
             }
         }
 
-
-
     }
     }

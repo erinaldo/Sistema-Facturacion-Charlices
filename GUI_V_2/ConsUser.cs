@@ -15,6 +15,7 @@ namespace GUI_V_2
         public ConsUser()
         {
             InitializeComponent();
+            try { 
             dataGridViewUser.AutoGenerateColumns = false;
             CodUser.DataPropertyName = "codigo";
             NomUser.DataPropertyName = "nombre_completo";
@@ -27,17 +28,30 @@ namespace GUI_V_2
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
 
-        private void label1_Click(object sender, EventArgs e)
+}
+
+private void label1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormUsuarios obj = new FormUsuarios();
             obj.ShowDialog();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+
+}
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -51,6 +65,7 @@ namespace GUI_V_2
 
         public void LlenarDataGrid(string condicion = "")
         {
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 var usuarios = from u in DB.Usuarios select new {
@@ -78,11 +93,18 @@ namespace GUI_V_2
                 dataGridViewUser.DataSource = usuarios.ToList();
             }
             nro_registros.Text = dataGridViewUser.Rows.Count.ToString() + " REGISTROS.";
-        }
+            }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+
+}
 
 
-        private void Editar()
-        {
+         private void Editar()
+          {
+            try { 
             if (this.dataGridViewUser.Rows.Count > 0 && dataGridViewUser.SelectedRows.Count > 0)
             {
                 FormUsuarios obj = new FormUsuarios();
@@ -92,6 +114,11 @@ namespace GUI_V_2
                 SendKeys.Send("{TAB}");
             }
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
 
         private void ConsUser_Load(object sender, EventArgs e)
         {
@@ -100,7 +127,14 @@ namespace GUI_V_2
 
         private void filtro_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             LlenarDataGrid(filtro.Text);
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+        }
+
     }
 }

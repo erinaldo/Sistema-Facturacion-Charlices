@@ -17,6 +17,7 @@ namespace GUI_V_2
         public ConsSup()
         {
             InitializeComponent();
+            try { 
             dataGridSuplidores.AutoGenerateColumns = false;
             CodSup.DataPropertyName = "codigo";
             NomSup.DataPropertyName = "nombre_completo";
@@ -27,9 +28,15 @@ namespace GUI_V_2
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+           }
 
         public void LlenarDataGrid(string condicion = "")
         {
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 IQueryable<Suplidores> suplidores = from s in DB.Suplidores select s;
@@ -47,14 +54,25 @@ namespace GUI_V_2
                 dataGridSuplidores.DataSource = suplidores.ToList();
             }
             nro_registros.Text = dataGridSuplidores.Rows.Count.ToString() + " REGISTROS.";
-        }
+            }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormSuplidores obj = new FormSuplidores();
             obj.ShowDialog();
             LlenarDataGrid();
-        }
+            }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
 
         private void label16_Click(object sender, EventArgs e)
         {
@@ -73,18 +91,18 @@ namespace GUI_V_2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try { 
             if (dataGridSuplidores.Rows.Count == 0)
                 return;
             DialogResult = DialogResult.OK;
             Close();
         }
-
-        private void dataGridSuplidores_DoubleClick(object sender, EventArgs e)
-        {
-    
-
-        }
-
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
+        
         private void dataGridSuplidores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Editar();
@@ -93,6 +111,7 @@ namespace GUI_V_2
 
         private void Editar()
         {
+            try { 
             if (this.dataGridSuplidores.Rows.Count > 0 && dataGridSuplidores.SelectedRows.Count > 0)
             {
                 FormSuplidores obj = new FormSuplidores();
@@ -102,6 +121,11 @@ namespace GUI_V_2
                 SendKeys.Send("{TAB}");
             }
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
         ReportDataSource rs = new ReportDataSource();
 
         private void button2_Click(object sender, EventArgs e)

@@ -17,15 +17,22 @@ namespace GUI_V_2
         public ConsUniMed()
         {
             InitializeComponent();
+            try { 
             dataGridView1.AutoGenerateColumns = false;
             CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
-        }
+            }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
 
         public void LlenarDataGrid(string condicion = "")
         {
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 IQueryable<Unidades_medidas> Unidades = from s in DB.Unidades_medidas select s;
@@ -44,9 +51,15 @@ namespace GUI_V_2
             }
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+
+}
 
 
-        ReportDataSource rs = new ReportDataSource();
+ReportDataSource rs = new ReportDataSource();
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -82,19 +95,34 @@ namespace GUI_V_2
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormUnidadesMedidas obj = new FormUnidadesMedidas();
             obj.ShowDialog();
             LlenarDataGrid();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+}
+
+private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try { 
             Editar();
             LlenarDataGrid();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+
+}
 
         private void Editar()
         {
+            try { 
             if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
             {
                 FormUnidadesMedidas obj = new FormUnidadesMedidas();
@@ -104,9 +132,15 @@ namespace GUI_V_2
                 obj.ShowDialog();
 
             }
+             }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+
         }
 
-        private void ConsUniMed_Load(object sender, EventArgs e)
+private void ConsUniMed_Load(object sender, EventArgs e)
         {
 
         }

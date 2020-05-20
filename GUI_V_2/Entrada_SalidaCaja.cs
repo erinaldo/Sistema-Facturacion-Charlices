@@ -15,12 +15,17 @@ namespace GUI_V_2
         public Entrada_SalidaCaja()
         {
             InitializeComponent();
+            try { 
             dataGridView1.AutoGenerateColumns = false;
             id.DataPropertyName = "id";
             fecha.DataPropertyName = "fecha";
             id_usuario.DataPropertyName = "id_usuario";
             motivo.DataPropertyName = "motivo";
             monto.DataPropertyName = "monto";
+            }
+            catch (Exception ex) {
+             //   MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
@@ -52,7 +57,7 @@ namespace GUI_V_2
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+             //   MessageBox.Show(ex.ToString());
             }
         }
 
@@ -61,13 +66,7 @@ namespace GUI_V_2
             this.Close();
         }
 
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
-        {
-
-            e.Graphics.DrawRectangle(new Pen(Color.Blue, 3),
-                           this.DisplayRectangle);
-        }
-
+     
         private void Salidas_Paint(object sender, PaintEventArgs e)
         {
 
@@ -77,6 +76,7 @@ namespace GUI_V_2
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            try { 
             if(comboBox1.SelectedIndex==-1)
             {
                 MessageBox.Show("Debe seleccionar el tipo de acción para reaizar el proceso.");
@@ -121,18 +121,28 @@ namespace GUI_V_2
                 {
                     MessageBox.Show(ex.ToString());
                 }
+                }
+            }
+            catch (Exception ex)
+            {
+                //   MessageBox.Show(ex.ToString());
             }
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
+            try { 
             if (comboBox1.SelectedIndex == -1) return;
                     TraerAccionCaja();
         }
+            catch (Exception ex) {
+             //   MessageBox.Show(ex.ToString());
+            }
+}
 
         public void TraerAccionCaja()
         {
-
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 bool tipo = comboBox1.SelectedIndex == 1 ? true : false;
@@ -140,6 +150,10 @@ namespace GUI_V_2
                 dataGridView1.DataSource = caja.ToList();
             }
         }
+            catch (Exception ex) {
+             //   MessageBox.Show(ex.ToString());
+            }
+}
 
         private void Entrada_SalidaCaja_Load(object sender, EventArgs e)
         {

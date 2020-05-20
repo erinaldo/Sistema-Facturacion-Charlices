@@ -15,6 +15,7 @@ namespace GUI_V_2
         public ConsVentas()
         {
             InitializeComponent();
+            try { 
             fecha_inicio.Value = DateTime.Today;
             fecha_fin.Value = DateTime.Today;
             dataGridView1.AutoGenerateColumns = false;
@@ -41,6 +42,11 @@ namespace GUI_V_2
                    MessageBox.Show(DateTime.Today.ToShortDateString()); */
             LlenarDataGrid();
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+        }
+}
 
         public void LlenarDataGrid(string condicion = "")
         {
@@ -111,6 +117,7 @@ namespace GUI_V_2
         //Botono anular venta
         private void btn_anular_Click(object sender, EventArgs e)
         {
+            try { 
             if (dataGridView1.SelectedRows.Count<1)
             {
                 MessageBox.Show("Debe seleccionar la venta que desea anular.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -156,9 +163,13 @@ namespace GUI_V_2
                 }
 
 
-            }  
-            
+            }
         }
+            catch (Exception Aa)
+            {
+                //   MessageBox.Show("Hubo un fallo Charly");
+            }
+}
 
         //Activar o desactivar por rango
         private void ActivarRango_CheckStateChanged(object sender, EventArgs e)
@@ -322,7 +333,6 @@ namespace GUI_V_2
         //Poner fila en rojo si esta anulada
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-
             try { 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {  
@@ -392,10 +402,5 @@ namespace GUI_V_2
              //  ERROR CHARLY
             }
         }
-
-
-            
-
-
     }
 }

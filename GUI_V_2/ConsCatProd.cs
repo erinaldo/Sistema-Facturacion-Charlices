@@ -18,14 +18,21 @@ namespace GUI_V_2
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
+            try { 
             CodPro.DataPropertyName = "codigo";
             NomPro.DataPropertyName = "nombre";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
+            }catch(Exception aas)
+            {
+                //Posible error
+            }
         }
 
         public void LlenarDataGrid(string condicion = "")
         {
+
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 IQueryable<Categorias> categorias = from s in DB.Categorias select s;
@@ -43,13 +50,23 @@ namespace GUI_V_2
                 dataGridView1.DataSource = categorias.ToList();
             }
             nro_registros.Text = dataGridView1.Rows.Count.ToString() + " REGISTROS.";
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
 
         private void btn_nuevo_Click(object sender, EventArgs e)
-        {   FormCategorias obj = new FormCategorias();
+        {
+            try { 
+            FormCategorias obj = new FormCategorias();
             obj.ShowDialog();
             LlenarDataGrid();
+            }catch(Exception aas)
+            {
+                //Posible error
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +84,7 @@ namespace GUI_V_2
 
         private void Editar()
         {
+            try { 
             if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
             {
                 FormCategorias obj = new FormCategorias();
@@ -75,7 +93,11 @@ namespace GUI_V_2
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         ReportDataSource rs = new ReportDataSource();
 

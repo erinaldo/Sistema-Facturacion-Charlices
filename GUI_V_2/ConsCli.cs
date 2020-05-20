@@ -17,6 +17,7 @@ namespace GUI_V_2.Consultas
         public ConsCli()
         {
             InitializeComponent();
+            try { 
             dataGridClientes.AutoGenerateColumns = false;
             id.DataPropertyName = "id";
             CodCli.DataPropertyName = "codigo";
@@ -28,10 +29,15 @@ namespace GUI_V_2.Consultas
             CorCli.DataPropertyName = "correo";
             estatus.DataPropertyName = "estado";
             LlenarDataGrid();
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         public void LlenarDataGrid(string condicion = "")
         {
+            try { 
             using (CRUD_MODEL DB = new CRUD_MODEL())
             {
                 var  clientes = from c in DB.Clientes
@@ -62,14 +68,24 @@ namespace GUI_V_2.Consultas
                 dataGridClientes.DataSource = clientes.ToList();
             }
             nro_registros.Text = dataGridClientes.Rows.Count.ToString() + " REGISTROS.";
+            }
+            catch (Exception aas)
+            {
+                //Posible error
+            }
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormClientes obj = new FormClientes();
             obj.ShowDialog();
             LlenarDataGrid();
-        }
+            }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void ConsCli_Load(object sender, EventArgs e)
         {
@@ -78,16 +94,25 @@ namespace GUI_V_2.Consultas
 
         private void filtro_KeyUp(object sender, KeyEventArgs e)
         {
+            try { 
             LlenarDataGrid(filtro.Text.Trim());
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try { 
             if (dataGridClientes.Rows.Count == 0) return;
             DialogResult = DialogResult.OK;
             Close();
-
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
         
         private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -95,6 +120,7 @@ namespace GUI_V_2.Consultas
         }
         private void Editar()
         {
+            try { 
             if (this.dataGridClientes.Rows.Count > 0 && dataGridClientes.SelectedRows.Count > 0)
             {
                 FormClientes obj = new FormClientes();
@@ -103,7 +129,11 @@ namespace GUI_V_2.Consultas
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         ReportDataSource rs = new ReportDataSource();
 

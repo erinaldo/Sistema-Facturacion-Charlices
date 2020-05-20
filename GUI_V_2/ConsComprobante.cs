@@ -20,9 +20,14 @@ namespace GUI_V_2
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
+            try { 
             FormComprabantes obj = new FormComprabantes();
             obj.ShowDialog();
-        }
+            }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -35,6 +40,7 @@ namespace GUI_V_2
         }
         private void Editar()
         {
+            try { 
             if (this.dataGridView1.Rows.Count > 0 && dataGridView1.SelectedRows.Count > 0)
             {
                 FormComprabantes obj = new FormComprabantes();
@@ -43,6 +49,10 @@ namespace GUI_V_2
                 obj.Codigo.Focus();
                 SendKeys.Send("{TAB}");
             }
-        }
+        }catch(Exception aas)
+            {
+                //Posible error
+            }
+}
     }
 }
